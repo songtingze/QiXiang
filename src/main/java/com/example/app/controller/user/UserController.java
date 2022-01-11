@@ -6,6 +6,8 @@ import com.example.app.service.UserService;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.security.crypto.bcrypt.BCryptPasswordEncoder;
 import org.springframework.web.bind.annotation.*;
+
+import java.sql.Timestamp;
 import java.util.UUID;
 
 import java.text.SimpleDateFormat;
@@ -46,8 +48,9 @@ public class UserController {
             String uuid = UUID.randomUUID().toString().replaceAll("-","");
             newUser.setUid(uuid);
             newUser.setPassword(encoding.encode(newUser.getPassword()));
-            SimpleDateFormat formatter = new SimpleDateFormat("yyyy年MM月dd日 HH:mm:ss");
-            newUser.setCreateTime(formatter.format(new Date()));
+            Timestamp t = new Timestamp(System.currentTimeMillis());
+            String createTime = new SimpleDateFormat("yyyy-MM-dd HH:mm:ss").format(t);
+            newUser.setCreateTime(createTime);
             userService.addUser(newUser);
             return Result.success(newUser);
         }
