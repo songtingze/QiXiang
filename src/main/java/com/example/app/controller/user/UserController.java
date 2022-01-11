@@ -30,6 +30,7 @@ public class UserController {
             return Result.error("101","用户不存在");
         }else{
             //密码是否正确
+            //密码解密
             if(encoding.matches(password,user.getPassword())){
                 return Result.success(user);
             }
@@ -46,9 +47,12 @@ public class UserController {
         if(user != null){
             return Result.error("103","手机已被注册");
         }else{
+            //生成唯一标识uid
             String uuid = UUID.randomUUID().toString().replaceAll("-","");
             newUser.setUid("U_" + uuid.substring(0,10));
+            //密码加密
             newUser.setPassword(encoding.encode(newUser.getPassword()));
+            //设置创建时间
             Timestamp t = new Timestamp(System.currentTimeMillis());
             String createTime = new SimpleDateFormat("yyyy-MM-dd HH:mm:ss").format(t);
             newUser.setCreateTime(createTime);
