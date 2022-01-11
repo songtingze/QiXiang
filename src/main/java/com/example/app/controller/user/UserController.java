@@ -7,6 +7,7 @@ import com.zhenzi.sms.ZhenziSmsClient;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.security.crypto.bcrypt.BCryptPasswordEncoder;
 import org.springframework.web.bind.annotation.*;
+import com.alibaba.fastjson.JSONObject;
 
 import java.sql.Timestamp;
 import java.util.HashMap;
@@ -62,12 +63,15 @@ public class UserController {
             return Result.success(newUser);
         }
     }
+    //发送短信验证码
     @PostMapping("/send")
     public Result sendMSM(@RequestParam String telephone) throws Exception {
         User user = userService.queryByPhone(telephone);
+        //判断手机号是否已被注册
         if(user != null){
             return Result.error("103","手机已被注册");
         }else{
+            //利用榛子云api发送短信
             String apiUrl = "http://sms_developer.zhenzikj.com";
             String appId = "107456";
             String appSecret = "bb3f909f-ef88-4343-8a19-9930e728a0f8";
@@ -79,6 +83,7 @@ public class UserController {
             map.put("templateId", "2705");
             //生成验证码
             int pow = (int) Math.pow(10, 4 - 1);
+
             String verificationCode = String.valueOf((int) (Math.random() * 9 * pow + pow));
             //随机生成messageId，验证验证码的时候，需要携带这个参数去取验证码
             String messageId = UUID.randomUUID().toString();
@@ -93,9 +98,17 @@ public class UserController {
             map.put("number", telephone);
 
             String result = client.send(map);
-            System.out.println(result);
 
-            return Result.success();
+            JSONObject jsonObject = JSONObject.parseObject(result);
+            int  code =(int)jsonObject.get("code");
+
+            //发送成功
+            if(code == 0){
+                return Result.success();
+            }else{
+                //发送失败
+                return Result.error("104","短信发送失败");
+            }
         }
 
     }

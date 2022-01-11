@@ -11,6 +11,16 @@ public class User {
     private String birthday;
     private String createTime;
     private String updateTime;
+    private String verifyCode;
+
+    public String getVerifyCode() {
+        return verifyCode;
+    }
+
+    public void setVerifyCode(String verifyCode) {
+        this.verifyCode = verifyCode;
+    }
+
 
     public int getId() {
         return id;
