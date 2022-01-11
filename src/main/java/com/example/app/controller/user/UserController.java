@@ -12,14 +12,21 @@ public class UserController {
     @Autowired
     private UserService userService;
 
+    //用户登录
     @PostMapping("/login")
-    public Result<User> login(@RequestParam String uid, @RequestParam String password){
-        User user = userService.queryByUid(uid);
-        if(user.getPassword().equalsIgnoreCase(password)){
-            return Result.success(user);
-        }
-        else{
-            return Result.error("404","密码错误");
+    public Result<User> login(@RequestParam String phone, @RequestParam String password){
+        User user = userService.queryByPhone(phone);
+        //用户是否存在
+        if(user == null){
+            return Result.error("101","用户不存在");
+        }else{
+            //密码是否正确
+            if(user.getPassword().equalsIgnoreCase(password)){
+                return Result.success(user);
+            }
+            else{
+                return Result.error("102","密码错误");
+            }
         }
     }
 

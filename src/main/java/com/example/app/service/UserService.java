@@ -1,10 +1,31 @@
 package com.example.app.service;
 
-
+import com.example.app.dao.IUserDao;
 import com.example.app.entity.User;
+import com.example.app.service.UserService;
 
-public interface UserService {
-    User queryByUid(String uid);
-    void addUser(User user);
-    void updateUser(User user);
+import org.springframework.stereotype.Service;
+
+import javax.annotation.Resource;
+
+@Service
+public class UserService {
+    @Resource
+    private IUserDao userDao;
+
+    public User queryByUid(String uid) {
+        return userDao.queryByUid(uid);
+    }
+
+    public User queryByPhone(String phone) {
+        return userDao.queryByPhone(phone);
+    }
+
+    public void addUser(User user) {
+        userDao.addUser(user);
+    }
+
+    public void updateUser(User user) {
+        userDao.updateUser(user);
+    }
 }
