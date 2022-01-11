@@ -42,11 +42,12 @@ public class UserController {
     @PostMapping("/register")
     public Result<User> createSingleUser(@RequestBody User newUser){
         User user = userService.queryByPhone(newUser.getPhone());
+        //判断手机号是否已被注册
         if(user != null){
             return Result.error("103","手机已被注册");
         }else{
             String uuid = UUID.randomUUID().toString().replaceAll("-","");
-            newUser.setUid(uuid);
+            newUser.setUid("U_" + uuid.substring(0,10));
             newUser.setPassword(encoding.encode(newUser.getPassword()));
             Timestamp t = new Timestamp(System.currentTimeMillis());
             String createTime = new SimpleDateFormat("yyyy-MM-dd HH:mm:ss").format(t);
