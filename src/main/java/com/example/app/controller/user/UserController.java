@@ -3,11 +3,13 @@ package com.example.app.controller.user;
 import com.example.app.common.Result;
 import com.example.app.entity.User;
 import com.example.app.service.UserService;
+import com.zhenzi.sms.ZhenziSmsClient;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.security.crypto.bcrypt.BCryptPasswordEncoder;
 import org.springframework.web.bind.annotation.*;
 
 import java.sql.Timestamp;
+import java.util.HashMap;
 import java.util.UUID;
 
 import java.text.SimpleDateFormat;
@@ -60,6 +62,42 @@ public class UserController {
             return Result.success(newUser);
         }
     }
+    @PostMapping("/send")
+    public Result sendMSM(@RequestParam String telephone) throws Exception {
+        User user = userService.queryByPhone(telephone);
+        if(user != null){
+            return Result.error("103","手机已被注册");
+        }else{
+            String apiUrl = "http://sms_developer.zhenzikj.com";
+            String appId = "107456";
+            String appSecret = "bb3f909f-ef88-4343-8a19-9930e728a0f8";
 
+            ZhenziSmsClient client = new ZhenziSmsClient(apiUrl,appId, appSecret);
+
+            HashMap<String, Object> map = new HashMap<>();
+            //这个是榛子云短信平台用户中心下的短信管理的短信模板的模板id
+            map.put("templateId", "2705");
+            //生成验证码
+            int pow = (int) Math.pow(10, 4 - 1);
+            String verificationCode = String.valueOf((int) (Math.random() * 9 * pow + pow));
+            //随机生成messageId，验证验证码的时候，需要携带这个参数去取验证码
+            String messageId = UUID.randomUUID().toString();
+            map.put("messageId", messageId);
+            String[] templateParams = new String[2];
+            //两个参数分别为验证码和过期时间
+            templateParams[0] = verificationCode;
+//        templateParams[0] = "5211314";
+            templateParams[1] = String.valueOf("五分钟");
+            map.put("templateParams", templateParams);
+
+            map.put("number", telephone);
+
+            String result = client.send(map);
+            System.out.println(result);
+
+            return Result.success();
+        }
+
+    }
 
 }
