@@ -5,8 +5,8 @@ public class Record {
     private int id;
     private String rid;
     private String content;
-    private String createtime;
-    private String updatetime;
+    private String createTime;
+    private String updateTime;
     private String state;
     private String uid;
     private String picture;
@@ -36,20 +36,20 @@ public class Record {
         this.content = content;
     }
 
-    public String getCreatetime() {
-        return createtime;
+    public String getCreateTime() {
+        return createTime;
     }
 
-    public void setCreatetime(String createtime) {
-        this.createtime = createtime;
+    public void setCreateTime(String createTime) {
+        this.createTime = createTime;
     }
 
-    public String getUpdatetime() {
-        return updatetime;
+    public String getUpdateTime() {
+        return updateTime;
     }
 
-    public void setUpdatetime(String updatetime) {
-        this.updatetime = updatetime;
+    public void setUpdateTime(String updateTime) {
+        this.updateTime = updateTime;
     }
 
     public String getState() {

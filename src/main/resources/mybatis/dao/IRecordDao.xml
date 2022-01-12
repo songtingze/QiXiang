@@ -7,11 +7,11 @@
         select * from record where rid = #{rid}
     </select>
     <insert id="addRecord" parameterType="Record" useGeneratedKeys="true" keyProperty="id">
-        insert into record (id,rid,content,create_time,update_time,state,uid,picture) values (#{id},#{rid},#{content},#{createtime},#{updatetime},#{state},#{uid},#{picture})
+        insert into record (id,rid,content,create_time,update_time,state,uid,picture) values (#{id},#{rid},#{content},#{createTime},#{updateTime},#{state},#{uid},#{picture})
     </insert>
 
     <update id="updateRecord" parameterType="Record">
-        update record set id = #{id},rid = #{rid},content = #{content},create_time = #{createtime},update_time = #{updatetime},state = #{state},uid = #{uid},picture = #{picture} where rid = #{rid}
+        update record set id = #{id},rid = #{rid},content = #{content},create_time = #{createTime},update_time = #{updateTime},state = #{state},uid = #{uid},picture = #{picture} where rid = #{rid}
     </update>
 
     <delete id="deleteRecord">
