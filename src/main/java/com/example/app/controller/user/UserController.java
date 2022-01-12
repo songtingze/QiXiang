@@ -1,6 +1,7 @@
 package com.example.app.controller.user;
 
 import com.example.app.common.Result;
+import com.example.app.config.RedisService;
 import com.example.app.entity.User;
 import com.example.app.service.UserService;
 import com.zhenzi.sms.ZhenziSmsClient;
@@ -23,6 +24,8 @@ public class UserController {
     private UserService userService;
     @Autowired
     private BCryptPasswordEncoder encoding;
+    @Autowired
+    private RedisService redisService;
 
     //用户登录
     @PostMapping("/login")
@@ -55,9 +58,14 @@ public class UserController {
     public Result<User> createSingleUser(@RequestBody User newUser){
         try {
             User user = userService.queryByPhone(newUser.getPhone());
+            Object code = redisService.getValue(newUser.getPhone());
             //判断手机号是否已被注册
             if(user != null){
                 return Result.error("103","手机已被注册");
+            }else if(code == null){
+                return Result.error("104","验证码失效");
+            }else if(!code.toString().equalsIgnoreCase(newUser.getVerifyCode())){
+                return Result.error("105","验证码错误");
             }else{
                 //生成唯一标识uid
                 String uuid = UUID.randomUUID().toString().replaceAll("-","");
@@ -80,7 +88,7 @@ public class UserController {
     }
     //发送短信验证码
     @PostMapping("/send")
-    public Result sendMSM(@RequestParam String telephone) throws Exception {
+    public Result<String> sendMSM(@RequestParam String telephone) throws Exception {
         User user = userService.queryByPhone(telephone);
         //判断手机号是否已被注册
         if(user != null){
@@ -119,11 +127,22 @@ public class UserController {
 
             //发送成功
             if(code == 0){
-                return Result.success();
+                redisService.setKey(telephone,verificationCode);
+                return Result.success(verificationCode+"");
             }else{
                 //发送失败
                 return Result.error("104","短信发送失败");
             }
+        }
+
+    }
+    @PostMapping("/getRedis")
+    public Result<String> getRedis(String telephone){
+        Object code = redisService.getValue(telephone);
+        if(code != null){
+            return Result.success(code.toString());
+        }else{
+            return Result.error("111","验证码失效");
         }
 
     }
