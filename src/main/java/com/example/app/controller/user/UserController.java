@@ -3,6 +3,7 @@ package com.example.app.controller.user;
 import com.example.app.common.Result;
 import com.example.app.config.RedisService;
 import com.example.app.entity.User;
+import com.example.app.service.PhotoService;
 import com.example.app.service.UserService;
 import com.zhenzi.sms.ZhenziSmsClient;
 import org.springframework.beans.factory.annotation.Autowired;
@@ -26,6 +27,8 @@ public class UserController {
     private BCryptPasswordEncoder encoding;
     @Autowired
     private RedisService redisService;
+    @Autowired
+    private PhotoService photoService;
 
     //用户登录
 
@@ -147,6 +150,12 @@ public class UserController {
         }else{
             return Result.error("111","验证码失效");
         }
-
     }
+
+    @PostMapping("/modifyPic")
+    public Result<User> modifyPic(String uid,String imgData){
+        photoService.uploadPhoto(uid,imgData);
+        return Result.success(userService.queryByUid(uid));
+    }
+
 }

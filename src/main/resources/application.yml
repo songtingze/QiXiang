@@ -1,5 +1,9 @@
 server:
     port: 8081
+
+photo:
+#    uploadPath: "/root/App/photoUpload/"
+    uploadPath: "D:/test/"
 spring:
     datasource:
         driver-class-name: com.mysql.cj.jdbc.Driver
@@ -13,7 +17,8 @@ spring:
         # 端口，默认为6379
         port: 6379
         # 密码
-        password: xwtec123
+#        password: xwtec123
+        password:
         jedis:
             pool:
                 max-active: 100

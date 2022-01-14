@@ -1,0 +1,15 @@
+<?xml version="1.0" encoding="UTF-8" ?>
+<!DOCTYPE mapper
+        PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN"
+        "http://mybatis.org/dtd/mybatis-3-mapper.dtd">
+<mapper namespace="com.example.app.dao.IPhotoDao">
+    <select id="queryByPid" parameterType="String" resultType="Photo">
+        select * from photo where pid = #{pid}
+    </select>
+    <insert id="addPhoto" parameterType="Photo" useGeneratedKeys="true" keyProperty="id">
+        insert into photo(id,pid,path) values (#{id},#{pid},#{path})
+    </insert>
+    <update id="updatePhoto" parameterType="Photo">
+        update photo set id = #{id},pid = #{pid},path = #{path}, where pid = #{pid}
+    </update>
+</mapper>
