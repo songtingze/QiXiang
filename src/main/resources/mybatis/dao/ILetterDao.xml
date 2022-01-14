@@ -1,0 +1,17 @@
+<?xml version="1.0" encoding="UTF-8" ?>
+<!DOCTYPE mapper
+        PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN"
+        "http://mybatis.org/dtd/mybatis-3-mapper.dtd">
+<mapper namespace="com.example.app.dao.ILetterDao">
+    <select id="queryByLid" parameterType="String" resultType="Letter">
+        select * from letter where lid = #{lid}
+    </select>
+
+    <insert id="addLetter" parameterType="Letter" useGeneratedKeys="true" keyProperty="id">
+        insert into letter(id,lid,send_uid,receive_uid,msg,stamp_id,postcode,create_time,update_time) values (#{id},#{lid},#{sendUid},#{receiveUid},#{msg},#{stampId},#{postCode},#{createTime},#{updateTime})
+    </insert>
+
+    <select id="queryByReceiveUid" parameterType="String" resultType="Letter">
+        select * from letter where receive_uid = #{receiveUid}
+    </select>
+</mapper>

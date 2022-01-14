@@ -2,10 +2,7 @@ package com.example.app.service;
 
 import com.example.app.dao.IUserDao;
 import com.example.app.entity.User;
-
-
 import org.springframework.stereotype.Service;
-
 import javax.annotation.Resource;
 
 @Service

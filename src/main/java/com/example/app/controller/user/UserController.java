@@ -28,6 +28,7 @@ public class UserController {
     private RedisService redisService;
 
     //用户登录
+
     @PostMapping("/login")
     public Result<User> login(@RequestParam String phone, @RequestParam String password){
         try{
@@ -87,6 +88,7 @@ public class UserController {
 
     }
     //发送短信验证码
+
     @PostMapping("/send")
     public Result<String> sendMSM(@RequestParam String telephone) throws Exception {
         User user = userService.queryByPhone(telephone);
@@ -136,6 +138,7 @@ public class UserController {
         }
 
     }
+
     @PostMapping("/getRedis")
     public Result<String> getRedis(String telephone){
         Object code = redisService.getValue(telephone);
@@ -146,5 +149,4 @@ public class UserController {
         }
 
     }
-
 }
