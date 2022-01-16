@@ -5,6 +5,9 @@ import org.springframework.stereotype.Service;
 import sun.misc.BASE64Decoder;
 import sun.misc.BASE64Encoder;
 
+import javax.imageio.ImageIO;
+import java.awt.*;
+import java.awt.image.BufferedImage;
 import java.io.*;
 
 
@@ -12,7 +15,7 @@ import java.io.*;
 public class BaseService {
 
     // 将图片转成Base64
-    public static String pictureConvertToBase64(String path) {
+    public String pictureConvertToBase64(String path) {
         byte[] data = null;
         // 读取图片字节数组
         try {
@@ -31,7 +34,7 @@ public class BaseService {
     }
 
     // 将Base64转成图片
-    public static boolean base64ConvertToPicture(String imgStr,String path){
+    public boolean base64ConvertToPicture(String imgStr,String path){
         if (imgStr == null){
             //图像数据为空
             return false;
@@ -62,6 +65,27 @@ public class BaseService {
         }
     }
 
+    //图片压缩
+    public void scale(String srcImageFile,String type) {
+        try {
 
+            File tempFile = new File(srcImageFile);
+            BufferedImage src = ImageIO.read(tempFile); // 读入文件
+
+            int width = 960;
+            int height = 544;
+
+            Image image = src.getScaledInstance(width, height,
+                    Image.SCALE_DEFAULT);
+            BufferedImage tag = new BufferedImage(width, height,
+                    BufferedImage.TYPE_INT_RGB);
+            Graphics g = tag.getGraphics();
+            g.drawImage(image, 0, 0, null); // 绘制缩小后的图
+            g.dispose();
+            ImageIO.write(tag, type, new File(srcImageFile));// 输出到文件流
+        } catch (IOException e) {
+            e.printStackTrace();
+        }
+    }
 
 }

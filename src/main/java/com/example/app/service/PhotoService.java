@@ -7,22 +7,12 @@ import com.example.app.entity.Photo;
 import com.example.app.entity.User;
 import org.springframework.beans.factory.annotation.Value;
 import org.springframework.stereotype.Service;
-import sun.misc.BASE64Decoder;
 
 import javax.annotation.Resource;
-import javax.imageio.ImageIO;
-import java.awt.*;
-import java.awt.image.BufferedImage;
 import java.io.File;
-import java.io.FileOutputStream;
-import java.io.IOException;
-import java.io.OutputStream;
 import java.text.SimpleDateFormat;
 import java.util.Date;
 import java.util.UUID;
-
-import static com.example.app.service.BaseService.base64ConvertToPicture;
-import static com.example.app.service.BaseService.pictureConvertToBase64;
 
 @Service
 public class PhotoService {
@@ -30,6 +20,8 @@ public class PhotoService {
     private IPhotoDao photoDao;
     @Resource
     private IUserDao userDao;
+    @Resource
+    private BaseService BaseService;
 
     @Value("${photo.uploadPath}")
     private String uploadPath;
@@ -46,6 +38,7 @@ public class PhotoService {
         photoDao.updatePhoto(photo);
     }
 
+    //上传图片到服务器
     public void uploadPhoto(String uid,String imgStr){
 
         String folderName =  new SimpleDateFormat("yyyyMMdd").format(new Date());
@@ -56,10 +49,10 @@ public class PhotoService {
         if (!file.getParentFile().exists()) {
             file.getParentFile().mkdirs();
         }
-        base64ConvertToPicture(imgStr,path + file_name);
+        BaseService.base64ConvertToPicture(imgStr,path + file_name);
 
         //把base64转成图片，保存到指定路径
-        scale(path + file_name,"jpg");
+        BaseService.scale(path + file_name,"jpg");
 
         Photo photo = new Photo();
         String uuid = UUID.randomUUID().toString().replaceAll("-","");
@@ -73,63 +66,11 @@ public class PhotoService {
 
     }
 
+    //下载图片
     public void downloadPhoto(String photoPath){
-        String base64Str = pictureConvertToBase64(photoPath);
+        String base64Str = BaseService.pictureConvertToBase64(photoPath);
         System.out.println(base64Str);
     }
-
-    public void scale(String srcImageFile,String type) {
-        try {
-
-            File tempFile = new File(srcImageFile);
-            BufferedImage src = ImageIO.read(tempFile); // 读入文件
-
-            int width = 960;
-            int height = 544;
-
-            Image image = src.getScaledInstance(width, height,
-                    Image.SCALE_DEFAULT);
-            BufferedImage tag = new BufferedImage(width, height,
-                    BufferedImage.TYPE_INT_RGB);
-            Graphics g = tag.getGraphics();
-            g.drawImage(image, 0, 0, null); // 绘制缩小后的图
-            g.dispose();
-            ImageIO.write(tag, type, new File(srcImageFile));// 输出到文件流
-        } catch (IOException e) {
-            e.printStackTrace();
-        }
-    }
-
-    /*public boolean base64ConvertToPicture(String imgStr,String path){
-        if (imgStr == null){
-            //图像数据为空
-            return false;
-        }
-
-        BASE64Decoder decoder = new BASE64Decoder();
-        try
-        {
-            //Base64解码
-            byte[] b = decoder.decodeBuffer(imgStr);
-            for(int i=0;i<b.length;++i)
-            {
-                if(b[i]<0)
-                {//调整异常数据
-                    b[i]+=256;
-                }
-            }
-            //生成jpeg图片
-            OutputStream out = new FileOutputStream(path);
-            out.write(b);
-            out.flush();
-            out.close();
-            return true;
-        }
-        catch (Exception e)
-        {
-            return false;
-        }
-    }*/
 
 }
 
