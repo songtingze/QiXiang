@@ -21,6 +21,9 @@ import java.text.SimpleDateFormat;
 import java.util.Date;
 import java.util.UUID;
 
+import static com.example.app.service.BaseService.base64ConvertToPicture;
+import static com.example.app.service.BaseService.pictureConvertToBase64;
+
 @Service
 public class PhotoService {
     @Resource
@@ -48,7 +51,7 @@ public class PhotoService {
         String folderName =  new SimpleDateFormat("yyyyMMdd").format(new Date());
         String file_name = new SimpleDateFormat("HHmmss").format(new Date()) + ".jpg";
         String path = uploadPath + folderName + "/" ;
-        File file = new File(path, file_name );
+        File file = new File(path, file_name);
         //判断文件夹是否存在，不存在就创建
         if (!file.getParentFile().exists()) {
             file.getParentFile().mkdirs();
@@ -69,6 +72,12 @@ public class PhotoService {
         userDao.updateUser(user);
 
     }
+
+    public void downloadPhoto(String photoPath){
+        String base64Str = pictureConvertToBase64(photoPath);
+        System.out.println(base64Str);
+    }
+
     public void scale(String srcImageFile,String type) {
         try {
 
@@ -90,7 +99,8 @@ public class PhotoService {
             e.printStackTrace();
         }
     }
-    public boolean base64ConvertToPicture(String imgStr,String path){
+
+    /*public boolean base64ConvertToPicture(String imgStr,String path){
         if (imgStr == null){
             //图像数据为空
             return false;
@@ -119,7 +129,7 @@ public class PhotoService {
         {
             return false;
         }
-    }
+    }*/
 
 }
 
