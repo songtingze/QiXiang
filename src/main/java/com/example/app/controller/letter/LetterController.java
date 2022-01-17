@@ -4,14 +4,10 @@ package com.example.app.controller.letter;
 import com.example.app.common.Result;
 import com.example.app.entity.Letter;
 import com.example.app.service.LetterService;
-import com.example.app.service.PhotoService;
+import com.example.app.service.HeadService;
 import com.github.pagehelper.PageInfo;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.web.bind.annotation.*;
-
-import java.sql.Timestamp;
-import java.text.SimpleDateFormat;
-import java.util.UUID;
 
 @RestController
 @RequestMapping("/letter")
@@ -20,7 +16,7 @@ public class LetterController {
     @Autowired
     private LetterService letterService;
     @Autowired
-    private PhotoService photoService;
+    private HeadService photoService;
 
 
     //写信

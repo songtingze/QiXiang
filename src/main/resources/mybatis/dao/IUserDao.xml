@@ -10,9 +10,9 @@
         select * from user where phone = #{phone}
     </select>
     <insert id="addUser" parameterType="User" useGeneratedKeys="true" keyProperty="id">
-        insert into user(id,uid,user_name,password,phone,pid,sex,birthday,create_time,update_time,address,state) values (#{id},#{uid},#{userName},#{password},#{phone},#{pid},#{sex},#{birthday},#{createTime},#{updateTime},#{address},#{state})
+        insert into user(id,uid,user_name,password,phone,hid,sex,birthday,create_time,update_time,address,state) values (#{id},#{uid},#{userName},#{password},#{phone},#{hid},#{sex},#{birthday},#{createTime},#{updateTime},#{address},#{state})
     </insert>
     <update id="updateUser" parameterType="User">
-        update user set id = #{id},uid = #{uid},user_name = #{userName},password = #{password},phone = #{phone},pid = #{pid},sex = #{sex},birthday = #{birthday},create_time = #{createTime},update_time = #{updateTime},address=#{address} , state=#{state} where uid = #{uid}
+        update user set id = #{id},uid = #{uid},user_name = #{userName},password = #{password},phone = #{phone},hid = #{hid},sex = #{sex},birthday = #{birthday},create_time = #{createTime},update_time = #{updateTime},address=#{address} , state=#{state} where uid = #{uid}
     </update>
 </mapper>

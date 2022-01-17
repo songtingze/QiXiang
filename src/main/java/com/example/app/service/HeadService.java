@@ -1,8 +1,8 @@
 package com.example.app.service;
 
-import com.example.app.dao.IPhotoDao;
+import com.example.app.dao.IHeadDao;
 import com.example.app.dao.IUserDao;
-import com.example.app.entity.Photo;
+import com.example.app.entity.Head;
 
 import com.example.app.entity.User;
 import org.springframework.beans.factory.annotation.Value;
@@ -15,31 +15,31 @@ import java.util.Date;
 import java.util.UUID;
 
 @Service
-public class PhotoService {
+public class HeadService {
     @Resource
-    private IPhotoDao photoDao;
+    private IHeadDao headDao;
     @Resource
     private IUserDao userDao;
     @Resource
     private BaseService BaseService;
 
-    @Value("${photo.uploadPath}")
+    @Value("${head.uploadPath}")
     private String uploadPath;
 
-    public Photo queryByPid(String pid) {
-        return photoDao.queryByPid(pid);
+    public Head queryByHid(String hid) {
+        return headDao.queryByHid(hid);
     }
 
-    public void addPhoto(Photo photo) {
-        photoDao.addPhoto(photo);
+    public void addHead(Head head) {
+        headDao.addHead(head);
     }
 
-    public void updatePhoto(Photo photo) {
-        photoDao.updatePhoto(photo);
+    public void updateHead(Head head) {
+        headDao.updateHead(head);
     }
 
-    //上传图片到服务器
-    public void uploadPhoto(String uid,String imgStr){
+    //上传头像到服务器
+    public void uploadHead(String uid,String imgStr){
 
         String folderName =  new SimpleDateFormat("yyyyMMdd").format(new Date());
         String file_name = new SimpleDateFormat("HHmmss").format(new Date()) + ".jpg";
@@ -54,21 +54,21 @@ public class PhotoService {
         //把base64转成图片，保存到指定路径
         BaseService.scale(path + file_name,"jpg");
 
-        Photo photo = new Photo();
+        Head head = new Head();
         String uuid = UUID.randomUUID().toString().replaceAll("-","");
-        photo.setPid("P_" + uuid.substring(0,10));
-        photo.setPath(folderName + "/" + file_name);
-        addPhoto(photo);
+        head.setHid("H_" + uuid.substring(0,10));
+        head.setPath(folderName + "/" + file_name);
+        addHead(head);
 
         User user = userDao.queryByUid(uid);
-        user.setPid(photo.getPid());
+        user.setHid(head.getHid());
         userDao.updateUser(user);
 
     }
 
-    //下载图片
-    public void downloadPhoto(String photoPath){
-        String base64Str = BaseService.pictureConvertToBase64(photoPath);
+    //从服务器下载头像到本地
+    public void downloadHead(String headPath){
+        String base64Str = BaseService.pictureConvertToBase64(headPath);
         System.out.println(base64Str);
     }
 

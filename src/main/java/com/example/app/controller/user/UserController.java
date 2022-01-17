@@ -40,10 +40,10 @@ public class UserController {
     }
 
     //修改头像
-    @PostMapping("/modifyPic")
-    public Result<User> modifyPic(@RequestParam String uid,@RequestParam String imgData){
+    @PostMapping("/modifyHead")
+    public Result<User> modifyHead(@RequestParam String uid,@RequestParam String imgData){
         try {
-            return userService.modifyPic(uid,imgData);
+            return userService.modifyHead(uid,imgData);
         }catch (Exception e){
 
             e.printStackTrace();

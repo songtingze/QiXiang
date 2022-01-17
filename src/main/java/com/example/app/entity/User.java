@@ -9,7 +9,7 @@ public class User {
     private String userName;
     private String password;
     private String phone;
-    private String pid;
+    private String hid;
     private String sex;
     private String birthday;
     private String createTime;
@@ -86,12 +86,12 @@ public class User {
         this.phone = phone;
     }
 
-    public String getPid() {
-        return pid;
+    public String getHid() {
+        return hid;
     }
 
-    public void setPid(String pid) {
-        this.pid = pid;
+    public void setHid(String hid) {
+        this.hid = hid;
     }
 
     public String getSex() {

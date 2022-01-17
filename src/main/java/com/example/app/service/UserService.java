@@ -7,8 +7,6 @@ import com.example.app.entity.User;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.security.crypto.bcrypt.BCryptPasswordEncoder;
 import org.springframework.stereotype.Service;
-import org.springframework.web.bind.annotation.RequestBody;
-import org.springframework.web.bind.annotation.RequestParam;
 
 import javax.annotation.Resource;
 import java.sql.Timestamp;
@@ -24,7 +22,7 @@ public class UserService {
     @Autowired
     private RedisService redisService;
     @Autowired
-    private PhotoService photoService;
+    private HeadService headService;
 
     public User queryByUid(String uid) {
         return userDao.queryByUid(uid);
@@ -103,9 +101,9 @@ public class UserService {
         }
     }
     //修改用户头像
-    public Result<User> modifyPic(String uid,String imgData){
+    public Result<User> modifyHead(String uid,String imgData){
         try {
-            photoService.uploadPhoto(uid,imgData);
+            headService.uploadHead(uid,imgData);
             return Result.success(queryByUid(uid));
         }catch (Exception e){
 

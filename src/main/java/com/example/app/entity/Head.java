@@ -1,9 +1,9 @@
 package com.example.app.entity;
 
-public class Photo {
+public class Head {
 
     private int id;
-    private String pid;
+    private String hid;
     private String path;
 
     public int getId() {
@@ -14,12 +14,12 @@ public class Photo {
         this.id = id;
     }
 
-    public String getPid() {
-        return pid;
+    public String getHid() {
+        return hid;
     }
 
-    public void setPid(String pid) {
-        this.pid = pid;
+    public void setHid(String hid) {
+        this.hid = hid;
     }
 
     public String getPath() {
