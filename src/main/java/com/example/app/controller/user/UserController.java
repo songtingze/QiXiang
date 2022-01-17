@@ -4,6 +4,7 @@ import com.example.app.common.Result;
 import com.example.app.entity.User;
 import com.example.app.service.UserService;
 import org.springframework.beans.factory.annotation.Autowired;
+import org.springframework.beans.factory.annotation.Value;
 import org.springframework.web.bind.annotation.*;
 
 
@@ -13,6 +14,7 @@ import org.springframework.web.bind.annotation.*;
 public class UserController {
     @Autowired
     private UserService userService;
+
 
     //用户登录
     @PostMapping("/login")

@@ -3,14 +3,18 @@ package com.example.app.service;
 import com.example.app.common.Result;
 import com.example.app.config.RedisService;
 import com.example.app.dao.IUserDao;
+import com.example.app.entity.Head;
 import com.example.app.entity.User;
 import org.springframework.beans.factory.annotation.Autowired;
+import org.springframework.beans.factory.annotation.Value;
 import org.springframework.security.crypto.bcrypt.BCryptPasswordEncoder;
 import org.springframework.stereotype.Service;
 
 import javax.annotation.Resource;
+import java.io.File;
 import java.sql.Timestamp;
 import java.text.SimpleDateFormat;
+import java.util.Date;
 import java.util.UUID;
 
 @Service
@@ -22,7 +26,13 @@ public class UserService {
     @Autowired
     private RedisService redisService;
     @Autowired
+    private BaseService baseService;
+    @Autowired
     private HeadService headService;
+
+
+    @Value("${head.uploadPath}")
+    private String uploadPath;
 
     public User queryByUid(String uid) {
         return userDao.queryByUid(uid);
@@ -103,7 +113,32 @@ public class UserService {
     //修改用户头像
     public Result<User> modifyHead(String uid,String imgData){
         try {
-            headService.uploadHead(uid,imgData);
+            String folderName =  new SimpleDateFormat("yyyyMMdd").format(new Date());
+            String file_name = new SimpleDateFormat("HHmmss").format(new Date()) + ".jpg";
+            String path = uploadPath + folderName + "/" ;
+            File file = new File(path, file_name);
+            //判断文件夹是否存在，不存在就创建
+            if (!file.getParentFile().exists()) {
+                file.getParentFile().mkdirs();
+            }
+            baseService.base64ConvertToPicture(imgData,path + file_name);
+
+            //把base64转成图片，保存到指定路径
+            baseService.scale(path + file_name,"jpg");
+
+            Head head = new Head();
+            String uuid = UUID.randomUUID().toString().replaceAll("-","");
+            head.setHid("H_" + uuid.substring(0,10));
+            head.setPath(folderName + "/" + file_name);
+            headService.addHead(head);
+
+            User user = userDao.queryByUid(uid);
+            System.out.println(user);
+            user.setHid(head.getHid());
+            Timestamp t = new Timestamp(System.currentTimeMillis());
+            String updateTime = new SimpleDateFormat("yyyy-MM-dd HH:mm:ss").format(t);
+            user.setUpdateTime(updateTime);
+            userDao.updateUser(user);
             return Result.success(queryByUid(uid));
         }catch (Exception e){
 

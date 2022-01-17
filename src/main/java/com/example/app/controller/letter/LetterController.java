@@ -15,8 +15,6 @@ import org.springframework.web.bind.annotation.*;
 public class LetterController {
     @Autowired
     private LetterService letterService;
-    @Autowired
-    private HeadService photoService;
 
 
     //写信
