@@ -133,7 +133,7 @@ public class UserService {
             headService.addHead(head);
 
             User user = userDao.queryByUid(uid);
-            System.out.println(user);
+            System.out.println(user.getUserName());
             user.setHid(head.getHid());
             Timestamp t = new Timestamp(System.currentTimeMillis());
             String updateTime = new SimpleDateFormat("yyyy-MM-dd HH:mm:ss").format(t);
