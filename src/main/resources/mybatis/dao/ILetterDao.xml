@@ -8,10 +8,10 @@
     </select>
 
     <insert id="addLetter" parameterType="Letter" useGeneratedKeys="true" keyProperty="id">
-        insert into letter(id,lid,sendUid,receiveUid,msg,stampId,postcode,createTime,updateTime) values (#{id},#{lid},#{sendUid},#{receiveUid},#{msg},#{stampId},#{postCode},#{createTime},#{updateTime})
+        insert into letter(id,lid,send_uid,receive_uid,msg,stamp_id,postcode,create_time,update_time) values (#{id},#{lid},#{sendUid},#{receiveUid},#{msg},#{stampId},#{postCode},#{createTime},#{updateTime})
     </insert>
 
     <select id="queryByReceiveUid" parameterType="String" resultType="Letter">
-        select * from letter where receiveUid = #{receiveUid}
+        select * from letter where receive_uid = #{receiveUid}
     </select>
 </mapper>
