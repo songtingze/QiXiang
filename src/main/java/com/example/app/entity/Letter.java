@@ -5,9 +5,16 @@ public class Letter {
     private String lid;
     private String sendUid;
     private String receiveUid;
+    private String sid;
+    private String receiveName;
+    private String receivePhone;
+    private String receiveAddress;
+    private String receivePostCode;
+    private String sendName;
+    private String sendPhone;
+    private String sendAddress;
+    private String sendPostCode;
     private String msg;
-    private int stampId;
-    private int postCode;
     private String createTime;
     private String updateTime;
 
@@ -20,8 +27,77 @@ public class Letter {
         this.lid = lid;
     }
 
+    public String getSid() {
+        return sid;
+    }
 
+    public void setSid(String sid) {
+        this.sid = sid;
+    }
 
+    public String getReceiveName() {
+        return receiveName;
+    }
+
+    public void setReceiveName(String receiveName) {
+        this.receiveName = receiveName;
+    }
+
+    public String getReceivePhone() {
+        return receivePhone;
+    }
+
+    public void setReceivePhone(String receivePhone) {
+        this.receivePhone = receivePhone;
+    }
+
+    public String getReceiveAddress() {
+        return receiveAddress;
+    }
+
+    public void setReceiveAddress(String receiveAddress) {
+        this.receiveAddress = receiveAddress;
+    }
+
+    public String getReceivePostCode() {
+        return receivePostCode;
+    }
+
+    public void setReceivePostCode(String receivePostCode) {
+        this.receivePostCode = receivePostCode;
+    }
+
+    public String getSendName() {
+        return sendName;
+    }
+
+    public void setSendName(String sendName) {
+        this.sendName = sendName;
+    }
+
+    public String getSendPhone() {
+        return sendPhone;
+    }
+
+    public void setSendPhone(String sendPhone) {
+        this.sendPhone = sendPhone;
+    }
+
+    public String getSendAddress() {
+        return sendAddress;
+    }
+
+    public void setSendAddress(String sendAddress) {
+        this.sendAddress = sendAddress;
+    }
+
+    public String getSendPostCode() {
+        return sendPostCode;
+    }
+
+    public void setSendPostCode(String sendPostCode) {
+        this.sendPostCode = sendPostCode;
+    }
 
     public int getId() {
         return id;
@@ -55,22 +131,6 @@ public class Letter {
 
     public void setMsg(String msg) {
         this.msg = msg;
-    }
-
-    public int getStampId() {
-        return stampId;
-    }
-
-    public void setStampId(int stampId) {
-        this.stampId = stampId;
-    }
-
-    public int getPostCode() {
-        return postCode;
-    }
-
-    public void setPostCode(int postCode) {
-        this.postCode = postCode;
     }
 
     public String getCreateTime() {
