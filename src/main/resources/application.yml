@@ -17,8 +17,8 @@ spring:
         # 端口，默认为6379
         port: 6379
         # 密码
-        password: xwtec123
-#        password:
+#        password: xwtec123
+        password:
         jedis:
             pool:
                 max-active: 100

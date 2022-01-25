@@ -8,7 +8,7 @@
     </select>
 
     <insert id="addLetter" parameterType="Letter" useGeneratedKeys="true" keyProperty="id">
-        insert into letter(id,lid,sendUid,receiveUid,sid,receiveName,receivePhone,receiveAddress,receivePostCode,sendName,sendPhone,sendAddress,sendPostCode,msg,createTime,updateTime) values (#{id},#{lid},#{sendUid},#{receiveUid},#{sid},#{receiveName.#{receivePhone},#{receiveAddress},#{receivePostCode},#{sendName.#{sendPhone},#{sendAddress},#{sendPostCode},#{msg},#{createTime},#{updateTime})
+        insert into letter(id,lid,sendUid,receiveUid,sid,receiveName,receivePhone,receiveAddress,receivePostCode,sendName,sendPhone,sendAddress,sendPostCode,msg,createTime,updateTime) values (#{id},#{lid},#{sendUid},#{receiveUid},#{sid},#{receiveName},#{receivePhone},#{receiveAddress},#{receivePostCode},#{sendName},#{sendPhone},#{sendAddress},#{sendPostCode},#{msg},#{createTime},#{updateTime})
     </insert>
 
     <select id="queryByReceiveUid" parameterType="String" resultType="Letter">
