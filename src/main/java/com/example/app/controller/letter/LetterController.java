@@ -4,7 +4,6 @@ package com.example.app.controller.letter;
 import com.example.app.common.Result;
 import com.example.app.entity.Letter;
 import com.example.app.service.LetterService;
-import com.example.app.service.HeadService;
 import com.github.pagehelper.PageInfo;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.web.bind.annotation.*;
