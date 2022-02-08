@@ -9,12 +9,14 @@ import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.beans.factory.annotation.Value;
 import org.springframework.security.crypto.bcrypt.BCryptPasswordEncoder;
 import org.springframework.stereotype.Service;
+import org.springframework.web.bind.annotation.RequestParam;
 
 import javax.annotation.Resource;
 import java.io.File;
 import java.sql.Timestamp;
 import java.text.SimpleDateFormat;
 import java.util.Date;
+import java.util.Random;
 import java.util.UUID;
 
 @Service
@@ -101,6 +103,14 @@ public class UserService {
                 Timestamp t = new Timestamp(System.currentTimeMillis());
                 String createTime = new SimpleDateFormat("yyyy-MM-dd HH:mm:ss").format(t);
                 newUser.setCreateTime(createTime);
+
+                //1-9随机数
+                Random r =new Random(100);
+                int num = r.nextInt(8)+1;
+
+                //设置初始头像
+                String path = "default/" + num + ".jpg";
+                newUser.setHid(headService.queryByPath(path).getHid());
                 addUser(newUser);
                 return Result.success(newUser);
             }
@@ -146,5 +156,17 @@ public class UserService {
             return null;
         }
 
+    }
+    //返回用户头像base64码
+    public Result<String> getHeadBase64(@RequestParam String uid){
+        try {
+            Head head = headService.queryByHid(queryByUid(uid).getHid());
+            String base64 = baseService.pictureConvertToBase64(uploadPath + head.getPath());
+            return Result.success(base64);
+        }catch (Exception e){
+
+            e.printStackTrace();
+            return null;
+        }
     }
 }

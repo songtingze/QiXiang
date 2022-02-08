@@ -53,6 +53,18 @@ public class UserController {
         }
     }
 
+    //修改头像
+    @PostMapping("/getHeadBase64")
+    public Result<String> getHeadBase64(@RequestParam String uid){
+        try {
+            return userService.getHeadBase64(uid);
+        }catch (Exception e){
+
+            e.printStackTrace();
+            return null;
+        }
+    }
+
 
 //    //发送短信验证码
 //    @PostMapping("/send")

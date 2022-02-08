@@ -10,4 +10,5 @@ public interface IHeadDao {
     Head queryByHid(String hid);
     void addHead(Head head);
     void updateHead(Head head);
+    Head queryByPath(String path);
 }

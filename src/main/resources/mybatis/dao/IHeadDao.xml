@@ -12,4 +12,7 @@
     <update id="updateHead" parameterType="Head">
         update head set id = #{id},hid = #{hid},path = #{path}, where hid = #{hid}
     </update>
+    <select id="queryByPath" parameterType="String" resultType="Head">
+        select * from head where path = #{path}
+    </select>
 </mapper>

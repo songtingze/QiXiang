@@ -32,6 +32,8 @@ public class HeadService {
         headDao.updateHead(head);
     }
 
+    public Head queryByPath(String path){return headDao.queryByPath(path); }
+
 
 
 }
