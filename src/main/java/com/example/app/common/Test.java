@@ -6,7 +6,7 @@ import com.example.app.demo.ClibUtil;
 
 import java.util.HashMap;
 
-public class test {
+public class Test {
     public static void main(String[] args){
         DataQueryClient client = new DataQueryClient();
 //        String userId = "DZQX_QXT";
@@ -20,8 +20,9 @@ public class test {
 
         params.put("dataCode","SURF_CHN_MUL_HOR");
         params.put("elements","Station_ID_C,PRE_1h,PRS,RHU,VIS,WIN_S_Avg_2mi,WIN_D_Avg_2mi,Q_PRS");
+        //检索要素：站号、站名、小时降水、气压、相对湿度、能见度、2分钟平均风速、2分钟风向
 
-        params.put("times","20210917000000");
+        params.put("times","20220705000000");
         params.put("orderby","Station_ID_C:ASC");
         params.put("limitCnt","10");
 
