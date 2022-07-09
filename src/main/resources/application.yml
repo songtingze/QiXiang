@@ -1,30 +1,30 @@
 server:
-    port: 8081
+    port: 8091
 
 head:
 #    uploadPath: "/root/App/photoUpload/"
     uploadPath: "D:/test/"
-spring:
-    datasource:
-        driver-class-name: com.mysql.cj.jdbc.Driver
-        url: jdbc:mysql://rm-2zesetj4b82392841oo.mysql.rds.aliyuncs.com:3306/meteorological-monitor?useUnicode=true&characterEncoding=utf8&zeroDateTimeBehavior=convertToNull&useSSL=true&serverTimezone=GMT%2B8
-        username: stz123232
-        password: Stz156184
+#spring:
+#    datasource:
+#        driver-class-name: com.mysql.cj.jdbc.Driver
+#        url: jdbc:mysql://rm-2zesetj4b82392841oo.mysql.rds.aliyuncs.com:3306/meteorological-monitor?useUnicode=true&characterEncoding=utf8&zeroDateTimeBehavior=convertToNull&useSSL=true&serverTimezone=GMT%2B8
+#        username: stz123232
+#        password: Stz156184
     # redis配置
-    redis:
-        database: 1
-        host: localhost
-        # 端口，默认为6379
-        port: 6379
-        # 密码
-#        password: xwtec123
-        password:
-        jedis:
-            pool:
-                max-active: 100
-                max-idle: 10
-                max-wait: 100000
-        timeout: 5000
+#    redis:
+#        database: 1
+#        host: localhost
+#        # 端口，默认为6379
+#        port: 6379
+#        # 密码
+##        password: xwtec123
+#        password:
+#        jedis:
+#            pool:
+#                max-active: 100
+#                max-idle: 10
+#                max-wait: 100000
+#        timeout: 5000
 mybatis:
     type-aliases-package: com.example.app.entity
     mapper-locations: classpath:mybatis/dao/*.xml
@@ -33,3 +33,7 @@ pagehelper:
     helper-dialect: mysql
     reasonable: true
     support-methods-arguments: true
+
+#气象数据配置文件路径
+filePath:
+    dataConfig: src/main/resources/data/config.json
