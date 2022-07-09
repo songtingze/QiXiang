@@ -36,4 +36,6 @@ pagehelper:
 
 #气象数据配置文件路径
 filePath:
-    dataConfig: src/main/resources/data/config.json
+    indexConfig: src/main/resources/data/index.json
+    dataConfig: src/main/resources/data/data.json
+
