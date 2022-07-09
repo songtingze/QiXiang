@@ -1,0 +1,68 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<?import javafx.scene.control.*?>
+<?import javafx.scene.image.*?>
+<?import javafx.scene.layout.*?>
+
+<AnchorPane prefHeight="400.0" prefWidth="600.0" xmlns="http://javafx.com/javafx/11.0.1" xmlns:fx="http://javafx.com/fxml/1" fx:controller="com.example.app.view.RootController">
+   <children>
+      <Pane prefHeight="400.0" prefWidth="600.0" AnchorPane.bottomAnchor="0.0" AnchorPane.leftAnchor="0.0" AnchorPane.rightAnchor="0.0" AnchorPane.topAnchor="0.0">
+         <children>
+            <AnchorPane prefHeight="33.0" prefWidth="600.0">
+               <children>
+                  <MenuBar layoutX="14.0" layoutY="7.0" prefHeight="26.0" prefWidth="600.0" AnchorPane.bottomAnchor="9.0" AnchorPane.leftAnchor="0.0" AnchorPane.rightAnchor="0.0" AnchorPane.topAnchor="0.0">
+                    <menus>
+                      <Menu mnemonicParsing="false" text="File">
+                        <items>
+                          <MenuItem mnemonicParsing="false" text="Close" />
+                        </items>
+                      </Menu>
+                      <Menu mnemonicParsing="false" text="Edit">
+                        <items>
+                          <MenuItem mnemonicParsing="false" text="Delete" />
+                        </items>
+                      </Menu>
+                      <Menu mnemonicParsing="false" text="Help">
+                        <items>
+                          <MenuItem mnemonicParsing="false" text="About" />
+                        </items>
+                      </Menu>
+                    </menus>
+                     <tooltip>
+                        <Tooltip text="Empty Tooltip" />
+                     </tooltip>
+                  </MenuBar>
+               </children></AnchorPane>
+            <AnchorPane layoutY="25.0" prefHeight="375.0" prefWidth="600.0">
+               <children>
+                  <SplitPane dividerPositions="0.12207357859531773" prefHeight="375.0" prefWidth="600.0">
+                    <items>
+                      <AnchorPane minHeight="0.0" minWidth="0.0" prefHeight="374.0" prefWidth="37.0">
+                           <children>
+                              <Button fx:id="InfoBtn" mnemonicParsing="false" onAction="#showInfo" prefHeight="68.0" prefWidth="72.0">
+                                 <graphic>
+                                    <ImageView fitHeight="59.0" fitWidth="50.0" onMouseClicked="#onEdit" pickOnBounds="true" preserveRatio="true">
+                                       <image>
+                                          <Image url="@数据库,数据.png" />
+                                       </image>
+                                    </ImageView>
+                                 </graphic></Button>
+                              <Button fx:id="EditBtn" layoutY="68.0" mnemonicParsing="false" onAction="#onEdit" prefHeight="68.0" prefWidth="72.0">
+                                 <graphic>
+                                    <ImageView fitHeight="55.0" fitWidth="54.0" pickOnBounds="true" preserveRatio="true">
+                                       <image>
+                                          <Image url="@设置.png" />
+                                       </image>
+                                    </ImageView>
+                                 </graphic>
+                              </Button>
+                           </children></AnchorPane>
+                      <AnchorPane minHeight="0.0" minWidth="0.0" prefHeight="379.0" prefWidth="418.0" />
+                    </items>
+                  </SplitPane>
+               </children>
+            </AnchorPane>
+         </children>
+      </Pane>
+   </children>
+</AnchorPane>

@@ -1,0 +1,49 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<?import javafx.scene.control.*?>
+<?import javafx.scene.layout.*?>
+<?import javafx.scene.text.*?>
+<?import javafx.scene.web.*?>
+
+<AnchorPane prefHeight="400.0" prefWidth="600.0" xmlns="http://javafx.com/javafx/11.0.1" xmlns:fx="http://javafx.com/fxml/1" fx:controller="com.example.app.view.SettingController">
+   <children>
+      <AnchorPane prefHeight="500.0" prefWidth="600.0">
+         <children>
+            <SplitPane dividerPositions="0.29797979797979796" prefHeight="508.0" prefWidth="600.0">
+              <items>
+                <AnchorPane minHeight="0.0" minWidth="0.0" prefHeight="521.0" prefWidth="175.0" style="-fx-background-color:rgb(230,235,240);">
+                     <children>
+                        <TreeView fx:id="toolTree" layoutY="46.0" prefHeight="460.0" prefWidth="175.0" stylesheets="treeView.css" AnchorPane.bottomAnchor="0.0" AnchorPane.leftAnchor="0.0" AnchorPane.rightAnchor="0.0" AnchorPane.topAnchor="46.0" />
+                        <TextField fx:id="search" layoutX="7.0" layoutY="14.0" prefHeight="23.0" prefWidth="161.0" />
+                     </children></AnchorPane>
+                <AnchorPane minHeight="0.0" minWidth="0.0" prefHeight="439.0" prefWidth="411.0" style="-fx-background-color:rgb(242,242,242);">
+                     <children>
+                        <AnchorPane prefHeight="39.0" prefWidth="418.0">
+                           <children>
+                              <Label fx:id="navigation" layoutX="14.0" layoutY="16.0">
+                                 <font>
+                                    <Font name="System Bold" size="13.0" />
+                                 </font>
+                              </Label>
+                           </children>
+                        </AnchorPane>
+                        <AnchorPane layoutY="39.0" prefHeight="467.0" prefWidth="418.0">
+                           <children>
+                               <fx:include fx:id="index" source="index.fxml"/>
+                               <fx:include fx:id="test" source="test.fxml"/>
+                           </children>
+                        </AnchorPane>
+                     </children></AnchorPane>
+              </items>
+            </SplitPane>
+         </children>
+      </AnchorPane>
+      <AnchorPane layoutY="506.0" prefHeight="39.0" prefWidth="600.0" style="-fx-background-color:rgb(240,240,240);">
+         <children>
+            <Button fx:id="saveBtn" layoutX="423.0" layoutY="5.0" mnemonicParsing="false" onMouseClicked="#save" prefHeight="30.0" prefWidth="72.0" text="OK" />
+            <Button fx:id="cancelBtn" layoutX="507.0" layoutY="5.0" mnemonicParsing="false" onMouseClicked="#cancel" prefHeight="30.0" prefWidth="72.0" text="Cancel" />
+         </children>
+      </AnchorPane>
+      <Label layoutX="-100.0" text="Label" />
+   </children>
+</AnchorPane>
