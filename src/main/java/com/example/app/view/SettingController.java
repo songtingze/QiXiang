@@ -20,34 +20,28 @@ import org.springframework.stereotype.Component;
 @Component
 public class SettingController {
 
-    public AnchorPane test;
-    public AnchorPane index;
+    @FXML
+    private AnchorPane test;
+    @FXML
+    private AnchorPane index;
+    @FXML
+    private AnchorPane indicators;
     @FXML // ResourceBundle that was given to the FXMLLoader
     private ResourceBundle resources;
-
     @FXML // URL location of the FXML file that was given to the FXMLLoader
     private URL location;
-
-
     @FXML // fx:id="search"
     private TextField search; // Value injected by FXMLLoader
-
     @FXML // fx:id="navigation"
     private Label navigation; // Value injected by FXMLLoader
-
-
     @FXML // fx:id="cancelBtn"
     private Button cancelBtn; // Value injected by FXMLLoader
-
     @FXML // fx:id="toolTree"
     private TreeView<String> toolTree; // Value injected by FXMLLoader
-
     @FXML // fx:id="saveBtn"
     private Button saveBtn; // Value injected by FXMLLoader
-
     @FXML
     private IndexController indexController;
-
     @FXML // This method is called by the FXMLLoader when initialization is complete
     void initialize() {
         assert search != null : "fx:id=\"search\" was not injected: check your FXML file 'setting.fxml'.";
@@ -60,16 +54,19 @@ public class SettingController {
 
         test.setVisible(false);
         index.setVisible(false);
+        indicators.setVisible(true);
 
 
         //菜单栏
-        TreeItem<String> rootItem = new TreeItem<String> ("Inbox");
+        TreeItem<String> rootItem = new TreeItem<String> ("气象预警");
         rootItem.setExpanded(true);
-        for (int i = 1; i < 6; i++) {
-            TreeItem<String> item = new TreeItem<String> ("Message" + i);
-            item.setExpanded(false);
-            rootItem.getChildren().add(item);
-        }
+        rootItem.setExpanded(true);
+        TreeItem<String> item1 = new TreeItem<String> ("气象信息监控");
+        item1.setExpanded(false);
+        rootItem.getChildren().add(item1);
+        TreeItem<String> item2 = new TreeItem<String> ("预警指标管理");
+        item2.setExpanded(false);
+        rootItem.getChildren().add(item2);
         toolTree.setRoot(rootItem);
         //点击菜单item事件
         toolTree.getSelectionModel().selectedItemProperty().addListener(
@@ -82,29 +79,19 @@ public class SettingController {
                         //导航栏
                         navigation.setText(getTreeRoute(newItem));
                         //界面切换
-                        if(newItem.getValue().equals("Message1")){
-                           index.setVisible(true);
-                           test.setVisible(false);
-                        }else{
+                        if(newItem.getValue().equals("气象信息监控")){
+                            index.setVisible(true);
+                            test.setVisible(false);
+                            indicators.setVisible(false);
+                        }else if(newItem.getValue().equals("预警指标管理")){
                             index.setVisible(false);
-                            test.setVisible(true);
+                            test.setVisible(false);
+                            indicators.setVisible(true);
                         }
-
                     }
                 });
     }
 
-    //OK按钮
-    public void save(MouseEvent mouseEvent) {
-        String pressure = indexController.getPressure();
-
-        System.out.println("save"+pressure);
-    }
-
-    //Cancel按钮
-    public void cancel(MouseEvent mouseEvent) {
-        System.out.println("cancel");
-    }
 
     private String getTreeRoute(TreeItem<String> item){
         String route = "";

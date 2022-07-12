@@ -1,0 +1,10 @@
+.toolbar{
+    -fx-border-color: rgb(200,200,200);
+    -fx-border-width: 1;
+    -fx-background-color:rgb(242,242,242);
+}
+.tablepane{
+    -fx-border-color: black;
+    -fx-border-width: 1;
+    -fx-background-color:rgb(242,242,242);
+}
