@@ -2,6 +2,7 @@ package com.example.app.service;
 
 import com.alibaba.fastjson.JSONArray;
 import com.alibaba.fastjson.JSONObject;
+import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.beans.factory.annotation.Value;
 import org.springframework.stereotype.Service;
 
@@ -14,6 +15,9 @@ public class FileService {
     private String indexFilePath;
     @Value("${filePath.dataConfig}")
     private String dataFilePath;
+
+    @Autowired
+    private DataService dataService;
 
     public JSONArray readJSONArray() throws IOException {
         //如果文件没有内容，则返回空的JsonArray
@@ -34,6 +38,7 @@ public class FileService {
         //如果文件没有内容，则返回空的JsonArray
         File file = new File(dataFilePath);
         if(file.length() == 0){
+            dataService.initDataFile();
             return new JSONObject();
         }
         JSONObject jsonObject = JSONObject.parseObject(new FileInputStream(dataFilePath), JSONObject.class);

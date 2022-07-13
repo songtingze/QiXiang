@@ -63,21 +63,31 @@ public class EditController {
 
         indexStatus.getItems().addAll("正常", "停用");
         indexStatus.setValue("正常");
-        indexJudge.getItems().addAll("大于", "大于等于", "等于", "小于等于", "小于");
+        indexJudge.getItems().addAll("大于", "大于等于", "等于", "小于等于", "小于","不等于");
         indexJudge.setValue("大于");
 
     }
 
     public Index save() {
-
         String indexName = this.indexName.getText();
         String indexCode = this.indexCode.getText();
         String indexData = this.indexData.getText();
-        String indexJudge = this.indexJudge.getValue();
-        String indexStatus = this.indexStatus.getValue();
+        String indexJudge = "";
+        switch (this.indexJudge.getValue()){
+            case "大于":indexJudge = ">";break;
+            case "大于等于":indexJudge = ">=";break;
+            case "等于":indexJudge = "==";break;
+            case "小于等于":indexJudge = "<=";break;
+            case "小于":indexJudge = "<";break;
+            case "不等于":indexJudge = "!=";break;
+        }
+        String indexStatus = "";
+        switch (this.indexStatus.getValue()){
+            case "正常":indexStatus = "yes";break;
+            case "停用":indexStatus = "no";break;
+        }
         Index index = new Index(false,indexCode,indexData,indexJudge,indexName,indexNum,indexStatus);
         return index;
-
     }
     
     public void cancel(MouseEvent mouseEvent) {

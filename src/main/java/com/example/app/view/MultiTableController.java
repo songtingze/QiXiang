@@ -1,6 +1,9 @@
 package com.example.app.view;
 
+import com.alibaba.fastjson.JSONObject;
+import com.example.app.common.Result;
 import com.example.app.entity.Index;
+import com.example.app.service.IndexService;
 import com.example.app.view.components.CellFactory;
 import com.example.app.view.components.MyTableView;
 import javafx.beans.property.SimpleBooleanProperty;
@@ -20,10 +23,12 @@ import javafx.scene.input.MouseEvent;
 import javafx.stage.Modality;
 import javafx.stage.Stage;
 import javafx.util.Callback;
+import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Component;
 
 import java.io.IOException;
 import java.net.URL;
+import java.util.List;
 import java.util.ResourceBundle;
 import javafx.fxml.FXML;
 import javafx.scene.control.TableColumn;
@@ -71,11 +76,13 @@ public class MultiTableController {
     private ObservableList<Index> data =
             FXCollections.observableArrayList();
 
+    @Autowired
+    private IndexService indexService;
 
     private int selectNum = 0;
 
     @FXML // This method is called by the FXMLLoader when initialization is complete
-    void initialize() {
+    void initialize() throws IOException {
         assert indexNum != null : "fx:id=\"indexNum\" was not injected: check your FXML file 'multiTable.fxml'.";
         assert indexJudge != null : "fx:id=\"indexJudge\" was not injected: check your FXML file 'multiTable.fxml'.";
         assert indexName != null : "fx:id=\"indexName\" was not injected: check your FXML file 'multiTable.fxml'.";
@@ -145,9 +152,25 @@ public class MultiTableController {
             public void handle(ActionEvent event) {
 //                System.out.println("btn1的单击事件");
                 Index newIndex = editController.save();
-                newIndex.setIndexNum("123");
                 data.add(newIndex);
                 indexTable.refresh();
+                //添加到文件
+                JSONObject jsonObject = new JSONObject();
+                jsonObject.put("indexName",newIndex.getIndexName());
+                jsonObject.put("indexCode",newIndex.getIndexCode());
+                jsonObject.put("indexData",newIndex.getIndexData());
+                jsonObject.put("indexJudge",newIndex.getIndexJudge());
+                jsonObject.put("indexStatus",newIndex.getIndexStatus());
+                try {
+                    indexService.addIndex(jsonObject);
+                } catch (IOException e) {
+                    e.printStackTrace();
+                }
+                try {
+                    initData();
+                } catch (IOException e) {
+                    e.printStackTrace();
+                }
                 selectNum=0;
 //                indexTable.setItems(data);
                 Scene scene = editController.root.getScene();
@@ -164,7 +187,7 @@ public class MultiTableController {
     }
 
     @FXML//删除
-    public boolean delete(MouseEvent event) {
+    public boolean delete(MouseEvent event) throws IOException {
         int size = data.size();
         if (size <= 0) {
             return false;
@@ -173,6 +196,8 @@ public class MultiTableController {
             Index s = data.get(i);
             if (s.getSelected()) {
                 data.remove(s);
+                //删除到文件
+                indexService.deleteIndex(Integer.parseInt(s.getIndexNum()));
             }
         }
         return true;
@@ -211,14 +236,26 @@ public class MultiTableController {
                 for (int i = size - 1; i >= 0; i--) {
                     Index s = data.get(i);
                     if (s.getSelected()) {
-                        //修改表格中的值
-                        data.get(i).setSelected(newIndex.getSelected());
-                        data.get(i).setIndexData(newIndex.getIndexData());
-                        data.get(i).setIndexCode(newIndex.getIndexCode());
-                        data.get(i).setIndexJudge(newIndex.getIndexJudge());
-                        data.get(i).setIndexName(newIndex.getIndexName());
-                        data.get(i).setIndexNum(newIndex.getIndexNum());
-                        data.get(i).setIndexStatus(newIndex.getIndexStatus());
+                        //添加到文件
+                        JSONObject jsonObject = new JSONObject();
+                        jsonObject.put("indexNum",Integer.parseInt(s.getIndexNum()));
+                        jsonObject.put("indexName",newIndex.getIndexName());
+                        jsonObject.put("indexCode",newIndex.getIndexCode());
+                        jsonObject.put("indexData",newIndex.getIndexData());
+                        jsonObject.put("indexJudge",newIndex.getIndexJudge());
+                        jsonObject.put("indexStatus",newIndex.getIndexStatus());
+                        try {
+                            System.out.println(indexService.modifyIndex(jsonObject).getMsg());
+                        } catch (IOException e) {
+                            e.printStackTrace();
+                        }
+                        try {
+                            initData();
+                            //修改表格中的值
+                            data.get(i).setSelected(newIndex.getSelected());
+                        } catch (IOException e) {
+                            e.printStackTrace();
+                        }
                     }
                 }
                 //刷新表格
@@ -240,15 +277,25 @@ public class MultiTableController {
 
     }
     @FXML//刷新
-    public void flash(MouseEvent mouseEvent) {
+    public void flash(MouseEvent mouseEvent) throws IOException {
+        initData();
         indexTable.refresh();
         selectNum=0;
     }
 
-    private void initData(){
-        data.add(new Index(false,"1","1","1","1","1","1"));
-        data.add(new Index(false,"2","1","1","1","1","1"));
-        data.add(new Index(false,"3","1","1","1","1","1"));
+    private void initData() throws IOException {
+        data.clear();
+        Result<List<Index>> result = indexService.queryAllIndex();
+        if(result.getCode().equalsIgnoreCase("0")){
+            List<Index> indexList = result.getData();
+            for(Index index:indexList){
+                data.add(index);
+            }
+        }
+
+//        data.add(new Index(false,"1","1","1","1","1","1"));
+//        data.add(new Index(false,"2","1","1","1","1","1"));
+//        data.add(new Index(false,"3","1","1","1","1","1"));
     }
 
 

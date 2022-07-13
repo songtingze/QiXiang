@@ -68,16 +68,16 @@ public class LetterController {
         }
     }
 
-    @PostMapping("/queryAllIndex")
-    public Result<JSONArray> queryAllIndex(){
-        try {
-            return indexService.queryAllIndex();
-
-        }catch (Exception e){
-            e.printStackTrace();
-            return null;
-        }
-    }
+//    @PostMapping("/queryAllIndex")
+//    public Result<JSONArray> queryAllIndex(){
+//        try {
+//            return indexService.queryAllIndex();
+//
+//        }catch (Exception e){
+//            e.printStackTrace();
+//            return null;
+//        }
+//    }
 
     @PostMapping("/queryAllIndexCode")
     public Result<String> queryAllIndexCode(){

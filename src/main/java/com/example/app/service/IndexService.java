@@ -3,10 +3,13 @@ package com.example.app.service;
 import com.alibaba.fastjson.JSONArray;
 import com.alibaba.fastjson.JSONObject;
 import com.example.app.common.Result;
+import com.example.app.entity.Index;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Service;
 
 import java.io.IOException;
+import java.util.ArrayList;
+import java.util.List;
 import java.util.regex.Pattern;
 
 @Service
@@ -135,9 +138,17 @@ public class IndexService {
     }
 
     //返回所有指标信息
-    public Result<JSONArray> queryAllIndex() throws IOException {
+    public Result<List<Index>> queryAllIndex() throws IOException {
         JSONArray jsonArray = fileService.readJSONArray();
-        return Result.success(jsonArray);
+        List<Index> indexList = new ArrayList();
+        for(int i = 0;i < jsonArray.size();i ++){
+            JSONObject jsonObject = jsonArray.getJSONObject(i);
+            Index index = new Index(false,jsonObject.getString("indexCode"),jsonObject.getString("indexData"),
+                    jsonObject.getString("indexJudge"),jsonObject.getString("indexName"),jsonObject.getString("indexNum"),
+                    jsonObject.getString("indexStatus"));
+            indexList.add(index);
+        }
+        return Result.success(indexList);
     }
 
     //返回所有指标代码

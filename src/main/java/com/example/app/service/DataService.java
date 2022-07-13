@@ -44,7 +44,10 @@ public class DataService {
 
     public void addData(JSONObject data) throws IOException {
         JSONObject jsonObject = fileService.readJSONObject();
-        JSONArray dataArray = jsonObject.getJSONArray("data");
+        JSONArray dataArray = new JSONArray();
+        if(jsonObject.get("data") != null){
+            dataArray = jsonObject.getJSONArray("data");
+        }
         dataArray.add(data);
         jsonObject.put("data",dataArray);
         fileService.writeJSONObject(jsonObject);
