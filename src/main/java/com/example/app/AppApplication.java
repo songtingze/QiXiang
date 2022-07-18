@@ -10,8 +10,12 @@ import org.springframework.boot.autoconfigure.jdbc.DataSourceAutoConfiguration;
 import org.springframework.boot.autoconfigure.orm.jpa.HibernateJpaAutoConfiguration;
 import org.springframework.context.ApplicationContext;
 import org.springframework.context.annotation.Bean;
+import org.springframework.scheduling.annotation.EnableScheduling;
 import org.springframework.security.crypto.bcrypt.BCryptPasswordEncoder;
 
+import java.util.Timer;
+import java.util.TimerTask;
+@EnableScheduling
 @SpringBootApplication(exclude={DataSourceAutoConfiguration.class, HibernateJpaAutoConfiguration.class})
 public class AppApplication extends Application {
 
@@ -40,4 +44,5 @@ public class AppApplication extends Application {
         primaryStage.setScene(scene);
         primaryStage.show();
     }
+
 }

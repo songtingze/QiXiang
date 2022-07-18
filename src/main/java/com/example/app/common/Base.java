@@ -14,7 +14,8 @@ public class Base {
 //        calendar.add(calendar.DATE, -1);
 // 这个时间就是日期往后推一天的结果
         now=calendar.getTime();
-        Date date = new Date(now.getTime() - 32400000);
+        Date date = new Date(now.getTime() - 28860000);
+//        Date date = new Date(now.getTime() - 35220000);
         SimpleDateFormat dateFormat= new SimpleDateFormat("yyyyMMddHHmm");
         String times = dateFormat.format(date)+"00";
         System.out.println(times);

@@ -48,12 +48,20 @@ public class IndexService {
         for(int i = 0; i< jsonArray.size();i ++){
             JSONObject index = jsonArray.getJSONObject(i);
             if(indexName.equalsIgnoreCase(index.getString("indexName"))){
-                msg = "该气象指标名称已存在!";
-                return msg;
+                if(jsonObject.get("indexNum")!=null && jsonObject.getIntValue("indexNum") == i){
+
+                }else{
+                    msg = "该气象指标名称已存在!";
+                    return msg;
+                }
             }
             if(indexCode.equalsIgnoreCase(index.getString("indexCode"))){
-                msg = "该气象指标代码已存在!";
-                return msg;
+                if(jsonObject.get("indexNum")!=null && jsonObject.getIntValue("indexNum") == i){
+
+                }else{
+                    msg = "该气象指标代码已存在!";
+                    return msg;
+                }
             }
         }
         if(!isNumeric(indexData)){
@@ -152,7 +160,7 @@ public class IndexService {
     }
 
     //返回所有指标代码
-    public Result<String> queryAllIndexCode() throws IOException {
+    public String queryAllIndexCode() throws IOException {
         JSONArray jsonArray = fileService.readJSONArray();
         String indexCodes = "";
         for (int i = 0;i < jsonArray.size();i ++){
@@ -162,7 +170,7 @@ public class IndexService {
                 indexCodes += ",";
             }
         }
-        return Result.success(indexCodes);
+        return indexCodes;
     }
 
     //根据指标号码查询指标

@@ -79,16 +79,16 @@ public class LetterController {
 //        }
 //    }
 
-    @PostMapping("/queryAllIndexCode")
-    public Result<String> queryAllIndexCode(){
-        try {
-            return indexService.queryAllIndexCode();
-
-        }catch (Exception e){
-            e.printStackTrace();
-            return null;
-        }
-    }
+//    @PostMapping("/queryAllIndexCode")
+//    public Result<String> queryAllIndexCode(){
+//        try {
+//            return indexService.queryAllIndexCode();
+//
+//        }catch (Exception e){
+//            e.printStackTrace();
+//            return null;
+//        }
+//    }
 
     @PostMapping("/initDataFile")
     public Result<String> initDataFile(){
@@ -101,16 +101,16 @@ public class LetterController {
         }
     }
 
-    @PostMapping("/getData")
-    public Result<String> getData(@RequestBody JSONArray jsonArray){
-        try {
-            return dataService.getData(jsonArray);
-
-        }catch (Exception e){
-            e.printStackTrace();
-            return null;
-        }
-    }
+//    @PostMapping("/getData")
+//    public Result<String> getData(@RequestBody JSONArray jsonArray){
+//        try {
+//            return dataService.getData(jsonArray);
+//
+//        }catch (Exception e){
+//            e.printStackTrace();
+//            return null;
+//        }
+//    }
 
     @PostMapping("/getDataJSONObject")
     public Result<JSONObject> getDataJSONObject(){

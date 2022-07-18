@@ -42,6 +42,8 @@ public class SettingController {
     private Button saveBtn; // Value injected by FXMLLoader
     @FXML
     private IndexController indexController;
+//    @FXML
+//    private MultiTableController multiTableController;
     @FXML // This method is called by the FXMLLoader when initialization is complete
     void initialize() {
         assert search != null : "fx:id=\"search\" was not injected: check your FXML file 'setting.fxml'.";
@@ -74,12 +76,17 @@ public class SettingController {
                     @Override
                     public void changed(ObservableValue<? extends TreeItem<String>> observableValue,
                                         TreeItem<String> oldItem, TreeItem<String> newItem) {
-                        System.out.println(newItem.getValue());
+//                        System.out.println(newItem.getValue());
 //                        System.out.println(getTreeRoute(newItem));
                         //导航栏
                         navigation.setText(getTreeRoute(newItem));
                         //界面切换
                         if(newItem.getValue().equals("气象信息监控")){
+                            try {
+                                indexController.initialize();
+                            } catch (IOException e) {
+                                e.printStackTrace();
+                            }
                             index.setVisible(true);
                             test.setVisible(false);
                             indicators.setVisible(false);

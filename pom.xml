@@ -119,6 +119,16 @@
                     <skipTests>true</skipTests>
                 </configuration>
             </plugin>
+            <plugin>
+                <groupId>com.zenjava</groupId>
+                <artifactId>javafx-maven-plugin</artifactId>
+                <version>8.8.3</version>
+                <configuration>
+                    <mainClass>AppApplication</mainClass>
+                    <appName>app</appName>
+                    <vendor>bjtu</vendor>
+                </configuration>
+            </plugin>
         </plugins>
     </build>
 
