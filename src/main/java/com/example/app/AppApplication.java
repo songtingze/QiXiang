@@ -41,6 +41,7 @@ public class AppApplication extends Application {
     @Override
     public void start(Stage primaryStage) throws Exception {
         Scene scene = new Scene(loadFxml("/setting.fxml").load());
+        primaryStage.setTitle("气象预警");
         primaryStage.setScene(scene);
         primaryStage.show();
     }

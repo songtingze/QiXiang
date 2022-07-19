@@ -1,14 +1,13 @@
 <?xml version="1.0" encoding="UTF-8"?>
 
+<?import com.example.app.view.components.*?>
 <?import javafx.scene.control.*?>
+<?import javafx.scene.image.*?>
 <?import javafx.scene.layout.*?>
 
-<?import com.example.app.view.components.MyTableView?>
-<?import javafx.scene.image.ImageView?>
-<?import javafx.scene.image.Image?>
-<AnchorPane prefHeight="359.0" prefWidth="518.0" xmlns="http://javafx.com/javafx/11.0.1" xmlns:fx="http://javafx.com/fxml/1" fx:controller="com.example.app.view.MultiTableController">
+<AnchorPane prefHeight="659.0" prefWidth="1000.0" xmlns="http://javafx.com/javafx/11.0.1" xmlns:fx="http://javafx.com/fxml/1" fx:controller="com.example.app.view.MultiTableController">
         <children>
-            <AnchorPane prefHeight="34.0" prefWidth="484.0" styleClass="toolbar" stylesheets="@style/table.css">
+            <AnchorPane prefHeight="54.0" prefWidth="1000.0" styleClass="toolbar" stylesheets="@style/table.css">
                 <children>
                     <Button fx:id="addBtn" mnemonicParsing="false" onMouseClicked="#add" prefHeight="28.0" prefWidth="17.0" stylesheets="@style/button.css">
                         <graphic>
@@ -45,23 +44,19 @@
                     </Button>
                 </children>
             </AnchorPane>
-            <AnchorPane layoutY="36.0" prefHeight="371.0" prefWidth="484.0" stylesheets="@style/table.css">
+            <AnchorPane layoutY="53.0" prefHeight="606.0" prefWidth="1000.0" stylesheets="@style/table.css">
                 <children>
-                    <ScrollPane layoutY="-7.0" prefHeight="378.0" prefWidth="484.0" AnchorPane.bottomAnchor="0.0" AnchorPane.leftAnchor="0.0" AnchorPane.rightAnchor="0.0" AnchorPane.topAnchor="-7.0">
-                        <content>
-                            <MyTableView fx:id="indexTable" prefHeight="371.0" prefWidth="547.0" AnchorPane.bottomAnchor="0.0" AnchorPane.leftAnchor="0.0" AnchorPane.rightAnchor="0.0" AnchorPane.topAnchor="0.0">
-                                <columns>
-                                    <TableColumn fx:id="mColumnSelect" prefWidth="40" resizable="false" text="" />
-                                    <TableColumn fx:id="indexNum" prefWidth="80" resizable="false" text="指标序号" />
-                                    <TableColumn fx:id="indexName" prefWidth="80" resizable="false" text="指标名称" />
-                                    <TableColumn fx:id="indexCode" prefWidth="80" resizable="false" text="指标代码" />
-                                    <TableColumn fx:id="indexData" prefWidth="80" resizable="false" text="指标临界值" />
-                                    <TableColumn fx:id="indexJudge" prefWidth="80" resizable="false" text="指标判断条件" />
-                                    <TableColumn fx:id="indexStatus" prefWidth="80" resizable="false" text="指标状态" />
-                                </columns>
-                            </MyTableView>
-                        </content>
-                    </ScrollPane>
+                      <MyTableView fx:id="indexTable" prefHeight="606.4" prefWidth="1000.0" AnchorPane.bottomAnchor="0.0" AnchorPane.leftAnchor="0.0" AnchorPane.rightAnchor="0.0" AnchorPane.topAnchor="0.0">
+                          <columns>
+                              <TableColumn fx:id="mColumnSelect" prefWidth="40" resizable="false" text="" />
+                              <TableColumn fx:id="indexNum" prefWidth="80" resizable="false" text="指标序号" />
+                              <TableColumn fx:id="indexName" prefWidth="80" resizable="false" text="指标名称" />
+                              <TableColumn fx:id="indexCode" prefWidth="80" resizable="false" text="指标代码" />
+                              <TableColumn fx:id="indexData" prefWidth="80" resizable="false" text="指标临界值" />
+                              <TableColumn fx:id="indexJudge" prefWidth="80" resizable="false" text="指标判断条件" />
+                              <TableColumn fx:id="indexStatus" prefWidth="80" resizable="false" text="指标状态" />
+                          </columns>
+                      </MyTableView>
                 </children>
             </AnchorPane>
         </children>

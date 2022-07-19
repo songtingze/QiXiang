@@ -5,16 +5,16 @@
 <?import javafx.scene.layout.*?>
 <?import javafx.scene.text.*?>
 
-<AnchorPane prefHeight="724.0" prefWidth="1044.0" xmlns="http://javafx.com/javafx/11.0.1" xmlns:fx="http://javafx.com/fxml/1" fx:controller="com.example.app.view.IndicatorsController">
+<AnchorPane prefHeight="724.0" prefWidth="1044.0" xmlns="http://javafx.com/javafx/11.0.1" xmlns:fx="http://javafx.com/fxml/1" fx:controller="com.example.app.view.PhoneController">
     <children>
         <AnchorPane prefHeight="468.0" prefWidth="528.0" AnchorPane.bottomAnchor="0.0" AnchorPane.leftAnchor="0.0" AnchorPane.rightAnchor="0.0" AnchorPane.topAnchor="0.0">
             <children>
-            <AnchorPane layoutX="21.0" layoutY="49.0" prefHeight="403.0" prefWidth="484.0" AnchorPane.bottomAnchor="16.0" AnchorPane.leftAnchor="21.0" AnchorPane.rightAnchor="23.0" AnchorPane.topAnchor="49.0">
-               <children>
-                   <fx:include fx:id="indexTable" source="multiTable.fxml" />
-               </children>
-            </AnchorPane>
-                <Label layoutX="21.0" layoutY="24.0" text="气象指标管理">
+                <AnchorPane layoutX="21.0" layoutY="49.0" prefHeight="403.0" prefWidth="484.0" AnchorPane.bottomAnchor="16.0" AnchorPane.leftAnchor="21.0" AnchorPane.rightAnchor="23.0" AnchorPane.topAnchor="49.0">
+                    <children>
+                        <fx:include fx:id="indexTable" source="phoneTable.fxml" />
+                    </children>
+                </AnchorPane>
+                <Label layoutX="21.0" layoutY="24.0" text="手机推送管理">
                     <font>
                         <Font size="14.0" />
                     </font>

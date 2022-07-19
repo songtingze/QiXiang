@@ -25,6 +25,8 @@ public class SettingController {
     @FXML
     private AnchorPane index;
     @FXML
+    private AnchorPane phone;
+    @FXML
     private AnchorPane indicators;
     @FXML // ResourceBundle that was given to the FXMLLoader
     private ResourceBundle resources;
@@ -56,12 +58,13 @@ public class SettingController {
 
         test.setVisible(false);
         index.setVisible(false);
+        phone.setVisible(false);
         indicators.setVisible(true);
+
 
 
         //菜单栏
         TreeItem<String> rootItem = new TreeItem<String> ("气象预警");
-        rootItem.setExpanded(true);
         rootItem.setExpanded(true);
         TreeItem<String> item1 = new TreeItem<String> ("气象信息监控");
         item1.setExpanded(false);
@@ -69,7 +72,11 @@ public class SettingController {
         TreeItem<String> item2 = new TreeItem<String> ("预警指标管理");
         item2.setExpanded(false);
         rootItem.getChildren().add(item2);
+        TreeItem<String> item3 = new TreeItem<String> ("手机推送管理");
+        item3.setExpanded(false);
+        rootItem.getChildren().add(item3);
         toolTree.setRoot(rootItem);
+        toolTree.setShowRoot(false);
         //点击菜单item事件
         toolTree.getSelectionModel().selectedItemProperty().addListener(
                 new ChangeListener<TreeItem <String>>() {
@@ -90,10 +97,17 @@ public class SettingController {
                             index.setVisible(true);
                             test.setVisible(false);
                             indicators.setVisible(false);
+                            phone.setVisible(false);
                         }else if(newItem.getValue().equals("预警指标管理")){
                             index.setVisible(false);
                             test.setVisible(false);
+                            phone.setVisible(false);
                             indicators.setVisible(true);
+                        }else if(newItem.getValue().equals("手机推送管理")){
+                            index.setVisible(false);
+                            test.setVisible(false);
+                            indicators.setVisible(false);
+                            phone.setVisible(true);
                         }
                     }
                 });

@@ -4,20 +4,19 @@
 <?import javafx.scene.layout.*?>
 <?import javafx.scene.text.*?>
 
-<AnchorPane prefHeight="563.0" prefWidth="720.0" xmlns="http://javafx.com/javafx/11.0.1" xmlns:fx="http://javafx.com/fxml/1" fx:controller="com.example.app.view.SettingController">
+<AnchorPane prefHeight="799.0" prefWidth="1403.0" xmlns="http://javafx.com/javafx/11.0.1" xmlns:fx="http://javafx.com/fxml/1" fx:controller="com.example.app.view.SettingController">
    <children>
-      <AnchorPane prefHeight="524.0" prefWidth="710.0">
+      <AnchorPane prefHeight="762.0" prefWidth="1408.0">
          <children>
-            <SplitPane dividerPositions="0.2586713697824809" prefHeight="524.0" prefWidth="720.0" AnchorPane.bottomAnchor="0.0" AnchorPane.leftAnchor="0.0" AnchorPane.rightAnchor="-10.0" AnchorPane.topAnchor="0.0">
+            <SplitPane dividerPositions="0.2586713697824809" prefHeight="762.0" prefWidth="1408.0" AnchorPane.bottomAnchor="0.0" AnchorPane.leftAnchor="0.0" AnchorPane.rightAnchor="0.0" AnchorPane.topAnchor="0.0">
               <items>
                 <AnchorPane minHeight="0.0" minWidth="0.0" prefHeight="521.0" prefWidth="209.0" style="-fx-background-color:rgb(230,235,240);">
                      <children>
-                        <TreeView fx:id="toolTree" layoutY="46.0" prefHeight="460.0" prefWidth="152.0" stylesheets="treeView.css" AnchorPane.bottomAnchor="0.0" AnchorPane.leftAnchor="0.0" AnchorPane.rightAnchor="0.0" AnchorPane.topAnchor="46.0" />
-                        <TextField fx:id="search" layoutX="7.0" layoutY="14.0" prefHeight="23.0" prefWidth="161.0" />
+                        <TreeView fx:id="toolTree" layoutY="13.0" prefHeight="509.0" prefWidth="183.0" stylesheets="treeView.css" AnchorPane.bottomAnchor="0.0" AnchorPane.leftAnchor="0.0" AnchorPane.rightAnchor="0.0" AnchorPane.topAnchor="13.0" />
                      </children></AnchorPane>
-                <AnchorPane minHeight="0.0" minWidth="0.0" prefHeight="523.0" prefWidth="535.0" style="-fx-background-color:rgb(242,242,242);">
+                <AnchorPane minHeight="0.0" minWidth="0.0" prefHeight="761.0" prefWidth="1066.0" style="-fx-background-color:rgb(242,242,242);">
                      <children>
-                        <AnchorPane prefHeight="39.0" prefWidth="530.0">
+                        <AnchorPane prefHeight="39.0" prefWidth="1034.0">
                            <children>
                               <Label fx:id="navigation" layoutX="14.0" layoutY="16.0">
                                  <font>
@@ -26,11 +25,12 @@
                               </Label>
                            </children>
                         </AnchorPane>
-                        <AnchorPane layoutY="39.0" prefHeight="487.0" prefWidth="527.0">
+                        <AnchorPane layoutY="39.0" prefHeight="724.0" prefWidth="1044.0">
                            <children>
                                <fx:include fx:id="index" source="index.fxml" />
                                <fx:include fx:id="test" source="edit.fxml" />
                                <fx:include fx:id="indicators" source="indicators.fxml" />
+                               <fx:include fx:id="phone" source="phone.fxml" />
                            </children>
                         </AnchorPane>
                      </children></AnchorPane>
@@ -38,7 +38,7 @@
             </SplitPane>
          </children>
       </AnchorPane>
-      <AnchorPane layoutY="522.0" prefHeight="39.0" prefWidth="720.0" style="-fx-background-color:rgb(240,240,240);" />
+      <AnchorPane layoutX="8.0" layoutY="756.0" prefHeight="47.0" prefWidth="1400.0" style="-fx-background-color:rgb(240,240,240);" />
       <Label layoutX="-100.0" text="Label" />
    </children>
 </AnchorPane>

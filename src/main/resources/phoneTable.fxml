@@ -1,0 +1,60 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<?import com.example.app.view.components.*?>
+<?import javafx.scene.control.*?>
+<?import javafx.scene.image.*?>
+<?import javafx.scene.layout.*?>
+
+<AnchorPane prefHeight="659.0" prefWidth="1000.0" xmlns="http://javafx.com/javafx/11.0.1" xmlns:fx="http://javafx.com/fxml/1" fx:controller="com.example.app.view.PhoneTableController">
+    <children>
+        <AnchorPane prefHeight="54.0" prefWidth="1000.0" styleClass="toolbar" stylesheets="@style/table.css">
+            <children>
+                <Button fx:id="addBtn" mnemonicParsing="false" onMouseClicked="#add" prefHeight="28.0" prefWidth="17.0" stylesheets="@style/button.css">
+                    <graphic>
+                        <ImageView fitHeight="12.0" fitWidth="12.0" pickOnBounds="true" preserveRatio="true">
+                            <image>
+                                <Image url="@static/add.png" />
+                            </image>
+                        </ImageView>
+                    </graphic>
+                </Button>
+                <Button fx:id="deleteBtn" layoutX="28.0" mnemonicParsing="false" onMouseClicked="#delete" prefHeight="28.0" prefWidth="8.0" stylesheets="@style/button.css">
+                    <graphic>
+                        <ImageView fitHeight="12.0" fitWidth="12.0" pickOnBounds="true" preserveRatio="true">
+                            <image>
+                                <Image url="@static/delete.png" />
+                            </image></ImageView>
+                    </graphic>
+                </Button>
+                <Button fx:id="editBtn" layoutX="56.0" mnemonicParsing="false" onMouseClicked="#edit" prefHeight="28.0" prefWidth="6.0" stylesheets="@style/button.css">
+                    <graphic>
+                        <ImageView fitHeight="12.0" fitWidth="12.0" pickOnBounds="true" preserveRatio="true">
+                            <image>
+                                <Image url="@static/edit.png" />
+                            </image></ImageView>
+                    </graphic>
+                </Button>
+                <Button fx:id="flashBtn" layoutX="84.0" layoutY="1.0" mnemonicParsing="false" onMouseClicked="#flash" prefHeight="28.0" prefWidth="12.0" stylesheets="@style/button.css">
+                    <graphic>
+                        <ImageView fitHeight="12.0" fitWidth="12.0" pickOnBounds="true" preserveRatio="true">
+                            <image>
+                                <Image url="@static/flash.png" />
+                            </image></ImageView>
+                    </graphic>
+                </Button>
+            </children>
+        </AnchorPane>
+        <AnchorPane layoutY="53.0" prefHeight="606.0" prefWidth="1000.0" stylesheets="@style/table.css">
+            <children>
+                  <MyTableView fx:id="phoneTable" prefHeight="599.2" prefWidth="1000.0" AnchorPane.bottomAnchor="0.0" AnchorPane.leftAnchor="0.0" AnchorPane.rightAnchor="0.0" AnchorPane.topAnchor="0.0">
+                      <columns>
+                          <TableColumn fx:id="mColumnSelect" prefWidth="40" resizable="false" text="" />
+                          <TableColumn fx:id="seq" prefWidth="80" resizable="false" text="序号" />
+                          <TableColumn fx:id="phone" prefWidth="80" resizable="false" text="手机号" />
+                          <TableColumn fx:id="status" prefWidth="80" resizable="false" text="状态" />
+                      </columns>
+                  </MyTableView>
+            </children>
+        </AnchorPane>
+    </children>
+</AnchorPane>
