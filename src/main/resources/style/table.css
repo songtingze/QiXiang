@@ -8,3 +8,68 @@
     -fx-border-width: 1;
     -fx-background-color:rgb(242,242,242);
 }
+
+/*设置表格头靠左、字体大小，字体颜色*/
+/*#indexTable .column-header .label{*/
+/*    -fx-alignment: center;*/
+/*    -fx-font-family: "Arial";*/
+/*    -fx-text-fill: rgba(68,68,68,0.96);*/
+/*    -fx-font-size: 12;*/
+/*}*/
+
+/*设置表格头高度*/
+.table-view > .column-header-background{
+    -fx-pref-height: 40;
+}
+
+/*设置每一列内容居中，每一行高度*/
+#indexTable .table-row-cell{
+    -fx-cell-size: 45px;
+    -fx-alignment: center;
+}
+
+#indexTable{
+    -fx-table-cell-border-color:transparent;
+    -fx-border-color: rgb(200,200,200);
+    -fx-alignment: center;
+}
+
+/*设置每一列内容居中*/
+#indexTable .table-column{
+    -fx-cell-size: 45px;
+    -fx-alignment: center;
+}
+
+#indexTable .table-row-cell:hover {
+    -fx-background-color:rgb(230,235,240);
+}
+
+#indexTable .table-row-cell:focused {
+    -fx-background-color:rgb(65,105,225);
+}
+
+
+#phoneTable .table-row-cell{
+    -fx-cell-size: 45px;
+    -fx-alignment: center;
+}
+
+#phoneTable{
+    -fx-table-cell-border-color:transparent;
+    -fx-border-color: rgb(200,200,200);
+    -fx-alignment: center;
+}
+
+/*设置每一列内容居中*/
+#phoneTable .table-column{
+    -fx-cell-size: 45px;
+    -fx-alignment: center;
+}
+
+#phoneTable .table-row-cell:hover {
+    -fx-background-color:rgb(230,235,240);
+}
+
+#phoneTable .table-row-cell:focused {
+    -fx-background-color:rgb(65,105,225);
+}

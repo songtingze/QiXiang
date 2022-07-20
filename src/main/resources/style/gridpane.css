@@ -1,0 +1,32 @@
+.indexpane{
+    -fx-background-color: rgb(242,242,242);
+    -fx-padding: 2em 5em 5em 5em ;
+    -fx-background-radius:20;
+    fx-border-color: black;
+    /*-fx-border-insets: 5;*/
+    -fx-border-radius: 20;
+    -fx-border-style: solid inside;
+    -fx-border-width: 2;
+}
+.title{
+    -fx-font-size: 16px;
+    -fx-font-weight:bold;
+    -fx-label-padding: 20px;
+    -fx-alignment: CENTER;
+    -fx-background-color: rgb(176,224,225);
+    /*-fx-background-radius:20;*/
+}
+
+.dataText{
+    -fx-font-size: 16px;
+    -fx-alignment: CENTER;
+}
+
+.editpane{
+    -fx-padding: 5px 10px 5px 10px ;
+    -fx-font-size: 16px;
+}
+.editpane .label{
+    -fx-font-size: 16px;
+}
+

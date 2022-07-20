@@ -20,7 +20,9 @@ import javafx.scene.control.Label;
 import javafx.scene.image.Image;
 import javafx.scene.image.ImageView;
 import javafx.scene.layout.AnchorPane;
+import javafx.scene.layout.ColumnConstraints;
 import javafx.scene.layout.GridPane;
+import javafx.scene.layout.HBox;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.scheduling.annotation.Scheduled;
 import org.springframework.stereotype.Component;
@@ -60,11 +62,21 @@ public class IndexController {
         Label indexname1 = new Label("气象指标");
         Label datas1 = new Label("气象数据");
         Label dataStatus1 = new Label("数据状态");
-        gridpane.add(indexname1, 0, 0, 1, 1);
-        gridpane.add(datas1,1,0, 1, 1);
-        gridpane.add(dataStatus1, 2, 0, 1, 1);
+        HBox hBox1 = new HBox(5);
+        hBox1.getChildren().addAll(indexname1);
+        hBox1.getStyleClass().add("title");
+        gridpane.add(hBox1, 0, 0, 1, 1);
+        HBox hBox2 = new HBox(5);
+        hBox2.getChildren().addAll(datas1);
+        hBox2.getStyleClass().add("title");
+        gridpane.add(hBox2,1,0, 1, 1);
+        HBox hBox3 = new HBox(5);
+        hBox3.getChildren().addAll(dataStatus1);
+        hBox3.getStyleClass().add("title");
+        gridpane.add(hBox3, 2, 0, 1, 1);
         gridpane.setHgap(15);
         gridpane.setVgap(15);
+
         JSONObject jsonObject = dataService.getDataJSONObject().getData();
         time.setText("当前时间:"+jsonObject.getJSONObject("dataTime").getString("time"));
         JSONArray jsonArray = jsonObject.getJSONArray("data");
@@ -96,10 +108,18 @@ public class IndexController {
                 status.setFitWidth(20);
                 status.setFitHeight(20);
             }
-            gridpane.add(indexname, 0, i+1, 1, 1);
-            gridpane.add(datas,1,i+1, 1, 1);
-            gridpane.add(dataStatus, 2, i+1, 1, 1);
-            gridpane.add(status, 3, i+1, 1, 1);
+            HBox hindexname = new HBox(5);
+            hindexname.getChildren().addAll(indexname);
+            HBox hdatas = new HBox(5);
+            hdatas.getChildren().addAll(datas);
+            HBox hstatus = new HBox(5);
+            hstatus.getChildren().addAll(status,dataStatus);
+            gridpane.add(hindexname, 0, i+1, 1, 1);
+            gridpane.add(hdatas,1,i+1, 1, 1);
+            gridpane.add(hstatus, 2, i+1, 1, 1);
+            hindexname.getStyleClass().add("dataText");
+            hdatas.getStyleClass().add("dataText");
+            hstatus.getStyleClass().add("dataText");
             gridpane.setHgap(15);
             gridpane.setVgap(15);
         }

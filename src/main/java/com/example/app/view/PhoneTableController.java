@@ -81,6 +81,12 @@ public class PhoneTableController {
         assert mColumnSelect != null : "fx:id=\"mColumnSelect\" was not injected: check your FXML file 'multiTable.fxml'.";
         editBtn.setDisable(true);
 
+        //表格宽度
+        mColumnSelect.prefWidthProperty().bind(phoneTable.widthProperty().multiply(0.05));
+        seq.prefWidthProperty().bind(phoneTable.widthProperty().multiply(0.1));
+        phone.prefWidthProperty().bind(phoneTable.widthProperty().multiply(0.5));
+        status.prefWidthProperty().bind(phoneTable.widthProperty().multiply(0.35));
+
         initData();
 
         //初始化表格

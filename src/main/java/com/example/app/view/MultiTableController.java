@@ -20,6 +20,7 @@ import javafx.scene.control.Button;
 import javafx.scene.control.Tooltip;
 import javafx.scene.control.cell.PropertyValueFactory;
 import javafx.scene.input.MouseEvent;
+import javafx.scene.layout.Region;
 import javafx.stage.Modality;
 import javafx.stage.Stage;
 import javafx.util.Callback;
@@ -32,6 +33,7 @@ import java.util.List;
 import java.util.ResourceBundle;
 import javafx.fxml.FXML;
 import javafx.scene.control.TableColumn;
+import sun.misc.MessageUtils;
 
 @Component
 public class MultiTableController {
@@ -93,7 +95,17 @@ public class MultiTableController {
         assert indexData != null : "fx:id=\"indexData\" was not injected: check your FXML file 'multiTable.fxml'.";
         editBtn.setDisable(true);
 
+        //表格宽度
+        mColumnSelect.prefWidthProperty().bind(indexTable.widthProperty().multiply(0.05));
+        indexNum.prefWidthProperty().bind(indexTable.widthProperty().multiply(0.1));
+        indexJudge.prefWidthProperty().bind(indexTable.widthProperty().multiply(0.15));
+        indexName.prefWidthProperty().bind(indexTable.widthProperty().multiply(0.2));
+        indexStatus.prefWidthProperty().bind(indexTable.widthProperty().multiply(0.15));
+        indexCode.prefWidthProperty().bind(indexTable.widthProperty().multiply(0.25));
+        indexData.prefWidthProperty().bind(indexTable.widthProperty().multiply(0.1));
+
         initData();
+
 
         //初始化表格
         mColumnSelect.setCellValueFactory(new PropertyValueFactory<Index, Boolean>("selected"));

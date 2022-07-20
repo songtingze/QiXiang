@@ -1,19 +1,24 @@
 package com.example.app.view;
 
 
+import java.io.IOException;
 import java.net.URL;
 import java.util.ResourceBundle;
 
 import com.example.app.entity.Index;
 import javafx.embed.swing.JFXPanel;
 import javafx.fxml.FXML;
+import javafx.fxml.FXMLLoader;
+import javafx.scene.control.Alert;
 import javafx.scene.control.Button;
 import javafx.scene.control.ChoiceBox;
 import javafx.scene.control.TextField;
 import javafx.scene.input.MouseEvent;
 import javafx.scene.layout.AnchorPane;
+import javafx.scene.layout.Region;
 import javafx.stage.Stage;
 import org.springframework.stereotype.Component;
+import sun.misc.MessageUtils;
 
 @Component
 public class EditController {
@@ -68,7 +73,7 @@ public class EditController {
 
     }
 
-    public Index save() {
+    public Index save(){
         String indexName = this.indexName.getText();
         String indexCode = this.indexCode.getText();
         String indexData = this.indexData.getText();

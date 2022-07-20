@@ -4,13 +4,13 @@
 <?import javafx.scene.layout.*?>
 <?import javafx.scene.text.*?>
 
-<AnchorPane prefHeight="724.0" prefWidth="1044.0" xmlns="http://javafx.com/javafx/11.0.1" xmlns:fx="http://javafx.com/fxml/1" fx:controller="com.example.app.view.IndexController">
+<AnchorPane prefHeight="726.4" prefWidth="1167.2" xmlns="http://javafx.com/javafx/11.0.1" xmlns:fx="http://javafx.com/fxml/1" fx:controller="com.example.app.view.IndexController">
     <children>
         <AnchorPane prefHeight="468.0" prefWidth="528.0" AnchorPane.bottomAnchor="0.0" AnchorPane.leftAnchor="0.0" AnchorPane.rightAnchor="0.0" AnchorPane.topAnchor="0.0">
             <children>
-                <AnchorPane fx:id="info" layoutX="2.0" layoutY="45.0" prefHeight="411.0" prefWidth="509.0" AnchorPane.bottomAnchor="16.0" AnchorPane.leftAnchor="2.0" AnchorPane.rightAnchor="4.0" AnchorPane.topAnchor="45.0">
+                <AnchorPane fx:id="info" layoutX="2.0" layoutY="76.0" prefHeight="634.0" prefWidth="1167.0" AnchorPane.bottomAnchor="16.0" AnchorPane.leftAnchor="2.0" AnchorPane.rightAnchor="-2.0" AnchorPane.topAnchor="76.0">
                <children>
-                  <GridPane fx:id="gridpane" layoutX="173.0" layoutY="69.0" prefHeight="298.0" prefWidth="676.0">
+                  <GridPane fx:id="gridpane" layoutX="32.0" layoutY="19.0" prefHeight="305.0" prefWidth="1071.0" styleClass="indexpane" stylesheets="@style/gridpane.css">
                     <columnConstraints>
                       <ColumnConstraints hgrow="SOMETIMES" minWidth="10.0" prefWidth="100.0" />
                       <ColumnConstraints hgrow="SOMETIMES" minWidth="10.0" prefWidth="100.0" />
@@ -23,13 +23,16 @@
                     </rowConstraints>
                   </GridPane>
                </children></AnchorPane>
-                <Label layoutX="21.0" layoutY="24.0" text="气象信息监控">
+                <Label layoutX="21.0" layoutY="23.0" text="气象信息监控">
                     <font>
-                        <Font size="14.0" />
+                        <Font size="16.0" />
                     </font>
                 </Label>
-                <Separator layoutX="114.0" layoutY="24.0" prefHeight="19.0" prefWidth="388.0" />
-            <Label fx:id="time" layoutX="213.0" layoutY="-2.0" prefHeight="34.0" prefWidth="291.0" />
+                <Separator layoutX="123.0" layoutY="24.0" prefHeight="19.0" prefWidth="1026.0" />
+            <Label fx:id="time" layoutX="861.0" layoutY="34.0" prefHeight="34.0" prefWidth="291.0">
+               <font>
+                  <Font size="16.0" />
+               </font></Label>
             </children>
         </AnchorPane>
     </children>

@@ -15,13 +15,12 @@ import javafx.fxml.FXMLLoader;
 import javafx.scene.control.*;
 import javafx.scene.input.MouseEvent;
 import javafx.scene.layout.AnchorPane;
+import javafx.scene.layout.Pane;
 import org.springframework.stereotype.Component;
 
 @Component
 public class SettingController {
 
-    @FXML
-    private AnchorPane test;
     @FXML
     private AnchorPane index;
     @FXML
@@ -53,13 +52,11 @@ public class SettingController {
         assert cancelBtn != null : "fx:id=\"cancelBtn\" was not injected: check your FXML file 'setting.fxml'.";
         assert toolTree != null : "fx:id=\"toolTree\" was not injected: check your FXML file 'setting.fxml'.";
         assert saveBtn != null : "fx:id=\"saveBtn\" was not injected: check your FXML file 'setting.fxml'.";
-        assert test != null : "fx:id=\"test\" was not injected: check your FXML file 'setting.fxml'.";
         assert index != null : "fx:id=\"index\" was not injected: check your FXML file 'setting.fxml'.";
 
-        test.setVisible(false);
-        index.setVisible(false);
         phone.setVisible(false);
-        indicators.setVisible(true);
+        indicators.setVisible(false);
+        index.setVisible(true);
 
 
 
@@ -77,6 +74,8 @@ public class SettingController {
         rootItem.getChildren().add(item3);
         toolTree.setRoot(rootItem);
         toolTree.setShowRoot(false);
+        toolTree.getSelectionModel().select(0);
+        navigation.setText(getTreeRoute(item1));
         //点击菜单item事件
         toolTree.getSelectionModel().selectedItemProperty().addListener(
                 new ChangeListener<TreeItem <String>>() {
@@ -95,17 +94,14 @@ public class SettingController {
                                 e.printStackTrace();
                             }
                             index.setVisible(true);
-                            test.setVisible(false);
                             indicators.setVisible(false);
                             phone.setVisible(false);
                         }else if(newItem.getValue().equals("预警指标管理")){
                             index.setVisible(false);
-                            test.setVisible(false);
                             phone.setVisible(false);
                             indicators.setVisible(true);
                         }else if(newItem.getValue().equals("手机推送管理")){
                             index.setVisible(false);
-                            test.setVisible(false);
                             indicators.setVisible(false);
                             phone.setVisible(true);
                         }
