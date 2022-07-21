@@ -124,9 +124,14 @@
                 <artifactId>javafx-maven-plugin</artifactId>
                 <version>8.8.3</version>
                 <configuration>
-                    <mainClass>AppApplication</mainClass>
-                    <appName>app</appName>
-                    <vendor>bjtu</vendor>
+                    <mainClass>com.example.app.AppApplication</mainClass>
+                    <appName>APP</appName>
+                    <needShortcut>true</needShortcut><!-- 需要生成快捷方式-->
+                    <vendor>BJTU</vendor>
+                    <bundleArguments>
+                        <installdirChooser>true</installdirChooser><!-- 指示用户是否可以选择应用程序安装目录的标志 -->
+<!--                        <licenseFile>${licenseFilePath}</licenseFile> &lt;!&ndash; 安装时显示的用户协议 &ndash;&gt;-->
+                    </bundleArguments>
                 </configuration>
             </plugin>
         </plugins>
