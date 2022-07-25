@@ -12,6 +12,7 @@ import java.util.ResourceBundle;
 import com.alibaba.fastjson.JSONArray;
 import com.alibaba.fastjson.JSONObject;
 import com.example.app.common.StaElemSearchAPI_CLIB_callAPI_to_array2D;
+import com.example.app.repository.DataRepository;
 import com.example.app.service.DataService;
 import com.example.app.service.IndexService;
 import javafx.application.Platform;
@@ -48,6 +49,9 @@ public class IndexController {
 
     @Autowired
     private IndexService indexService;
+
+    @Autowired
+    private DataRepository dataRepository;
 
     private Integer times = 0;
 
@@ -135,7 +139,7 @@ public class IndexController {
         try {
             System.out.println(indexService.queryAllIndexCode());
             JSONObject jsonObject = staElemSearchAPI_clib_callAPI_to_array2D.test(indexService.queryAllIndexCode());
-            dataService.getData(jsonObject);
+            dataRepository.getData(jsonObject);
         } catch (IOException e) {
             e.printStackTrace();
         }

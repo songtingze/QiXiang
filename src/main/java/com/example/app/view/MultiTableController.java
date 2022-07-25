@@ -3,6 +3,7 @@ package com.example.app.view;
 import com.alibaba.fastjson.JSONObject;
 import com.example.app.common.Result;
 import com.example.app.entity.Index;
+import com.example.app.repository.IndexRepository;
 import com.example.app.service.IndexService;
 import com.example.app.view.components.CellFactory;
 import com.example.app.view.components.MyTableView;
@@ -80,6 +81,9 @@ public class MultiTableController {
 
     @Autowired
     private IndexService indexService;
+
+    @Autowired
+    private IndexRepository indexRepository;
 
     private int selectNum = 0;
 
@@ -174,7 +178,7 @@ public class MultiTableController {
                 jsonObject.put("indexJudge",newIndex.getIndexJudge());
                 jsonObject.put("indexStatus",newIndex.getIndexStatus());
                 try {
-                    indexService.addIndex(jsonObject);
+                    indexRepository.addIndex(jsonObject);
                 } catch (IOException e) {
                     e.printStackTrace();
                 }
@@ -209,7 +213,7 @@ public class MultiTableController {
             if (s.getSelected()) {
                 data.remove(s);
                 //删除到文件
-                indexService.deleteIndex(Integer.parseInt(s.getIndexNum()));
+                indexRepository.deleteIndex(Integer.parseInt(s.getIndexNum()));
             }
         }
         return true;
@@ -257,7 +261,7 @@ public class MultiTableController {
                         jsonObject.put("indexJudge",newIndex.getIndexJudge());
                         jsonObject.put("indexStatus",newIndex.getIndexStatus());
                         try {
-                            System.out.println(indexService.modifyIndex(jsonObject).getMsg());
+                            System.out.println(indexRepository.modifyIndex(jsonObject).getMsg());
                         } catch (IOException e) {
                             e.printStackTrace();
                         }
