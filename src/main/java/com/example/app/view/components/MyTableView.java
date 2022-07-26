@@ -3,9 +3,7 @@ package com.example.app.view.components;
 import javafx.scene.AccessibleAttribute;
 import javafx.scene.control.ScrollBar;
 import javafx.scene.control.TableView;
-import org.springframework.stereotype.Component;
 
-@Component
 public class MyTableView<S> extends TableView<S> {
 
     @Override
