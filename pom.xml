@@ -124,7 +124,7 @@
                 <artifactId>javafx-maven-plugin</artifactId>
                 <version>8.8.3</version>
                 <configuration>
-                    <mainClass>com.example.app.AppApplication</mainClass>
+                    <mainClass>com.example.app.AppStart</mainClass>
                     <appName>APP</appName>
                     <needShortcut>true</needShortcut><!-- 需要生成快捷方式-->
                     <vendor>BJTU</vendor>
