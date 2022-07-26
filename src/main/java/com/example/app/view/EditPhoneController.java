@@ -1,20 +1,16 @@
 package com.example.app.view;
 
-
-import java.net.URL;
-import java.util.ResourceBundle;
-
-import com.example.app.entity.Index;
 import com.example.app.entity.Phone;
-import javafx.embed.swing.JFXPanel;
 import javafx.fxml.FXML;
 import javafx.scene.control.Button;
 import javafx.scene.control.ChoiceBox;
 import javafx.scene.control.TextField;
 import javafx.scene.input.MouseEvent;
 import javafx.scene.layout.AnchorPane;
-import javafx.stage.Stage;
 import org.springframework.stereotype.Component;
+
+import java.net.URL;
+import java.util.ResourceBundle;
 
 @Component
 public class EditPhoneController {

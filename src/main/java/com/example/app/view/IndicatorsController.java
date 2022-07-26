@@ -1,22 +1,14 @@
 package com.example.app.view;
 
-
 /**
  * Sample Skeleton for 'indicators.fxml' Controller Class
  */
 
-import java.net.URL;
-import java.util.ResourceBundle;
-
-import com.example.app.entity.Index;
-import javafx.collections.FXCollections;
-import javafx.collections.ObservableList;
 import javafx.fxml.FXML;
-import javafx.scene.control.Button;
-import javafx.scene.control.TableView;
-import javafx.scene.input.MouseEvent;
 import javafx.scene.layout.AnchorPane;
 import org.springframework.stereotype.Component;
+import java.net.URL;
+import java.util.ResourceBundle;
 
 @Component
 public class IndicatorsController {

@@ -1,9 +1,5 @@
 package com.example.app.entity;
 
-
-import javafx.scene.control.TableColumn;
-import javafx.scene.control.TableView;
-
 public class Index {
     private boolean selected;
     private String indexNum;

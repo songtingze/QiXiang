@@ -1,6 +1,5 @@
 package com.example.app.entity;
 
-import com.sun.org.apache.xpath.internal.objects.XString;
 
 public class User {
 
