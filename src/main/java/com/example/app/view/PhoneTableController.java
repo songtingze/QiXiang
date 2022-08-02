@@ -154,6 +154,7 @@ public class PhoneTableController {
                 JSONObject jsonObject = new JSONObject();
                 jsonObject.put("phone",newph.getPhone());
                 jsonObject.put("status",newph.getStatus());
+                jsonObject.put("remark",newph.getRemark());
                 try {
                     Result<String> result = phoneService.addPhone(jsonObject);
                     if(result.getCode().equalsIgnoreCase("0")){
@@ -267,6 +268,7 @@ public class PhoneTableController {
                         jsonObject.put("seq",Integer.parseInt(p.getSeq()));
                         jsonObject.put("phone",p.getPhone());
                         jsonObject.put("status",p.getStatus());
+                        jsonObject.put("remark",p.getRemark());
                         try {
                             Result<String> result = phoneService.modifyPhone(jsonObject);
                             if(result.getCode().equalsIgnoreCase("0")){

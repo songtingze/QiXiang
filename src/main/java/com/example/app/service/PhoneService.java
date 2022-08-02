@@ -73,6 +73,9 @@ public class PhoneService {
         if(jsonObject.getString("phone").equalsIgnoreCase("") || jsonObject.getString("phone") == null){
             return Result.error("101","手机号不能为空！");
         }
+        if(jsonObject.getString("remark").equalsIgnoreCase("") || jsonObject.getString("remark") == null){
+            return Result.error("101","备注不能为空！");
+        }
         if(isMobileNO(jsonObject.getString("phone"))){
             JSONArray jsonArray = fileService.readPhoneJSONArray();
             for(int i = 0 ;i < jsonArray.size(); i++){
@@ -107,6 +110,7 @@ public class PhoneService {
             jsonArray.remove(phone);
             phone.put("phone",jsonObject.getString("phone"));
             phone.put("status",jsonObject.getString("status"));
+            phone.put("remark",jsonObject.getString("remark"));
             jsonArray.add(phoneSeq,phone);
             fileService.writePhoneJSONArray(jsonArray);
             return Result.success("手机号修改成功！");
@@ -137,10 +141,30 @@ public class PhoneService {
         for(int i = 0;i < jsonArray.size();i ++){
             JSONObject jsonObject = jsonArray.getJSONObject(i);
             Phone phone = new Phone(false,jsonObject.getString("seq"),jsonObject.getString("phone"),
-                    jsonObject.getString("status"),"remark");
+                    jsonObject.getString("status"),jsonObject.getString("remark"));
             phoneList.add(phone);
         }
         return Result.success(phoneList);
+    }
+
+    public Result<String> getPhones() throws IOException{
+        JSONArray jsonArray = fileService.readPhoneJSONArray();
+        String phones = "";
+        for(int i = 0;i < jsonArray.size();i ++){
+            JSONObject jsonObject = jsonArray.getJSONObject(i);
+            if(jsonObject.getString("status").equalsIgnoreCase("yes")){
+                if(phones.equalsIgnoreCase("")){
+                    phones += jsonObject.getString("phone");
+                }else {
+                    phones += ","+jsonObject.getString("phone");
+                }
+            }
+        }
+        if(phones.equalsIgnoreCase("")){
+            return Result.error("101","无手机号");
+        }else {
+            return Result.success(phones);
+        }
     }
 
 }

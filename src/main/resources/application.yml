@@ -41,3 +41,4 @@ filePath:
     indexConfig: index.json
     dataConfig: data.json
     phoneConfig: phone.json
+    warningConfig: warning.txt

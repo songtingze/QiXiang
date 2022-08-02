@@ -2,12 +2,17 @@ package com.example.app.view;
 
 import com.alibaba.fastjson.JSONArray;
 import com.alibaba.fastjson.JSONObject;
+import com.example.app.common.Result;
+import com.example.app.common.SendMsg;
 import com.example.app.common.StaElemSearchAPI_CLIB_callAPI_to_array2D;
 import com.example.app.repository.DataRepository;
 import com.example.app.service.DataService;
+import com.example.app.service.FileService;
 import com.example.app.service.IndexService;
+import com.example.app.service.PhoneService;
 import javafx.application.Platform;
 import javafx.fxml.FXML;
+import javafx.scene.control.Alert;
 import javafx.scene.control.Label;
 import javafx.scene.control.ScrollPane;
 import javafx.scene.image.ImageView;
@@ -47,6 +52,10 @@ public class IndexController {
 
     @Autowired
     private IndexService indexService;
+    @Autowired
+    private PhoneService phoneService;
+    @Autowired
+    private FileService fileService;
 
     @Autowired
     private DataRepository dataRepository;
@@ -155,5 +164,32 @@ public class IndexController {
 //        });
 //
 //    }
+    @Scheduled(cron = "*/10 * * * * ?")   //定时器定义，设置执行时间
+    private void process() throws IOException {
+        Result<String> phoneResult = phoneService.getPhones();
+        Result<String> warningResult = dataRepository.getWarningInfo();
+        SimpleDateFormat dateFormat= new SimpleDateFormat("yyyy年MM月dd日 HH:mm:ss");
+        String times = dateFormat.format(new Date());
+        if(phoneResult.getCode().equalsIgnoreCase("0")){
+            String phones = phoneResult.getData();
+            System.out.println(phones);
+            if(warningResult.getCode().equalsIgnoreCase("0")){
+                String waringInfo = warningResult.getData();
+                System.out.println(waringInfo);
+                SendMsg sendMsg = new SendMsg();
+                Result<String> sendResult = sendMsg.sendSMS(phones,waringInfo,"");
+                if(sendResult.getCode().equalsIgnoreCase("0")){
+                    fileService.writeWarningTxt(times+"-"+phones+"-成功-"+sendResult.getData()+"。\n");
+                }else {
+                    fileService.writeWarningTxt(times+"-"+phones+"-失败-"+sendResult.getMsg()+"。\n");
+                }
+            }else{
+//                fileService.writeWarningTxt(times+"-"+phones+"-"+warningResult.getMsg()+"。");
+            }
+
+        }else{
+//            fileService.writeWarningTxt(times+"-"+"phones"+"-"+warningResult.getMsg()+"。");
+        }
+    }
 }
 

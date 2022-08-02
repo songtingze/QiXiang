@@ -77,4 +77,34 @@ public class DataRepository {
 
         return Result.success(msg);
     }
+
+    public Result<String> getWarningInfo() throws IOException {
+        JSONObject dataJson = fileService.readJSONObject();
+        JSONArray dataArray = dataJson.getJSONArray("data");
+        String warningInfo = "";
+        for(int i = 0; i < dataArray.size();i ++){
+            JSONObject jsonObject = dataArray.getJSONObject(i);
+            if(jsonObject.getString("dataStatus").equalsIgnoreCase("abnormal")){
+                if(!warningInfo.equalsIgnoreCase("")){
+                    warningInfo += ";";
+                }
+                JSONObject index = indexService.queryByIndexCode(jsonObject.getString("indexCode"));
+                warningInfo += index.getString("indexName") + "数据异常";
+            }
+            if(jsonObject.getString("dataStatus").equalsIgnoreCase("lack")){
+                if(!warningInfo.equalsIgnoreCase("")){
+                    warningInfo += ";";
+                }
+                JSONObject index = indexService.queryByIndexCode(jsonObject.getString("indexCode"));
+                warningInfo += index.getString("indexName") + "数据缺失";
+            }
+        }
+        if(!warningInfo.equalsIgnoreCase("")){
+            warningInfo += "。";
+            return Result.success(warningInfo);
+        }else {
+            return Result.error("101","数据一切正常");
+        }
+
+    }
 }

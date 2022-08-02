@@ -17,6 +17,8 @@ public class FileService {
     private String dataFilePath;
     @Value("${filePath.phoneConfig}")
     private String phoneFilePath;
+    @Value("${filePath.warningConfig}")
+    private String warningFilePath;
 
     @Autowired
     private DataService dataService;
@@ -71,6 +73,11 @@ public class FileService {
     public void writePhoneJSONArray(JSONArray jsonArray) throws IOException {
         BufferedWriter writer = new BufferedWriter(new OutputStreamWriter(new FileOutputStream(new File(phoneFilePath)),"utf-8"));
         writer.write(jsonArray.toString());
+        writer.close();
+    }
+    public void writeWarningTxt(String warningInfo) throws IOException {
+        BufferedWriter writer = new BufferedWriter(new OutputStreamWriter(new FileOutputStream(new File(warningFilePath),true),"utf-8"));
+        writer.write(warningInfo);
         writer.close();
     }
 }
