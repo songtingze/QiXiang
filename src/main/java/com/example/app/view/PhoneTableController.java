@@ -37,6 +37,7 @@ import javafx.scene.control.TableColumn;
 
 @Component
 public class PhoneTableController {
+    public TableColumn remark;
     @FXML
     private Button addBtn;
     @FXML
@@ -86,8 +87,9 @@ public class PhoneTableController {
         //表格宽度
         mColumnSelect.prefWidthProperty().bind(phoneTable.widthProperty().multiply(0.05));
         seq.prefWidthProperty().bind(phoneTable.widthProperty().multiply(0.1));
-        phone.prefWidthProperty().bind(phoneTable.widthProperty().multiply(0.5));
-        status.prefWidthProperty().bind(phoneTable.widthProperty().multiply(0.35));
+        phone.prefWidthProperty().bind(phoneTable.widthProperty().multiply(0.3));
+        status.prefWidthProperty().bind(phoneTable.widthProperty().multiply(0.15));
+        remark.prefWidthProperty().bind(phoneTable.widthProperty().multiply(0.4));
 
         initData();
 
@@ -96,6 +98,7 @@ public class PhoneTableController {
         seq.setCellValueFactory(new PropertyValueFactory<>("seq"));
         phone.setCellValueFactory(new PropertyValueFactory<>("phone"));
         status.setCellValueFactory(new PropertyValueFactory<>("status"));
+        remark.setCellValueFactory(new PropertyValueFactory<>("remark"));
         phoneTable.setItems(data);
         phoneTable.setEditable(true);
 
@@ -247,7 +250,7 @@ public class PhoneTableController {
         EditPhoneController editPhoneController = loader.getController();
         editPhoneController.phone.setText(selectedItem.getPhone());
         editPhoneController.status.setValue(selectedItem.getStatus());
-
+        editPhoneController.remark.setText(selectedItem.getRemark());
 
         editPhoneController.seq=selectedItem.getSeq();
         //编辑窗口确认按钮点击事件

@@ -137,7 +137,7 @@ public class PhoneService {
         for(int i = 0;i < jsonArray.size();i ++){
             JSONObject jsonObject = jsonArray.getJSONObject(i);
             Phone phone = new Phone(false,jsonObject.getString("seq"),jsonObject.getString("phone"),
-                    jsonObject.getString("status"));
+                    jsonObject.getString("status"),"remark");
             phoneList.add(phone);
         }
         return Result.success(phoneList);

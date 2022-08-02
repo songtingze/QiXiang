@@ -2,9 +2,7 @@ package com.example.app.view;
 
 import com.example.app.entity.Phone;
 import javafx.fxml.FXML;
-import javafx.scene.control.Button;
-import javafx.scene.control.ChoiceBox;
-import javafx.scene.control.TextField;
+import javafx.scene.control.*;
 import javafx.scene.input.MouseEvent;
 import javafx.scene.layout.AnchorPane;
 import org.springframework.stereotype.Component;
@@ -32,6 +30,8 @@ public class EditPhoneController {
 
     public String seq;
 
+    public TextArea remark;
+
 
 
 
@@ -51,12 +51,13 @@ public class EditPhoneController {
     public Phone save() {
         String phone = this.phone.getText();
         String status = this.status.getValue();
+        String remark = this.remark.getText();
         if(status.equalsIgnoreCase("正常")){
             status = "yes";
         }else if(status.equalsIgnoreCase("停用")){
             status = "no";
         }
-        Phone ph = new Phone(false,seq,phone,status);
+        Phone ph = new Phone(false,seq,phone,status,remark);
         return ph;
     }
 
@@ -65,6 +66,7 @@ public class EditPhoneController {
             phone.setText("");
         }
         status.setValue("");
+        remark.setText("");
     }
 }
 

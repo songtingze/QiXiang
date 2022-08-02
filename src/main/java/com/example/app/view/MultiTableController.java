@@ -272,6 +272,8 @@ public class MultiTableController {
         editController.indexName.setText(selectedItem.getIndexName());
         editController.indexCode.setText(selectedItem.getIndexCode());
         editController.indexData.setText(selectedItem.getIndexData());
+        editController.indexJudge.setValue(selectedItem.getIndexJudge());
+        editController.indexStatus.setValue(selectedItem.getIndexStatus());
 //        editController.indexJudge.getItems().addAll("正常", "停用");
 //        switch (selectedItem.getIndexJudge()){
 //            case ">":editController.indexJudge.setValue("大于");break;

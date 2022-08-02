@@ -5,12 +5,14 @@ public class Phone {
     private String seq;
     private String phone;
     private String status;
+    private String remark;
 
-    public Phone(boolean selected,String seq,String phone,String status){
+    public Phone(boolean selected,String seq,String phone,String status,String remark){
         this.seq=seq;
         this.phone=phone;
         this.status=status;
         this.selected=selected;
+        this.remark = remark;
     }
 
 
@@ -44,5 +46,13 @@ public class Phone {
 
     public void setSeq(String seq) {
         this.seq = seq;
+    }
+
+    public String getRemark() {
+        return remark;
+    }
+
+    public void setRemark(String remark) {
+        this.remark = remark;
     }
 }

@@ -22,6 +22,7 @@
                           <TableColumn fx:id="seq" prefWidth="100" resizable="false" text="序号" />
                           <TableColumn fx:id="phone" prefWidth="250" resizable="false" text="手机号" />
                           <TableColumn fx:id="status" prefWidth="200" resizable="false" text="状态" />
+                          <TableColumn fx:id="remark" prefWidth="250" resizable="false" text="备注" />
                       </columns>
                   </MyTableView>
             </children>

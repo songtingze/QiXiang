@@ -4,20 +4,21 @@
 <?import javafx.scene.layout.*?>
 <?import javafx.scene.text.*?>
 
-<AnchorPane fx:id="root" prefHeight="235.0" prefWidth="508.0" style="-fx-background-color:rgb(230,235,240);" xmlns="http://javafx.com/javafx/11.0.1" xmlns:fx="http://javafx.com/fxml/1" fx:controller="com.example.app.view.EditPhoneController">
+<AnchorPane fx:id="root" prefHeight="303.0" prefWidth="512.0" style="-fx-background-color:rgb(230,235,240);" xmlns="http://javafx.com/javafx/11.0.1" xmlns:fx="http://javafx.com/fxml/1" fx:controller="com.example.app.view.EditPhoneController">
     <children>
       <BorderPane prefHeight="244.4" prefWidth="508.0" AnchorPane.bottomAnchor="0.0" AnchorPane.leftAnchor="0.0" AnchorPane.rightAnchor="0.0" AnchorPane.topAnchor="0.0">
          <center>
               <AnchorPane prefHeight="193.0" prefWidth="495.0" BorderPane.alignment="CENTER">
                   <children>
-                      <GridPane layoutX="96.0" layoutY="25.0" prefHeight="142.0" prefWidth="303.0" styleClass="editpane" stylesheets="@style/gridpane.css">
+                      <GridPane layoutX="96.0" layoutY="25.0" prefHeight="216.0" prefWidth="346.0" styleClass="editpane" stylesheets="@style/gridpane.css">
                           <columnConstraints>
-                              <ColumnConstraints hgrow="SOMETIMES" minWidth="10.0" prefWidth="100.0" />
-                              <ColumnConstraints hgrow="SOMETIMES" minWidth="10.0" prefWidth="100.0" />
+                              <ColumnConstraints hgrow="SOMETIMES" maxWidth="157.0" minWidth="10.0" prefWidth="105.00001525878906" />
+                              <ColumnConstraints hgrow="SOMETIMES" maxWidth="220.9999847412109" minWidth="10.0" prefWidth="220.9999847412109" />
                           </columnConstraints>
                           <rowConstraints>
                               <RowConstraints minHeight="10.0" prefHeight="30.0" vgrow="SOMETIMES" />
-                              <RowConstraints minHeight="10.0" prefHeight="30.0" vgrow="SOMETIMES" />
+                              <RowConstraints maxHeight="64.40000000000002" minHeight="10.0" prefHeight="54.40000000000002" vgrow="SOMETIMES" />
+                        <RowConstraints maxHeight="84.4" minHeight="10.0" prefHeight="84.4" vgrow="SOMETIMES" />
                           </rowConstraints>
                           <children>
                               <Label text="手机号">
@@ -32,6 +33,12 @@
                         </Label>
                               <TextField fx:id="phone" GridPane.columnIndex="1" />
                               <ChoiceBox fx:id="status" prefWidth="150.0" GridPane.columnIndex="1" GridPane.rowIndex="1" />
+                        <Label fx:id="top" text="备注" GridPane.rowIndex="2">
+                           <font>
+                              <Font size="14.0" />
+                           </font>
+                        </Label>
+                        <TextArea fx:id="remark" prefHeight="141.0" prefWidth="214.0" GridPane.columnIndex="1" GridPane.rowIndex="2" />
                           </children>
                       </GridPane>
                   </children>
