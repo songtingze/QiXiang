@@ -1,9 +1,12 @@
 package com.example.app.view;
 
 import com.example.app.entity.Index;
+import javafx.beans.value.ChangeListener;
+import javafx.beans.value.ObservableValue;
 import javafx.fxml.FXML;
 import javafx.scene.control.Button;
 import javafx.scene.control.ChoiceBox;
+import javafx.scene.control.Label;
 import javafx.scene.control.TextField;
 import javafx.scene.input.MouseEvent;
 import javafx.scene.layout.AnchorPane;
@@ -16,6 +19,7 @@ import java.util.ResourceBundle;
 public class EditController {
 
     public AnchorPane root;
+    public Label notice;
     @FXML // ResourceBundle that was given to the FXMLLoader
     private ResourceBundle resources;
 
@@ -62,6 +66,17 @@ public class EditController {
         indexStatus.setValue("正常");
         indexJudge.getItems().addAll("大于", "大于等于", "等于", "小于等于", "小于","不等于","范围","缺值");
         indexJudge.setValue("大于");
+
+        indexJudge.getSelectionModel().selectedIndexProperty().addListener(new ChangeListener<Number>() {
+            public void changed(ObservableValue ov, Number value, Number new_value)
+            {
+                if(new_value.equals(6)){
+                    notice.setText("格式如 2,3");
+                }else{
+                    notice.setText("");
+                }
+            }
+        });
 
     }
 
