@@ -1,12 +1,33 @@
-.indexpane{
+.titlepane{
     -fx-background-color: rgb(242,242,242);
     -fx-padding: 2em 5em 5em 5em ;
     -fx-background-radius:20;
     fx-border-color: black;
     /*-fx-border-insets: 5;*/
-    -fx-border-radius: 20;
+    -fx-border-radius: 20 20 0 0;
     -fx-border-style: solid inside;
-    -fx-border-width: 2;
+    -fx-border-width: 2 2 0 2;
+}
+.indexpane{
+    -fx-background-color: rgb(242,242,242);
+    -fx-padding: 2em 5em 5em 5em ;
+    /*-fx-background-radius:20;*/
+    /*fx-border-color: black;*/
+    /*-fx-border-insets: 5;*/
+    /*-fx-border-radius: 20 20 0 0;*/
+    /*-fx-border-style: solid inside;*/
+    /*-fx-border-width: 2 2 0 2;*/
+}
+.scrollpane{
+    -fx-background-color: rgb(242,242,242);
+    /*-fx-padding: 2em 5em 5em 5em ;*/
+    -fx-background-radius:20;
+    fx-border-color: black;
+    /*-fx-border-insets: 5;*/
+    /*-fx-border-radius: 0 0 20 20;*/
+    -fx-border-style: solid inside;
+    -fx-border-width: 0 2 2 2;
+    -fx-hbar-policy: never;
 }
 .title{
     -fx-font-size: 16px;

@@ -9,6 +9,7 @@ import com.example.app.service.IndexService;
 import javafx.application.Platform;
 import javafx.fxml.FXML;
 import javafx.scene.control.Label;
+import javafx.scene.control.ScrollPane;
 import javafx.scene.image.ImageView;
 import javafx.scene.layout.AnchorPane;
 import javafx.scene.layout.GridPane;
@@ -27,6 +28,8 @@ import java.util.ResourceBundle;
 public class IndexController {
 
     public GridPane gridpane;
+    public ScrollPane scrollpane;
+    public GridPane titlepane;
     @FXML // ResourceBundle that was given to the FXMLLoader
     private ResourceBundle resources;
 
@@ -57,6 +60,7 @@ public class IndexController {
     void initialize() throws IOException {
         assert info != null : "fx:id=\"info\" was not injected: check your FXML file 'index.fxml'.";
         gridpane.getChildren().clear();
+        titlepane.getChildren().clear();
         //事件label
         Label indexname1 = new Label("气象指标");
         Label datas1 = new Label("气象数据");
@@ -64,17 +68,17 @@ public class IndexController {
         HBox hBox1 = new HBox(5);
         hBox1.getChildren().addAll(indexname1);
         hBox1.getStyleClass().add("title");
-        gridpane.add(hBox1, 0, 0, 1, 1);
+        titlepane.add(hBox1, 0, 0, 1, 1);
         HBox hBox2 = new HBox(5);
         hBox2.getChildren().addAll(datas1);
         hBox2.getStyleClass().add("title");
-        gridpane.add(hBox2,1,0, 1, 1);
+        titlepane.add(hBox2,1,0, 1, 1);
         HBox hBox3 = new HBox(5);
         hBox3.getChildren().addAll(dataStatus1);
         hBox3.getStyleClass().add("title");
-        gridpane.add(hBox3, 2, 0, 1, 1);
-        gridpane.setHgap(15);
-        gridpane.setVgap(15);
+        titlepane.add(hBox3, 2, 0, 1, 1);
+        titlepane.setHgap(15);
+        titlepane.setVgap(15);
 
         JSONObject jsonObject = dataService.getDataJSONObject().getData();
         time.setText("当前时间:"+jsonObject.getJSONObject("dataTime").getString("time"));
@@ -113,9 +117,9 @@ public class IndexController {
             hdatas.getChildren().addAll(datas);
             HBox hstatus = new HBox(5);
             hstatus.getChildren().addAll(status,dataStatus);
-            gridpane.add(hindexname, 0, i+1, 1, 1);
-            gridpane.add(hdatas,1,i+1, 1, 1);
-            gridpane.add(hstatus, 2, i+1, 1, 1);
+            gridpane.add(hindexname, 0, i, 1, 1);
+            gridpane.add(hdatas,1,i, 1, 1);
+            gridpane.add(hstatus, 2, i, 1, 1);
             hindexname.getStyleClass().add("dataText");
             hdatas.getStyleClass().add("dataText");
             hstatus.getStyleClass().add("dataText");
