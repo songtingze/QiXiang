@@ -18,6 +18,7 @@ import javafx.fxml.FXML;
 import javafx.fxml.FXMLLoader;
 import javafx.scene.Parent;
 import javafx.scene.Scene;
+import javafx.scene.control.Alert;
 import javafx.scene.control.Button;
 import javafx.scene.control.TableColumn;
 import javafx.scene.control.cell.PropertyValueFactory;
@@ -175,7 +176,22 @@ public class MultiTableController {
                 jsonObject.put("indexJudge",newIndex.getIndexJudge());
                 jsonObject.put("indexStatus",newIndex.getIndexStatus());
                 try {
-                    indexRepository.addIndex(jsonObject);
+                    Result<String> result = indexRepository.addIndex(jsonObject);
+                    if(result.getCode().equalsIgnoreCase("0")){
+                        Alert alert = new Alert(Alert.AlertType.INFORMATION);
+                        alert.setTitle("添加气象指标");
+                        alert.setHeaderText(null);
+                        alert.setContentText(result.getData());
+
+                        alert.showAndWait();
+                    }else{
+                        Alert alert = new Alert(Alert.AlertType.INFORMATION);
+                        alert.setTitle("添加气象指标");
+                        alert.setHeaderText(null);
+                        alert.setContentText(result.getMsg());
+
+                        alert.showAndWait();
+                    }
                 } catch (IOException e) {
                     e.printStackTrace();
                 }
@@ -210,9 +226,25 @@ public class MultiTableController {
             if (s.getSelected()) {
                 data.remove(s);
                 //删除到文件
-                indexRepository.deleteIndex(Integer.parseInt(s.getIndexNum()));
+                Result<String> result = indexRepository.deleteIndex(Integer.parseInt(s.getIndexNum()));
+                if(result.getCode().equalsIgnoreCase("0")){
+                    Alert alert = new Alert(Alert.AlertType.INFORMATION);
+                    alert.setTitle("删除气象指标");
+                    alert.setHeaderText(null);
+                    alert.setContentText(result.getData());
+
+                    alert.showAndWait();
+                }else{
+                    Alert alert = new Alert(Alert.AlertType.INFORMATION);
+                    alert.setTitle("删除气象指标");
+                    alert.setHeaderText(null);
+                    alert.setContentText(result.getMsg());
+
+                    alert.showAndWait();
+                }
             }
         }
+        initData();
         selectNum=0;
         return true;
     }
@@ -240,6 +272,23 @@ public class MultiTableController {
         editController.indexName.setText(selectedItem.getIndexName());
         editController.indexCode.setText(selectedItem.getIndexCode());
         editController.indexData.setText(selectedItem.getIndexData());
+//        editController.indexJudge.getItems().addAll("正常", "停用");
+//        switch (selectedItem.getIndexJudge()){
+//            case ">":editController.indexJudge.setValue("大于");break;
+//            case ">=":editController.indexJudge.setValue("大于等于");break;
+//            case "==":editController.indexJudge.setValue("等于");break;
+//            case "<=":editController.indexJudge.setValue("小于等于");break;
+//            case "<":editController.indexJudge.setValue("小于");break;
+//            case "!=":editController.indexJudge.setValue("不等于");break;
+//            case "[]":editController.indexJudge.setValue("范围");break;
+//            case "lack":editController.indexJudge.setValue("缺值");break;
+//        }
+//        editController.indexStatus.getItems().addAll("大于", "大于等于", "等于", "小于等于", "小于","不等于","范围","缺值");
+//        if(selectedItem.getIndexStatus().equalsIgnoreCase("yes")){
+//            editController.indexStatus.setValue("正常");
+//        }else if(selectedItem.getIndexStatus().equalsIgnoreCase("no")){
+//            editController.indexStatus.setValue("停用");
+//        }
         editController.indexNum=selectedItem.getIndexNum();
         //编辑窗口确认按钮点击事件
         editController.saveBtn.setOnAction(new EventHandler<ActionEvent>() {
@@ -259,7 +308,22 @@ public class MultiTableController {
                         jsonObject.put("indexJudge",newIndex.getIndexJudge());
                         jsonObject.put("indexStatus",newIndex.getIndexStatus());
                         try {
-                            System.out.println(indexRepository.modifyIndex(jsonObject).getMsg());
+                            Result<String> result = indexRepository.modifyIndex(jsonObject);
+                            if(result.getCode().equalsIgnoreCase("0")){
+                                Alert alert = new Alert(Alert.AlertType.INFORMATION);
+                                alert.setTitle("修改气象指标");
+                                alert.setHeaderText(null);
+                                alert.setContentText(result.getData());
+
+                                alert.showAndWait();
+                            }else{
+                                Alert alert = new Alert(Alert.AlertType.INFORMATION);
+                                alert.setTitle("修改气象指标");
+                                alert.setHeaderText(null);
+                                alert.setContentText(result.getMsg());
+
+                                alert.showAndWait();
+                            }
                         } catch (IOException e) {
                             e.printStackTrace();
                         }
@@ -303,6 +367,21 @@ public class MultiTableController {
         if(result.getCode().equalsIgnoreCase("0")){
             List<Index> indexList = result.getData();
             for(Index index:indexList){
+                if(index.getIndexStatus().equalsIgnoreCase("yes")){
+                    index.setIndexStatus("正常");
+                }else if(index.getIndexStatus().equalsIgnoreCase("no")){
+                    index.setIndexStatus("停用");
+                }
+                switch (index.getIndexJudge()){
+                    case ">":index.setIndexJudge("大于");break;
+                    case ">=":index.setIndexJudge("大于等于");break;
+                    case "==":index.setIndexJudge("等于");break;
+                    case "<=":index.setIndexJudge("小于等于");break;
+                    case "<":index.setIndexJudge("小于");break;
+                    case "!=":index.setIndexJudge("不等于");break;
+                    case "[]":index.setIndexJudge("范围");break;
+                    case "lack":index.setIndexJudge("缺值");break;
+                }
                 data.add(index);
             }
         }

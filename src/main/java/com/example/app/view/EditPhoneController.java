@@ -35,6 +35,7 @@ public class EditPhoneController {
 
 
 
+
     @FXML // This method is called by the FXMLLoader when initialization is complete
     void initialize() {
         assert phone != null : "fx:id=\"phone\" was not injected: check your FXML file 'edit.fxml'.";
@@ -50,6 +51,11 @@ public class EditPhoneController {
     public Phone save() {
         String phone = this.phone.getText();
         String status = this.status.getValue();
+        if(status.equalsIgnoreCase("正常")){
+            status = "yes";
+        }else if(status.equalsIgnoreCase("停用")){
+            status = "no";
+        }
         Phone ph = new Phone(false,seq,phone,status);
         return ph;
     }

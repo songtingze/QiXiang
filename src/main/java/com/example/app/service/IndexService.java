@@ -43,6 +43,20 @@ public class IndexService {
         String indexData = jsonObject.getString("indexData");
         String indexJudge = jsonObject.getString("indexJudge");
         String msg = "";
+        if(indexName.equalsIgnoreCase("") || indexName == null){
+            msg = "气象指标名称不能为空!";
+            return msg;
+        }
+        if(indexCode.equalsIgnoreCase("") || indexCode == null){
+            msg = "气象指标代码不能为空!";
+            return msg;
+        }
+        if(indexData.equalsIgnoreCase("") || indexData == null){
+            if(!indexJudge.equalsIgnoreCase("lack")){
+                msg = "气象指标临界值不能为空!";
+                return msg;
+            }
+        }
         JSONArray jsonArray = fileService.readJSONArray();
         for(int i = 0; i< jsonArray.size();i ++){
             JSONObject index = jsonArray.getJSONObject(i);
@@ -69,10 +83,11 @@ public class IndexService {
                 msg = "请输入正确的范围格式！如2,3";
                 return msg;
             }
-        }
-        if(!isNumeric(indexData)){
-            msg = "输入的指标临界值是非法数字!";
-            return msg;
+        }else{
+            if(!isNumeric(indexData)){
+                msg = "输入的指标临界值是非法数字!";
+                return msg;
+            }
         }
         msg = "success";
         return msg;

@@ -27,7 +27,6 @@ public class IndexRepository {
         String msg = indexService.isIndexRight(jsonObject);
         if(msg.equalsIgnoreCase("success")){
             JSONArray jsonArray = fileService.readJSONArray();
-
             jsonObject.put("indexNum",jsonArray.size());
             JSONObject data = new JSONObject();
             data.put("dataNum",jsonArray.size());

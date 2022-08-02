@@ -17,7 +17,7 @@ public class WebSecurityConfig  extends WebSecurityConfigurerAdapter {
                 .authorizeRequests()
                 // 直接放行
                 .antMatchers("/auth/**", "/error/**", "/dev/**").permitAll()
-                .antMatchers("/letter/**").anonymous()
+                .antMatchers("/user/**").anonymous()
                 // 权限认证
                 .anyRequest().authenticated()
                 .and()

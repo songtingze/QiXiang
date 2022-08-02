@@ -40,3 +40,4 @@ filePath:
 #    dataConfig: src/main/resources/data/data.json
     indexConfig: index.json
     dataConfig: data.json
+    phoneConfig: phone.json

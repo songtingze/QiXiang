@@ -4,6 +4,7 @@ import com.alibaba.fastjson.JSONObject;
 import com.example.app.common.Result;
 import com.example.app.entity.Phone;
 import com.example.app.service.IndexService;
+import com.example.app.service.PhoneService;
 import com.example.app.view.components.CellFactory;
 import com.example.app.view.components.MyTableView;
 import javafx.beans.property.SimpleBooleanProperty;
@@ -16,6 +17,7 @@ import javafx.event.EventHandler;
 import javafx.fxml.FXMLLoader;
 import javafx.scene.Parent;
 import javafx.scene.Scene;
+import javafx.scene.control.Alert;
 import javafx.scene.control.Button;
 import javafx.scene.control.Tooltip;
 import javafx.scene.control.cell.PropertyValueFactory;
@@ -68,7 +70,7 @@ public class PhoneTableController {
             FXCollections.observableArrayList();
 
     @Autowired
-    private IndexService indexService;
+    private PhoneService phoneService;
 
     private int selectNum = 0;
 
@@ -146,14 +148,29 @@ public class PhoneTableController {
                 data.add(newph);
                 phoneTable.refresh();
                 //添加到文件
-//                JSONObject jsonObject = new JSONObject();
-//                jsonObject.put("phone",newph.getPhone());
-//                jsonObject.put("status",newph.getStatus());
-//                try {
-//                    indexService.addIndex(jsonObject);
-//                } catch (IOException e) {
-//                    e.printStackTrace();
-//                }
+                JSONObject jsonObject = new JSONObject();
+                jsonObject.put("phone",newph.getPhone());
+                jsonObject.put("status",newph.getStatus());
+                try {
+                    Result<String> result = phoneService.addPhone(jsonObject);
+                    if(result.getCode().equalsIgnoreCase("0")){
+                        Alert alert = new Alert(Alert.AlertType.INFORMATION);
+                        alert.setTitle("添加手机号");
+                        alert.setHeaderText(null);
+                        alert.setContentText(result.getData());
+
+                        alert.showAndWait();
+                    }else{
+                        Alert alert = new Alert(Alert.AlertType.INFORMATION);
+                        alert.setTitle("添加手机号");
+                        alert.setHeaderText(null);
+                        alert.setContentText(result.getMsg());
+
+                        alert.showAndWait();
+                    }
+                } catch (IOException e) {
+                    e.printStackTrace();
+                }
                 try {
                     initData();
                 } catch (IOException e) {
@@ -185,8 +202,26 @@ public class PhoneTableController {
             if (ph.getSelected()) {
                 data.remove(ph);
                 //删除到文件
+                Result<String> result = phoneService.deletePhone(Integer.parseInt(ph.getSeq()));
+                if(result.getCode().equalsIgnoreCase("0")){
+                    Alert alert = new Alert(Alert.AlertType.INFORMATION);
+                    alert.setTitle("删除手机号");
+                    alert.setHeaderText(null);
+                    alert.setContentText(result.getData());
+
+                    alert.showAndWait();
+                }else{
+                    Alert alert = new Alert(Alert.AlertType.INFORMATION);
+                    alert.setTitle("删除手机号");
+                    alert.setHeaderText(null);
+                    alert.setContentText(result.getMsg());
+
+                    alert.showAndWait();
+                }
+
             }
         }
+        initData();
         return true;
     }
     @FXML//编辑
@@ -212,6 +247,8 @@ public class PhoneTableController {
         EditPhoneController editPhoneController = loader.getController();
         editPhoneController.phone.setText(selectedItem.getPhone());
         editPhoneController.status.setValue(selectedItem.getStatus());
+
+
         editPhoneController.seq=selectedItem.getSeq();
         //编辑窗口确认按钮点击事件
         editPhoneController.saveBtn.setOnAction(new EventHandler<ActionEvent>() {
@@ -221,20 +258,32 @@ public class PhoneTableController {
                 Phone newph = editPhoneController.save();
                 for (int i = size - 1; i >= 0; i--) {
                     Phone p = data.get(i);
-//                    if (p.getSelected()) {
-                        //添加到文件
-//                        JSONObject jsonObject = new JSONObject();
-//                        jsonObject.put("indexNum",Integer.parseInt(p.getIndexNum()));
-//                        jsonObject.put("indexName",newIndex.getIndexName());
-//                        jsonObject.put("indexCode",newIndex.getIndexCode());
-//                        jsonObject.put("indexData",newIndex.getIndexData());
-//                        jsonObject.put("indexJudge",newIndex.getIndexJudge());
-//                        jsonObject.put("indexStatus",newIndex.getIndexStatus());
-//                        try {
-//                            System.out.println(indexService.modifyIndex(jsonObject).getMsg());
-//                        } catch (IOException e) {
-//                            e.printStackTrace();
-//                        }
+                    if (p.getSelected()) {
+//                        添加到文件
+                        JSONObject jsonObject = new JSONObject();
+                        jsonObject.put("seq",Integer.parseInt(p.getSeq()));
+                        jsonObject.put("phone",p.getPhone());
+                        jsonObject.put("status",p.getStatus());
+                        try {
+                            Result<String> result = phoneService.modifyPhone(jsonObject);
+                            if(result.getCode().equalsIgnoreCase("0")){
+                                Alert alert = new Alert(Alert.AlertType.INFORMATION);
+                                alert.setTitle("修改手机号");
+                                alert.setHeaderText(null);
+                                alert.setContentText(result.getData());
+
+                                alert.showAndWait();
+                            }else{
+                                Alert alert = new Alert(Alert.AlertType.INFORMATION);
+                                alert.setTitle("修改手机号");
+                                alert.setHeaderText(null);
+                                alert.setContentText(result.getMsg());
+
+                                alert.showAndWait();
+                            }
+                        } catch (IOException e) {
+                            e.printStackTrace();
+                        }
                         try {
                             initData();
                             //修改表格中的值
@@ -242,7 +291,7 @@ public class PhoneTableController {
                         } catch (IOException e) {
                             e.printStackTrace();
                         }
-//                    }
+                    }
                 }
                 //刷新表格
                 phoneTable.refresh();
@@ -272,17 +321,19 @@ public class PhoneTableController {
 
     private void initData() throws IOException {
         data.clear();
-//        Result<List<Index>> result = indexService.queryAllIndex();
-//        if(result.getCode().equalsIgnoreCase("0")){
-//            List<Index> indexList = result.getData();
-//            for(Index index:indexList){
-//                data.add(index);
-//            }
-//        }
+        Result<List<Phone>> result = phoneService.queryAllPhone();
+        if(result.getCode().equalsIgnoreCase("0")){
+            List<Phone> phoneList = result.getData();
+            for(Phone phone:phoneList){
+                if(phone.getStatus().equalsIgnoreCase("yes")){
+                    phone.setStatus("正常");
+                }else if(phone.getStatus().equalsIgnoreCase("no")){
+                    phone.setStatus("停用");
+                }
+                data.add(phone);
+            }
+        }
 
-        data.add(new Phone(false,"1","1","1"));
-        data.add(new Phone(false,"2","1","1"));
-        data.add(new Phone(false,"3","1","1"));
     }
 
 

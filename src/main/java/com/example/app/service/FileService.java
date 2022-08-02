@@ -15,6 +15,8 @@ public class FileService {
     private String indexFilePath;
     @Value("${filePath.dataConfig}")
     private String dataFilePath;
+    @Value("${filePath.phoneConfig}")
+    private String phoneFilePath;
 
     @Autowired
     private DataService dataService;
@@ -32,8 +34,6 @@ public class FileService {
     }
     public void writeJSONArray(JSONArray jsonArray) throws IOException {
         BufferedWriter writer = new BufferedWriter(new OutputStreamWriter(new FileOutputStream(new File(indexFilePath)),"utf-8"));
-//        FileWriter fileWriter = new FileWriter(indexFilePath);
-//        BufferedWriter bw = new BufferedWriter(fileWriter);
         writer.write(jsonArray.toString());
         writer.close();
     }
@@ -53,9 +53,24 @@ public class FileService {
 
     public void writeJSONObject(JSONObject jsonObject) throws IOException{
         BufferedWriter writer = new BufferedWriter(new OutputStreamWriter(new FileOutputStream(new File(dataFilePath)),"utf-8"));
-//        FileWriter fileWriter = new FileWriter(dataFilePath);
-//        BufferedWriter bw = new BufferedWriter(fileWriter);
         writer.write(jsonObject.toString());
+        writer.close();
+    }
+
+    public JSONArray readPhoneJSONArray() throws IOException {
+        //如果文件没有内容，则返回空的JsonArray
+        File file = new File(phoneFilePath);
+        if(file.length() == 0){
+            return new JSONArray();
+        }
+        FileInputStream fileInputStream = new FileInputStream(phoneFilePath);
+        JSONArray jsonArray = JSONArray.parseObject(fileInputStream, JSONArray.class);
+        fileInputStream.close();
+        return jsonArray;
+    }
+    public void writePhoneJSONArray(JSONArray jsonArray) throws IOException {
+        BufferedWriter writer = new BufferedWriter(new OutputStreamWriter(new FileOutputStream(new File(phoneFilePath)),"utf-8"));
+        writer.write(jsonArray.toString());
         writer.close();
     }
 }

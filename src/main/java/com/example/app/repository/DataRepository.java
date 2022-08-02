@@ -36,17 +36,28 @@ public class DataRepository {
                     dataArray.remove(dataObject);
                     dataObject.put("data",data.getString("data"));
                     if(index.getString("indexStatus").equalsIgnoreCase("yes")){
-                        if(data.getString("data") == null || data.getString("data").equalsIgnoreCase("999999")){
+                        if(data.getString("data") == null || data.getString("data").equalsIgnoreCase("999999") ||
+                                data.getString("data").equalsIgnoreCase("")){
                             dataObject.put("data","缺值");
                             dataObject.put("dataStatus","lack");
-                        }else{
+                        }else if(index.getString("indexJudge").equalsIgnoreCase("lack")){
+                            dataObject.put("dataStatus","normal");
+                        }
+                        else{
                             SpelExpressionParser spelExpressionParser = new SpelExpressionParser();
-                            String expression = data.getString("data")+index.getString("indexJudge")+index.getString("indexData");
+                            String expression = "";
+                            if(index.getString("indexJudge").equalsIgnoreCase("[]")){
+                                String[] strs = index.getString("indexData").split(",");
+                                expression = data.getString("data")+">="+strs[0]+" && "+data.getString("data")+"<="+strs[1];
+                            }else{
+                                expression = data.getString("data")+index.getString("indexJudge")+index.getString("indexData");
+                            }
                             if(spelExpressionParser.parseExpression(expression).getValue(Boolean.class)){
                                 dataObject.put("dataStatus","normal");
                             }else{
                                 dataObject.put("dataStatus","abnormal");
                             }
+
                         }
                     }
                     dataArray.add(index.getInteger("indexNum"),dataObject);
