@@ -213,6 +213,7 @@ public class MultiTableController {
                 indexRepository.deleteIndex(Integer.parseInt(s.getIndexNum()));
             }
         }
+        selectNum=0;
         return true;
     }
     @FXML//编辑
@@ -306,9 +307,6 @@ public class MultiTableController {
             }
         }
 
-//        data.add(new Index(false,"1","1","1","1","1","1"));
-//        data.add(new Index(false,"2","1","1","1","1","1"));
-//        data.add(new Index(false,"3","1","1","1","1","1"));
     }
 
 

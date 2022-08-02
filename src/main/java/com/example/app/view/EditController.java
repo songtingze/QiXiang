@@ -60,7 +60,7 @@ public class EditController {
 
         indexStatus.getItems().addAll("正常", "停用");
         indexStatus.setValue("正常");
-        indexJudge.getItems().addAll("大于", "大于等于", "等于", "小于等于", "小于","不等于");
+        indexJudge.getItems().addAll("大于", "大于等于", "等于", "小于等于", "小于","不等于","范围","缺值");
         indexJudge.setValue("大于");
 
     }
@@ -77,6 +77,8 @@ public class EditController {
             case "小于等于":indexJudge = "<=";break;
             case "小于":indexJudge = "<";break;
             case "不等于":indexJudge = "!=";break;
+            case "范围":indexJudge = "[]";break;
+            case "缺值":indexJudge = "lack";break;
         }
         String indexStatus = "";
         switch (this.indexStatus.getValue()){

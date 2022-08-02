@@ -25,13 +25,17 @@ public class FileService {
         if(file.length() == 0){
             return new JSONArray();
         }
-        JSONArray jsonArray = JSONArray.parseObject(new FileInputStream(indexFilePath), JSONArray.class);
+        FileInputStream fileInputStream = new FileInputStream(indexFilePath);
+        JSONArray jsonArray = JSONArray.parseObject(fileInputStream, JSONArray.class);
+        fileInputStream.close();
         return jsonArray;
     }
     public void writeJSONArray(JSONArray jsonArray) throws IOException {
-        BufferedWriter bw = new BufferedWriter(new FileWriter(indexFilePath));
-        bw.write(jsonArray.toString());
-        bw.close();
+        BufferedWriter writer = new BufferedWriter(new OutputStreamWriter(new FileOutputStream(new File(indexFilePath)),"utf-8"));
+//        FileWriter fileWriter = new FileWriter(indexFilePath);
+//        BufferedWriter bw = new BufferedWriter(fileWriter);
+        writer.write(jsonArray.toString());
+        writer.close();
     }
 
     public JSONObject readJSONObject() throws IOException{
@@ -39,16 +43,19 @@ public class FileService {
         File file = new File(dataFilePath);
         if(file.length() == 0){
             dataService.initDataFile();
-            return new JSONObject();
+//            return new JSONObject();
         }
-        JSONObject jsonObject = JSONObject.parseObject(new FileInputStream(dataFilePath), JSONObject.class);
+        FileInputStream fileInputStream = new FileInputStream(dataFilePath);
+        JSONObject jsonObject = JSONObject.parseObject(fileInputStream, JSONObject.class);
+        fileInputStream.close();
         return jsonObject;
     }
 
     public void writeJSONObject(JSONObject jsonObject) throws IOException{
-        BufferedWriter bw = new BufferedWriter(new FileWriter(dataFilePath));
-        bw.write(jsonObject.toString());
-        bw.close();
+        BufferedWriter writer = new BufferedWriter(new OutputStreamWriter(new FileOutputStream(new File(dataFilePath)),"utf-8"));
+//        FileWriter fileWriter = new FileWriter(dataFilePath);
+//        BufferedWriter bw = new BufferedWriter(fileWriter);
+        writer.write(jsonObject.toString());
+        writer.close();
     }
-
 }

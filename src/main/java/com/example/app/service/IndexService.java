@@ -41,6 +41,7 @@ public class IndexService {
         String indexName = jsonObject.getString("indexName");
         String indexCode = jsonObject.getString("indexCode");
         String indexData = jsonObject.getString("indexData");
+        String indexJudge = jsonObject.getString("indexJudge");
         String msg = "";
         JSONArray jsonArray = fileService.readJSONArray();
         for(int i = 0; i< jsonArray.size();i ++){
@@ -62,8 +63,15 @@ public class IndexService {
                 }
             }
         }
+        if(indexJudge.equalsIgnoreCase("[]")){
+            String[] strs = indexData.split(",");
+            if(strs.length != 2 || !isNumeric(strs[0]) || !isNumeric(strs[1])){
+                msg = "请输入正确的范围格式！如2,3";
+                return msg;
+            }
+        }
         if(!isNumeric(indexData)){
-            msg = "该气象指标代码已存在!";
+            msg = "输入的指标临界值是非法数字!";
             return msg;
         }
         msg = "success";
