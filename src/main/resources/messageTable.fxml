@@ -1,0 +1,28 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<?import com.example.app.view.components.*?>
+<?import javafx.scene.control.*?>
+<?import javafx.scene.layout.*?>
+
+<AnchorPane prefHeight="726.4" prefWidth="1167.2" xmlns="http://javafx.com/javafx/11.0.1" xmlns:fx="http://javafx.com/fxml/1" fx:controller="com.example.app.view.MessageTableController">
+    <children>
+        <AnchorPane prefHeight="54.0" prefWidth="1123.0" styleClass="toolbar" stylesheets="@style/table.css">
+            <children>
+                <Button fx:id="deleteBtn" layoutX="14.0" layoutY="9.0" mnemonicParsing="false" onMouseClicked="#delete" prefHeight="36.0" prefWidth="82.0" stylesheets="@style/button.css" text="清空" />
+                <Button fx:id="flashBtn" layoutX="111.0" layoutY="9.0" mnemonicParsing="false" onMouseClicked="#flash" prefHeight="36.0" prefWidth="82.0" stylesheets="@style/button.css" text="刷新" />
+            </children>
+        </AnchorPane>
+        <AnchorPane layoutY="53.0" prefHeight="606.0" prefWidth="1000.0" stylesheets="@style/table.css">
+            <children>
+                <MyTableView fx:id="messageTable" prefHeight="606.0" prefWidth="1123.0" stylesheets="@style/table.css" AnchorPane.bottomAnchor="0.0" AnchorPane.leftAnchor="0.0" AnchorPane.rightAnchor="-123.0" AnchorPane.topAnchor="0.0">
+                    <columns>
+                        <TableColumn fx:id="seq" prefWidth="100" resizable="false" text="序号" />
+                        <TableColumn fx:id="time" prefWidth="100" resizable="false" text="发送时间" />
+                        <TableColumn fx:id="status" prefWidth="200" resizable="false" text="发送状态" />
+                        <TableColumn fx:id="opreation" prefWidth="250" resizable="false" text="发送对象" />
+                    </columns>
+                </MyTableView>
+            </children>
+        </AnchorPane>
+    </children>
+</AnchorPane>

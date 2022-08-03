@@ -38,6 +38,7 @@
                                      <fx:include fx:id="index" source="index.fxml" />
                                      <fx:include fx:id="indicators" source="indicators.fxml" />
                                      <fx:include fx:id="phone" source="phone.fxml" />
+                                     <fx:include fx:id="messages" source="message.fxml" />
                                  </children>
                               </AnchorPane>
                            </children>
