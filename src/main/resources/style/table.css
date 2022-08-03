@@ -45,7 +45,7 @@
 }
 
 #indexTable .table-row-cell:focused {
-    -fx-background-color:rgb(65,105,225);
+    -fx-background-color:#ADD8E6;
 }
 
 
@@ -71,5 +71,63 @@
 }
 
 #phoneTable .table-row-cell:focused {
-    -fx-background-color:rgb(65,105,225);
+    -fx-background-color:#ADD8E6;
 }
+
+#list .table-row-cell{
+    -fx-cell-size: 45px;
+    -fx-alignment: center;
+}
+
+#list{
+    -fx-table-cell-border-color:transparent;
+    -fx-border-color: rgb(200,200,200);
+    -fx-alignment: center;
+}
+
+/*设置每一列内容居中*/
+#list .table-column{
+    -fx-cell-size: 45px;
+    -fx-alignment: center;
+}
+
+#list .table-row-cell:hover {
+    -fx-background-color:rgb(230,235,240);
+}
+
+#list .table-row-cell:focused {
+    -fx-background-color:#ADD8E6;
+    /*-fx-background-color:rgb(276,224,225);*/
+}
+
+
+.opreation{
+    -fx-border-color: transparent;
+    -fx-border-width: 0;
+    -fx-background-radius: 0;
+    -fx-background-color: transparent;
+    -fx-font-family:"Segoe UI", Helvetica, Arial, sans-serif;
+    -fx-font-size: 1em; /* 12 */
+    -fx-text-fill: rgb(65,105,225);
+}
+
+/*.opreation:focused {*/
+/*    -fx-border-color: transparent;*/
+/*    -fx-border-width: 0;*/
+/*    -fx-background-radius: 0;*/
+/*    -fx-background-color: transparent;*/
+/*    -fx-font-family:"Segoe UI", Helvetica, Arial, sans-serif;*/
+/*    -fx-font-size: 1em; !* 12 *!*/
+/*    -fx-text-fill: #808080;*/
+/*}*/
+
+.opreation:pressed {
+    -fx-border-color: transparent;
+    -fx-border-width: 0;
+    -fx-background-radius: 0;
+    -fx-background-color: transparent;
+    -fx-font-family:"Segoe UI", Helvetica, Arial, sans-serif;
+    -fx-font-size: 1em; /* 12 */
+    -fx-text-fill: white;
+}
+

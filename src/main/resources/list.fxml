@@ -1,0 +1,28 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<?import javafx.scene.control.*?>
+<?import javafx.scene.layout.*?>
+
+<AnchorPane fx:id="root" prefHeight="583.0" prefWidth="518.0" style="-fx-background-color:rgb(230,235,240);" xmlns="http://javafx.com/javafx/11.0.1" xmlns:fx="http://javafx.com/fxml/1" fx:controller="com.example.app.view.ListController">
+    <children>
+        <BorderPane prefHeight="244.4" prefWidth="508.0" AnchorPane.bottomAnchor="0.0" AnchorPane.leftAnchor="0.0" AnchorPane.rightAnchor="0.0" AnchorPane.topAnchor="0.0">
+            <center>
+                <AnchorPane prefHeight="193.0" prefWidth="495.0" BorderPane.alignment="CENTER">
+               <children>
+                  <TableView fx:id="list" layoutX="40.0" layoutY="32.0" prefHeight="482.0" prefWidth="426.0" stylesheets="@style/table.css">
+                    <columns>
+                        <TableColumn fx:id="phone" prefWidth="200" resizable="false" text="手机号码" />
+                    </columns>
+                  </TableView>
+               </children></AnchorPane>
+            </center>
+            <bottom>
+                <AnchorPane prefHeight="42.0" prefWidth="505.0" style="-fx-background-color:rgb(240,240,240);" BorderPane.alignment="CENTER">
+                    <children>
+                        <Button fx:id="saveBtn" layoutX="421.0" layoutY="7.0" mnemonicParsing="false" onMouseClicked="#save" prefHeight="30.0" prefWidth="72.0" text="确定 " />
+                    </children>
+                </AnchorPane>
+            </bottom>
+        </BorderPane>
+    </children>
+</AnchorPane>

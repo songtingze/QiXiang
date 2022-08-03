@@ -22,6 +22,8 @@ import org.springframework.stereotype.Component;
 public class SettingController {
 
     @FXML
+    private AnchorPane messages;
+    @FXML
     private AnchorPane index;
     @FXML
     private AnchorPane phone;
@@ -56,6 +58,7 @@ public class SettingController {
 
         phone.setVisible(false);
         indicators.setVisible(false);
+        messages.setVisible(false);
         index.setVisible(true);
 
 
@@ -72,6 +75,9 @@ public class SettingController {
         TreeItem<String> item3 = new TreeItem<String> ("手机推送管理");
         item3.setExpanded(false);
         rootItem.getChildren().add(item3);
+        TreeItem<String> item4 = new TreeItem<String> ("短信发送情况");
+        item4.setExpanded(false);
+        rootItem.getChildren().add(item4);
         toolTree.setRoot(rootItem);
         toolTree.setShowRoot(false);
         toolTree.getSelectionModel().select(0);
@@ -96,14 +102,22 @@ public class SettingController {
                             index.setVisible(true);
                             indicators.setVisible(false);
                             phone.setVisible(false);
+                            messages.setVisible(false);
                         }else if(newItem.getValue().equals("预警指标管理")){
                             index.setVisible(false);
                             phone.setVisible(false);
+                            messages.setVisible(false);
                             indicators.setVisible(true);
                         }else if(newItem.getValue().equals("手机推送管理")){
                             index.setVisible(false);
                             indicators.setVisible(false);
+                            messages.setVisible(false);
                             phone.setVisible(true);
+                        }else{
+                            messages.setVisible(true);
+                            index.setVisible(false);
+                            indicators.setVisible(false);
+                            phone.setVisible(false);
                         }
                     }
                 });
