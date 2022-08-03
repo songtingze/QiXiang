@@ -226,6 +226,7 @@ public class PhoneTableController {
             }
         }
         initData();
+        selectNum=0;
         return true;
     }
     @FXML//编辑
