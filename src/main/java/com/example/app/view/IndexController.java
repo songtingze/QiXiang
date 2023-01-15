@@ -134,6 +134,7 @@ public class IndexController {
             hstatus.getStyleClass().add("dataText");
             gridpane.setHgap(15);
             gridpane.setVgap(15);
+            gridpane.setMaxHeight(20);
         }
 
     }

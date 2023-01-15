@@ -28,6 +28,10 @@ public class SettingController {
     @FXML
     private AnchorPane phone;
     @FXML
+    private AnchorPane user;
+    @FXML
+    private AnchorPane data;
+    @FXML
     private AnchorPane indicators;
     @FXML // ResourceBundle that was given to the FXMLLoader
     private ResourceBundle resources;
@@ -59,7 +63,10 @@ public class SettingController {
         phone.setVisible(false);
         indicators.setVisible(false);
         messages.setVisible(false);
+        user.setVisible(false);
+        data.setVisible(false);
         index.setVisible(true);
+
 
 
 
@@ -78,6 +85,12 @@ public class SettingController {
         TreeItem<String> item4 = new TreeItem<String> ("短信发送情况");
         item4.setExpanded(false);
         rootItem.getChildren().add(item4);
+        TreeItem<String> item5 = new TreeItem<String> ("个人信息管理");
+        item5.setExpanded(false);
+        rootItem.getChildren().add(item5);
+        TreeItem<String> item6 = new TreeItem<String> ("数据获取情况");
+        item6.setExpanded(false);
+        rootItem.getChildren().add(item6);
         toolTree.setRoot(rootItem);
         toolTree.setShowRoot(false);
         toolTree.getSelectionModel().select(0);
@@ -103,21 +116,43 @@ public class SettingController {
                             indicators.setVisible(false);
                             phone.setVisible(false);
                             messages.setVisible(false);
+                            user.setVisible(false);
+                            data.setVisible(false);
                         }else if(newItem.getValue().equals("预警指标管理")){
                             index.setVisible(false);
                             phone.setVisible(false);
                             messages.setVisible(false);
                             indicators.setVisible(true);
+                            user.setVisible(false);
+                            data.setVisible(false);
                         }else if(newItem.getValue().equals("手机推送管理")){
                             index.setVisible(false);
                             indicators.setVisible(false);
                             messages.setVisible(false);
                             phone.setVisible(true);
-                        }else{
+                            user.setVisible(false);
+                            data.setVisible(false);
+                        }else if(newItem.getValue().equals("短信发送情况")){
                             messages.setVisible(true);
                             index.setVisible(false);
                             indicators.setVisible(false);
                             phone.setVisible(false);
+                            user.setVisible(false);
+                            data.setVisible(false);
+                        }else if(newItem.getValue().equals("个人信息管理")){
+                            messages.setVisible(false);
+                            index.setVisible(false);
+                            indicators.setVisible(false);
+                            phone.setVisible(false);
+                            user.setVisible(true);
+                            data.setVisible(false);
+                        }else if(newItem.getValue().equals("数据获取情况")){
+                            messages.setVisible(false);
+                            index.setVisible(false);
+                            indicators.setVisible(false);
+                            phone.setVisible(false);
+                            user.setVisible(false);
+                            data.setVisible(true);
                         }
                     }
                 });

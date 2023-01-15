@@ -28,6 +28,7 @@
     -fx-border-style: solid inside;
     -fx-border-width: 0 2 2 2;
     -fx-hbar-policy: never;
+    /*-fx-max-width: 100px;*/
 }
 .title{
     -fx-font-size: 16px;

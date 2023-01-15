@@ -1,0 +1,32 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<?import com.example.app.view.components.*?>
+<?import javafx.scene.control.*?>
+<?import javafx.scene.layout.*?>
+
+<AnchorPane prefHeight="726.4" prefWidth="1167.2" xmlns="http://javafx.com/javafx/11.0.1" xmlns:fx="http://javafx.com/fxml/1" fx:controller="com.example.app.view.UserTableController">
+    <children>
+        <AnchorPane prefHeight="54.0" prefWidth="1123.0" styleClass="toolbar" stylesheets="@style/table.css">
+            <children>
+                <Button fx:id="addBtn" layoutX="14.0" layoutY="9.0" mnemonicParsing="false" onMouseClicked="#add" prefHeight="36.0" prefWidth="82.0" stylesheets="@style/button.css" text="添加" />
+                <Button fx:id="deleteBtn" layoutX="111.0" layoutY="9.0" mnemonicParsing="false" onMouseClicked="#delete" prefHeight="36.0" prefWidth="82.0" stylesheets="@style/button.css" text="删除" />
+                <Button fx:id="editBtn" layoutX="206.0" layoutY="9.0" mnemonicParsing="false" onMouseClicked="#edit" prefHeight="36.0" prefWidth="82.0" stylesheets="@style/button.css" text="修改" />
+                <Button fx:id="flashBtn" layoutX="299.0" layoutY="9.0" mnemonicParsing="false" onMouseClicked="#flash" prefHeight="36.0" prefWidth="82.0" stylesheets="@style/button.css" text="刷新" />
+            </children>
+        </AnchorPane>
+        <AnchorPane layoutY="53.0" prefHeight="606.0" prefWidth="1000.0" stylesheets="@style/table.css">
+            <children>
+                <MyTableView fx:id="userTable" prefHeight="606.0" prefWidth="1123.0" stylesheets="@style/table.css" AnchorPane.bottomAnchor="0.0" AnchorPane.leftAnchor="0.0" AnchorPane.rightAnchor="-123.0" AnchorPane.topAnchor="0.0">
+                    <columns>
+                        <TableColumn fx:id="mColumnSelect" prefWidth="80" resizable="false" text="" />
+                        <TableColumn fx:id="seq" prefWidth="100" resizable="false" text="序号" />
+                        <TableColumn fx:id="stateAddress" prefWidth="100" resizable="false" text="站点" />
+                        <TableColumn fx:id="stateName" prefWidth="250" resizable="false" text="站点名" />
+                        <TableColumn fx:id="userName" prefWidth="200" resizable="false" text="登录名" />
+                        <TableColumn fx:id="userPsw" prefWidth="250" resizable="false" text="登录密码" />
+                    </columns>
+                </MyTableView>
+            </children>
+        </AnchorPane>
+    </children>
+</AnchorPane>

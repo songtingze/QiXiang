@@ -44,9 +44,9 @@
                     </font>
                 </Label>
                 <Separator layoutX="123.0" layoutY="24.0" prefHeight="19.0" prefWidth="1026.0" />
-            <Label fx:id="time" layoutX="861.0" layoutY="34.0" prefHeight="34.0" prefWidth="291.0">
+            <Label fx:id="time" layoutX="821.0" layoutY="34.0" prefHeight="34.0" prefWidth="310.0">
                <font>
-                  <Font size="16.0" />
+                  <Font size="18.0" />
                </font></Label>
             </children>
         </AnchorPane>
