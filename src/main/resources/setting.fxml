@@ -31,6 +31,10 @@
                                           <Font name="System Bold" size="18.0" />
                                        </font>
                                     </Label>
+                                     <Label layoutX="905.0" layoutY="10.0" text="一切代码参考于中国地面压温湿风资料">
+                                         <font>
+                                             <Font size="14.0" />
+                                         </font></Label>
                                  </children>
                               </AnchorPane>
                               <AnchorPane layoutY="39.0" prefHeight="726.0" prefWidth="1167.0">
@@ -41,6 +45,10 @@
                                      <fx:include fx:id="messages" source="message.fxml" />
                                      <fx:include fx:id="user" source="user.fxml" />
                                      <fx:include fx:id="data" source="data.fxml" />
+                                     <Label layoutX="911.0" layoutY="-10.0" text="资料代码：SURF_CHN_MAIN_MIN">
+                                         <font>
+                                             <Font size="14.0" />
+                                         </font></Label>
                                  </children>
                               </AnchorPane>
                            </children>
