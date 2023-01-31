@@ -1,7 +1,10 @@
 package com.example.app.view;
 
+import com.example.app.common.Result;
 import com.example.app.entity.Message;
 import com.example.app.entity.Phone;
+import com.example.app.repository.DataRepository;
+import com.example.app.service.PhoneService;
 import com.example.app.view.components.MyTableView;
 import javafx.collections.FXCollections;
 import javafx.collections.ObservableList;
@@ -11,6 +14,7 @@ import javafx.fxml.FXML;
 import javafx.fxml.FXMLLoader;
 import javafx.scene.Parent;
 import javafx.scene.Scene;
+import javafx.scene.control.Alert;
 import javafx.scene.control.Button;
 import javafx.scene.control.TableCell;
 import javafx.scene.control.TableColumn;
@@ -18,12 +22,14 @@ import javafx.scene.control.cell.PropertyValueFactory;
 import javafx.scene.input.MouseEvent;
 import javafx.stage.Modality;
 import javafx.stage.Stage;
+import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Component;
 
 import java.io.IOException;
 import java.net.URL;
 import java.util.ArrayList;
 import java.util.Arrays;
+import java.util.List;
 import java.util.ResourceBundle;
 @Component
 public class MessageTableController {
@@ -51,6 +57,9 @@ public class MessageTableController {
 
     @FXML // URL location of the FXML file that was given to the FXMLLoader
     private URL location;
+
+    @Autowired
+    private PhoneService phoneService;
 
     private ObservableList<Message> data =
             FXCollections.observableArrayList();
@@ -159,6 +168,13 @@ public class MessageTableController {
     @FXML//清除
     public boolean delete(MouseEvent event) throws IOException {
         data.clear();
+        Result<String> result = phoneService.deleteWarning();
+        Alert alert = new Alert(Alert.AlertType.INFORMATION);
+        alert.setTitle("清空信息");
+        alert.setHeaderText(null);
+        alert.setContentText(result.getData());
+
+        alert.showAndWait();
         return true;
     }
     @FXML//刷新
@@ -170,14 +186,18 @@ public class MessageTableController {
 
     private void initData() throws IOException {
         data.clear();
-        Phone phone1 = new Phone(true,"1","123456","789","65");
-        Phone phone2 = new Phone(true,"2","12355556","789","65");
-        Phone phone3 = new Phone(true,"3","1234777556","789","65");
-        Phone phone4 = new Phone(true,"4","123466656","789","65");
-        data.add(new Message("1","2022年08月03日 01:36:10","一次提交信息不能超过600个手机号码",
-                new ArrayList<Phone>(Arrays.asList(phone1,phone2))));
-        data.add(new Message("2","2","3",new ArrayList<Phone>(Arrays.asList(phone3))));
-        data.add(new Message("3","2","3",new ArrayList<Phone>(Arrays.asList(phone4))));
+        List<Message> messageList = phoneService.getMessageList();
+        for(int i = 0;i < messageList.size();i ++){
+            data.add(messageList.get(i));
+        }
+//        Phone phone1 = new Phone(true,"1","123456","789","65");
+//        Phone phone2 = new Phone(true,"2","12355556","789","65");
+//        Phone phone3 = new Phone(true,"3","1234777556","789","65");
+//        Phone phone4 = new Phone(true,"4","123466656","789","65");
+//        data.add(new Message("1","2022年08月03日 01:36:10","一次提交信息不能超过600个手机号码",
+//                new ArrayList<Phone>(Arrays.asList(phone1,phone2))));
+//        data.add(new Message("2","2","3",new ArrayList<Phone>(Arrays.asList(phone3))));
+//        data.add(new Message("3","2","3",new ArrayList<Phone>(Arrays.asList(phone4))));
 //        Result<List<Phone>> result = phoneService.queryAllPhone();
 //        if(result.getCode().equalsIgnoreCase("0")){
 //            List<Phone> phoneList = result.getData();

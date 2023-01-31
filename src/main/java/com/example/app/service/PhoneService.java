@@ -4,6 +4,7 @@ import com.alibaba.fastjson.JSONArray;
 import com.alibaba.fastjson.JSONObject;
 import com.example.app.common.Result;
 import com.example.app.entity.Index;
+import com.example.app.entity.Message;
 import com.example.app.entity.Phone;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Service;
@@ -166,5 +167,42 @@ public class PhoneService {
             return Result.success(phones);
         }
     }
+
+    public JSONObject getPhoneByPhone(String phone) throws IOException {
+        JSONArray jsonArray = fileService.readPhoneJSONArray();
+        for(int i = 0;i < jsonArray.size();i ++){
+            JSONObject jsonObject = jsonArray.getJSONObject(i);
+            if(jsonObject.getString("phone").equalsIgnoreCase(phone)){
+
+                return jsonObject;
+            }
+        }
+        return new JSONObject();
+    }
+
+    public List<Message> getMessageList() throws IOException {
+        List<String> list = fileService.readWarningTxt();
+        List<Message> messageList = new ArrayList<>();
+        for (int i = 0; i < list.size();i ++){
+            String[] line = list.get(i).split("-");
+            String[] phones = line[1].split(",");
+            ArrayList<Phone> phoneList = new ArrayList<>();
+            for(int j = 0 ;j < phones.length;j ++){
+                JSONObject jsonObject = getPhoneByPhone(phones[j]);
+                if(jsonObject != null){
+                    phoneList.add(new Phone(true,jsonObject.getString("seq"),jsonObject.getString("phone"),
+                            jsonObject.getString("status"),jsonObject.getString("remark")));
+                }
+
+            }
+            messageList.add(new Message(i+"",line[0],line[3],phoneList));
+        }
+        return messageList;
+    }
+
+    public Result<String> deleteWarning() throws IOException {
+        return Result.success(fileService.deleteWarningTxt());
+    }
+
 
 }

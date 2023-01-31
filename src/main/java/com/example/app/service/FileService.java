@@ -7,6 +7,8 @@ import org.springframework.beans.factory.annotation.Value;
 import org.springframework.stereotype.Service;
 
 import java.io.*;
+import java.util.ArrayList;
+import java.util.List;
 
 @Service
 public class FileService {
@@ -79,5 +81,27 @@ public class FileService {
         BufferedWriter writer = new BufferedWriter(new OutputStreamWriter(new FileOutputStream(new File(warningFilePath),true),"utf-8"));
         writer.write(warningInfo);
         writer.close();
+    }
+    public List<String> readWarningTxt() throws IOException {
+        File file = new File(warningFilePath);
+        InputStreamReader input = new InputStreamReader(new FileInputStream(file), "utf-8");
+        BufferedReader bufferedReader = new BufferedReader(input);
+        List<String> list = new ArrayList<>();
+        String line = null;
+        line = bufferedReader.readLine();
+
+        while (line != null) {
+            list.add(line);
+//            System.out.println(line);
+            line = bufferedReader.readLine();
+        }
+        return list;
+    }
+
+    public String deleteWarningTxt() throws IOException {
+        BufferedWriter writer = new BufferedWriter(new OutputStreamWriter(new FileOutputStream(new File(warningFilePath)),"utf-8"));
+        writer.write("");
+        writer.close();
+        return "已清空";
     }
 }

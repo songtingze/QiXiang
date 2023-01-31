@@ -139,34 +139,34 @@ public class IndexController {
 
     }
 
-    @Scheduled(cron = "*/10 * * * * ?")   //定时器定义，设置执行时间
-    private void process() throws IOException {
-        System.out.println("定时器1执行"+times++);
-        SimpleDateFormat format = new SimpleDateFormat("HH:mm:ss");
-        System.out.println(format.format(new Date()));
-        StaElemSearchAPI_CLIB_callAPI_to_array2D staElemSearchAPI_clib_callAPI_to_array2D = new StaElemSearchAPI_CLIB_callAPI_to_array2D();
-        try {
-//            System.out.println(indexService.queryAllIndexCode());
-            if(!indexService.queryAllIndexCode().equalsIgnoreCase("")){
-                JSONObject jsonObject = staElemSearchAPI_clib_callAPI_to_array2D.test(indexService.queryAllIndexCode());
-                dataRepository.getData(jsonObject);
-            }
-        } catch (IOException e) {
-            e.printStackTrace();
-        }
-        Platform.runLater(new Runnable() {
-            @Override
-            public void run() {
-                //更新JavaFX的主线程的代码放在此处
-                try {
-                    initialize();
-                } catch (IOException e) {
-                    e.printStackTrace();
-                }
-            }
-        });
-
-    }
+//    @Scheduled(cron = "*/10 * * * * ?")   //定时器定义，设置执行时间
+//    private void process() throws IOException {
+//        System.out.println("定时器1执行"+times++);
+//        SimpleDateFormat format = new SimpleDateFormat("HH:mm:ss");
+//        System.out.println(format.format(new Date()));
+//        StaElemSearchAPI_CLIB_callAPI_to_array2D staElemSearchAPI_clib_callAPI_to_array2D = new StaElemSearchAPI_CLIB_callAPI_to_array2D();
+//        try {
+////            System.out.println(indexService.queryAllIndexCode());
+//            if(!indexService.queryAllIndexCode().equalsIgnoreCase("")){
+//                JSONObject jsonObject = staElemSearchAPI_clib_callAPI_to_array2D.test(indexService.queryAllIndexCode());
+//                dataRepository.getData(jsonObject);
+//            }
+//        } catch (IOException e) {
+//            e.printStackTrace();
+//        }
+//        Platform.runLater(new Runnable() {
+//            @Override
+//            public void run() {
+//                //更新JavaFX的主线程的代码放在此处
+//                try {
+//                    initialize();
+//                } catch (IOException e) {
+//                    e.printStackTrace();
+//                }
+//            }
+//        });
+//
+//    }
 //    @Scheduled(cron = "*/10 * * * * ?")   //定时器定义，设置执行时间
 //    private void process() throws IOException {
 //        Result<String> phoneResult = phoneService.getPhones();
