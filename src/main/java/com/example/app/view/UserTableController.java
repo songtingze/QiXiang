@@ -51,10 +51,6 @@ public class UserTableController {
 
     @FXML // This method is called by the FXMLLoader when initialization is complete
     void initialize() throws IOException {
-        stateAddress.setEditable(false);
-        stateName.setEditable(false);
-        userName.setEditable(false);
-        userPsw.setEditable(false);
         initData();
     }
     @FXML//保存
@@ -64,10 +60,6 @@ public class UserTableController {
         String userNameText =  userName.getText();
         String userPswText =  userPsw.getText();
 
-        stateAddress.setEditable(false);
-        stateName.setEditable(false);
-        userName.setEditable(false);
-        userPsw.setEditable(false);
 
 
         Alert alert = new Alert(Alert.AlertType.INFORMATION);
@@ -131,13 +123,6 @@ public class UserTableController {
 //        stage.initModality(Modality.APPLICATION_MODAL);
 //        stage.show();
 
-    }
-
-    public void edit(MouseEvent mouseEvent) {
-        stateAddress.setEditable(true);
-        stateName.setEditable(true);
-        userName.setEditable(true);
-        userPsw.setEditable(true);
     }
 
 
