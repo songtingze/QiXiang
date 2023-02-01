@@ -19,7 +19,8 @@
                         <TableColumn fx:id="seq" prefWidth="100" resizable="false" text="序号" />
                         <TableColumn fx:id="time" prefWidth="100" resizable="false" text="获取时间" />
                         <TableColumn fx:id="status" prefWidth="200" resizable="false" text="获取状态" />
-                        <TableColumn fx:id="opreation" prefWidth="250" resizable="false" text="获取对象" />
+                        <TableColumn fx:id="info" prefWidth="200" resizable="false" text="对应资料" />
+                        <TableColumn fx:id="opreation" prefWidth="250" resizable="false" text="获取详情" />
                     </columns>
                 </MyTableView>
             </children>

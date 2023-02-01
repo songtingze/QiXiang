@@ -86,8 +86,8 @@ public class IndexController {
         hBox3.getChildren().addAll(dataStatus1);
         hBox3.getStyleClass().add("title");
         titlepane.add(hBox3, 2, 0, 1, 1);
-        titlepane.setHgap(15);
-        titlepane.setVgap(15);
+        titlepane.setHgap(5);
+        titlepane.setVgap(10);
 
         JSONObject jsonObject = dataService.getDataJSONObject().getData();
         time.setText("当前时间:"+jsonObject.getJSONObject("dataTime").getString("time"));
@@ -132,8 +132,8 @@ public class IndexController {
             hindexname.getStyleClass().add("dataText");
             hdatas.getStyleClass().add("dataText");
             hstatus.getStyleClass().add("dataText");
-            gridpane.setHgap(15);
-            gridpane.setVgap(15);
+            gridpane.setHgap(2);
+            gridpane.setVgap(20);
             gridpane.setMaxHeight(20);
         }
 

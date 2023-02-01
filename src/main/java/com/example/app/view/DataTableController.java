@@ -43,6 +43,9 @@ public class DataTableController {
     @FXML // fx:id="status"
     private TableColumn<Message,String> status; // Value injected by FXMLLoader
 
+    @FXML
+    private TableColumn<Message,String> info; // Value injected by FXMLLoader
+
     @FXML // fx:id="phoneTable"
     private MyTableView messageTable; // Value injected by FXMLLoader
 
@@ -69,9 +72,10 @@ public class DataTableController {
 
         //表格宽度
         seq.prefWidthProperty().bind(messageTable.widthProperty().multiply(0.05));
-        time.prefWidthProperty().bind(messageTable.widthProperty().multiply(0.3));
-        status.prefWidthProperty().bind(messageTable.widthProperty().multiply(0.35));
-        opreation.prefWidthProperty().bind(messageTable.widthProperty().multiply(0.3));
+        time.prefWidthProperty().bind(messageTable.widthProperty().multiply(0.15));
+        status.prefWidthProperty().bind(messageTable.widthProperty().multiply(0.2));
+        opreation.prefWidthProperty().bind(messageTable.widthProperty().multiply(0.2));
+        info.prefWidthProperty().bind(messageTable.widthProperty().multiply(0.4));
 
         initData();
 
@@ -80,6 +84,7 @@ public class DataTableController {
         time.setCellValueFactory(new PropertyValueFactory<>("time"));
         status.setCellValueFactory(new PropertyValueFactory<>("status"));
         opreation.setCellValueFactory(new PropertyValueFactory<>("opreation"));
+        info.setCellValueFactory(new PropertyValueFactory<>("info"));
 
         opreation.setCellFactory((col)->{
 
@@ -98,7 +103,7 @@ public class DataTableController {
                                 System.out.println(selectedItem);
 
                                 Stage stage = new Stage();
-                                FXMLLoader loader = new FXMLLoader(getClass().getResource("/list.fxml"));
+                                FXMLLoader loader = new FXMLLoader(getClass().getResource("/text.fxml"));
                                 Parent parent = null;
                                 try {
                                     parent = loader.load();
@@ -106,24 +111,25 @@ public class DataTableController {
                                     e.printStackTrace();
                                 }
                                 //初始化编辑窗口
-                                ListController listController = loader.getController();
-                                int num = selectedItem.getPhone().size();
-                                ObservableList<Phone> phonelist =
-                                        FXCollections.observableArrayList();
-                                for(int i=0 ; i<num ;i++){
-                                    System.out.println(selectedItem.getPhone().get(i));
-                                    phonelist.add(selectedItem.getPhone().get(i));
-                                }
-
-                                listController.list.setItems(phonelist);
-                                listController.list.setEditable(true);
+                                TextController textController = loader.getController();
+                                textController.info.setText("测试测试测试测试测试测试测试测试测试测试测试测试测试测试测试");
+//                                int num = selectedItem.getPhone().size();
+//                                ObservableList<Phone> phonelist =
+//                                        FXCollections.observableArrayList();
+//                                for(int i=0 ; i<num ;i++){
+//                                    System.out.println(selectedItem.getPhone().get(i));
+//                                    phonelist.add(selectedItem.getPhone().get(i));
+//                                }
+//
+//                                listController.list.setItems(phonelist);
+//                                listController.list.setEditable(true);
 
                                 //编辑窗口确认按钮点击事件
-                                listController.saveBtn.setOnAction(new EventHandler<ActionEvent>() {
+                                textController.saveBtn.setOnAction(new EventHandler<ActionEvent>() {
                                     @Override
                                     public void handle(ActionEvent event) {
                                         //关闭子窗口
-                                        Scene scene = listController.root.getScene();
+                                        Scene scene = textController.root.getScene();
                                         Stage window = (Stage) scene.getWindow();
                                         window.close();
                                     }
