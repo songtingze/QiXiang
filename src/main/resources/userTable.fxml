@@ -49,7 +49,8 @@
         </AnchorPane>
       <AnchorPane layoutY="591.0" prefHeight="54.0" prefWidth="1123.0" styleClass="toolbar" stylesheets="@style/table.css">
          <children>
-            <Button fx:id="saveBtn" layoutX="53.0" layoutY="9.0" mnemonicParsing="false" onMouseClicked="#save" prefHeight="36.0" prefWidth="82.0" stylesheets="@style/button.css" text="保存" />
+            <Button fx:id="editBtn" layoutX="53.0" layoutY="9.0" mnemonicParsing="false" onMouseClicked="#edit" prefHeight="36.0" prefWidth="82.0" stylesheets="@style/button.css" text="编辑" />
+            <Button fx:id="saveBtn" layoutX="154.0" layoutY="9.0" mnemonicParsing="false" onMouseClicked="#save" prefHeight="36.0" prefWidth="82.0" stylesheets="@style/button.css" text="保存" />
          </children>
       </AnchorPane>
     </children>

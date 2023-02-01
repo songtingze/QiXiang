@@ -72,10 +72,10 @@ public class DataTableController {
 
         //表格宽度
         seq.prefWidthProperty().bind(messageTable.widthProperty().multiply(0.05));
-        time.prefWidthProperty().bind(messageTable.widthProperty().multiply(0.15));
-        status.prefWidthProperty().bind(messageTable.widthProperty().multiply(0.2));
-        opreation.prefWidthProperty().bind(messageTable.widthProperty().multiply(0.2));
-        info.prefWidthProperty().bind(messageTable.widthProperty().multiply(0.4));
+        time.prefWidthProperty().bind(messageTable.widthProperty().multiply(0.25));
+        status.prefWidthProperty().bind(messageTable.widthProperty().multiply(0.25));
+        opreation.prefWidthProperty().bind(messageTable.widthProperty().multiply(0.1));
+        info.prefWidthProperty().bind(messageTable.widthProperty().multiply(0.35));
 
         initData();
 
