@@ -9,7 +9,7 @@
 <AnchorPane prefHeight="726.4" prefWidth="1167.2" xmlns="http://javafx.com/javafx/8" xmlns:fx="http://javafx.com/fxml/1" fx:controller="com.example.app.view.UserTableController">
     <children>
         <AnchorPane prefHeight="54.0" prefWidth="1123.0" styleClass="toolbar" stylesheets="@style/table.css" />
-        <AnchorPane layoutY="53.0" prefHeight="538.0" prefWidth="1000.0" stylesheets="@style/table.css">
+        <AnchorPane id="userInfo" layoutY="53.0" prefHeight="538.0" prefWidth="1123.0" stylesheets="@style/table.css">
          <children>
             <GridPane layoutX="33.0" layoutY="17.0" prefHeight="506.0" prefWidth="474.0">
               <columnConstraints>
