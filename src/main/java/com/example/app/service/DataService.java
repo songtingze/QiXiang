@@ -15,6 +15,7 @@ public class DataService {
     @Autowired
     private FileService fileService;
 
+    //数据初始化
     public Result<String> initDataFile() throws IOException {
         JSONObject jsonObject = new JSONObject();
         JSONObject dataTime = new JSONObject();

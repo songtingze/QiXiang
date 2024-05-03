@@ -120,12 +120,24 @@ public class IndexService {
         String indexCodes = "";
         for (int i = 0;i < jsonArray.size();i ++){
             JSONObject jsonObject = jsonArray.getJSONObject(i);
-            indexCodes += jsonObject.getString("indexCode");
-            if(i != jsonArray.size()-1){
-                indexCodes += ",";
+            if(!jsonObject.getString("indexCode").equalsIgnoreCase("VIS_HOR_1MI")){
+                indexCodes += jsonObject.getString("indexCode");
+                if(i != jsonArray.size()-1){
+                    indexCodes += ",";
+                }
             }
         }
         return indexCodes;
+    }
+    public Boolean queryIndex(String indexCode) throws IOException {
+        JSONArray jsonArray = fileService.readJSONArray();
+        for (int i = 0;i < jsonArray.size();i ++){
+            JSONObject jsonObject = jsonArray.getJSONObject(i);
+            if(jsonObject.getString("indexCode").equalsIgnoreCase(indexCode)){
+                return true;
+            }
+        }
+        return false;
     }
 
     //根据指标号码查询指标

@@ -266,10 +266,11 @@ public class PhoneTableController {
                     if (p.getSelected()) {
 //                        添加到文件
                         JSONObject jsonObject = new JSONObject();
-                        jsonObject.put("seq",Integer.parseInt(p.getSeq()));
-                        jsonObject.put("phone",p.getPhone());
-                        jsonObject.put("status",p.getStatus());
-                        jsonObject.put("remark",p.getRemark());
+                        jsonObject.put("seq",Integer.parseInt(newph.getSeq()));
+                        jsonObject.put("phone",newph.getPhone());
+                        jsonObject.put("status",newph.getStatus());
+                        jsonObject.put("remark",newph.getRemark());
+//                        System.out.println("status:"+p.getStatus());
                         try {
                             Result<String> result = phoneService.modifyPhone(jsonObject);
                             if(result.getCode().equalsIgnoreCase("0")){

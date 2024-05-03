@@ -21,6 +21,10 @@ public class FileService {
     private String phoneFilePath;
     @Value("${filePath.warningConfig}")
     private String warningFilePath;
+    @Value("${filePath.userConfig}")
+    private String userInfoFilePath;
+    @Value("${filePath.searchConfig}")
+    private String searchInfoFilePath;
 
     @Autowired
     private DataService dataService;
@@ -103,5 +107,52 @@ public class FileService {
         writer.write("");
         writer.close();
         return "已清空";
+    }
+
+    public JSONObject readUserJSONObject() throws IOException{
+        //如果文件没有内容，则返回空的JsonArray
+        File file = new File(userInfoFilePath);
+        if(file.length() == 0){
+            dataService.initDataFile();
+//            return new JSONObject();
+        }
+        FileInputStream fileInputStream = new FileInputStream(userInfoFilePath);
+        JSONObject jsonObject = JSONObject.parseObject(fileInputStream, JSONObject.class);
+        fileInputStream.close();
+        return jsonObject;
+    }
+
+    public void writeUserJSONObject(JSONObject jsonObject) throws IOException{
+        BufferedWriter writer = new BufferedWriter(new OutputStreamWriter(new FileOutputStream(new File(userInfoFilePath)),"utf-8"));
+        writer.write(jsonObject.toString());
+        writer.close();
+    }
+
+    public List<String> readSearchInfoTxt() throws IOException {
+        File file = new File(searchInfoFilePath);
+        InputStreamReader input = new InputStreamReader(new FileInputStream(file), "utf-8");
+        BufferedReader bufferedReader = new BufferedReader(input);
+        List<String> list = new ArrayList<>();
+        String line = null;
+        line = bufferedReader.readLine();
+
+        while (line != null) {
+            list.add(line);
+//            System.out.println(line);
+            line = bufferedReader.readLine();
+        }
+        return list;
+    }
+
+    public void writeSearchInfoTxt(String searchInfo) throws IOException {
+        BufferedWriter writer = new BufferedWriter(new OutputStreamWriter(new FileOutputStream(new File(searchInfoFilePath),true),"utf-8"));
+        writer.write(searchInfo);
+        writer.close();
+    }
+
+    public void deleteSearchInfoTxt() throws IOException {
+        BufferedWriter writer = new BufferedWriter(new OutputStreamWriter(new FileOutputStream(new File(searchInfoFilePath)),"utf-8"));
+        writer.write("");
+        writer.close();
     }
 }

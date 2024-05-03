@@ -14,12 +14,12 @@
         </AnchorPane>
         <AnchorPane layoutY="53.0" prefHeight="606.0" prefWidth="1000.0" stylesheets="@style/table.css">
             <children>
-                <MyTableView fx:id="messageTable" prefHeight="606.0" prefWidth="1123.0" stylesheets="@style/table.css" AnchorPane.bottomAnchor="0.0" AnchorPane.leftAnchor="0.0" AnchorPane.rightAnchor="-123.0" AnchorPane.topAnchor="0.0">
+                <MyTableView fx:id="dataTable" prefHeight="606.0" prefWidth="1123.0" stylesheets="@style/table.css" AnchorPane.bottomAnchor="0.0" AnchorPane.leftAnchor="0.0" AnchorPane.rightAnchor="-123.0" AnchorPane.topAnchor="0.0">
                     <columns>
                         <TableColumn fx:id="seq" prefWidth="100" resizable="false" text="序号" />
                         <TableColumn fx:id="time" prefWidth="100" resizable="false" text="获取时间" />
                         <TableColumn fx:id="status" prefWidth="200" resizable="false" text="获取状态" />
-                        <TableColumn fx:id="info" prefWidth="200" resizable="false" text="对应资料" />
+                        <TableColumn fx:id="library" prefWidth="200" resizable="false" text="对应资料" />
                         <TableColumn fx:id="opreation" prefWidth="250" resizable="false" text="获取详情" />
                     </columns>
                 </MyTableView>

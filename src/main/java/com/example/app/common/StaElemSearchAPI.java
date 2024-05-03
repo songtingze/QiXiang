@@ -1,16 +1,19 @@
 package com.example.app.common;
 
+import java.io.*;
 import java.util.HashMap;
-import cma.cimiss.RetArray2D;
-import cma.cimiss.client.DataQueryClient;
+//import cma.cimiss.RetArray2D;
+//import cma.cimiss.client.DataQueryClient;
+import cma.music.RetArray2D;
+import cma.music.client.DataQueryClient;
 import com.alibaba.fastjson.JSONArray;
 import com.alibaba.fastjson.JSONObject;
-import com.example.app.demo.ClibUtil;
 
+//请求数据，并根据我们需要的指标进行筛选，并返回
 /*
  * 客户端调取，站点资料检索，返回RetArray2D对象
  */
-public class StaElemSearchAPI_CLIB_callAPI_to_array2D {
+public class StaElemSearchAPI {
     /*
      * main方法，程序入口
      * 如：按时间检索地面数据要素 getSurfEleByTime
@@ -18,25 +21,24 @@ public class StaElemSearchAPI_CLIB_callAPI_to_array2D {
 //    public static void main(String[] args){
 ////        test();
 //    }
-    public JSONObject test(String elements) {
+    public JSONObject test(String elements,String stateAddress,String userName,String userPsw) throws IOException {
 
         /* 1. 定义client对象 */
-        DataQueryClient client = new DataQueryClient() ;
-
+        DataQueryClient client = new DataQueryClient();
         /* 2. 调用方法的参数定义，并赋值 */
         /* 2.1 用户名&密码 */
-        String userId = "BEJN_DZQX_QXT" ;
-        String pwd = "123456" ;
+        String userId = userName;
+        String pwd = userPsw;
         /* 2.2  接口ID */
         String interfaceId = "getSurfEleByTimeAndStaID" ;
         /* 2.3  接口参数，多个参数间无顺序 */
         HashMap<String, String> params = new HashMap<String, String>();
         //必选参数
         params.put("dataCode", "SURF_CHN_MAIN_MIN") ; //资料代码
-        params.put("elements", elements) ;
+        params.put("elements", elements);
         //检索要素：站号、站名、小时降水、气压、相对湿度、能见度、2分钟平均风速、2分钟风向
         params.put("times", new Base().getTimes()) ; //检索时间
-        params.put("staIds","54718"); //站台号
+        params.put("staIds",stateAddress); //站台号
 //        params.put("minSeparate","1");
         //可选参数
         params.put("orderby", "Station_ID_C:ASC") ; //排序：按照站号从小到大
@@ -52,7 +54,6 @@ public class StaElemSearchAPI_CLIB_callAPI_to_array2D {
             client.initResources() ;
             //调用接口
             int rst = client.callAPI_to_array2D(userId, pwd, interfaceId, params, retArray2D) ;
-
 //            //输出结果
 //            if(rst == 0) { //正常返回
 //                ClibUtil clibUtil = new ClibUtil();
@@ -76,7 +77,6 @@ public class StaElemSearchAPI_CLIB_callAPI_to_array2D {
                 }
                 jsonObject.put("data",jsonArray);
             }
-            System.out.println(jsonObject.toJSONString());
             return jsonObject;
 
         } catch (Exception e) {
@@ -88,5 +88,6 @@ public class StaElemSearchAPI_CLIB_callAPI_to_array2D {
         }
         return jsonObject;
     }
+
 
 }

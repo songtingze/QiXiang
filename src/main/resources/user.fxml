@@ -14,7 +14,7 @@
                         <fx:include fx:id="userTable" source="userTable.fxml" />
                     </children>
                 </AnchorPane>
-                <Label layoutX="21.0" layoutY="23.0" text="手机推送管理">
+                <Label layoutX="21.0" layoutY="23.0" text="信息管理">
                     <font>
                         <Font size="16.0" />
                     </font>

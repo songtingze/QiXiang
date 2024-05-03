@@ -57,6 +57,7 @@ public class EditPhoneController {
         }else if(status.equalsIgnoreCase("停用")){
             status = "no";
         }
+        System.out.println("status:"+status);
         Phone ph = new Phone(false,seq,phone,status,remark);
         return ph;
     }

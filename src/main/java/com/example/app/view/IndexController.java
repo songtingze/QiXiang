@@ -2,17 +2,11 @@ package com.example.app.view;
 
 import com.alibaba.fastjson.JSONArray;
 import com.alibaba.fastjson.JSONObject;
-import com.example.app.common.Result;
-import com.example.app.common.SendMsg;
-import com.example.app.common.StaElemSearchAPI_CLIB_callAPI_to_array2D;
+import com.example.app.common.*;
 import com.example.app.repository.DataRepository;
-import com.example.app.service.DataService;
-import com.example.app.service.FileService;
-import com.example.app.service.IndexService;
-import com.example.app.service.PhoneService;
+import com.example.app.service.*;
 import javafx.application.Platform;
 import javafx.fxml.FXML;
-import javafx.scene.control.Alert;
 import javafx.scene.control.Label;
 import javafx.scene.control.ScrollPane;
 import javafx.scene.image.ImageView;
@@ -56,6 +50,8 @@ public class IndexController {
     private PhoneService phoneService;
     @Autowired
     private FileService fileService;
+    @Autowired
+    private UserService userService;
 
     @Autowired
     private DataRepository dataRepository;
@@ -139,55 +135,67 @@ public class IndexController {
 
     }
 
-//    @Scheduled(cron = "*/10 * * * * ?")   //定时器定义，设置执行时间
-//    private void process() throws IOException {
-//        System.out.println("定时器1执行"+times++);
-//        SimpleDateFormat format = new SimpleDateFormat("HH:mm:ss");
-//        System.out.println(format.format(new Date()));
-//        StaElemSearchAPI_CLIB_callAPI_to_array2D staElemSearchAPI_clib_callAPI_to_array2D = new StaElemSearchAPI_CLIB_callAPI_to_array2D();
-//        try {
-////            System.out.println(indexService.queryAllIndexCode());
-//            if(!indexService.queryAllIndexCode().equalsIgnoreCase("")){
-//                JSONObject jsonObject = staElemSearchAPI_clib_callAPI_to_array2D.test(indexService.queryAllIndexCode());
-//                dataRepository.getData(jsonObject);
-//            }
-//        } catch (IOException e) {
-//            e.printStackTrace();
-//        }
-//        Platform.runLater(new Runnable() {
-//            @Override
-//            public void run() {
-//                //更新JavaFX的主线程的代码放在此处
-//                try {
-//                    initialize();
-//                } catch (IOException e) {
-//                    e.printStackTrace();
-//                }
-//            }
-//        });
-//
-//    }
-//    @Scheduled(cron = "*/10 * * * * ?")   //定时器定义，设置执行时间
-//    private void process() throws IOException {
-//        Result<String> phoneResult = phoneService.getPhones();
-//        Result<String> warningResult = dataRepository.getWarningInfo();
-//        SimpleDateFormat dateFormat= new SimpleDateFormat("yyyy年MM月dd日 HH:mm:ss");
-//        String times = dateFormat.format(new Date());
-//        if(phoneResult.getCode().equalsIgnoreCase("0")){
-//            String phones = phoneResult.getData();
-//            System.out.println(phones);
-//            if(warningResult.getCode().equalsIgnoreCase("0")){
-//                String waringInfo = warningResult.getData();
-//                System.out.println(waringInfo);
-//                SendMsg sendMsg = new SendMsg();
-//                Result<String> sendResult = sendMsg.sendSMS(phones,waringInfo,"");
-//                if(sendResult.getCode().equalsIgnoreCase("0")){
-//                    fileService.writeWarningTxt(times+"-"+phones+"-成功-"+sendResult.getData()+"。\n");
-//                }else {
-//                    fileService.writeWarningTxt(times+"-"+phones+"-失败-"+sendResult.getMsg()+"。\n");
-//                }
-//            }
-//        }
-//    }
+    @Scheduled(cron = "0 0/5 * * * ?")   //定时器定义，设置执行时间
+    private void process() throws IOException {
+        System.out.println("定时器1执行"+times++);
+        SimpleDateFormat format = new SimpleDateFormat("HH:mm:ss");
+        System.out.println(format.format(new Date()));
+
+        JSONObject userInfo = userService.getUserInfo();
+        String stateAddress = userInfo.getString("stateAddress");
+        String userName = userInfo.getString("userName");
+        String userPsw = userInfo.getString("userPsw");
+        if(!stateAddress.equalsIgnoreCase("") && !userName.equalsIgnoreCase("") && !userPsw.equalsIgnoreCase("")){
+            StaElemSearchAPI staElemSearchAPI_ = new StaElemSearchAPI();
+            try {
+//            System.out.println(indexService.queryAllIndexCode());
+                if(!indexService.queryAllIndexCode().equalsIgnoreCase("")){
+                    JSONObject jsonObject = staElemSearchAPI_.test(indexService.queryAllIndexCode(),stateAddress,userName,userPsw);
+                    dataRepository.getData(jsonObject,indexService.queryAllIndexCode());
+                    if(indexService.queryIndex("VIS_HOR_1MI")){
+                        SearchVIS_HOR_1MI searchVIS_hor_1MI = new SearchVIS_HOR_1MI();
+                        JSONObject jsonObject1 = searchVIS_hor_1MI.test(stateAddress,userName,userPsw);
+                        dataRepository.getData(jsonObject1,"VIS_HOR_1MI");
+                    }
+                }
+            } catch (IOException e) {
+                e.printStackTrace();
+            }
+            Platform.runLater(new Runnable() {
+                @Override
+                public void run() {
+                    //更新JavaFX的主线程的代码放在此处
+                    try {
+                        initialize();
+                    } catch (IOException e) {
+                        e.printStackTrace();
+                    }
+                }
+            });
+        }
+
+    }
+    @Scheduled(cron = "0 1/5 * * * ?")   //定时器定义，设置执行时间
+    private void process1() throws Exception {
+        Result<String> phoneResult = phoneService.getPhones();
+        Result<String> warningResult = dataRepository.getWarningInfo();
+        SimpleDateFormat dateFormat= new SimpleDateFormat("yyyy年MM月dd日 HH:mm:ss");
+        String times = dateFormat.format(new Date());
+        if(phoneResult.getCode().equalsIgnoreCase("0")){
+            String phones = phoneResult.getData();
+            System.out.println(phones);
+            if(warningResult.getCode().equalsIgnoreCase("0")){
+                String waringInfo = warningResult.getData();
+                System.out.println(waringInfo);
+                SendMessage sendMsg = new SendMessage();
+                Result<String> sendResult = sendMsg.doIt(phones,waringInfo);
+                if(sendResult.getCode().equalsIgnoreCase("0")){
+                    fileService.writeWarningTxt(times+"-"+phones+"-成功-"+sendResult.getData()+"。\n");
+                }else {
+                    fileService.writeWarningTxt(times+"-"+phones+"-失败-"+sendResult.getMsg()+"。\n");
+                }
+            }
+        }
+    }
 }
 

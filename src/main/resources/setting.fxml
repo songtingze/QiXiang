@@ -15,7 +15,7 @@
                       <AnchorPane minHeight="0.0" minWidth="0.0" prefHeight="521.0" prefWidth="209.0" style="-fx-background-color:rgb(0,21,41);">
                            <children>
                               <TreeView fx:id="toolTree" layoutY="50.0" prefHeight="700.0" prefWidth="232.0" stylesheets="style/treeView.css" AnchorPane.bottomAnchor="0.0" AnchorPane.leftAnchor="0.0" AnchorPane.rightAnchor="0.0" AnchorPane.topAnchor="47.0" />
-                              <Label layoutX="56.0" layoutY="14.0" text="气象预警系统" textFill="WHITE">
+                              <Label layoutX="20.0" layoutY="14.0" text="气象数据实时报警系统" textFill="WHITE">
                                  <font>
                                     <Font name="HGDH_CNKI" size="20.0" />
                                  </font>

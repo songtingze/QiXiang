@@ -1,7 +1,10 @@
 package com.example.app.view;
 
+import com.alibaba.fastjson.JSONObject;
 import com.example.app.entity.Message;
 import com.example.app.entity.Phone;
+import com.example.app.entity.SearchInfo;
+import com.example.app.service.FileService;
 import com.example.app.view.components.MyTableView;
 import javafx.collections.FXCollections;
 import javafx.collections.ObservableList;
@@ -11,6 +14,7 @@ import javafx.fxml.FXML;
 import javafx.fxml.FXMLLoader;
 import javafx.scene.Parent;
 import javafx.scene.Scene;
+import javafx.scene.control.Alert;
 import javafx.scene.control.Button;
 import javafx.scene.control.TableCell;
 import javafx.scene.control.TableColumn;
@@ -18,12 +22,14 @@ import javafx.scene.control.cell.PropertyValueFactory;
 import javafx.scene.input.MouseEvent;
 import javafx.stage.Modality;
 import javafx.stage.Stage;
+import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Component;
 
 import java.io.IOException;
 import java.net.URL;
 import java.util.ArrayList;
 import java.util.Arrays;
+import java.util.List;
 import java.util.ResourceBundle;
 @Component
 public class DataTableController {
@@ -43,11 +49,14 @@ public class DataTableController {
     @FXML // fx:id="status"
     private TableColumn<Message,String> status; // Value injected by FXMLLoader
 
-    @FXML
-    private TableColumn<Message,String> info; // Value injected by FXMLLoader
+    @FXML // fx:id="status"
+    private TableColumn<Message,String> library; // Value injected by FXMLLoader
+
+//    @FXML
+//    private TableColumn<Message,String> info; // Value injected by FXMLLoader
 
     @FXML // fx:id="phoneTable"
-    private MyTableView messageTable; // Value injected by FXMLLoader
+    private MyTableView dataTable; // Value injected by FXMLLoader
 
     @FXML // ResourceBundle that was given to the FXMLLoader
     private ResourceBundle resources;
@@ -55,11 +64,11 @@ public class DataTableController {
     @FXML // URL location of the FXML file that was given to the FXMLLoader
     private URL location;
 
-    private ObservableList<Message> data =
+    private ObservableList<SearchInfo> data =
             FXCollections.observableArrayList();
 
-//    @Autowired
-//    private PhoneService phoneService;
+    @Autowired
+    private FileService fileService;
 
 //    private int selectNum = 0;
 
@@ -68,14 +77,16 @@ public class DataTableController {
         assert seq != null : "fx:id=\"seq\" was not injected: check your FXML file 'multiTable.fxml'.";
         assert time != null : "fx:id=\"time\" was not injected: check your FXML file 'multiTable.fxml'.";
         assert status != null : "fx:id=\"status\" was not injected: check your FXML file 'multiTable.fxml'.";
-        assert messageTable != null : "fx:id=\"phoneTable\" was not injected: check your FXML file 'multiTable.fxml'.";
+        assert library != null : "fx:id=\"status\" was not injected: check your FXML file 'multiTable.fxml'.";
+        assert dataTable != null : "fx:id=\"dataTable\" was not injected: check your FXML file 'multiTable.fxml'.";
 
         //表格宽度
-        seq.prefWidthProperty().bind(messageTable.widthProperty().multiply(0.05));
-        time.prefWidthProperty().bind(messageTable.widthProperty().multiply(0.25));
-        status.prefWidthProperty().bind(messageTable.widthProperty().multiply(0.25));
-        opreation.prefWidthProperty().bind(messageTable.widthProperty().multiply(0.1));
-        info.prefWidthProperty().bind(messageTable.widthProperty().multiply(0.35));
+        seq.prefWidthProperty().bind(dataTable.widthProperty().multiply(0.05));
+        time.prefWidthProperty().bind(dataTable.widthProperty().multiply(0.25));
+        status.prefWidthProperty().bind(dataTable.widthProperty().multiply(0.25));
+        library.prefWidthProperty().bind(dataTable.widthProperty().multiply(0.25));
+        opreation.prefWidthProperty().bind(dataTable.widthProperty().multiply(0.1));
+//        info.prefWidthProperty().bind(dataTable.widthProperty().multiply(0.35));
 
         initData();
 
@@ -83,8 +94,9 @@ public class DataTableController {
         seq.setCellValueFactory(new PropertyValueFactory<>("seq"));
         time.setCellValueFactory(new PropertyValueFactory<>("time"));
         status.setCellValueFactory(new PropertyValueFactory<>("status"));
+        library.setCellValueFactory(new PropertyValueFactory<>("library"));
         opreation.setCellValueFactory(new PropertyValueFactory<>("opreation"));
-        info.setCellValueFactory(new PropertyValueFactory<>("info"));
+//        info.setCellValueFactory(new PropertyValueFactory<>("info"));
 
         opreation.setCellFactory((col)->{
 
@@ -99,7 +111,7 @@ public class DataTableController {
                             button.setOnMouseClicked((col) -> {
 
                                 //获取list列表中的位置，进而获取列表对应的信息数据
-                                Message selectedItem = data.get(getIndex());
+                                SearchInfo selectedItem = data.get(getIndex());
                                 System.out.println(selectedItem);
 
                                 Stage stage = new Stage();
@@ -112,7 +124,7 @@ public class DataTableController {
                                 }
                                 //初始化编辑窗口
                                 TextController textController = loader.getController();
-                                textController.info.setText("测试测试测试测试测试测试测试测试测试测试测试测试测试测试测试");
+                                textController.info.setText(selectedItem.getInfo());
 //                                int num = selectedItem.getPhone().size();
 //                                ObservableList<Phone> phonelist =
 //                                        FXCollections.observableArrayList();
@@ -137,7 +149,7 @@ public class DataTableController {
                                 //打开子窗口
                                 Scene scene = new Scene(parent);
                                 stage.setScene(scene);
-                                stage.setTitle("短信发送手机号");
+                                stage.setTitle("数据获取详情");
                                 stage.initModality(Modality.APPLICATION_MODAL);
                                 stage.show();
 
@@ -156,8 +168,8 @@ public class DataTableController {
                 }
         );
 
-        messageTable.setItems(data);
-        messageTable.setEditable(true);
+        dataTable.setItems(data);
+        dataTable.setEditable(true);
 
 
     }
@@ -165,37 +177,30 @@ public class DataTableController {
     @FXML//清除
     public boolean delete(MouseEvent event) throws IOException {
         data.clear();
+        fileService.deleteSearchInfoTxt();
+        Alert alert = new Alert(Alert.AlertType.INFORMATION);
+        alert.setTitle("清空信息");
+        alert.setHeaderText(null);
+        alert.setContentText("已清空");
+
+        alert.showAndWait();
+
         return true;
     }
     @FXML//刷新
     public void flash(MouseEvent mouseEvent) throws IOException {
         initData();
-        messageTable.refresh();
+        dataTable.refresh();
 //        selectNum=0;
     }
 
     private void initData() throws IOException {
         data.clear();
-        Phone phone1 = new Phone(true,"1","123456","789","65");
-        Phone phone2 = new Phone(true,"2","12355556","789","65");
-        Phone phone3 = new Phone(true,"3","1234777556","789","65");
-        Phone phone4 = new Phone(true,"4","123466656","789","65");
-        data.add(new Message("1","2022年08月03日 01:36:10","一次提交信息不能超过600个手机号码",
-                new ArrayList<Phone>(Arrays.asList(phone1,phone2))));
-        data.add(new Message("2","2","3",new ArrayList<Phone>(Arrays.asList(phone3))));
-        data.add(new Message("3","2","3",new ArrayList<Phone>(Arrays.asList(phone4))));
-//        Result<List<Phone>> result = phoneService.queryAllPhone();
-//        if(result.getCode().equalsIgnoreCase("0")){
-//            List<Phone> phoneList = result.getData();
-//            for(Phone phone:phoneList){
-//                if(phone.getStatus().equalsIgnoreCase("yes")){
-//                    phone.setStatus("正常");
-//                }else if(phone.getStatus().equalsIgnoreCase("no")){
-//                    phone.setStatus("停用");
-//                }
-//                data.add(phone);
-//            }
-//        }
-
+        List<String> list = fileService.readSearchInfoTxt();
+        for (int i = 0; i < list.size();i ++){
+            String[] line = list.get(i).split("-");
+            SearchInfo searchInfo = new SearchInfo(i+"",line[0],line[1],line[2],line[3]);
+            data.add(searchInfo);
+        }
     }
 }

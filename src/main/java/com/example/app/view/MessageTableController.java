@@ -190,26 +190,7 @@ public class MessageTableController {
         for(int i = 0;i < messageList.size();i ++){
             data.add(messageList.get(i));
         }
-//        Phone phone1 = new Phone(true,"1","123456","789","65");
-//        Phone phone2 = new Phone(true,"2","12355556","789","65");
-//        Phone phone3 = new Phone(true,"3","1234777556","789","65");
-//        Phone phone4 = new Phone(true,"4","123466656","789","65");
-//        data.add(new Message("1","2022年08月03日 01:36:10","一次提交信息不能超过600个手机号码",
-//                new ArrayList<Phone>(Arrays.asList(phone1,phone2))));
-//        data.add(new Message("2","2","3",new ArrayList<Phone>(Arrays.asList(phone3))));
-//        data.add(new Message("3","2","3",new ArrayList<Phone>(Arrays.asList(phone4))));
-//        Result<List<Phone>> result = phoneService.queryAllPhone();
-//        if(result.getCode().equalsIgnoreCase("0")){
-//            List<Phone> phoneList = result.getData();
-//            for(Phone phone:phoneList){
-//                if(phone.getStatus().equalsIgnoreCase("yes")){
-//                    phone.setStatus("正常");
-//                }else if(phone.getStatus().equalsIgnoreCase("no")){
-//                    phone.setStatus("停用");
-//                }
-//                data.add(phone);
-//            }
-//        }
+
 
     }
 }

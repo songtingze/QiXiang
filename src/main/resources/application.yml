@@ -42,3 +42,5 @@ filePath:
     dataConfig: data.json
     phoneConfig: phone.json
     warningConfig: warning.txt
+    userConfig: userInfo.json
+    searchConfig: searchInfo.txt

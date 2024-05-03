@@ -1,0 +1,108 @@
+<?xml version="1.0" encoding="utf-8"?>
+<jnlp spec="1.0" xmlns:jfx="http://javafx.com" href="App.jnlp">
+  <information>
+    <title>App</title>
+    <vendor>Unknown</vendor>
+    <description>App</description>
+    <offline-allowed/>
+  </information>
+  <resources>
+    <j2se version="1.6+" href="http://java.sun.com/products/autodl/j2se"/>
+    <jar href="App.jar" size="150236" download="eager" />
+    <jar href="HikariCP-3.4.5.jar" size="156005" download="eager" />
+    <jar href="RXTXcomm.jar" size="60984" download="eager" />
+    <jar href="android-json-0.0.20131108.vaadin1.jar" size="18279" download="eager" />
+    <jar href="attoparser-2.0.5.RELEASE.jar" size="244959" download="eager" />
+    <jar href="dsn.jar" size="19175" download="eager" />
+    <jar href="fastjson-1.2.47.jar" size="546572" download="eager" />
+    <jar href="gimap.jar" size="14772" download="eager" />
+    <jar href="imap.jar" size="181513" download="eager" />
+    <jar href="jackson-annotations-2.11.4.jar" size="72086" download="eager" />
+    <jar href="jackson-core-2.11.4.jar" size="351519" download="eager" />
+    <jar href="jackson-databind-2.11.4.jar" size="1421841" download="eager" />
+    <jar href="jackson-datatype-jdk8-2.11.4.jar" size="34334" download="eager" />
+    <jar href="jackson-datatype-jsr310-2.11.4.jar" size="111009" download="eager" />
+    <jar href="jackson-module-parameter-names-2.11.4.jar" size="9269" download="eager" />
+    <jar href="jakarta.annotation-api-1.3.5.jar" size="25058" download="eager" />
+    <jar href="jakarta.el-3.0.3.jar" size="237826" download="eager" />
+    <jar href="javax.ejb.jar" size="47581" download="eager" />
+    <jar href="javax.jms.jar" size="25957" download="eager" />
+    <jar href="javax.persistence.jar" size="129793" download="eager" />
+    <jar href="javax.resource.jar" size="44511" download="eager" />
+    <jar href="javax.servlet.jsp.jar" size="78836" download="eager" />
+    <jar href="javax.servlet.jsp.jstl.jar" size="28120" download="eager" />
+    <jar href="javax.transaction.jar" size="9714" download="eager" />
+    <jar href="javax.websocket-api-1.1.jar" size="36710" download="eager" />
+    <jar href="javax.websocket-client-api-1.1.jar" size="27070" download="eager" />
+    <jar href="jsqlparser-1.2.jar" size="410148" download="eager" />
+    <jar href="jul-to-slf4j-1.7.30.jar" size="4592" download="eager" />
+    <jar href="lettuce-core-5.3.7.RELEASE.jar" size="1441568" download="eager" />
+    <jar href="log4j-1.2.16.jar" size="481534" download="eager" />
+    <jar href="log4j-api-2.13.3.jar" size="292301" download="eager" />
+    <jar href="log4j-to-slf4j-2.13.3.jar" size="17461" download="eager" />
+    <jar href="logback-classic-1.2.3.jar" size="290339" download="eager" />
+    <jar href="logback-core-1.2.3.jar" size="471901" download="eager" />
+    <jar href="mailapi.jar" size="279899" download="eager" />
+    <jar href="mybatis-3.5.9.jar" size="1814114" download="eager" />
+    <jar href="mybatis-spring-2.0.6.jar" size="71229" download="eager" />
+    <jar href="mybatis-spring-boot-autoconfigure-2.2.1.jar" size="26197" download="eager" />
+    <jar href="mybatis-spring-boot-starter-2.2.1.jar" size="2454" download="eager" />
+    <jar href="mysql-connector-java-8.0.23.jar" size="2415211" download="eager" />
+    <jar href="netty-buffer-4.1.63.Final.jar" size="300918" download="eager" />
+    <jar href="netty-codec-4.1.63.Final.jar" size="320878" download="eager" />
+    <jar href="netty-common-4.1.63.Final.jar" size="649329" download="eager" />
+    <jar href="netty-handler-4.1.63.Final.jar" size="495265" download="eager" />
+    <jar href="netty-resolver-4.1.63.Final.jar" size="33225" download="eager" />
+    <jar href="netty-transport-4.1.63.Final.jar" size="478159" download="eager" />
+    <jar href="pagehelper-5.1.6.jar" size="83924" download="eager" />
+    <jar href="pagehelper-spring-boot-autoconfigure-1.2.7.jar" size="6367" download="eager" />
+    <jar href="pagehelper-spring-boot-starter-1.2.7.jar" size="2628" download="eager" />
+    <jar href="pop3.jar" size="44410" download="eager" />
+    <jar href="reactive-streams-1.0.3.jar" size="11369" download="eager" />
+    <jar href="reactor-core-3.3.16.RELEASE.jar" size="1573359" download="eager" />
+    <jar href="slf4j-api-1.7.30.jar" size="41472" download="eager" />
+    <jar href="smslib-3.3.0b2.jar" size="220344" download="eager" />
+    <jar href="smtp.jar" size="52898" download="eager" />
+    <jar href="snakeyaml-1.26.jar" size="309001" download="eager" />
+    <jar href="spring-aop-5.2.14.RELEASE.jar" size="372785" download="eager" />
+    <jar href="spring-beans-5.2.14.RELEASE.jar" size="688779" download="eager" />
+    <jar href="spring-boot-2.3.10.RELEASE.jar" size="1125285" download="eager" />
+    <jar href="spring-boot-autoconfigure-2.3.10.RELEASE.jar" size="1484035" download="eager" />
+    <jar href="spring-boot-starter-2.3.10.RELEASE.jar" size="4763" download="eager" />
+    <jar href="spring-boot-starter-data-redis-2.3.10.RELEASE.jar" size="4776" download="eager" />
+    <jar href="spring-boot-starter-jdbc-2.3.10.RELEASE.jar" size="4760" download="eager" />
+    <jar href="spring-boot-starter-json-2.3.10.RELEASE.jar" size="4741" download="eager" />
+    <jar href="spring-boot-starter-logging-2.3.10.RELEASE.jar" size="4754" download="eager" />
+    <jar href="spring-boot-starter-security-2.3.10.RELEASE.jar" size="4738" download="eager" />
+    <jar href="spring-boot-starter-thymeleaf-2.3.10.RELEASE.jar" size="4762" download="eager" />
+    <jar href="spring-boot-starter-tomcat-2.3.10.RELEASE.jar" size="4790" download="eager" />
+    <jar href="spring-boot-starter-web-2.3.10.RELEASE.jar" size="4798" download="eager" />
+    <jar href="spring-context-5.2.14.RELEASE.jar" size="1232106" download="eager" />
+    <jar href="spring-context-support-5.2.14.RELEASE.jar" size="182954" download="eager" />
+    <jar href="spring-core-5.2.14.RELEASE.jar" size="1446998" download="eager" />
+    <jar href="spring-data-commons-2.3.9.RELEASE.jar" size="1214050" download="eager" />
+    <jar href="spring-data-keyvalue-2.3.9.RELEASE.jar" size="107991" download="eager" />
+    <jar href="spring-data-redis-2.3.9.RELEASE.jar" size="1879653" download="eager" />
+    <jar href="spring-expression-5.2.14.RELEASE.jar" size="282168" download="eager" />
+    <jar href="spring-jcl-5.2.14.RELEASE.jar" size="23963" download="eager" />
+    <jar href="spring-jdbc-5.2.14.RELEASE.jar" size="409152" download="eager" />
+    <jar href="spring-oxm-5.2.14.RELEASE.jar" size="64162" download="eager" />
+    <jar href="spring-security-config-5.3.9.RELEASE.jar" size="1082259" download="eager" />
+    <jar href="spring-security-core-5.3.9.RELEASE.jar" size="443961" download="eager" />
+    <jar href="spring-security-web-5.3.9.RELEASE.jar" size="569134" download="eager" />
+    <jar href="spring-tx-5.2.14.RELEASE.jar" size="314623" download="eager" />
+    <jar href="spring-web-5.2.14.RELEASE.jar" size="1443434" download="eager" />
+    <jar href="spring-webmvc-5.2.14.RELEASE.jar" size="956796" download="eager" />
+    <jar href="springboot-javafx-support-2.1.6.jar" size="69469" download="eager" />
+    <jar href="thymeleaf-3.0.12.RELEASE.jar" size="865552" download="eager" />
+    <jar href="thymeleaf-extras-java8time-3.0.4.RELEASE.jar" size="40092" download="eager" />
+    <jar href="thymeleaf-extras-springsecurity5-3.0.4.RELEASE.jar" size="47189" download="eager" />
+    <jar href="thymeleaf-spring5-3.0.12.RELEASE.jar" size="178527" download="eager" />
+    <jar href="tomcat-embed-core-9.0.45.jar" size="3395180" download="eager" />
+    <jar href="tomcat-embed-websocket-9.0.45.jar" size="269908" download="eager" />
+    <jar href="unbescape-1.1.6.RELEASE.jar" size="173935" download="eager" />
+    <jar href="zhenzisms-2.0.2.jar" size="10558" download="eager" />
+  </resources>
+  <jfx:javafx-desc  width="600" height="400" main-class="com.example.app.AppApplication"  name="App" />
+  <update check="background"/>
+</jnlp>

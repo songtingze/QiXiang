@@ -71,7 +71,7 @@ public class SettingController {
 
 
         //菜单栏
-        TreeItem<String> rootItem = new TreeItem<String> ("气象预警");
+        TreeItem<String> rootItem = new TreeItem<String> ("气象数据实时报警");
         rootItem.setExpanded(true);
         TreeItem<String> item1 = new TreeItem<String> ("气象信息监控");
         item1.setExpanded(false);
@@ -88,7 +88,7 @@ public class SettingController {
         TreeItem<String> item5 = new TreeItem<String> ("短信发送情况");
         item5.setExpanded(false);
         rootItem.getChildren().add(item5);
-        TreeItem<String> item6 = new TreeItem<String> ("个人信息管理");
+        TreeItem<String> item6 = new TreeItem<String> ("信息管理");
         item6.setExpanded(false);
         rootItem.getChildren().add(item6);
         toolTree.setRoot(rootItem);
@@ -139,7 +139,7 @@ public class SettingController {
                             phone.setVisible(false);
                             user.setVisible(false);
                             data.setVisible(false);
-                        }else if(newItem.getValue().equals("个人信息管理")){
+                        }else if(newItem.getValue().equals("信息管理")){
                             messages.setVisible(false);
                             index.setVisible(false);
                             indicators.setVisible(false);

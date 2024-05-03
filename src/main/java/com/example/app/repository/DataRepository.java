@@ -21,13 +21,35 @@ public class DataRepository {
     @Autowired
     private IndexService indexService;
 
-    public Result<String> getData(JSONObject jsonObject) throws IOException {
+    public Result<String> getData(JSONObject jsonObject,String index_) throws IOException {
         int code = jsonObject.getIntValue("code");
+
+        SimpleDateFormat dateFormat= new SimpleDateFormat("yyyy年MM月dd日 HH:mm:ss");
+        String times = dateFormat.format(new Date());
+
         String msg = "";
         if (code == 0) {
             JSONArray dataStr = jsonObject.getJSONArray("data");
             JSONObject dataJson = fileService.readJSONObject();
             JSONArray dataArray = dataJson.getJSONArray("data");
+
+            if(index_.equalsIgnoreCase("VIS_HOR_1MI")){
+                fileService.writeSearchInfoTxt(times+"-成功-SURF_CHN_OTHER_MIN-查询指标如下:"+
+                        indexService.queryByIndexCode(index_).getString("indexName")+"。\n");
+            }else{
+                String indexName = "";
+                String[] indexes = index_.split(",");
+                for(int i = 0;i < indexes.length;i ++){
+                    indexName += indexService.queryByIndexCode(indexes[i]).getString("indexName");
+                    if(i != indexes.length-1){
+                        indexName += ";";
+                    }
+                }
+                fileService.writeSearchInfoTxt(times+"-成功-SURF_CHN_MAIN_MIN-查询指标如下:"+
+                        indexName+"。\n");
+            }
+
+
             for(int i = 0 ; i < dataStr.size();i ++){
                 JSONObject data = dataStr.getJSONObject(i);
                 JSONObject index = indexService.queryByIndexCode(data.getString("indexCode"));
@@ -65,14 +87,29 @@ public class DataRepository {
             }
             dataJson.put("data",dataArray);
             JSONObject dataTime = dataJson.getJSONObject("dataTime");
-            SimpleDateFormat dateFormat= new SimpleDateFormat("yyyy年MM月dd日 HH:mm:ss");
-            String times = dateFormat.format(new Date());
             dataTime.put("time",times);
             dataJson.put("dataTime",dataTime);
             fileService.writeJSONObject(dataJson);
             msg = "数据获取完成！";
         }else{
             msg = jsonObject.getString("message");
+
+            if(index_.equalsIgnoreCase("VIS_HOR_1MI")){
+                fileService.writeSearchInfoTxt(times+"-失败-SURF_CHN_OTHER_MIN-查询指标如下:"+
+                        indexService.queryByIndexCode(index_).getString("indexName")+";失败原因："+msg+"。\n");
+            }else{
+                String indexName = "";
+                String[] indexes = index_.split(",");
+                for(int i = 0;i < indexes.length;i ++){
+                    indexName += indexService.queryByIndexCode(indexes[i]).getString("indexName");
+                    if(i != indexes.length-1){
+                        indexName += ";";
+                    }
+                }
+                fileService.writeSearchInfoTxt(times+"-失败-SURF_CHN_MAIN_MIN-查询指标如下:"+
+                        indexName+";失败原因："+msg+"。\n");
+            }
+
         }
 
         return Result.success(msg);
